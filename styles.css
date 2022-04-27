@@ -537,6 +537,32 @@ body {
 .main .action__btn a i {
   margin-left: 0.5rem;
 }
+.main .action__btn button {
+  padding: 0.7rem 3rem;
+  margin-left: 1rem;
+  background-color: #1c64ff;
+  border: none;
+  color: #ebebeb;
+  position: relative;
+  top: 0;
+  transition: all 0.5s ease-in-out;
+  text-transform: uppercase;
+  border-radius: 4px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+}
+.main .action__btn button:hover {
+  background-color: blue;
+  top: -2px;
+  box-shadow: 0px 0px 15px blue;
+}
+.main .action__btn button.disable {
+  background-color: #4d4a4a;
+}
+.main .action__btn button.disable:hover {
+  background-color: #000000;
+  top: -2px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+}
 .main .filter {
   width: 99%;
   margin: 0.7rem auto;
@@ -556,6 +582,14 @@ body {
 .main .filter__actions a:nth-of-type(1) i {
   font-size: 10px;
   margin-left: 0.5rem;
+}
+.main .filter__actions a:nth-of-type(1)::before {
+  position: absolute;
+  width: 0px;
+  height: 0;
+}
+.main .filter__actions a:nth-of-type(1):hover::before {
+  width: 0px;
 }
 .main .filter__actions a {
   margin-right: 1.5rem;
@@ -615,4 +649,72 @@ body {
 .main .filter__time a:nth-of-type(1).active {
   background-color: rgba(0, 128, 0, 0.7);
   color: #ebebeb;
+}
+.main .apply {
+  width: 99%;
+  margin: 1rem auto 1rem auto;
+  padding: 0 1rem;
+}
+.main .apply .title {
+  font-size: 1rem;
+  position: relative;
+  isolation: isolate;
+  color: #4d4a4a;
+}
+.main .apply .title::before {
+  position: absolute;
+  content: "";
+  bottom: -4px;
+  left: 0;
+  height: 2px;
+  width: 20px;
+  background-color: #4d4a4a;
+}
+.main .apply .form {
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+.main .apply .form__group {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+.main .apply .form .formControl label {
+  margin-bottom: 0.5rem;
+  font-size: 0.75rem;
+  text-transform: capitalize;
+  color: #1c64ff;
+}
+.main .apply .form .formControl input[type=text], .main .apply .form .formControl input[type=date], .main .apply .form .formControl input[type=month], .main .apply .form .formControl input[type=number] {
+  border: 1px solid #a3a2a2;
+  padding: 0.4rem 0.5rem;
+  color: #4d4a4a;
+  outline: none;
+  border-radius: 3px;
+  letter-spacing: 0.08rem;
+  box-shadow: 2px 2px 3px rgba(77, 74, 74, 0.5);
+}
+.main .apply .form .formControl textarea {
+  height: 5rem;
+  resize: none;
+  padding: 0.4rem 0.5rem;
+  border-radius: 3px;
+  color: #4d4a4a;
+  border: 1px solid #a3a2a2;
+  outline: none;
+  box-shadow: 2px 2px 3px rgba(77, 74, 74, 0.5);
+}
+.main .apply .form .formControl div {
+  justify-content: space-between;
+  align-items: center;
+}
+.main .apply .form .formControl div span {
+  margin-right: 10px;
+  border: 1px solid #a3a2a2;
+  padding: 0.4rem 0.5rem;
+  border-radius: 4px;
+}
+.main .apply .form .formControl div div {
+  margin-top: 0.4rem;
+  gap: 5px;
 }/*# sourceMappingURL=styles.css.map */

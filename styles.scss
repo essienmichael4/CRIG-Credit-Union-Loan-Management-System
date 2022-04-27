@@ -233,7 +233,6 @@ body{
         height: 4.7rem;
         width: 99%;
         z-index: 1000;
-        // display: flex;
         align-items: center;
         justify-content: space-between;
         margin: 0 auto;
@@ -595,6 +594,36 @@ body{
                 margin-left: .5rem;
             }
         }
+
+        button{
+            padding: .7rem 3rem;
+            margin-left: 1rem;
+            background-color: #1c64ff;
+            border: none;
+            color: #ebebeb;
+            position: relative;
+            top: 0;
+            transition: all .5s ease-in-out;
+            text-transform: uppercase;
+            border-radius: 4px;
+            box-shadow: 5px 5px 15px rgba($color: #000000, $alpha: .5);
+
+            &:hover{
+                background-color: blue;
+                top: -2px;
+                box-shadow: 0px 0px 15px blue;
+            }
+
+            &.disable{
+                background-color: #4d4a4a;
+
+                &:hover{
+                    background-color: #000000;
+                    top: -2px;
+                    box-shadow: 0px 0px 15px rgba($color: #000000, $alpha: .5) ;
+                }
+            }
+        }
     }
     
     .filter{
@@ -608,8 +637,6 @@ body{
         box-shadow: 5px 5px 15px rgba($color: #000000, $alpha: .5);
 
         &__actions{
-
-
             a:nth-of-type(1){
                 background-color: #1c64ff;
                 padding: .4rem 1rem;
@@ -619,6 +646,16 @@ body{
                 i{
                     font-size: 10px;
                     margin-left: .5rem;
+                }
+
+                &::before{
+                    position: absolute;
+                    width: 0px;
+                    height: 0;
+                }
+
+                &:hover::before{
+                    width: 0px;
                 }
             }
     
@@ -643,13 +680,11 @@ body{
                     width: 0%;
                     background-color: #4d4a4a;
                     height: 2px;
-                    // transform-origin: right;
                     transition: all .5s ease-in-out;
                 }
     
                 &:not(.active):hover::before{
                     width: 100%;
-                    // transform-origin: left;
                 }
             }
         }
@@ -690,6 +725,89 @@ body{
                 &.active{
                     background-color: rgba(0, 128, 0, .7);
                     color: #ebebeb;
+                }
+            }
+        }
+    }
+
+    .apply{
+        width: 99%;
+        margin: 1rem auto 1rem auto;
+        padding: 0 1rem;
+
+        .title{
+            font-size: 1rem;
+            position: relative;
+            isolation: isolate;
+            color: #4d4a4a;
+
+            &::before{
+                position: absolute;
+                content: "";
+                bottom: -4px;
+                left: 0;
+                height: 2px;
+                width: 20px;
+                background-color: #4d4a4a;
+            }
+        }
+
+        .form{
+            margin-top: 2rem;
+            margin-bottom: 3rem;
+
+            &__group{
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 2rem;
+            }
+            
+
+            .formControl{
+
+                label{
+                    margin-bottom: .5rem;
+                    font-size: .75rem;
+                    text-transform: capitalize;
+                    color: #1c64ff;
+                }
+                
+                input[type="text"], input[type="date"], input[type="month"], input[type="number"]{
+                    border: 1px solid #a3a2a2;
+                    padding: .4rem .5rem;
+                    color: #4d4a4a;
+                    outline: none;
+                    border-radius: 3px;
+                    letter-spacing: .08rem;
+                    box-shadow: 2px 2px 3px rgba($color: #4d4a4a, $alpha: .5);
+                }
+
+                textarea{
+                    height: 5rem;
+                    resize: none;
+                    padding: .4rem .5rem;
+                    border-radius: 3px;
+                    color: #4d4a4a;
+                    border: 1px solid #a3a2a2;
+                    outline: none;
+                    box-shadow: 2px 2px 3px rgba($color: #4d4a4a, $alpha: .5);
+                }
+
+                div{
+                    justify-content: space-between;
+                    align-items: center;
+
+                    span{
+                        margin-right: 10px;
+                        border: 1px solid #a3a2a2;
+                        padding: .4rem .5rem;
+                        border-radius: 4px;
+                    }
+
+                    div{
+                        margin-top: .4rem;
+                        gap: 5px;
+                    }
                 }
             }
         }
