@@ -5,10 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../css/styles.css">
 
-    <link rel="stylesheet" href="./fontawesome.min.css">
-    <link rel="stylesheet" href="./all.min.css">
+    <link rel="stylesheet" href="../css/fontawesome.min.css">
+    <link rel="stylesheet" href="../css/all.min.css">
 </head>
 <body>
     <div class="container">
@@ -20,27 +20,27 @@
                 <ul class="nav__list">
                 <?php
                         if($_GET['pgname']=="dashboard"){
-                            echo '<li class=""><a href="?pgname=dashboard" class="item__link active py1"><span><i class="fas fa-home"></i> Dashboard</span></a></li>';
+                            echo '<li class="list__item"><a href="?pgname=dashboard" class="item__link active py1"><span><i class="fas fa-home"></i> Dashboard</span></a></li>';
                         }else{
-                            echo '<li class=""><a href="?pgname=dashboard" class="item__link py1"><span><i class="fas fa-home"></i> Dashboard</span></a></li>';
+                            echo '<li class="list__item"><a href="?pgname=dashboard" class="item__link py1"><span><i class="fas fa-home"></i> Dashboard</span></a></li>';
                         }
 
                         if($_GET['pgname']=="loans"){
-                            echo '<li><a href="?pgname=loans" class="item__link active py1"><span><i class="fas fa-home"></i> loans</span></a></li>';
+                            echo '<li class="list__item "><a href="?pgname=loans" class="item__link active py1"><span><i class="fas fa-home"></i> loans</span></a></li>';
                         }else{
-                            echo '<li><a href="?pgname=loans" class="item__link py1"><span><i class="fas fa-home"></i> loans</span></a></li>';
+                            echo '<li class="list__item "><a href="?pgname=loans" class="item__link py1"><span><i class="fas fa-home"></i> loans</span></a></li>';
                         }
 
                         if($_GET['pgname']=="apply"){
-                            echo '<li><a href="?pgname=apply" class="item__link active py1"><span><i class="fas fa-home"></i> loan Application</span></a></li>';
+                            echo '<li class="list__item "><a href="?pgname=apply" class="item__link active py1"><span><i class="fas fa-home"></i> loan Application</span></a></li>';
                         }else{
-                            echo '<li><a href="?pgname=apply" class="item__link py1"><span><i class="fas fa-home"></i> loan Application</span></li>';
+                            echo '<li class="list__item "><a href="?pgname=apply" class="item__link py1"><span><i class="fas fa-home"></i> loan Application</span></li>';
                         }
-                        
+
                         if($_GET['pgname']=="users"){
-                            echo '<li><a href="?pgname=users" class="item__link active py1"><span><i class="fas fa-home"></i> users</span></a></li>';
+                            echo '<li class="list__item "><a href="?pgname=users" class="item__link active py1"><span><i class="fas fa-home"></i> users</span></a></li>';
                         }else{
-                            echo '<li><a href="?pgname=users" class="item__link py1"><span><i class="fas fa-home"></i> users</span></a></li>';
+                            echo '<li class="list__item "><a href="?pgname=users" class="item__link py1"><span><i class="fas fa-home"></i> users</span></a></li>';
                         }
                 ?>
                     <!-- <li class="list__item "><a href="./index.html" class="item__link active py1"><span><i class="fas fa-home"></i> Dashboard</span></a></li>                     -->

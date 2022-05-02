@@ -15,7 +15,7 @@
 <body>
         <div class="hero">
             <h1>CQC - LOAN MANAGEMENT</h1>
-            <form action="" class="login">
+            <form action="./php/login.inc.php" method="POST" class="login">
                 <h2>Welcome back...</h2>
                 <p>Please enter your username or email or worker id and password.</p>
                 <div class="formControl">
@@ -31,7 +31,7 @@
                 </div>
                 <div class="formControl">
                     
-                    <input type="password" class="pwd" placeholder="Password...">
+                    <input type="password" class="pwd" placeholder="Password..." name="password">
                     <i class="fas fa-eye password" onclick='passwordShow("pwd")'></i>
                 </div>
 

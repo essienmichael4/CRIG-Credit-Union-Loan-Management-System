@@ -3,7 +3,7 @@
     $server = "localhost";
     $dbuname = "root";
     $dbpwd = "";
-    $dbname = "cqcloan";
+    $dbname = "cqcloandb";
 
     $conn = mysqli_connect($server,$dbuname,$dbpwd,$dbname);
 

@@ -1,5 +1,5 @@
 <?php
-    include("./db.inc.php");
+    include("./dbs.inc.php");
     include("functions.inc.php");
  
     $username = mysqli_real_escape_string($conn, $_POST['username']);

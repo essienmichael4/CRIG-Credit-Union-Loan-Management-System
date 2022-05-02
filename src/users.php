@@ -15,7 +15,7 @@
                 <div class="userdetails">
                     <p>codejunior</p>
                     <a href=">">edit user</a>
-                    <form><button type="submit">logout</button></form>
+                    <form action="../php/logout.inc.php"><button type="submit">logout</button></form>
                 </div>
             </header>
             <div class="wrapper">
@@ -141,4 +141,4 @@
             </div>
         </div>
     </div>   
-    <script src="./js/user.js"></script> 
+    <script src="../js/user.js"></script> 

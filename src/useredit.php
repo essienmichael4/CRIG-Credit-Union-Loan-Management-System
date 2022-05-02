@@ -15,7 +15,7 @@
                 <div class="userdetails">
                     <p>codejunior</p>
                     <a href=">">edit user</a>
-                    <form><button type="submit">logout</button></form>
+                    <form action="../php/logout.inc.php"><button type="submit">logout</button></form>
                 </div>
             </header>
             <div class="wrapper">
