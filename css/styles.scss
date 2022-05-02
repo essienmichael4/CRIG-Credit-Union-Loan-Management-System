@@ -115,11 +115,112 @@ body{
     width: 100%;
     max-width: 1440px;
     height: 100vh;
-    // background-color: var(--color-primary);
     overflow-x: hidden;
     position: relative;
-    // overflow-y: scroll;
-    // scrollbar-width: 5px;
+}
+
+.hero{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../assets/hero.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+
+    h1{
+        margin-top: 3rem;
+        margin-left: 6rem;
+        font-size: 1.5rem;
+        color: #4d4a4a;
+    }
+
+    .login{
+        position: absolute;
+        left: 6rem;
+        top: 6.5rem;
+        background-color: rgba($color: #ebebeb, $alpha: .7);
+        padding: 2rem 3rem;
+        width: 400px;
+        border-radius: 20px;
+        box-shadow: 5px 5px 15px rgba($color: #000000, $alpha: .7);
+
+        h2{
+            margin-bottom: 1rem;
+        }
+
+        p{
+            font-size: .8rem;
+            color: #4d4a4a;
+            
+            &.err{
+                text-align: center;
+                background-color: rgba(241, 145, 145, .5);
+                padding-block: .5rem;
+                border-radius: 4px;
+                color: red;
+            }
+
+            &:not(.err){
+                margin-bottom: 1rem;
+            }
+        }
+
+        .formControl{
+            width: 100%;
+            padding: .5rem .5rem;
+            // background-color: #1c64ff;
+            border: 1px solid #4d4a4a;
+            margin-block: 1rem;
+            position: relative;
+            border-radius: 4px;
+
+            input{
+                width: 90%;
+                padding: .2rem .5rem;
+                outline: none;
+                border: none;
+                background-color: transparent;
+            }
+
+            i{
+                position: absolute;
+                top: .75rem;
+                right: .8rem;
+                color: #8a8b8d;
+
+                &:is(.password){
+                    cursor: pointer;
+
+                    &.active::before{
+                        color: #4d4a4a;
+                        content: '\f070';
+                    }
+                }
+            }
+
+        }
+
+        span{
+            margin-top: 1rem;
+            text-transform: uppercase;
+        }
+
+        button{
+            width: 100%;
+            margin-block: 1rem 2rem;
+            padding: .5rem;
+            background-color: #4d4a4a;
+            border: none;
+            color: #ebebeb;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        hr{
+            margin-bottom: 1rem;
+        }
+    }
 }
 
 .sidebar{
