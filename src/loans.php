@@ -1,39 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="styles.css">
-
-    <link rel="stylesheet" href="./fontawesome.min.css">
-    <link rel="stylesheet" href="./all.min.css">
-</head>
-<body>
-    <div class="container">
-        <aside class="sidebar">
-            <header class="sidebar__header header p1">
-                <h1>Loan app</h1>
-            </header>
-            <nav class="sidebar__nav nav">
-                <ul class="nav__list">
-                    <li class="list__item "><a href="./index.html" class="item__link active py1"><span><i class="fas fa-home"></i> Dashboard</span></a></li>                    
-                    <li class="list__item "><a href="./loans.html" class="item__link py1"><span><i class="fas fa-home"></i> loans</span></a></li>                    
-                    <li class="list__item "><a href="./apply.html" class="item__link py1"><span><i class="fas fa-home"></i> loan Application</span></a></li>                    
-                    <li class="list__item "><a href="./users.html" class="item__link py1"><span><i class="fas fa-home"></i> users</span></a></li>                    
-                    <li class="list__item "><a href="" class="item__link py1"><span><i class="fas fa-home"></i> home</span></a></li>                    
-                </ul>
-            </nav>
-            <footer class="sidebar__footer flex-c">
-                <h3 class=".p">created by Michael Essein</h3>
-                <p>copyrights &copy; 2022</p> 
-                <p>all rights reserved</p>
-            </footer>
-        </aside>
         <div class="main">
             <header class="main__header flex px1">
-                <h2 class="">Dashboard</h2>
+                <h2 class="">Loans</h2>
                 <form class="search" action="">
                     <input type="text" class="search__input" placeholder="Search">
                     <button class="search__btn">Search</button>
@@ -51,27 +18,28 @@
                 </div>
             </header>
             <div class="wrapper">
-                <section class="cards flex">
-                    <div class="cards__card flex-c">
-                        <i class="icon icon--first fas fa-arrow-down"></i>
-                        <i class="icon__primary fas fa-money-check"></i>
-                        <p>GH¢ 1,000,000,000.00</p>
-                        <h2 class=""><span><i class="fas fa-exclamation"></i></span>All loans paid and unpaid</h2>
+                <div class="filter flex">
+                    <div class="filter__actions">
+                        <a href="./apply.html">Loan Application <i class="fas fa-plus"></i></a>
+                        <a href="" class="active">All Loans</a>
+                        <a href="" class="">Approved</a>
+                        <a href="" class="">Due</a>
+                        <a href="" class="">Overdue</a>
+                        <a href="" class="">Paid</a>
                     </div>
-                    <div class="cards__card flex-c">
-                        <i class="icon icon--second fas fa-arrow-down"></i>
-                        <i class="icon__primary fas fa-money-check"></i>
-                        <p>GH¢ 1,000,000.00</p>
-                        <h2 class=""><span><i class="fas fa-exclamation"></i></span>All paid loans</h2>
+                    <div class="filter__time">
+                        <a class="allTime active">All Time</a>
+                        <input type="date" class="dayInput1">
+                        <input type="date" class="dayInput2">
+                        <input type="month" class="monthInput1">
+                        <input type="month" class="monthInput2">
+                        <input type="month" class="yearInput">
+                        
+                        <a class="day">D</a>
+                        <a class="month">M</a>
+                        <a class="year">Y</a>
                     </div>
-                    <div class="cards__card flex-c">
-                        <i class="icon icon--third fas fa-arrow-down"></i>
-                        <i class="icon__primary fas fa-money-check"></i>
-                        <p>GH¢ 1,000.00</p>
-                        <h2 class=""><span><i class="fas fa-exclamation"></i></span>All unpaid loans</h2>
-                    </div>
-                    
-                </section>
+                </div>
                 <section class="main__table">
                     <table>
                         <thead>
@@ -296,12 +264,7 @@
                         </tbody>
                     </table>
                 </section>
-                <div class="action__btn flex">
-                    <a href="">view all <i class="fas fa-angle-down"></i></a>
-                </div>
             </div>
         </div>
-    </div>    
-</body>
-<script src="./js/main.js"></script>
-</html>
+    </div>
+    <script src="./js/searchUtils.js"></script>
