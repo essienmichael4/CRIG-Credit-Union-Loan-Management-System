@@ -50,7 +50,7 @@
                                 <td class="tc"><span class="in">logged in</span></td>
                                 <td class="tc">
                                     <button class="disable">disable</button>
-                                    <a href="useredit.html" class="edit">edit</a>
+                                    <a href="?pgname=useredit" class="edit">edit</a>
                                 </td>
                             </tr> 
                             
@@ -63,7 +63,7 @@
                                 <td>Avenue A</td>
                                 <td>23/04/2022</td>
                                 <td class="tc"> <span class="out">logged out</span></td>
-                                <td class="tc"><button class="enable">enable</button> <a href="useredit.html" class="edit">edit</a></td>
+                                <td class="tc"><button class="enable">enable</button> <a href="?pgname=useredit" class="edit">edit</a></td>
                             </tr> 
                         </tbody>
                     </table>
@@ -112,13 +112,19 @@
                         <div class="formControl flex-c">
                             <label for="">password</label>
                             <div>
-                                <input type="password"><span class="ml1"><i class="fas fa-eye"></i></span>
+                                <input type="password" class="pwd">
+                                <span class="ml1">
+                                    <i class="fas fa-eye password" onclick='passwordShow("pwd")'></i>
+                                </span>
                             </div>
                         </div>
                         <div class="formControl flex-c">
                             <label for="">password repeat</label>
                             <div>
-                                <input type="password"><span class="ml1"><i class="fas fa-eye"></i></span>
+                                <input type="password" class="pwdrep">
+                                <span class="ml1">
+                                    <i class="fas fa-eye passwordrep" onclick='passwordShowRep("pwdrep")'></i>
+                                </span>
                             </div>
                         </div>
                         <div class="formControl flex-c">
@@ -141,4 +147,6 @@
             </div>
         </div>
     </div>   
+    <script src="../js/password.js"></script>
+<script src="../js/passwordrep.js"></script>
     <script src="../js/user.js"></script> 

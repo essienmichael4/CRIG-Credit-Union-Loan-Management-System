@@ -866,7 +866,6 @@ body {
   box-shadow: 2px 2px 3px rgba(77, 74, 74, 0.5);
 }
 .main .apply .form .formControl div {
-  justify-content: space-between;
   align-items: center;
   width: 100%;
 }
@@ -973,6 +972,13 @@ body {
 .main .main__user form .formControl div div {
   margin-top: 0.4rem;
   gap: 5px;
+}
+.main .main__user form .formControl div i {
+  cursor: pointer;
+}
+.main .main__user form .formControl div i.active::before {
+  color: #4d4a4a;
+  content: "\f070";
 }
 .main .main__user form .action__btn {
   padding: 1.5rem;

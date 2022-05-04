@@ -72,21 +72,23 @@
                                 <label for="">Loan Amount</label>
                                 <div>
                                     <span>GH¢</span>
-                                    <input type="number" placeholder="Amount">
+                                    <input type="number" class="loan" placeholder="Amount">
                                 </div>
                             </div>
                             <div class="formControl flex-c">
-                                <label for="">Loan Amount (*20%)</label>
+                                <label for="">Loan Interest (*20%)</label>
                                 <div>
                                     <span>GH¢</span>
-                                    <input type="number" value="0">
+                                    <input type="number" class="interest" value="0">
                                 </div>
                             </div>
                             <div class="formControl flex-c">
-                                <label for="">First Due Date</label>
-                                <input type="date">
+                                <label for="">Expected Amount</label>
+                                <div>
+                                    <span>GH¢</span>
+                                    <input type="number" class="total" value="0">
+                                </div>
                             </div>
-
                             <div class="formControl flex-c">
                                 <label for="">Mode of Payment</label>
                                 <div class="flex">
@@ -99,6 +101,11 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="formControl flex-c">
+                                <label for="">First Due Date</label>
+                                <input type="date">
+                            </div>
+
 
                             <div class="formControl flex-c">
                                 <label for="">Purpose for the loan</label>
@@ -126,7 +133,7 @@
                                 <label for="">Guaranteed Amount (1st)</label>
                                 <div>
                                     <span>GH¢</span>
-                                    <input type="number" placeholder="Amount">
+                                    <input type="number" class="guaranteed1" placeholder="Amount">
                                 </div>
                             </div>
                             <div class="formControl flex-c">
@@ -147,7 +154,7 @@
                                 <label for="">Guaranteed Amount (2nd)</label>
                                 <div>
                                     <span>GH¢</span>
-                                    <input type="number" placeholder="Amount">
+                                    <input type="number" class="guaranteed2" placeholder="Amount">
                                 </div>
                             </div>
                             <div class="formControl flex-c">
@@ -168,7 +175,7 @@
                                 <label for="">Guaranteed Amount (3rd)</label>
                                 <div>
                                     <span>GH¢</span>
-                                    <input type="number" placeholder="Amount">
+                                    <input type="number" class="guaranteed3" placeholder="Amount">
                                 </div>
                             </div>
                             <div class="formControl flex-c">
@@ -189,7 +196,7 @@
                                 <label for="">Guaranteed Amount (4th)</label>
                                 <div>
                                     <span>GH¢</span>
-                                    <input type="number" placeholder="Amount">
+                                    <input type="number" class="guaranteed4" placeholder="Amount">
                                 </div>
                             </div>
                         </div>
@@ -231,3 +238,4 @@
             </div>
         </div>
     </div>    
+<script src="../js/interest.js"></script>

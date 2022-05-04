@@ -56,13 +56,19 @@
                             <div class="formControl flex-c">
                                 <label for="">password</label>
                                 <div>
-                                    <input type="password"><span class="ml1"><i class="fas fa-eye"></i></span>
+                                    <input type="password" class="pwd">
+                                    <span class="ml1">
+                                        <i class="fas fa-eye password" onclick='passwordShow("pwd")'></i>
+                                    </span>
                                 </div>
                             </div>
                             <div class="formControl flex-c">
                                 <label for="">password repeat</label>
                                 <div>
-                                    <input type="password"><span class="ml1"><i class="fas fa-eye"></i></span>
+                                    <input type="password" class="pwdrep">
+                                    <span class="ml1">
+                                        <i class="fas fa-eye passwordrep" onclick='passwordShowRep("pwdrep")'></i>
+                                    </span>
                                 </div>
                             </div>
                             <div class="formControl flex-c">
@@ -85,3 +91,5 @@
             </div>
         </div>
     </div>    
+<script src="../js/password.js"></script>
+<script src="../js/passwordrep.js"></script>

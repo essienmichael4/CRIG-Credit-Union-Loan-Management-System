@@ -26,21 +26,21 @@
                         }
 
                         if($_GET['pgname']=="loans"){
-                            echo '<li class="list__item "><a href="?pgname=loans" class="item__link active py1"><span><i class="fas fa-home"></i> loans</span></a></li>';
+                            echo '<li class="list__item "><a href="?pgname=loans" class="item__link active py1"><span><i class="fas fa-piggy-bank"></i> loans</span></a></li>';
                         }else{
-                            echo '<li class="list__item "><a href="?pgname=loans" class="item__link py1"><span><i class="fas fa-home"></i> loans</span></a></li>';
+                            echo '<li class="list__item "><a href="?pgname=loans" class="item__link py1"><span><i class="fas fa-piggy-bank"></i> loans</span></a></li>';
                         }
 
                         if($_GET['pgname']=="apply"){
-                            echo '<li class="list__item "><a href="?pgname=apply" class="item__link active py1"><span><i class="fas fa-home"></i> loan Application</span></a></li>';
+                            echo '<li class="list__item "><a href="?pgname=apply" class="item__link active py1"><span><i class="fas fa-fill"></i> loan Application</span></a></li>';
                         }else{
-                            echo '<li class="list__item "><a href="?pgname=apply" class="item__link py1"><span><i class="fas fa-home"></i> loan Application</span></li>';
+                            echo '<li class="list__item "><a href="?pgname=apply" class="item__link py1"><span><i class="fas fa-fill"></i> loan Application</span></li>';
                         }
 
-                        if($_GET['pgname']=="users"){
-                            echo '<li class="list__item "><a href="?pgname=users" class="item__link active py1"><span><i class="fas fa-home"></i> users</span></a></li>';
+                        if($_GET['pgname']=="users"|| $_GET['pgname']=="useredit"){
+                            echo '<li class="list__item "><a href="?pgname=users" class="item__link active py1"><span><i class="fas fa-users"></i> users</span></a></li>';
                         }else{
-                            echo '<li class="list__item "><a href="?pgname=users" class="item__link py1"><span><i class="fas fa-home"></i> users</span></a></li>';
+                            echo '<li class="list__item "><a href="?pgname=users" class="item__link py1"><span><i class="fas fa-users"></i> users</span></a></li>';
                         }
                 ?>
                     <!-- <li class="list__item "><a href="./index.html" class="item__link active py1"><span><i class="fas fa-home"></i> Dashboard</span></a></li>                     -->

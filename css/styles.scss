@@ -986,7 +986,7 @@ body{
                 }
 
                 div{
-                    justify-content: space-between;
+                    // justify-content: space-between;
                     align-items: center;
                     width: 100%;
 
@@ -1111,11 +1111,22 @@ body{
                         padding: .4rem .5rem;
                         border-radius: 4px;
                         box-shadow: 2px 2px 3px rgba($color: #4d4a4a, $alpha: .5);
+
+                        
                     }
 
                     div{
                         margin-top: .4rem;
                         gap: 5px;
+                    }
+
+                    i{
+                        cursor: pointer;
+    
+                        &.active::before{
+                            color: #4d4a4a;
+                            content: '\f070';
+                        }
                     }
                 }
             }
