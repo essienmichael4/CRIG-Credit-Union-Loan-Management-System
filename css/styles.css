@@ -656,7 +656,7 @@ body {
 }
 .main .action__btn {
   width: 99%;
-  margin: 1rem auto;
+  margin: 2rem auto 0.7rem auto;
   justify-content: end;
 }
 .main .action__btn a {
