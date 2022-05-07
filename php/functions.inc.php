@@ -51,9 +51,9 @@
             if($password == $row['password'] || $pwdVerify == "true"){
                 session_start();
                 $_SESSION["username"] = $row['username'];
-                $_SESSION["firstname"] = $row['firstname'];
-                $_SESSION["lastname"] = $row['lastname'];
-                $_SESSION["othername"] = $row['othername'];
+                $_SESSION["firstname"] = $row['first_name'];
+                $_SESSION["lastname"] = $row['last_name'];
+                // $_SESSION["othername"] = $row['othername'];
                 $_SESSION["worker_id"] = $row['workerid'];
                 $_SESSION["email"] = $row['email'];
                 $_SESSION["usertype"] = $row['role'];

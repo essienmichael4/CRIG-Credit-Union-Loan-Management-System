@@ -1,6 +1,3 @@
-   <?php
-   $_SESSION["usertype"]="user"
-   ?> 
     <div class="main">
             <header class="main__header flex px1">
                 <h2 class="">Loan Application</h2>
@@ -10,12 +7,12 @@
                 </form>
                 <div class="user flex">
                     <span class="flex">C</span>
-                    <p>Michael Essien</p>
+                    <p><?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?></p>
                     <i class="fas fa-angle-down"></i>
                 </div>
                 
                 <div class="userdetails">
-                    <p>codejunior</p>
+                    <p><?=$_SESSION["username"]?></p>
                     <a href=">">edit user</a>
                     <form action="../php/logout.inc.php"><button type="submit">logout</button></form>
                 </div>
@@ -25,6 +22,7 @@
                     <h3 class="title">Applicant Detials</h3>
                     <form class="form apply__form" action="../php/applyloan.inc.php" method="POST">
                         <div class="form__group">
+                            <input type="text" name="recipient" value="<?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?>" hidden>
                             <div class="formControl flex-c">
                                 <label for="">First name</label>
                                 <input type="text" name="firstname" placeholder="First Name">
@@ -96,11 +94,11 @@
                                 <label for="">Mode of Payment</label>
                                 <div class="flex">
                                     <div class="flex">
-                                        <input type="radio" name="mode" value="Member"> <p>By Cash</p>
+                                        <input type="radio" name="mode" value="cash"> <p>By Cash</p>
                                     </div>
     
                                     <div class="flex">
-                                        <input type="radio" name="mode" value="Non-Member"> <p>At Source</p>
+                                        <input type="radio" name="mode" value="source"> <p>At Source</p>
                                     </div>
                                 </div>
                             </div>
@@ -213,27 +211,27 @@
                         <div class="form__group">
                             <div class="formControl flex-c">
                                 <label for="">First Due Date</label>
-                                <input type="date">
+                                <input type="date" name="first_due_approved">
                             </div>
                             <div class="formControl flex-c">
                                 <label for="">second Due Date</label>
-                                <input type="date">
+                                <input type="date" name="second_due_approved">
                             </div>
                             <div class="formControl flex-c">
                                 <label for="">third Due Date</label>
-                                <input type="date">
+                                <input type="date" name="third_due_approved">
                             </div>
                             <div class="formControl flex-c">
                                 <label for="">Fourth Due Date</label>
-                                <input type="date">
+                                <input type="date" name="fourth_due_approved">
                             </div>
                             <div class="formControl flex-c">
                                 <label for="">Fifth Due Date</label>
-                                <input type="date">
+                                <input type="date" name="fifth_due_approved">
                             </div>
                             <div class="formControl flex-c">
                                 <label for="">sixth Due Date</label>
-                                <input type="date">
+                                <input type="date" name="sixth_due_approved">
                             </div>
                         </div>
                         <?php
@@ -248,10 +246,21 @@
                                 <button name="apply">Apply</button>
                             <?php
                             }else{
+                                if(isset($_GET["applicant_id"])){
+                                ?>
+                            
+                                    <button name="disapprove" class="disable">disapprove</button>
+                                    <button name="approve">Approve</button>
+                                <!-- <button name="approve">Apply & Approve</button> -->
+                                <?php
+                                }else{
                             ?>
-                                <button name="disapprove" class="disable">disapprove</button>
-                                <button name="approve">Approve</button>
+                            
+                                <!-- <button name="disapprove" class="disable">disapprove</button> -->
+                                <!-- <button name="approve">Approve</button> -->
+                                <button name="approveapply">Apply & Approve</button>
                             <?php
+                                }
                             }
                             ?>
                             

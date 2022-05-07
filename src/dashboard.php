@@ -7,12 +7,12 @@
                 </form>
                 <div class="user flex">
                     <span class="flex">C</span>
-                    <p>Michael Essien</p>
+                    <p><?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?></p>
                     <i class="fas fa-angle-down"></i>
                 </div>
                 
                 <div class="userdetails">
-                    <p>codejunior</p>
+                    <p><?=$_SESSION["username"]?></p>
                     <a href=">">edit user</a>
                     <form action="../php/logout.inc.php"><button type="submit">logout</button></form>
                 </div>
