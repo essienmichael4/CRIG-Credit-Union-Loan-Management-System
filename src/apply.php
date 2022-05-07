@@ -248,7 +248,7 @@
                             }else{
                                 if(isset($_GET["applicant_id"])){
                                 ?>
-                            
+                                    <input type="text" name="applicant_id" value="<?=$_GET["applicant_id"]?>" hidden>
                                     <button name="disapprove" class="disable">disapprove</button>
                                     <button name="approve">Approve</button>
                                 <!-- <button name="approve">Apply & Approve</button> -->

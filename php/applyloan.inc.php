@@ -205,9 +205,6 @@
         }
 
     }else if(isset($_POST["approve"])){
-        
-
-    }else if(isset($_POST["approve"])){
         include_once("./dbs.inc.php");
         include_once("./functions.inc.php");
 
@@ -426,7 +423,41 @@
                 }
             }
         }
-    }
-    else{
-        // header("location: ../src/routes.php?pgname=loans");
+    }else if(isset($_POST["approve"])){
+        include_once("./dbs.inc.php");
+        include_once("./functions.inc.php");
+
+        $recipientname = mysqli_real_escape_string($conn, $_POST["recipient"]);
+        $day_approved = date('Y-m-d');
+        $approval_status = "approved";
+
+        $applicant_id = mysqli_real_escape_string($conn, $_POST["applicant_id"]);
+        $first_due_approved = mysqli_real_escape_string($conn, $_POST["first_due_approved"]);
+        $second_due_approved = mysqli_real_escape_string($conn, $_POST["second_due_approved"]);
+        $third_due_approved = mysqli_real_escape_string($conn, $_POST["third_due_approved"]);
+        $fourth_due_approved = mysqli_real_escape_string($conn, $_POST["fourth_due_approved"]);
+        $fifth_due_approved = mysqli_real_escape_string($conn, $_POST["fifth_due_approved"]);
+        $sixth_due_approved = mysqli_real_escape_string($conn, $_POST["sixth_due_approved"]);
+
+        if(emptyField($first_due_approved) || emptyField($second_due_approved) || emptyField($third_due_approved) || 
+        emptyField($fourth_due_approved) || emptyField($fifth_due_approved) || emptyField($sixth_due_approved)){
+            header("location: ../src/routes.php?pgname=apply&error=emptyInput"); 
+        }else{
+
+            $sql = "UPDATE `applicant` SET `first_due_date` = '{$first_due_approved}', `second_due_date` = '{$second_due_approved}',
+            `third_due_date` = '{$third_due_approved}', `fourth_due_date` = '{$fourth_due_approved}',
+            `fifth_due_date` = '{$fifth_due_approved}',`sixth_due_date` = '{$sixth_due_approved}', 
+            `approved_by` = '{$recipientname}', `day_approved` = '{$day_approved}', `approval_status` = '{$approval_status}'
+            WHERE `id` = '{$applicant_id}'";
+
+            if(mysqli_query($conn, $sql)){
+                header("location: ../src/routes.php?pgname=dashboard"); 
+                exit();
+             }else{
+                header("location: ../src/routes.php?pgname=apply&error=sqlerror"); 
+                exit();
+             }
+        }
+    }else{
+        header("location: ../src/routes.php?pgname=apply");
     }
