@@ -72,7 +72,7 @@
             </div>
 
             <div class="main__user">
-                <form action="">
+                <form action="../php/adduser.inc.php" method="POST">
                     <header class="flex">
                         <h3 class="title">User form</h3>
                         <i class="fas fa-times closeForm"></i>
@@ -81,38 +81,38 @@
                     <div class="form__group">
                         <div class="formControl flex-c">
                             <label for="">First name</label>
-                            <input type="text" placeholder="First Name">
+                            <input type="text" name="firstname" placeholder="First Name">
                         </div>
                         <div class="formControl flex-c">
                             <label for="">Last name</label>
-                            <input type="text" placeholder="Last Name">
+                            <input type="text" name="lastname" placeholder="Last Name">
                         </div>
                         <div class="formControl flex-c">
                             <label for="">Other names</label>
-                            <input type="text" placeholder="Other Name">
+                            <input type="text" name="other_names" placeholder="Other Name">
                         </div>
                         <div class="formControl flex-c">
                             <label for="">username</label>
-                            <input type="text" placeholder="Username">
+                            <input type="text" name="username" placeholder="Username">
                         </div>
                         <div class="formControl flex-c">
                             <label for="">Email</label>
-                            <input type="text" placeholder="Email">
+                            <input type="text" name="email" placeholder="Email">
                         </div>
                         <div class="formControl flex-c">
                             <label for="">Staff No.</label>
-                            <input type="text" placeholder="Staff No.">
+                            <input type="text" name="staff_number" placeholder="Staff No.">
                         </div>
                         <div class="formControl flex-c">
                             <label for="">Phone Number</label>
                             <div>
-                                <span>+233</span><input type="text" placeholder="eg. 201234567">
+                                <span>+233</span><input type="text" name="phone_number" placeholder="eg. 201234567">
                             </div>
                         </div>
                         <div class="formControl flex-c">
                             <label for="">password</label>
                             <div>
-                                <input type="password" class="pwd">
+                                <input type="password" name="password" class="pwd">
                                 <span class="ml1">
                                     <i class="fas fa-eye password" onclick='passwordShow("pwd")'></i>
                                 </span>
@@ -121,7 +121,7 @@
                         <div class="formControl flex-c">
                             <label for="">password repeat</label>
                             <div>
-                                <input type="password" class="pwdrep">
+                                <input type="password" name="password_repeat" class="pwdrep">
                                 <span class="ml1">
                                     <i class="fas fa-eye passwordrep" onclick='passwordShowRep("pwdrep")'></i>
                                 </span>
@@ -129,13 +129,19 @@
                         </div>
                         <div class="formControl flex-c">
                             <label for="">Role</label>
-                            <input type="text" list="role" placeholder="User">
+                            <!-- <input type="text" list="role" placeholder="User">
 
                             <datalist id="role">
                                 <option>User</option>
                                 <option>Admin</option>
                                 <option>Super Admin</option>
-                            </datalist>
+                            </datalist> -->
+
+                            <select name="role" id="">
+                                <option value="user">User</option>
+                                <option value="admin">Admin</option>
+                                <option value="super">Super Admin</option>
+                            </select>
                         </div>
                         
                     </div>
