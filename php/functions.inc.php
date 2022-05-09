@@ -56,7 +56,7 @@
                 // $_SESSION["othername"] = $row['othername'];
                 $_SESSION["worker_id"] = $row['workerid'];
                 $_SESSION["email"] = $row['email'];
-                $_SESSION["usertype"] = $row['role'];
+                $_SESSION["role"] = $row['role'];
                 $_SESSION["uid"] = $row['id'];
                 header("location: ../src/routes.php?pgname=dashboard");
             }else{

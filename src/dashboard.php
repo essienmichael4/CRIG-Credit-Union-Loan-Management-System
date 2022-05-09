@@ -20,25 +20,33 @@
             <div class="wrapper">
                 <section class="cards flex">
                     <div class="cards__card flex-c">
-                        <i class="icon icon--first fas fa-arrow-down"></i>
-                        <i class="icon__primary fas fa-money-check"></i>
+                        <span><i class="icon icon--first fas fa-arrow-down"></i></span>
                         <p>GH¢ 1,000,000,000.00</p>
-                        <h2 class=""><span><i class="fas fa-exclamation"></i></span>All loans paid and unpaid</h2>
+                        <h2 class="">All loans</h2>
                     </div>
                     <div class="cards__card flex-c">
-                        <i class="icon icon--second fas fa-arrow-down"></i>
-                        <i class="icon__primary fas fa-money-check"></i>
+                        <span><i class="icon icon--second fas fa-arrow-down"></i></span>
                         <p>GH¢ 1,000,000.00</p>
-                        <h2 class=""><span><i class="fas fa-exclamation"></i></span>All paid loans</h2>
+                        <h2 class="">All paid loans</h2>
                     </div>
                     <div class="cards__card flex-c">
-                        <i class="icon icon--third fas fa-arrow-down"></i>
-                        <i class="icon__primary fas fa-money-check"></i>
+                        <span><i class="icon icon--third fas fa-arrow-down"></i></span>
                         <p>GH¢ 1,000.00</p>
-                        <h2 class=""><span><i class="fas fa-exclamation"></i></span>All unpaid loans</h2>
+                        <h2 class="">All unpaid loans</h2>
+                    </div>
+                    <div class="cards__card flex-c">
+                        <span><i class="icon icon--fourth fas fa-arrow-down"></i></span>
+                        <p>GH¢ 1,000.00</p>
+                        <h2 class="">Interest on Loans</h2>
                     </div>
                     
                 </section>
+
+                <section class="unapproved__table"></section>
+
+                
+
+
                 <section class="main__table">
                     <table>
                         <thead>
@@ -270,3 +278,4 @@
         </div>
     </div>
     <!-- <script src="../js/searchUtils.js"></script> -->
+    <script src="../js/unapproved.js"></script>

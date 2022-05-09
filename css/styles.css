@@ -454,27 +454,26 @@ body {
 }
 .main .cards {
   width: 99%;
-  margin: 0.3rem auto;
-  justify-content: center;
+  margin: 0.5rem auto;
+  justify-content: space-between;
   flex-wrap: wrap;
   gap: 10px;
 }
 .main .cards__card {
-  width: 365px;
-  min-width: 300px;
+  width: 270px;
   background-color: #ebebeb;
-  border-radius: 5px;
+  border-radius: 8px;
   margin-bottom: 0.3rem;
   position: relative;
-  padding: 3rem 1rem 1rem 1rem;
+  padding: 1rem 1rem 1rem 1rem;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
 }
 .main .cards__card:nth-of-type(1) {
   background-color: #4d4a4a;
 }
 .main .cards__card:nth-of-type(1) .icon--first {
-  color: blue;
-  transform: rotate(135deg);
+  color: rgb(27, 94, 236);
+  transform: rotate(225deg);
   padding: 0.5rem;
   background-color: rgba(27, 94, 236, 0.2);
   border-radius: 50%;
@@ -495,68 +494,52 @@ body {
   color: red;
 }
 .main .cards__card .icon {
-  position: absolute;
-  top: 0.5rem;
-  right: 0.5rem;
+  padding: 0.5rem;
   font-size: 16px;
+  margin-bottom: 1rem;
 }
 .main .cards__card .icon--second {
   color: green;
   transform: rotate(45deg);
-  padding: 0.5rem;
   background-color: rgba(27, 236, 27, 0.2);
   border-radius: 50%;
 }
 .main .cards__card .icon--third {
   color: red;
   transform: rotate(225deg);
-  padding: 0.5rem;
   background-color: rgba(236, 41, 27, 0.2);
   border-radius: 50%;
 }
+.main .cards__card .icon--fourth {
+  color: rgb(255, 1, 175);
+  transform: rotate(135deg);
+  background-color: rgba(240, 12, 221, 0.2);
+  border-radius: 50%;
+}
 .main .cards__card .icon__primary {
-  position: absolute;
-  top: -0.5rem;
-  left: 0.5rem;
   color: green;
   font-size: 40px;
   margin: 1rem 0;
 }
 .main .cards__card p {
-  font-size: 1.8rem;
-  align-self: flex-end;
+  font-size: 1rem;
+  margin-bottom: 1rem;
   font-weight: 400;
   color: #4d4a4a;
 }
 .main .cards__card h2 {
-  align-self: center;
   font-weight: 400;
   display: flex;
   align-items: center;
-  margin: 0.5rem 0;
   color: #4d4a4a;
   text-transform: capitalize;
   font-size: var(--font-size_s);
 }
-.main .cards__card h2 span {
-  border: 1px solid #4d4a4a;
-  display: flex;
-  border-radius: 50%;
-  align-items: center;
-  justify-content: center;
-  height: 16px;
-  width: 16px;
-  margin-right: 0.5rem;
-}
-.main .cards__card h2 span i {
-  transform: rotate(180deg);
-  font-size: 8px;
-}
-.main__table {
+.main__table, .main .unapproved__table {
   width: 99%;
   margin: 0 auto 1rem auto;
 }
-.main__table table {
+.main__table table, .main .unapproved__table table {
   border-radius: 5px;
   width: 100%;
   margin-top: 0.5rem;
@@ -566,31 +549,31 @@ body {
   border-top: 1px solid #ffffff;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
 }
-.main__table table thead {
+.main__table table thead, .main .unapproved__table table thead {
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
 }
-.main__table table thead tr {
+.main__table table thead tr, .main .unapproved__table table thead tr {
   background-color: #4d4a4a !important;
 }
-.main__table table th {
+.main__table table th, .main .unapproved__table table th {
   color: #ebebeb;
   padding: 0.5rem 0.5rem;
   text-transform: uppercase;
   font-size: 0.8rem;
 }
-.main__table table th.tc {
+.main__table table th.tc, .main .unapproved__table table th.tc {
   text-align: center;
 }
-.main__table table td {
+.main__table table td, .main .unapproved__table table td {
   padding: 0.5rem 0.5rem;
 }
-.main__table table td.tc {
+.main__table table td.tc, .main .unapproved__table table td.tc {
   text-align: center;
 }
-.main__table table td a {
+.main__table table td a, .main .unapproved__table table td a {
   color: #1c64ff;
 }
-.main__table table td a.edit {
+.main__table table td a.edit, .main .unapproved__table table td a.edit {
   padding: 0.2rem 0.8rem;
   margin-left: 5px;
   cursor: pointer;
@@ -598,61 +581,64 @@ body {
   background-color: #1c64ff;
   border-radius: 4px;
 }
-.main__table table td a.edit:hover {
+.main__table table td a.edit:hover, .main .unapproved__table table td a.edit:hover {
   background-color: blue;
 }
-.main__table table td button {
+.main__table table td button, .main .unapproved__table table td button {
   padding: 0.2rem 0.8rem;
   border-radius: 4px;
   border: none;
   cursor: pointer;
   color: #ebebeb;
 }
-.main__table table td button.enable {
+.main__table table td button.enable, .main .unapproved__table table td button.enable {
   background-color: rgba(0, 128, 0, 0.5);
 }
-.main__table table td button.enable:hover {
+.main__table table td button.enable:hover, .main .unapproved__table table td button.enable:hover {
   background-color: green;
 }
-.main__table table td button.disable {
+.main__table table td button.disable, .main .unapproved__table table td button.disable {
   background-color: rgba(80, 82, 80, 0.5);
 }
-.main__table table td button.disable:hover {
+.main__table table td button.disable:hover, .main .unapproved__table table td button.disable:hover {
   background-color: black;
 }
-.main__table table td span {
+.main__table table td span, .main .unapproved__table table td span {
   padding: 0.2rem 0.8rem;
   border-radius: 4px;
 }
-.main__table table td span.approved {
+.main__table table td span.approved, .main .unapproved__table table td span.approved {
   background-color: rgba(0, 128, 0, 0.5);
 }
-.main__table table td span.pending {
+.main__table table td span.pending, .main .unapproved__table table td span.pending {
   background-color: rgba(80, 82, 80, 0.5);
 }
-.main__table table td span.awaiting {
+.main__table table td span.awaiting, .main .unapproved__table table td span.awaiting {
   background-color: rgba(190, 190, 194, 0.5);
 }
-.main__table table td span.due {
+.main__table table td span.due, .main .unapproved__table table td span.due {
   background-color: rgba(255, 136, 0, 0.5);
 }
-.main__table table td span.overdue {
+.main__table table td span.overdue, .main .unapproved__table table td span.overdue {
   background-color: rgba(255, 0, 0, 0.5);
 }
-.main__table table td span.paid {
+.main__table table td span.paid, .main .unapproved__table table td span.paid {
   background-color: rgba(0, 26, 255, 0.5);
 }
-.main__table table td span.in {
+.main__table table td span.in, .main .unapproved__table table td span.in {
   background-color: rgba(0, 26, 255, 0.5);
 }
-.main__table table td span.out {
+.main__table table td span.out, .main .unapproved__table table td span.out {
   background-color: rgba(255, 0, 0, 0.5);
 }
-.main__table table tr:nth-child(odd) {
+.main__table table tr:nth-child(odd), .main .unapproved__table table tr:nth-child(odd) {
   background-color: #ffffff;
 }
-.main__table table tr:nth-child(even) {
+.main__table table tr:nth-child(even), .main .unapproved__table table tr:nth-child(even) {
   background-color: #ebebeb;
+}
+.main .unapproved__table {
+  padding: 1rem 0;
 }
 .main .action__btn {
   width: 99%;

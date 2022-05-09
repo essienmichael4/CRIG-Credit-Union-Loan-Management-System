@@ -4,18 +4,18 @@
         $approval_pending = "pending";
         $approval_approved  = "approved";
 
-        $sql = "SELECT * FROM `applicant` WHERE `approval_status` = '{$approval_pending}' or
-        `approval_status` = '{$approval_approved}'";
+        echo $sql = "SELECT * FROM `applicant` WHERE `approval_status` = 'pending' OR `approval_status` = 'approved';";
 
         $result = mysqli_query($conn, $sql);
 
+        var_dump($result);
         $data = "";
         if(mysqli_fetch_assoc($result)>0){
             
             $rows = "";
 
             while(mysqli_fetch_assoc($result)){
-                $status = $result["approval_status"];
+               echo $status = $result["approval_status"];
                 $row = "";
 
                 if($status == "pending"){

@@ -19,12 +19,21 @@
                 </div>
             </header>
             <div class="wrapper">
+
+            <?php
+                if($_SESSION["role"] == "super" || $_SESSION["role"] == "admin"){
+            ?>
                 <div class="filter flex">
                     <div class="filter__actions">
                         <a class="addUser">Add User <i class="fas fa-plus"></i></a>
                     </div>
                     
                 </div>
+
+            <?php 
+                }
+            ?>
+
                 <section class="main__table">
                     <table>
                         <thead>
@@ -129,13 +138,6 @@
                         </div>
                         <div class="formControl flex-c">
                             <label for="">Role</label>
-                            <!-- <input type="text" list="role" placeholder="User">
-
-                            <datalist id="role">
-                                <option>User</option>
-                                <option>Admin</option>
-                                <option>Super Admin</option>
-                            </datalist> -->
 
                             <select name="role" id="">
                                 <option value="user">User</option>
