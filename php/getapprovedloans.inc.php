@@ -13,7 +13,7 @@
 
             while($res = mysqli_fetch_assoc($result)){
                $status = $res["approval_status"];
-               $btn = '<button class="grant" onclick="handleSold('.$res["id"].')">Loan Granted</button>';
+               $btn = '<button class="grant" onclick="handleGrantLoan('.$res["id"].')">Loan Granted</button>';
                 $row = "";
 
                 if($status == "pending"){
@@ -24,7 +24,7 @@
                             <td>{$res['phone_number']}</td>
                             <td>{$res['work_place']}</td>
                             <td>{$res['applicant_first_due_date']}</td>
-                            <td>{$res['loan_to_be_payed']}</td>
+                            <td>GH¢ {$res['loan_to_be_payed']}</td>
                             {$row}
                         </tr>"; 
                 }else{
@@ -35,9 +35,12 @@
                             <td>{$res['phone_number']}</td>
                             <td>{$res['work_place']}</td>
                             <td>{$res['applicant_first_due_date']}</td>
-                            <td>{$res['loan_to_be_payed']}</td>
+                            <td>GH¢ {$res['loan_to_be_payed']}</td>
                             {$row}
-                            <td class='tc'><input type='text' name='id' value='{$res["id"]}' hidden />{$btn}</td>
+                            <td class='tc'>
+                                <input type='text' name='id' value='{$res["id"]}' hidden />
+                                {$btn}
+                            </td>
                         </tr>"; 
                 }
             }

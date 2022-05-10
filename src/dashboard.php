@@ -42,7 +42,9 @@
                     
                 </section>
 
-                <section class="unapproved__table"></section>
+                <section class="unapproved__table">
+                    <input type='text' name="user" value="<?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?>" hidden />
+                </section>
 
                 
 
@@ -279,3 +281,4 @@
     </div>
     <!-- <script src="../js/searchUtils.js"></script> -->
     <script src="../js/unapproved.js"></script>
+    <script src="../js/grantloans.js"></script>
