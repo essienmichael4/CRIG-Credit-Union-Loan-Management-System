@@ -12,7 +12,7 @@
         $lastname = mysqli_real_escape_string($conn, $_POST["lastname"]);
         $othernames = mysqli_real_escape_string($conn, $_POST["othernames"]);
         $recipientname = mysqli_real_escape_string($conn, $_POST["recipient"]);
-        $phone_number = mysqli_real_escape_string($conn, $_POST["phone"]);
+        $phone_number = "+233".mysqli_real_escape_string($conn, $_POST["phone"]);
         $staff_number = mysqli_real_escape_string($conn, $_POST["staff_number"]);
         $membership_code = mysqli_real_escape_string($conn, $_POST["memcode"]);
         $work_place = mysqli_real_escape_string($conn, $_POST["workplace"]);
@@ -216,7 +216,7 @@
         $lastname = mysqli_real_escape_string($conn, $_POST["lastname"]);
         $othernames = mysqli_real_escape_string($conn, $_POST["othernames"]);
         $recipientname = mysqli_real_escape_string($conn, $_POST["recipient"]);
-        $phone_number = mysqli_real_escape_string($conn, $_POST["phone"]);
+        $phone_number = "+233".mysqli_real_escape_string($conn, $_POST["phone"]);
         $staff_number = mysqli_real_escape_string($conn, $_POST["staff_number"]);
         $membership_code = mysqli_real_escape_string($conn, $_POST["memcode"]);
         $work_place = mysqli_real_escape_string($conn, $_POST["workplace"]);

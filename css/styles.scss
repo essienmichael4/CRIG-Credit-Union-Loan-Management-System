@@ -652,6 +652,14 @@ body{
                     cursor: pointer;
                     color: #ebebeb;
 
+                    &.grant{
+                        background-color: rgba(245, 8, 185, 0.5);
+
+                        &:hover{
+                            background-color: rgb(245, 8, 185);
+                        }
+                    }
+
                     &.enable{
                         background-color: rgba(0, 128, 0, .5);
 

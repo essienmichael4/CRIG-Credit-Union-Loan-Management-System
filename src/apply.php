@@ -205,7 +205,7 @@
                             </div>
                         </div>
                         <?php
-                            if($_SESSION["usertype"]=="admin" || $_SESSION["usertype"]=="super"){
+                            if($_SESSION["role"]=="admin" || $_SESSION["role"]=="super"){
                             ?>
                         <h3 class="title my2">Loan Repayment Schedule</h3>
                         <div class="form__group">
@@ -240,7 +240,7 @@
 
                         <div class="action__btn flex">
                             <?php
-                            if($_SESSION["usertype"]=="user"){
+                            if($_SESSION["role"]=="user"){
                             ?>
                                 <!-- <p><?=$_SESSION["usertype"]?></p> -->
                                 <button name="apply">Apply</button>

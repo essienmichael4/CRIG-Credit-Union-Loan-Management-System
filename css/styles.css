@@ -591,6 +591,12 @@ body {
   cursor: pointer;
   color: #ebebeb;
 }
+.main__table table td button.grant, .main .unapproved__table table td button.grant {
+  background-color: rgba(245, 8, 185, 0.5);
+}
+.main__table table td button.grant:hover, .main .unapproved__table table td button.grant:hover {
+  background-color: rgb(245, 8, 185);
+}
 .main__table table td button.enable, .main .unapproved__table table td button.enable {
   background-color: rgba(0, 128, 0, 0.5);
 }

@@ -8,8 +8,8 @@ setInterval(()=>{
             if(xhr.status == 200){
                 let data = xhr.response;
 
-                console.log(data)
-                // unapproved__table.innerHTML = data;
+                // console.log(data)
+                unapproved__table.innerHTML = data;
             }
         }
     }
