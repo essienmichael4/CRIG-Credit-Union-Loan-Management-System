@@ -4,7 +4,8 @@
         $approval_pending = "pending";
         $approval_approved  = "approved";
 
-        $sql = "SELECT * FROM `applicant` WHERE `approval_status` = '{$approval_pending}' OR `approval_status` = '{$approval_approved}';";
+        $sql = "SELECT * FROM `applicant` WHERE `approval_status` = '{$approval_pending}' OR `approval_status` = '{$approval_approved}'
+        AND `loan_status` = 'NULL';";
 
         $result = mysqli_query($conn, $sql);
 

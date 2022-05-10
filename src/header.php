@@ -19,7 +19,7 @@
             <nav class="sidebar__nav nav">
                 <ul class="nav__list">
                 <?php
-                        if($_GET['pgname']=="dashboard"){
+                        if($_GET['pgname']=="dashboard" || !$_GET['pgname']){
                             echo '<li class="list__item"><a href="?pgname=dashboard" class="item__link active py1"><span><i class="fas fa-home"></i> Dashboard</span></a></li>';
                         }else{
                             echo '<li class="list__item"><a href="?pgname=dashboard" class="item__link py1"><span><i class="fas fa-home"></i> Dashboard</span></a></li>';

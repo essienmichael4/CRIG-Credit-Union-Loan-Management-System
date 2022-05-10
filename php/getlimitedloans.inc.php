@@ -6,7 +6,7 @@
         $date = date('Y-m-d');
 
         $sql = "SELECT * FROM `applicant` WHERE `approval_status` != '{$approval_pending}' 
-        AND `loan_status` != 'NULL' ORDER BY `id` DESC;";
+        AND `loan_status` != 'NULL' ORDER BY `id` DESC LIMIT 25;";
 
         $result = mysqli_query($conn, $sql);
 
