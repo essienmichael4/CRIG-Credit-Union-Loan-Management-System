@@ -41,7 +41,7 @@
                     </div>
                 </div>
                 <section class="main__table">
-                    <table>
+                    <!-- <table>
                         <thead>
                             <tr>
                                 <th>Applicant ID</th>
@@ -262,9 +262,10 @@
                                 <td class="tc"> <span class="awaiting">awiating approval</span></td>
                             </tr> 
                         </tbody>
-                    </table>
+                    </table> -->
                 </section>
             </div>
         </div>
     </div>
     <script src="../js/searchUtils.js"></script>
+    <script src="../js/getallloans.js"></script>
