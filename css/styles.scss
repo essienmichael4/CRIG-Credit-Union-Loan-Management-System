@@ -957,6 +957,26 @@ body{
                     text-transform: capitalize;
                     color: #1c64ff;
                 }
+
+                select{
+                    padding: .3rem .5rem;
+                    width: 60%;
+                    margin-bottom: 2rem;
+                    border: 1px solid #a3a2a2;
+                    cursor: pointer;
+                    border-radius: 4px;
+                    box-shadow: 2px 2px 3px rgba($color: #4d4a4a, $alpha: .5);
+    
+                    &:focus,&:hover{
+                        outline: none;
+                    }
+    
+                    option{
+                        cursor: pointer;
+                        padding: .5rem 1rem;
+                        border-radius: 0px;
+                    }
+                }
                 
                 input[type="text"], input[type="password"], input[type="date"], input[type="month"], input[type="number"]{
                     border: 1px solid #a3a2a2;

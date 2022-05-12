@@ -103,7 +103,7 @@
             $rows .= "<tr>
                         <td>{$res['id']}</td>
                         <td><a href='?pgname=apply&applicant_id={$res['id']}'>{$res['first_name']} {$res['last_name']} {$res['other_names']}</a></td>
-                        <td>{$res['phone_number']}</td>
+                        <td>+233{$res['phone_number']}</td>
                         <td>{$res['work_place']}</td>
                         <td>{$applicant_due}</td>
                         <td>{$res['loan_to_be_payed']}</td>

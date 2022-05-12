@@ -838,6 +838,23 @@ body {
   text-transform: capitalize;
   color: #1c64ff;
 }
+.main .apply .form .formControl select {
+  padding: 0.3rem 0.5rem;
+  width: 60%;
+  margin-bottom: 2rem;
+  border: 1px solid #a3a2a2;
+  cursor: pointer;
+  border-radius: 4px;
+  box-shadow: 2px 2px 3px rgba(77, 74, 74, 0.5);
+}
+.main .apply .form .formControl select:focus, .main .apply .form .formControl select:hover {
+  outline: none;
+}
+.main .apply .form .formControl select option {
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 0px;
+}
 .main .apply .form .formControl input[type=text], .main .apply .form .formControl input[type=password], .main .apply .form .formControl input[type=date], .main .apply .form .formControl input[type=month], .main .apply .form .formControl input[type=number] {
   border: 1px solid #a3a2a2;
   padding: 0.4rem 0.5rem;

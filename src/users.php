@@ -1,18 +1,4 @@
-<?php
-    include_once("../php/dbs.inc.php");
-    $sql = "";
 
-    if($_SESSION["role"] =="user"){
-        $sql = "SELECT * FROM `users` WHERE `role` = '{$_SESSION["role"]}';";
-    }else if($_SESSION["usertype"] =="admin"){
-        $sql = "SELECT * FROM `users` WHERE `role` = 'user' OR `role` = '{$_SESSION["role"]}';";
-    }else{
-        $sql = "SELECT * FROM `users`";
-    }
-
-    $result = mysqli_query($conn, $sql);
-
-?>
     <div class="main">
         <header class="main__header flex px1">
             <h2 class="">All Users</h2>
@@ -48,7 +34,18 @@
             }
         ?>
 
-
+<?php
+    include_once("../php/dbs.inc.php");
+    $sql = "";
+    if($_SESSION["role"] =="user"){
+        $sql = "SELECT * FROM `users` WHERE `role` = '{$_SESSION["role"]}';";
+    }else if($_SESSION["role"] =="admin"){
+        $sql = "SELECT * FROM `users` WHERE `role` = 'user' OR `role` = '{$_SESSION["role"]}';";
+    }else{
+        $sql = "SELECT * FROM `users`";
+    }
+    $result = mysqli_query($conn, $sql);
+?>
             <section class="main__table">
                 <table>
                     <thead>

@@ -22,7 +22,7 @@
                     $rows .= "<tr>
                             <td>{$res['id']}</td>
                             <td><a href='?pgname=apply&applicant_id={$res['id']}'>{$res['first_name']} {$res['last_name']} {$res['other_names']}</a></td>
-                            <td>{$res['phone_number']}</td>
+                            <td>+233{$res['phone_number']}</td>
                             <td>{$res['work_place']}</td>
                             <td>{$res['applicant_first_due_date']}</td>
                             <td>GH¢ {$res['loan_to_be_payed']}</td>
@@ -33,7 +33,7 @@
                     $rows .= "<tr>
                             <td>{$res['id']}</td>
                             <td><a href='?pgname=apply&applicant_id={$res['id']}'>{$res['first_name']} {$res['last_name']} {$res['other_names']}</a></td>
-                            <td>{$res['phone_number']}</td>
+                            <td>+233{$res['phone_number']}</td>
                             <td>{$res['work_place']}</td>
                             <td>{$res['applicant_first_due_date']}</td>
                             <td>GH¢ {$res['loan_to_be_payed']}</td>
