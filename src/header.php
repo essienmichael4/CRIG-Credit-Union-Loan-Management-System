@@ -25,7 +25,7 @@
                             echo '<li class="list__item"><a href="?pgname=dashboard" class="item__link py1"><span><i class="fas fa-home"></i> Dashboard</span></a></li>';
                         }
 
-                        if($_GET['pgname']=="loans"){
+                        if($_GET['pgname']=="loans" || $_GET['pgname']=="loandetails"){
                             echo '<li class="list__item "><a href="?pgname=loans" class="item__link active py1"><span><i class="fas fa-piggy-bank"></i> loans</span></a></li>';
                         }else{
                             echo '<li class="list__item "><a href="?pgname=loans" class="item__link py1"><span><i class="fas fa-piggy-bank"></i> loans</span></a></li>';
