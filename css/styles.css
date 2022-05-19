@@ -306,9 +306,14 @@ body {
   text-transform: uppercase;
   border-radius: 4px;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
 }
 .btn.red {
+  background-color: rgb(253, 70, 70);
+}
+.btn:hover.red {
   background-color: red;
+  box-shadow: 0px 0px 15px red;
 }
 .btn:hover {
   background-color: blue;
@@ -688,6 +693,10 @@ body {
   margin: 2rem auto 0.7rem auto;
   justify-content: end;
 }
+.main .action__btn.jcs {
+  margin-top: 0;
+  justify-content: flex-start;
+}
 .main .action__btn a {
   background-color: #ff641c;
   padding: 0.4rem 1rem;
@@ -697,7 +706,18 @@ body {
 .main .action__btn a i {
   margin-left: 0.5rem;
 }
+.main .action__btn a.disable {
+  background-color: #4d4a4a;
+  margin-left: 1rem;
+  padding: 0.7rem 1rem;
+}
+.main .action__btn a.disable:hover {
+  background-color: #000000;
+  top: -2px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+}
 .main .action__btn button {
+  cursor: pointer;
   padding: 0.7rem 3rem;
   margin-left: 1rem;
   background-color: #1c64ff;
@@ -709,6 +729,9 @@ body {
   text-transform: uppercase;
   border-radius: 4px;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+}
+.main .action__btn button.mro {
+  margin-left: 0;
 }
 .main .action__btn button:hover {
   background-color: blue;
@@ -1046,4 +1069,83 @@ body {
 .main .main__user form .action__btn {
   margin-top: -0.5rem !important;
   padding: 1.5rem;
+}
+.main .deleteUser {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+.main .deleteUser .delContainer {
+  padding: 2rem;
+  width: 40%;
+  background-color: #ebebeb;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.main .deleteUser .delContainer h3 {
+  text-align: center;
+  font-size: 1rem;
+}
+.main .deleteUser .delContainer label {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  margin-bottom: 0.4rem;
+  font-weight: bold;
+  padding-top: 0.2rem;
+}
+.main .deleteUser .delContainer input {
+  padding: 0.5rem 0.5rem;
+  margin-bottom: 0.3rem;
+  outline: none;
+  border: 1px solid #4d4a4a;
+  border-radius: 3px;
+}
+.main .deleteUser .delContainer .box {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.main .deleteUser .delContainer .box a {
+  margin-top: 3rem;
+  padding: 0.5rem 1rem;
+  color: #ebebeb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  outline: none;
+  background-color: #4d4a4a;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 2px;
+}
+.main .deleteUser .delContainer .box a:hover, .main .deleteUser .delContainer .box a:focus {
+  background-color: #000000;
+}
+.main .deleteUser .delContainer .box button {
+  margin-top: 3rem;
+  padding: 0.5rem 1rem;
+  color: #ebebeb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  outline: none;
+  background-color: rgb(247, 56, 56);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 2px;
+}
+.main .deleteUser .delContainer .box button:hover, .main .deleteUser .delContainer .box button:focus {
+  background-color: red;
 }/*# sourceMappingURL=styles.css.map */

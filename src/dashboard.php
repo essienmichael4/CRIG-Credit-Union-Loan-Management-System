@@ -21,17 +21,17 @@
                 <section class="cards flex">
                     <div class="cards__card flex-c">
                         <span><i class="icon icon--first fas fa-arrow-down"></i></span>
-                        <p>GH¢ 1,000,000,000.00</p>
+                        <p class="all_loans_total">GH¢ 1,000,000,000.00</p>
                         <h2 class="">All loans</h2>
                     </div>
                     <div class="cards__card flex-c">
                         <span><i class="icon icon--second fas fa-arrow-down"></i></span>
-                        <p>GH¢ 1,000,000.00</p>
+                        <p class="paid_loans">GH¢ 1,000,000.00</p>
                         <h2 class="">All paid loans</h2>
                     </div>
                     <div class="cards__card flex-c">
                         <span><i class="icon icon--third fas fa-arrow-down"></i></span>
-                        <p>GH¢ 1,000.00</p>
+                        <p class="arrears">GH¢ 1,000.00</p>
                         <h2 class="">All unpaid loans</h2>
                     </div>
                     <div class="cards__card flex-c">

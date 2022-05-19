@@ -33,6 +33,7 @@
                     <div class="form-container flex">
                         <div class="form__group less">
                             <input type="text" name="uid" class="uid" value="<?=$user["id"]?>" hidden>
+                            <input type="text" name="sid" class="uid" value="<?=$_SESSION["uid"]?>" hidden>
                             <div class="formControl flex-c">
                                 <label for="">First name</label>
                                 <input type="text" placeholder="First Name" name="firstname" value="<?=$user["first_name"]?>">
@@ -84,15 +85,29 @@
                             <div class="formControl flex-c">
                                 <label for="">Role</label>
     
+                                <h4><?=$user["role"]?></h4>
+                            </div>
+                            <?php
+                                if($_SESSION["role"]=="super"){
+                            ?>
+                            <div class="formControl flex-c">
+                                <label for="">Change Role</label>
+    
                                 <select name="role" id="">
                                     <option value="user">User</option>
                                     <option value="admin">Admin</option>
                                     <option value="super">Super Admin</option>
                                 </select>
                             </div>
+                            <?php
+                                }
+                            ?> 
                             
                         </div>
                         <div class="new flex-c">
+                            <?php
+                                if($user["id"] == $_SESSION["uid"]){
+                            ?>
                             <div class="formControl flex-c">
                                 <label for="">old password</label>
                                 <input type="password" name="old_password">
@@ -106,20 +121,79 @@
                                 <input type="password"  name="password_repeat">
                             </div>
                             <div class="formControl flex-c">
-                                <button class="btn">change password</button>
+                                <button name="userpass" class="btn">change password</button>
+                            </div>
+                            
+                            <?php
+                                }else{
+                            ?>
+                            <div class="formControl flex-c">
+                                <label for="">new password</label>
+                                <input type="password"  name="password">
                             </div>
                             <div class="formControl flex-c">
-                                <button class="btn red">delete account</button>
+                                <label for="">confirm new password</label>
+                                <input type="password"  name="password_repeat">
+                            </div>
+                            <div class="formControl flex-c">
+                                <button name="adminpass" class="btn">change password</button>
+                            </div>
+                            <?php
+                                }
+                            ?>
+
+                            <div class="formControl flex-c">
+                                <a class="btn red deleteAccount">delete account</a>
                             </div>
                         </div>
                     </div>
-                    <div class="action__btn flex">
-                        <button>Approve</button>
+                    <div class="action__btn jcs flex">
+                        <button class="mro">Save Changes</button>
+                        <a href="?pgname=users" class="disable">go back</a>
                     </div>
                     
                 </form>
             </section>
+
+            <div class="deleteUser">
+                <form class="delContainer" action="../php/adduser.inc.php" method="POST">
+                    
+                    <input type="text" name="sid" class="sid" value="<?=$_SESSION["uid"]?>" hidden>
+                    <input type="text" name="uid" class="uid" value="<?=$user["id"]?>" hidden>
+
+                    <h3>Do you want to continue with this operation? This operation can't be reversed.</h3>
+                    <label for="">Enter Password to Confirm</label>
+                        <input type="password" name="password" class="oldPassword">
+                    <div class="box">
+                        <a class="cancelbtn">Cancel</a>
+                        <button type="submit" name="deleteuser" class="deletebtn">Delete This User Account</button>
+                    </div>
+                    
+                </form>
+            </div>
         </div>
     </div>    
 <script src="../js/password.js"></script>
 <script src="../js/passwordrep.js"></script>
+
+<script>
+    let cancelbtn = document.querySelector(".cancelbtn");
+    let deleteAccount = document.querySelector(".deleteAccount");
+    let deleteUser = document.querySelector(".deleteUser");
+
+    deleteAccount.addEventListener("click", ()=>{
+        deleteAccount.classList.toggle("active");
+
+        if(deleteAccount.classList.contains("active")){
+            deleteUser.style.display = "flex";
+        }
+    })
+
+    cancelbtn.addEventListener("click", ()=>{
+        deleteAccount.classList.toggle("active");
+
+        if(!deleteAccount.classList.contains("active")){
+            deleteUser.style.display = "none";
+        }
+    })
+</script>

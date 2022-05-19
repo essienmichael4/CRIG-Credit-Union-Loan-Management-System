@@ -77,7 +77,17 @@
                             <td><?=$user["phone"]?></td>
                             <td><?=$user["email"]?></td>
                             
-                            <td class="tc"><span class="out"><?=$user["role"]?></span></td>
+                            <?php
+                                if($user["status"] == "logged in"){
+                            ?>
+                            <td class="tc"><span class="in"><?=$user["status"]?></span></td>
+                            <?php
+                                }else{
+                            ?>
+                            <td class="tc"><span class="out"><?=$user["status"]?></span></td>
+                            <?php
+                                }
+                            ?>
                             <?php
                                 if($_SESSION["role"] == "super" || $_SESSION["role"] == "admin"){
                             ?>
@@ -93,32 +103,6 @@
                     <?php
                         }
                     ?>
-                        <!-- <tr>
-                            <td>CD1000234597678</td>
-                            <td>
-                                <a href="">Michael Essien</a>
-                            </td>
-                            <td>020000000</td>
-                            <td>Avenue A</td>
-                            <td>essienmichael4@gamil.com</td>
-                            <td class="tc"><span class="in">logged in</span></td>
-                            <td class="tc">
-                                <button class="disable">disable</button>
-                                <a href="?pgname=useredit" class="edit">edit</a>
-                            </td>
-                        </tr> 
-                        
-                        <tr>
-                            <td>CD1000234597678</td>
-                            <td>
-                                <a href="">Michael Essien</a>
-                            </td>
-                            <td>020000000</td>
-                            <td>Avenue A</td>
-                            <td>23/04/2022</td>
-                            <td class="tc"> <span class="out">logged out</span></td>
-                            <td class="tc"><button class="enable">enable</button> <a href="?pgname=useredit" class="edit">edit</a></td>
-                        </tr>  -->
                     </tbody>
                 </table>
             </section>

@@ -318,7 +318,6 @@ body{
 .btn{
     padding: .7rem 3rem;
     width: 100%;
-    // margin-left: 1rem;
     background-color: #1c64ff;
     border: none;
     color: #ebebeb;
@@ -328,9 +327,14 @@ body{
     text-transform: uppercase;
     border-radius: 4px;
     box-shadow: 5px 5px 15px rgba($color: #000000, $alpha: .5);
+    cursor: pointer;
 
     &.red{
+        background-color: rgb(253, 70, 70);
+    }
+    &:hover.red{
         background-color: red;
+        box-shadow: 0px 0px 15px red;
     }
 
     &:hover{
@@ -778,6 +782,12 @@ body{
 
         margin: 2rem auto .7rem auto;
         justify-content: end;
+
+        &.jcs{
+            margin-top: 0;
+            justify-content: flex-start;
+        }
+
         a{
             // justify-self: end;
             background-color: #ff641c;
@@ -788,9 +798,22 @@ body{
             i{
                 margin-left: .5rem;
             }
+
+            &.disable{
+                background-color: #4d4a4a;
+                margin-left: 1rem;
+                padding: .7rem 1rem;
+
+                &:hover{
+                    background-color: #000000;
+                    top: -2px;
+                    box-shadow: 0px 0px 15px rgba($color: #000000, $alpha: .5) ;
+                }
+            }
         }
 
         button{
+            cursor: pointer;
             padding: .7rem 3rem;
             margin-left: 1rem;
             background-color: #1c64ff;
@@ -802,6 +825,10 @@ body{
             text-transform: uppercase;
             border-radius: 4px;
             box-shadow: 5px 5px 15px rgba($color: #000000, $alpha: .5);
+
+            &.mro{
+                margin-left: 0;
+            }
 
             &:hover{
                 background-color: blue;
@@ -1212,6 +1239,107 @@ body{
             .action__btn{
                 margin-top: -.5rem !important;
                 padding: 1.5rem;
+            }
+        }
+    }
+
+    .deleteUser{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba($color: #000000, $alpha: .5);
+        display: none;
+        align-items: center;
+        justify-content: center;
+
+        .delContainer{
+            padding: 2rem;
+            width: 40%;
+            background-color: #ebebeb;
+            height: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            h3{
+                text-align: center;
+                font-size: 1rem;
+            }
+
+            label{
+                margin-top: 1rem;
+                font-size: .8rem;
+                margin-bottom: .4rem;
+                font-weight: bold;
+                padding-top: .2rem;
+            }
+
+            input{
+                padding: .5rem .5rem;
+                margin-bottom: .3rem;
+                outline: none;
+                border: 1px solid #4d4a4a;
+                border-radius: 3px;
+
+                &:focus, &:hover{
+                    // border: 1px solid $secondarylight;
+                }
+            }
+
+            .box{
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+
+                a{
+                    margin-top: 3rem;
+                    padding: .5rem 1rem;
+                    color: #ebebeb;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border: none;
+                    outline: none;
+                    background-color: #4d4a4a;
+                    // color: $accentcolor;
+                    font-size: .8rem;
+                    text-transform: uppercase;
+                    cursor: pointer;
+                    border-radius: 2px;
+    
+                    &:hover,&:focus{
+                        background-color: #000000;
+                    }
+
+                }
+
+                button{
+                    margin-top: 3rem;
+                    padding: .5rem 1rem;
+                    color: #ebebeb;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border: none;
+                    outline: none;
+                    background-color: rgb(247, 56, 56);
+                    // color: $accentcolor;
+                    font-size: .8rem;
+                    text-transform: uppercase;
+                    cursor: pointer;
+                    border-radius: 2px;
+    
+                    &:hover,&:focus{
+                        background-color: red;
+                    }
+
+                    // &.deletebtn{
+                    //     padding: .8rem 1rem;
+                    //     background-color: rgb(247, 56, 56);
+                    // }
+                }
             }
         }
     }

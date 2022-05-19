@@ -50,14 +50,19 @@
 
             if($password == $row['password'] || $pwdVerify == "true"){
                 session_start();
+                $status = "logged in";
                 $_SESSION["username"] = $row['username'];
                 $_SESSION["firstname"] = $row['first_name'];
                 $_SESSION["lastname"] = $row['last_name'];
-                // $_SESSION["othername"] = $row['othername'];
+                $_SESSION["othername"] = $row['other_names'];
                 $_SESSION["worker_id"] = $row['workerid'];
                 $_SESSION["email"] = $row['email'];
                 $_SESSION["role"] = $row['role'];
                 $_SESSION["uid"] = $row['id'];
+
+                $sql = "UPDATE `users` SET `status` = '$status' WHERE `id`= {$row['id']}";
+                mysqli_query($conn, $sql); 
+
                 header("location: ../src/routes.php?pgname=dashboard");
             }else{
                 header("location: ../index.php?error=wrongpwd&user=".$username);
