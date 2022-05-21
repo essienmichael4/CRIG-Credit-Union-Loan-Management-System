@@ -782,23 +782,23 @@ body {
   top: -2px;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
 }
-.main .filter__actions a:nth-of-type(1) {
+.main .filter__actions a:nth-of-type(1).active {
   background-color: #1c64ff;
   padding: 0.4rem 1rem;
   color: #ebebeb;
   border-radius: 4px;
   cursor: pointer;
 }
-.main .filter__actions a:nth-of-type(1) i {
+.main .filter__actions a:nth-of-type(1).active i {
   font-size: 10px;
   margin-left: 0.5rem;
 }
-.main .filter__actions a:nth-of-type(1)::before {
+.main .filter__actions a:nth-of-type(1).active::before {
   position: absolute;
   width: 0px;
   height: 0;
 }
-.main .filter__actions a:nth-of-type(1):hover::before {
+.main .filter__actions a:nth-of-type(1).active:hover::before {
   width: 0px;
 }
 .main .filter__actions a {
@@ -809,6 +809,7 @@ body {
   color: #4d4a4a;
   transition: all 0.5s ease-in-out;
   isolation: isolate;
+  cursor: pointer;
 }
 .main .filter__actions a.active {
   color: #1c64ff;
