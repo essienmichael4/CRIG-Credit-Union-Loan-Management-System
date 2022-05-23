@@ -3,7 +3,6 @@
         include_once("./functions.inc.php");
         $sentstatus = $_POST["loanrequest"];
         $startday = $_POST["year"];
-        // $endday = $_POST["endday"];
         $approval_pending = "pending";
         $approval_approved  = "approved";
         $date = date('Y-m-d');
@@ -11,10 +10,10 @@
 
         if($sentstatus == "all"){
             $sql = "SELECT * FROM `applicant` WHERE `approval_status` != '{$approval_pending}' 
-            AND `loan_status` != 'NULL' AND `applydate` = '{$startday}' ORDER BY `id` DESC;";
+            AND `loan_status` != 'NULL' AND `apply_date` = '{$startday}' ORDER BY `id` DESC;";
         }else{
             $sql = "SELECT * FROM `applicant` WHERE `approval_status` != '{$approval_pending}' 
-            AND `loan_status` != '{$sentstatus}' AND `applydate` =  '{$startday}' ORDER BY `id` DESC;";
+            AND `loan_status` != '{$sentstatus}' AND `apply_date` =  '{$startday}' ORDER BY `id` DESC;";
         }
 
         $result = mysqli_query($conn, $sql);

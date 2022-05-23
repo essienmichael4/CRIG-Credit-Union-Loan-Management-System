@@ -11,11 +11,11 @@
 
         if($sentstatus == "all"){
             $sql = "SELECT * FROM `applicant` WHERE `approval_status` != '{$approval_pending}' 
-            AND `loan_status` != 'NULL' AND `applydate` BETWEEN '{$startday}' AND
+            AND `loan_status` != 'NULL' AND `apply_date` BETWEEN '{$startday}' AND
             '{$endday}' ORDER BY `id` DESC;";
         }else{
             $sql = "SELECT * FROM `applicant` WHERE `approval_status` != '{$approval_pending}' 
-            AND `loan_status` != '{$sentstatus}' AND `applydate` BETWEEN '{$startday}' AND
+            AND `loan_status` != '{$sentstatus}' AND `apply_date` BETWEEN '{$startday}' AND
             '{$endday}' ORDER BY `id` DESC;";
         }
 
