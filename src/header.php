@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>CQC - Loan</title>
     <link rel="stylesheet" href="../css/styles.css">
 
     <link rel="stylesheet" href="../css/fontawesome.min.css">
@@ -14,7 +14,7 @@
     <div class="container">
         <aside class="sidebar">
             <header class="sidebar__header header p1">
-                <h1>Loan app</h1>
+                <h1>CQC - Loan</h1>
             </header>
             <nav class="sidebar__nav nav">
                 <ul class="nav__list">

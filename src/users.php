@@ -2,9 +2,9 @@
     <div class="main">
         <header class="main__header flex px1">
             <h2 class="">All Users</h2>
-            <form class="search" action="">
-                <input type="text" class="search__input" placeholder="Search">
-                <button class="search__btn">Search</button>
+            <form class="search" action="../php/search.php" method="POST">
+                <input type="text" class="search__input" name="inputsearch" placeholder="Search">
+                <button name="search" class="search__btn">Search</button>
             </form>
             <div class="user flex">
                 <span class="flex">C</span>

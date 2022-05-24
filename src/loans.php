@@ -1,9 +1,9 @@
         <div class="main">
             <header class="main__header flex px1">
                 <h2 class="">Loans</h2>
-                <form class="search" action="">
-                    <input type="text" class="search__input" placeholder="Search">
-                    <button class="search__btn">Search</button>
+                <form class="search" action="../php/search.php" method="POST">
+                    <input type="text" class="search__input" name="inputsearch" placeholder="Search">
+                    <button name="search" class="search__btn">Search</button>
                 </form>
                 <div class="user flex">
                     <span class="flex">C</span>
@@ -41,228 +41,14 @@
                     </div>
                 </div>
                 <section class="main__table">
-                    <!-- <table>
-                        <thead>
-                            <tr>
-                                <th>Applicant ID</th>
-                                <th>Applicant Name</th>
-                                <th>Contact</th>
-                                <th>Address</th>
-                                <th>Date</th>
-                                <th>Amount</th>
-                                <th class="tc">Status</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>CD1000234597678</td>
-                                <td>Michael Essien</td>
-                                <td>020000000</td>
-                                <td>Avenue A</td>
-                                <td>23/04/2022</td>
-                                <td>GH¢ 1,500.00</td>
-                                <td class="tc"><span class="awaiting">awiating approval</span></td>
-                            </tr> 
-                            <tr>
-                                <td>CD1000234597678</td>
-                                <td>Michael Essien</td>
-                                <td>020000000</td>
-                                <td>Avenue A</td>
-                                <td>23/04/2022</td>
-                                <td>GH¢ 1,500.00</td>
-                                <td class="tc"><span class="pending">pending</span></td>
-                            </tr> 
-                            <tr>
-                                <td>CD1000234597678</td>
-                                <td>Michael Essien</td>
-                                <td>020000000</td>
-                                <td>Avenue A</td>
-                                <td>23/04/2022</td>
-                                <td>GH¢ 1,500.00</td>
-                                <td class="tc"><span class="approved">approved</span></td>
-                            </tr> 
-                            <tr>
-                                <td>CD1000234597678</td>
-                                <td>Michael Essien</td>
-                                <td>020000000</td>
-                                <td>Avenue A</td>
-                                <td>23/04/2022</td>
-                                <td>GH¢ 1,500.00</td>
-                                <td class="tc"><span class="due">due</span></td>
-                            </tr> 
-                            <tr>
-                                <td>CD1000234597678</td>
-                                <td>Michael Essien</td>
-                                <td>020000000</td>
-                                <td>Avenue A</td>
-                                <td>23/04/2022</td>
-                                <td>GH¢ 1,500.00</td>
-                                <td class="tc"><span class="overdue">overdue</span></td>
-                            </tr> 
-                            <tr>
-                                <td>CD1000234597678</td>
-                                <td>Michael Essien</td>
-                                <td>020000000</td>
-                                <td>Avenue A</td>
-                                <td>23/04/2022</td>
-                                <td>GH¢ 1,500.00</td>
-                                <td class="tc"><span  class="paid">paid</span></td>
-                            </tr> 
-                            <tr>
-                                <td>CD1000234597678</td>
-                                <td>Michael Essien</td>
-                                <td>020000000</td>
-                                <td>Avenue A</td>
-                                <td>23/04/2022</td>
-                                <td>GH¢ 1,500.00</td>
-                                <td class="tc"><span class="pending">pending</span></td>
-                            </tr> 
-                            <tr>
-                                <td>CD1000234597678</td>
-                                <td>Michael Essien</td>
-                                <td>020000000</td>
-                                <td>Avenue A</td>
-                                <td>23/04/2022</td>
-                                <td>GH¢ 1,500.00</td>
-                                <td class="tc"><span class="approved">approved</span></td>
-                            </tr> 
-                            <tr>
-                                <td>CD1000234597678</td>
-                                <td>Michael Essien</td>
-                                <td>020000000</td>
-                                <td>Avenue A</td>
-                                <td>23/04/2022</td>
-                                <td>GH¢ 1,500.00</td>
-                                <td class="tc"><span class="due">due</span></td>
-                            </tr> 
-                            <tr>
-                                <td>CD1000234597678</td>
-                                <td>Michael Essien</td>
-                                <td>020000000</td>
-                                <td>Avenue A</td>
-                                <td>23/04/2022</td>
-                                <td>GH¢ 1,500.00</td>
-                                <td class="tc"><span class="overdue">overdue</span></td>
-                            </tr> 
-                            <tr>
-                                <td>CD1000234597678</td>
-                                <td>Michael Essien</td>
-                                <td>020000000</td>
-                                <td>Avenue A</td>
-                                <td>23/04/2022</td>
-                                <td>GH¢ 1,500.00</td>
-                                <td class="tc"><span  class="paid">paid</span></td>
-                            </tr> 
-                            <tr>
-                                <td>CD1000234597678</td>
-                                <td>Michael Essien</td>
-                                <td>020000000</td>
-                                <td>Avenue A</td>
-                                <td>23/04/2022</td>
-                                <td>GH¢ 1,500.00</td>
-                                <td class="tc"><span class="pending">pending</span></td>
-                            </tr> 
-                            <tr>
-                                <td>CD1000234597678</td>
-                                <td>Michael Essien</td>
-                                <td>020000000</td>
-                                <td>Avenue A</td>
-                                <td>23/04/2022</td>
-                                <td>GH¢ 1,500.00</td>
-                                <td class="tc"><span class="approved">approved</span></td>
-                            </tr> 
-                            <tr>
-                                <td>CD1000234597678</td>
-                                <td>Michael Essien</td>
-                                <td>020000000</td>
-                                <td>Avenue A</td>
-                                <td>23/04/2022</td>
-                                <td>GH¢ 1,500.00</td>
-                                <td class="tc"><span class="due">due</span></td>
-                            </tr> 
-                            <tr>
-                                <td>CD1000234597678</td>
-                                <td>Michael Essien</td>
-                                <td>020000000</td>
-                                <td>Avenue A</td>
-                                <td>23/04/2022</td>
-                                <td>GH¢ 1,500.00</td>
-                                <td class="tc"><span class="overdue">overdue</span></td>
-                            </tr> 
-                            <tr>
-                                <td>CD1000234597678</td>
-                                <td>Michael Essien</td>
-                                <td>020000000</td>
-                                <td>Avenue A</td>
-                                <td>23/04/2022</td>
-                                <td>GH¢ 1,500.00</td>
-                                <td class="tc"><span  class="paid">paid</span></td>
-                            </tr> 
-                            <tr>
-                                <td>CD1000234597678</td>
-                                <td>Michael Essien</td>
-                                <td>020000000</td>
-                                <td>Avenue A</td>
-                                <td>23/04/2022</td>
-                                <td>GH¢ 1,500.00</td>
-                                <td class="tc"><span class="awaiting">awiating approval</span></td>
-                            </tr> 
-                            <tr>
-                                <td>CD1000234597678</td>
-                                <td>Michael Essien</td>
-                                <td>020000000</td>
-                                <td>Avenue A</td>
-                                <td>23/04/2022</td>
-                                <td>GH¢ 1,500.00</td>
-                                <td class="tc"><span class="awaiting">awiating approval</span></td>
-                            </tr> 
-                            <tr>
-                                <td>CD1000234597678</td>
-                                <td>Michael Essien</td>
-                                <td>020000000</td>
-                                <td>Avenue A</td>
-                                <td>23/04/2022</td>
-                                <td>GH¢ 1,500.00</td>
-                                <td class="tc"><span class="awaiting">awiating approval</span></td>
-                            </tr> 
-                            <tr>
-                                <td>CD1000234597678</td>
-                                <td>Michael Essien</td>
-                                <td>020000000</td>
-                                <td>Avenue A</td>
-                                <td>23/04/2022</td>
-                                <td>GH¢ 1,500.00</td>
-                                <td class="tc"><span class="awaiting">awiating approval</span></td>
-                            </tr> 
-                            <tr>
-                                <td>CD1000234597678</td>
-                                <td>Michael Essien</td>
-                                <td>020000000</td>
-                                <td>Avenue A</td>
-                                <td>23/04/2022</td>
-                                <td>GH¢ 1,500.00</td>
-                                <td class="tc"><span class="awaiting">awiating approval</span></td>
-                            </tr> 
-                            <tr>
-                                <td>CD1000234597678</td>
-                                <td>Michael Essien</td>
-                                <td>020000000</td>
-                                <td>Avenue A</td>
-                                <td>23/04/2022</td>
-                                <td>GH¢ 1,500.00</td>
-                                <td class="tc"><span class="awaiting">awiating approval</span></td>
-                            </tr> 
-                            <tr>
-                                <td>CD1000234597678</td>
-                                <td>Michael Essien</td>
-                                <td>020000000</td>
-                                <td>Avenue A</td>
-                                <td>23/04/2022</td>
-                                <td>GH¢ 1,500.00</td>
-                                <td class="tc"> <span class="awaiting">awiating approval</span></td>
-                            </tr> 
-                        </tbody>
-                    </table> -->
+                    <?php
+                        if($_GET["data"]){
+                            require("../php/dbs.inc.php");
+                            require("../php/functions.inc.php");
+
+                            searchQueryloans($conn, $_GET["data"]);
+                        }
+                    ?>
                 </section>
             </div>
         </div>
