@@ -32,6 +32,9 @@ h2, .h2{
 h3, .h3{
     font-size: var(--font-size_l);
 }
+.h4{
+    font-size: var(--font-size_s);
+}
 
 // Utilities
 .flex{
@@ -235,8 +238,14 @@ body{
 
     &__header{
         margin-bottom: 1rem;
+        background-color: #4d4a4a;
+        margin: .3rem .3rem 1.5rem .3rem;
+        border-radius: 7px;
         h1{
-            color: #4d4a4a;
+            color: #ebebeb;
+            font-size: 1.5rem;
+            font-weight: 600;
+            text-transform: uppercase;
         }
     }
 
@@ -378,6 +387,16 @@ body{
         &::-webkit-scrollbar{
                 display: none;
             }
+
+        h2{
+            margin: 1rem;
+            text-transform: uppercase;
+            &.h4{
+                // margin-top: 2rem;
+                letter-spacing: .15rem;
+                color: #1c64ff;
+            }            
+        }
     }
 
     &__header{
@@ -619,7 +638,7 @@ body{
 
             p{
                 font-size: 1rem;
-                margin-bottom: 1rem;
+                margin-bottom: 0rem;
                 font-weight: 400;
                 color: #4d4a4a;
             }
@@ -631,6 +650,7 @@ body{
                 color: #4d4a4a;
                 text-transform: capitalize;
                 font-size: var(--font-size_s);
+                margin-left: 0;
             }
         }
 
@@ -1343,5 +1363,119 @@ body{
                 }
             }
         }
+    }
+
+    .details{
+        display: grid;
+        width: 99%;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        margin: 1rem auto;
+        padding: 1rem;
+        // background-color: #ebebeb;
+        box-shadow: 5px 5px 15px rgba($color: #000000, $alpha: .2);
+
+        &__card{
+            background-color: #ebebeb;
+            padding: .5rem;
+            border-radius: 8px;
+            box-shadow: 5px 5px 15px rgba($color: #000000, $alpha: .2);
+            
+            .title{
+                margin-bottom: .7rem;
+            }
+
+            .content{
+                letter-spacing: .095rem;
+            }
+        }
+    }
+
+    .action-head{
+        margin-top: .6rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 99%;
+        height: 2rem;
+
+        button{
+            padding: .4rem 1rem;
+            cursor: pointer;
+            background-color: #1c64ff;
+            color: #ffffff;
+            outline: none;
+            border: none;
+            border-radius: 3px;
+        }
+    }
+
+    .payment{
+        position: absolute;
+        inset: 0;
+        background-color: #00000045;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+        
+        
+        
+        &__card{
+            background-color: #ffffff;
+            width: 400px;
+            
+            header{
+                padding: .3rem;   
+                background-color: #4d4a4a;
+                color: #ffffff;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                i{
+                    margin-right: 1.5rem;
+                    cursor: pointer;
+                }
+            }
+
+            .payment__details{
+                background-color: #ebebeb;
+                padding: .5rem;
+                border-radius: 8px;
+                box-shadow: 5px 5px 15px rgba($color: #000000, $alpha: .2);
+                display: flex;
+                justify-content: space-between;
+                
+                .title{
+                    margin-bottom: .7rem;
+                }
+                input{
+                    padding: .3rem .5rem;
+                    outline: none;
+                    border: 1px solid #4d4a4a;
+                    border-radius: 3px;
+                    background-color: transparent;
+                }
+
+                .payment__status{
+                    width: 30%;
+                    display: flex;
+                    flex-direction: column;
+                    button{
+                        justify-self: flex-end;
+                        padding: .4rem .5rem;
+                        cursor: pointer;
+                        background-color: #1c64ff;
+                        color: #ffffff;
+                        outline: none;
+                        border: none;
+                        border-radius: 3px;
+                    }
+                }
+            }
+        }
+
+        
     }
 }

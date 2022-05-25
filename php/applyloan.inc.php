@@ -171,17 +171,17 @@
                                     }else{
                                         
                                         $loan_interest = $requested_loan * LOAN_INTEREST_PERCENTAGE;
-                                        $loan_total = $requested_loan + $loan_interest;
+                                        $loan_total = $requested_loan + $loan_interest; 
                                         $gauranteed_amount = $loan_total / LOAN_GUARANTEED;
                                         
                                         $sql = "INSERT INTO `applicant`(`first_name`, `last_name`, `other_names`, `phone_number`, `member_code`, `staff_id`, 
-                                        `work_place`, `member_status`, `purpose`, `loan_amount`, `loan_interest`, `loan_to_be_payed`, `mode_of_payment`,
+                                        `work_place`, `member_status`, `purpose`, `loan_amount`, `loan_interest`, `loan_arrears`, `loan_to_be_payed`, `mode_of_payment`,
                                          `guarantor_fullname_first`, `guarantor_phone_first`, `guarantor_staffnum_first`, `guaranteed_amount_first`, 
                                          `guarantor_fullname_second`, `guarantor_phone_second`, `guarantor_staffnum_second`, `guaranteed_amount_second`, 
                                          `guarantor_fullname_third`, `guarantor_phone_third`, `guarantor_staffnum_third`, `guaranteed_amount_third`, 
                                          `guarantor_fullname_fourth`, `guarantor_phone_fourth`, `guarantor_staffnum_fourth`, `guaranteed_amount_fourth`, 
                                          `recipient_name`,`applicant_first_due_date`) VALUES('{$firstname}', '{$lastname}', '{$othernames}', '{$phone_number}', '{$membership_code}', '{$staff_number}',
-                                         '{$work_place}', '{$membership_status}', '{$purpose_of_loan}', {$requested_loan}, {$loan_interest}, {$loan_total}, '{$mode_of_payment}',
+                                         '{$work_place}', '{$membership_status}', '{$purpose_of_loan}', {$requested_loan}, {$loan_interest}, {$loan_total} {$loan_total}, '{$mode_of_payment}',
                                          '{$first_guarantor_name}', '{$first_guarantor_phone_number}', '{$first_guarantor_staff_number}', {$gauranteed_amount},
                                          '{$second_guarantor_name}', '{$second_guarantor_phone_number}', '{$second_guarantor_staff_number}', {$gauranteed_amount},
                                          '{$third_guarantor_name}', '{$third_guarantor_phone_number}', '{$third_guarantor_staff_number}', {$gauranteed_amount},

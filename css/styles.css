@@ -33,6 +33,10 @@ h3, .h3 {
   font-size: var(--font-size_l);
 }
 
+.h4 {
+  font-size: var(--font-size_s);
+}
+
 .flex {
   display: flex;
 }
@@ -229,9 +233,15 @@ body {
 }
 .sidebar__header {
   margin-bottom: 1rem;
+  background-color: #4d4a4a;
+  margin: 0.3rem 0.3rem 1.5rem 0.3rem;
+  border-radius: 7px;
 }
 .sidebar__header h1 {
-  color: #4d4a4a;
+  color: #ebebeb;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
 }
 .sidebar__nav {
   width: 100%;
@@ -352,6 +362,14 @@ body {
 }
 .main .wrapper::-webkit-scrollbar {
   display: none;
+}
+.main .wrapper h2 {
+  margin: 1rem;
+  text-transform: uppercase;
+}
+.main .wrapper h2.h4 {
+  letter-spacing: 0.15rem;
+  color: #1c64ff;
 }
 .main__header {
   position: -webkit-sticky;
@@ -565,7 +583,7 @@ body {
 }
 .main .cards__card p {
   font-size: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0rem;
   font-weight: 400;
   color: #4d4a4a;
 }
@@ -576,6 +594,7 @@ body {
   color: #4d4a4a;
   text-transform: capitalize;
   font-size: var(--font-size_s);
+  margin-left: 0;
 }
 .main__table, .main .unapproved__table {
   width: 99%;
@@ -1149,4 +1168,100 @@ body {
 }
 .main .deleteUser .delContainer .box button:hover, .main .deleteUser .delContainer .box button:focus {
   background-color: red;
+}
+.main .details {
+  display: grid;
+  width: 99%;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin: 1rem auto;
+  padding: 1rem;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+}
+.main .details__card {
+  background-color: #ebebeb;
+  padding: 0.5rem;
+  border-radius: 8px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+}
+.main .details__card .title {
+  margin-bottom: 0.7rem;
+}
+.main .details__card .content {
+  letter-spacing: 0.095rem;
+}
+.main .action-head {
+  margin-top: 0.6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 99%;
+  height: 2rem;
+}
+.main .action-head button {
+  padding: 0.4rem 1rem;
+  cursor: pointer;
+  background-color: #1c64ff;
+  color: #ffffff;
+  outline: none;
+  border: none;
+  border-radius: 3px;
+}
+.main .payment {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.2705882353);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.main .payment__card {
+  background-color: #ffffff;
+  width: 400px;
+}
+.main .payment__card header {
+  padding: 0.3rem;
+  background-color: #4d4a4a;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.main .payment__card header i {
+  margin-right: 1.5rem;
+  cursor: pointer;
+}
+.main .payment__card .payment__details {
+  background-color: #ebebeb;
+  padding: 0.5rem;
+  border-radius: 8px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: space-between;
+}
+.main .payment__card .payment__details .title {
+  margin-bottom: 0.7rem;
+}
+.main .payment__card .payment__details input {
+  padding: 0.3rem 0.5rem;
+  outline: none;
+  border: 1px solid #4d4a4a;
+  border-radius: 3px;
+  background-color: transparent;
+}
+.main .payment__card .payment__details .payment__status {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+}
+.main .payment__card .payment__details .payment__status button {
+  justify-self: flex-end;
+  padding: 0.4rem 0.5rem;
+  cursor: pointer;
+  background-color: #1c64ff;
+  color: #ffffff;
+  outline: none;
+  border: none;
+  border-radius: 3px;
 }/*# sourceMappingURL=styles.css.map */
