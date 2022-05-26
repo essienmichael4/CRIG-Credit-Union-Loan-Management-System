@@ -20,13 +20,13 @@
             $pay_due = "";
             $applicant_due="";
 
-            if($res["loan_status" != "paid"]){
+            if($res["loan_status"] != "paid"){
                 if($res["first_due_date_status"] != "paid"){
                     if($pay_date == $date){
                         $status = "due";
                         $duesql = "UPDATE `applicant` SET `loan_status` = '{$status}' WHERE `id` = {$res["id"]};";
                         $conn->query($duesql);
-                    }else if($pay_date >= $date){
+                    }else if($date >= $pay_date){
                         $status = "overdue";
                         $duesql = "UPDATE `applicant` SET `loan_status` = '{$status}' WHERE `id` = {$res["id"]};";
                         $conn->query($duesql);
@@ -42,7 +42,7 @@
                         $status = "due";
                         $duesql = "UPDATE `applicant` SET `loan_status` = '{$status}' WHERE `id` = {$res["id"]};";
                         $conn->query($duesql);
-                    }else if($pay_date >= $date){
+                    }else if($pay_date <= $date){
                         $status = "overdue";
                         $duesql = "UPDATE `applicant` SET `loan_status` = '{$status}' WHERE `id` = {$res["id"]};";
                         $conn->query($duesql);
@@ -58,7 +58,7 @@
                         $status = "due";
                         $duesql = "UPDATE `applicant` SET `loan_status` = '{$status}' WHERE `id` = {$res["id"]};";
                         $conn->query($duesql);
-                    }else if($pay_date >= $date){
+                    }else if($pay_date <= $date){
                         $status = "overdue";
                         $duesql = "UPDATE `applicant` SET `loan_status` = '{$status}' WHERE `id` = {$res["id"]};";
                         $conn->query($duesql);
@@ -74,7 +74,7 @@
                         $status = "due";
                         $duesql = "UPDATE `applicant` SET `loan_status` = '{$status}' WHERE `id` = {$res["id"]};";
                         $conn->query($duesql);
-                    }else if($pay_date >= $date){
+                    }else if($pay_date <= $date){
                         $status = "overdue";
                         $duesql = "UPDATE `applicant` SET `loan_status` = '{$status}' WHERE `id` = {$res["id"]};";
                         $conn->query($duesql);
@@ -90,7 +90,7 @@
                         $status = "due";
                         $duesql = "UPDATE `applicant` SET `loan_status` = '{$status}' WHERE `id` = {$res["id"]};";
                         $conn->query($duesql);
-                    }else if($pay_date >= $date){
+                    }else if($pay_date <= $date){
                         $status = "overdue";
                         $duesql = "UPDATE `applicant` SET `loan_status` = '{$status}' WHERE `id` = {$res["id"]};";
                         $conn->query($duesql);
@@ -106,7 +106,7 @@
                         $status = "due";
                         $duesql = "UPDATE `applicant` SET `loan_status` = '{$status}' WHERE `id` = {$res["id"]};";
                         $conn->query($duesql);
-                    }else if($pay_date >= $date){
+                    }else if($pay_date <= $date){
                         $status = "overdue";
                         $duesql = "UPDATE `applicant` SET `loan_status` = '{$status}' WHERE `id` = {$res["id"]};";
                         $conn->query($duesql);

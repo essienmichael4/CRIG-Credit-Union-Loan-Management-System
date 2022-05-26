@@ -204,7 +204,7 @@
             }
         }
 
-    }else if(isset($_POST["approve"])){
+    }else if(isset($_POST["approveapply"])){
         include_once("./dbs.inc.php");
         include_once("./functions.inc.php");
 
@@ -255,9 +255,6 @@
         $fourth_due_approved = mysqli_real_escape_string($conn, $_POST["fourth_due_approved"]);
         $fifth_due_approved = mysqli_real_escape_string($conn, $_POST["fifth_due_approved"]);
         $sixth_due_approved = mysqli_real_escape_string($conn, $_POST["sixth_due_approved"]);
-
-
-
 
         if(emptyField($firstname) || emptyField($lastname) || emptyField($phone_number) ||
         emptyField($staff_number) || emptyField($work_place) || emptyField($requested_loan)
@@ -430,6 +427,7 @@
         $recipientname = mysqli_real_escape_string($conn, $_POST["recipient"]);
         $day_approved = date('Y-m-d');
         $approval_status = "approved";
+        $loan_status = "pending";
 
         $applicant_id = mysqli_real_escape_string($conn, $_POST["applicant_id"]);
         $first_due_approved = mysqli_real_escape_string($conn, $_POST["first_due_approved"]);
@@ -448,7 +446,7 @@
             `third_due_date` = '{$third_due_approved}', `fourth_due_date` = '{$fourth_due_approved}',
             `fifth_due_date` = '{$fifth_due_approved}',`sixth_due_date` = '{$sixth_due_approved}', 
             `approved_by` = '{$recipientname}', `day_approved` = '{$day_approved}', `approval_status` = '{$approval_status}'
-            WHERE `id` = '{$applicant_id}'";
+            , `loan_status` = '{$loan_status}' WHERE `id` = '{$applicant_id}'";
 
             if(mysqli_query($conn, $sql)){
                 header("location: ../src/routes.php?pgname=dashboard"); 

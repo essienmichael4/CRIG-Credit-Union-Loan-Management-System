@@ -20,11 +20,11 @@
             $pay_due = "";
             $applicant_due="";
 
-            if($res["loan_status" != "paid"]){
+            if($res["loan_status"] != "paid"){
                 if($res["first_due_date_status"] != "paid"){
                     if($pay_date == $date){
                         $status = "due";
-                    }else if($pay_date >= $date){
+                    }else if($pay_date <= $date){
                         $status = "overdue";
                     }else{
                         $status = "pending";
@@ -34,7 +34,7 @@
                     $pay_date = $res["second_due_date"];
                     if($pay_date == $date){
                         $status = "due";
-                    }else if($pay_date >= $date){
+                    }else if($pay_date <= $date){
                         $status = "overdue";
                     }else{
                         $status = "pending";
@@ -44,7 +44,7 @@
                     $pay_date = $res["third_due_date"];
                     if($pay_date == $date){
                         $status = "due";
-                    }else if($pay_date >= $date){
+                    }else if($pay_date <= $date){
                         $status = "overdue";
                     }else{
                         $status = "pending";
@@ -54,7 +54,7 @@
                     $pay_date = $res["fourth_due_date"];
                     if($pay_date == $date){
                         $status = "due";
-                    }else if($pay_date >= $date){
+                    }else if($pay_date <= $date){
                         $status = "overdue";
                     }else{
                         $status = "pending";
@@ -64,7 +64,7 @@
                     $pay_date = $res["fifth_due_date"];
                     if($pay_date == $date){
                         $status = "due";
-                    }else if($pay_date >= $date){
+                    }else if($pay_date <= $date){
                         $status = "overdue";
                     }else{
                         $status = "pending";
@@ -74,7 +74,7 @@
                     $pay_date = $res["sixth_due_date"];
                     if($pay_date == $date){
                         $status = "due";
-                    }else if($pay_date >= $date){
+                    }else if($pay_date <= $date){
                         $status = "overdue";
                     }else{
                         $status = "pending";

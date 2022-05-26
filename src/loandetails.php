@@ -276,64 +276,70 @@
                             <h2 class="h3">Payment Plan</h2>
                             <i class="fas fa-times closeForm"></i>
                         </header>
-                        <form class="payment__details">
+                        <form action="../php/payments.inc.php" method="POST" class="payment__details">
                             <div>
                                 <h4 class="title">First Due Payment</h4>
-                                <input type="number">
+                                <input type="number" name="amount">
+                                <input type="text" name="id" value="<?=$_GET["applicant_id"]?>" hidden>
                             </div>
                             <div class="payment__status">
                                 <h4 class="title">Status: pending</h4>
-                                <button>make payment</button>
+                                <button name="payment" disabled>make payment</button>
                             </div>
                         </form>
-                        <form class="payment__details">
+                        <form class="payment__details" action="../php/payments.inc.php" method="POST">
                             <div>
                                 <h4 class="title">Second Due Payment</h4>
-                                <input type="number">
+                                <input type="number" name="amount">
+                                <input type="text" name="id" value="<?=$_GET["applicant_id"]?>" hidden>
                             </div>
                             <div class="payment__status">
                                 <h4 class="title">Status: pending</h4>
-                                <button>make payment</button>
+                                <button name="payment">make payment</button>
                             </div>
                         </form>
-                        <form class="payment__details">
+                        <form action="../php/payments.inc.php" method="POST" class="payment__details">
                             <div>
                                 <h4 class="title">Third Due Payment</h4>
-                                <input type="number">
+                                <input type="number" name="amount">
+                                <input type="text" name="id" value="<?=$_GET["applicant_id"]?>" hidden>
                             </div>
                             <div class="payment__status">
                                 <h4 class="title">Status: pending</h4>
-                                <button>make payment</button>
+                                <button name="payment">make payment</button>
                             </div>
                         </form>
-                        <form class="payment__details">
+                        <form class="payment__details" action="../php/payments.inc.php" method="POST">
                             <div>
                                 <h4 class="title">Fourth Due Payment</h4>
-                                <input type="number">
+                                <input type="number" name="amount">
+                                <input type="text" name="id" value="<?=$_GET["applicant_id"]?>" hidden>
                             </div>
                             <div class="payment__status">
                                 <h4 class="title">Status: pending</h4>
-                                <button>make payment</button>
+                                <button name="payment">make payment</button>
                             </div>
                         </form>
-                        <form class="payment__details">
+                        <form action="../php/payments.inc.php" method="POST" class="payment__details">
                             <div>
                                 <h4 class="title">Fifth Due Payment</h4>
-                                <input type="number">
+                                <input type="number" name="amount">
+                                <input type="text" name="id" value="<?=$_GET["applicant_id"]?>" hidden>
                             </div>
                             <div class="payment__status">
                                 <h4 class="title">Status: pending</h4>
-                                <button>make payment</button>
+                                <button name="payment">make payment</button>
                             </div>
                         </form>
-                        <form class="payment__details">
+                        <form class="payment__details" action="../php/payments.inc.php" method="POST">
                             <div>
                                 <h4 class="title">Sixth Due Payment</h4>
-                                <input type="number">
+                                <input type="number" name="amount">
+                                <input type="text" name="id" value="<?=$_GET["applicant_id"]?>" hidden>
                             </div>
                             <div class="payment__status">
                                 <h4 class="title">Status: pending</h4>
-                                <button>make payment</button>
+                                <button name="payment">make payment</button>
                             </div>
                         </form>
                     </div>
