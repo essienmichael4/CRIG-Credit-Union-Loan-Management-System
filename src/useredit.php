@@ -64,24 +64,6 @@
                                     <span>+233</span><input type="text" placeholder="eg. 201234567" name="phone_number" value="<?=$user["phone"]?>">
                                 </div>
                             </div>
-                            <!-- <div class="formControl flex-c">
-                                <label for="">password</label>
-                                <div>
-                                    <input type="password" class="pwd" name="password">
-                                    <span class="ml1">
-                                        <i class="fas fa-eye password"  onclick='passwordShow("pwd")'></i>
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="formControl flex-c">
-                                <label for="">password repeat</label>
-                                <div>
-                                    <input type="password" class="pwdrep" name="password_repeat">
-                                    <span class="ml1">
-                                        <i class="fas fa-eye passwordrep" onclick='passwordShowRep("pwdrep")'></i>
-                                    </span>
-                                </div>
-                            </div> -->
                             <div class="formControl flex-c">
                                 <label for="">Role</label>
     

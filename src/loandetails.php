@@ -196,8 +196,8 @@
                             <p class="content"><?=$applicant["first_due_date_status"]?></p>
                         </div>
                         <div class="details__card">
-                            <h4 class="title">First Due Date Status</h4>
-                            <p class="content"><?=$applicant["first_due_date_status"]?></p>
+                            <h4 class="title">Recipient</h4>
+                            <p class="content"><?=$applicant["first_due_recipient"]?></p>
                         </div>
                         <div></div>
 
@@ -210,8 +210,8 @@
                             <p class="content"><?=$applicant["second_due_date_status"]?></p>
                         </div>
                         <div class="details__card">
-                            <h4 class="title">First Due Date Status</h4>
-                            <p class="content"><?=$applicant["first_due_date_status"]?></p>
+                            <h4 class="title">Recipient</h4>
+                            <p class="content"><?=$applicant["second_due_recipient"]?></p>
                         </div>
                         <div></div>
                         <div class="details__card">
@@ -223,8 +223,8 @@
                             <p class="content"><?=$applicant["third_due_date_status"]?></p>
                         </div>
                         <div class="details__card">
-                            <h4 class="title">First Due Date Status</h4>
-                            <p class="content"><?=$applicant["first_due_date_status"]?></p>
+                            <h4 class="title">Recipient</h4>
+                            <p class="content"><?=$applicant["third_due_recipient"]?></p>
                         </div>
                         <div></div>
                         <div class="details__card">
@@ -236,8 +236,8 @@
                             <p class="content"><?=$applicant["fourth_due_date_status"]?></p>
                         </div>
                         <div class="details__card">
-                            <h4 class="title">First Due Date Status</h4>
-                            <p class="content"><?=$applicant["first_due_date_status"]?></p>
+                            <h4 class="title">Recipient</h4>
+                            <p class="content"><?=$applicant["fourth_due_recipient"]?></p>
                         </div>
                         <div></div>
                         <div class="details__card">
@@ -249,8 +249,8 @@
                             <p class="content"><?=$applicant["fifth_due_date_status"]?></p>
                         </div>
                         <div class="details__card">
-                            <h4 class="title">First Due Date Status</h4>
-                            <p class="content"><?=$applicant["first_due_date_status"]?></p>
+                            <h4 class="title">Recipient</h4>
+                            <p class="content"><?=$applicant["fifth_due_recipient"]?></p>
                         </div>
                         <div></div>
                         <div class="details__card">
@@ -262,88 +262,652 @@
                             <p class="content"><?=$applicant["sixth_due_date_status"]?></p>
                         </div>
                         <div class="details__card">
-                            <h4 class="title">First Due Date Status</h4>
-                            <p class="content"><?=$applicant["first_due_date_status"]?></p>
+                            <h4 class="title">Recipient</h4>
+                            <p class="content"><?=$applicant["first_due_recipient"]?></p>
                         </div>
                         <div></div>
                         
                     </div>
                 </div>
                 
-                <div class="payment">
-                    <div class="payment__card">
-                        <header>
-                            <h2 class="h3">Payment Plan</h2>
-                            <i class="fas fa-times closeForm"></i>
-                        </header>
-                        <form action="../php/payments.inc.php" method="POST" class="payment__details">
-                            <div>
-                                <h4 class="title">First Due Payment</h4>
-                                <input type="number" name="amount">
-                                <input type="text" name="id" value="<?=$_GET["applicant_id"]?>" hidden>
-                            </div>
-                            <div class="payment__status">
-                                <h4 class="title">Status: pending</h4>
-                                <button name="payment" disabled>make payment</button>
-                            </div>
-                        </form>
-                        <form class="payment__details" action="../php/payments.inc.php" method="POST">
-                            <div>
-                                <h4 class="title">Second Due Payment</h4>
-                                <input type="number" name="amount">
-                                <input type="text" name="id" value="<?=$_GET["applicant_id"]?>" hidden>
-                            </div>
-                            <div class="payment__status">
-                                <h4 class="title">Status: pending</h4>
-                                <button name="payment">make payment</button>
-                            </div>
-                        </form>
-                        <form action="../php/payments.inc.php" method="POST" class="payment__details">
-                            <div>
-                                <h4 class="title">Third Due Payment</h4>
-                                <input type="number" name="amount">
-                                <input type="text" name="id" value="<?=$_GET["applicant_id"]?>" hidden>
-                            </div>
-                            <div class="payment__status">
-                                <h4 class="title">Status: pending</h4>
-                                <button name="payment">make payment</button>
-                            </div>
-                        </form>
-                        <form class="payment__details" action="../php/payments.inc.php" method="POST">
-                            <div>
-                                <h4 class="title">Fourth Due Payment</h4>
-                                <input type="number" name="amount">
-                                <input type="text" name="id" value="<?=$_GET["applicant_id"]?>" hidden>
-                            </div>
-                            <div class="payment__status">
-                                <h4 class="title">Status: pending</h4>
-                                <button name="payment">make payment</button>
-                            </div>
-                        </form>
-                        <form action="../php/payments.inc.php" method="POST" class="payment__details">
-                            <div>
-                                <h4 class="title">Fifth Due Payment</h4>
-                                <input type="number" name="amount">
-                                <input type="text" name="id" value="<?=$_GET["applicant_id"]?>" hidden>
-                            </div>
-                            <div class="payment__status">
-                                <h4 class="title">Status: pending</h4>
-                                <button name="payment">make payment</button>
-                            </div>
-                        </form>
-                        <form class="payment__details" action="../php/payments.inc.php" method="POST">
-                            <div>
-                                <h4 class="title">Sixth Due Payment</h4>
-                                <input type="number" name="amount">
-                                <input type="text" name="id" value="<?=$_GET["applicant_id"]?>" hidden>
-                            </div>
-                            <div class="payment__status">
-                                <h4 class="title">Status: pending</h4>
-                                <button name="payment">make payment</button>
-                            </div>
-                        </form>
+                <?php
+                    if($applicant["loan_status"] == "paid"){
+                ?>
+                    <div class="payment">
+                        <div class="payment__card">
+                            <header>
+                                <h2 class="h3">Payment Plan</h2>
+                                <i class="fas fa-times closeForm"></i>
+                            </header>
+                            <form action="../php/payments.inc.php" method="POST" class="payment__details disabled">
+                                <div>
+                                    <h4 class="title">First Due Payment</h4>
+                                    <input type="number" name="amount">
+                                    <input type="text" name="id" value="<?=$_GET["applicant_id"]?>" hidden>
+                                    <input type="text" name="duedate" value="first" hidden>
+                                    <input type="text" name="recipient" value="<?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?>" hidden>
+                                </div>
+                                <div class="payment__status">
+                                    <h4 class="title">Status: pending</h4>
+                                    <button name="payment">make payment</button>
+                                </div>
+                            </form>
+                            <form class="payment__details disabled" action="../php/payments.inc.php" method="POST">
+                                <div>
+                                    <h4 class="title">Second Due Payment</h4>
+                                    <input type="number" name="amount">
+                                    <input type="text" name="id" value="<?=$_GET["applicant_id"]?>" hidden>
+                                    <input type="text" name="duedate" value="second" hidden>
+                                    <input type="text" name="recipient" value="<?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?>" hidden>
+                                </div>
+                                <div class="payment__status">
+                                    <h4 class="title">Status: pending</h4>
+                                    <button name="payment">make payment</button>
+                                </div>
+                            </form>
+                            <form action="../php/payments.inc.php" method="POST" class="payment__details disabled">
+                                <div>
+                                    <h4 class="title">Third Due Payment</h4>
+                                    <input type="number" name="amount">
+                                    <input type="text" name="id" value="<?=$_GET["applicant_id"]?>" hidden>
+                                    <input type="text" name="duedate" value="third" hidden>
+                                    <input type="text" name="recipient" value="<?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?>" hidden>
+                                </div>
+                                <div class="payment__status">
+                                    <h4 class="title">Status: pending</h4>
+                                    <button name="payment">make payment</button>
+                                </div>
+                            </form>
+                            <form class="payment__details disabled" action="../php/payments.inc.php" method="POST">
+                                <div>
+                                    <h4 class="title">Fourth Due Payment</h4>
+                                    <input type="number" name="amount">
+                                    <input type="text" name="id" value="<?=$_GET["applicant_id"]?>" hidden>
+                                    <input type="text" name="duedate" value="fourth" hidden>
+                                    <input type="text" name="recipient" value="<?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?>" hidden>
+                                </div>
+                                <div class="payment__status">
+                                    <h4 class="title">Status: pending</h4>
+                                    <button name="payment">make payment</button>
+                                </div>
+                            </form>
+                            <form action="../php/payments.inc.php" method="POST" class="payment__details disabled">
+                                <div>
+                                    <h4 class="title">Fifth Due Payment</h4>
+                                    <input type="number" name="amount">
+                                    <input type="text" name="id" value="<?=$_GET["applicant_id"]?>" hidden>
+                                    <input type="text" name="duedate" value="fifth" hidden>
+                                    <input type="text" name="recipient" value="<?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?>" hidden>
+                                </div>
+                                <div class="payment__status">
+                                    <h4 class="title">Status: pending</h4>
+                                    <button name="payment">make payment</button>
+                                </div>
+                            </form>
+                            <form class="payment__details disabled" action="../php/payments.inc.php" method="POST">
+                                <div>
+                                    <h4 class="title">Sixth Due Payment</h4>
+                                    <input type="number" name="amount">
+                                    <input type="text" name="id" value="<?=$_GET["applicant_id"]?>" hidden>
+                                    <input type="text" name="duedate" value="sixth" hidden>
+                                    <input type="text" name="recipient" value="<?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?>" hidden>
+                                </div>
+                                <div class="payment__status">
+                                    <h4 class="title">Status: pending</h4>
+                                    <button name="payment">make payment</button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
-                </div>
+                <?php
+                    }else{
+                        if($applicant["first_due_date_status"] == "paid" && $applicant["second_due_date_status"] == "paid" &&
+                        $applicant["third_due_date_status"] == "paid" && $applicant["fourth_due_date_status"] == "paid" && 
+                        $applicant["fifth_due_date_status"] == "paid" && $applicant["Sixth_due_date_status"] != "paid"){
+                            ?>
+                                <div class="payment">
+                                    <div class="payment__card">
+                                        <header>
+                                            <h2 class="h3">Payment Plan</h2>
+                                            <i class="fas fa-times closeForm"></i>
+                                        </header>
+                                        <form action="../php/payments.inc.php" method="POST" class="payment__details disabled">
+                                            <div>
+                                                <h4 class="title">First Due Payment</h4>
+                                                <input type="number" name="amount">
+                                                <input type="text" name="id" value="<?=$_GET["applicant_id"]?>" hidden>
+                                                <input type="text" name="duedate" value="first" hidden>
+                                                <input type="text" name="recipient" value="<?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?>" hidden>
+                                            </div>
+                                            <div class="payment__status">
+                                                <h4 class="title">Status: pending</h4>
+                                                <button name="payment">make payment</button>
+                                            </div>
+                                        </form>
+                                        <form class="payment__details disabled" action="../php/payments.inc.php" method="POST">
+                                            <div>
+                                                <h4 class="title">Second Due Payment</h4>
+                                                <input type="number" name="amount">
+                                                <input type="text" name="id" value="<?=$_GET["applicant_id"]?>" hidden>
+                                                <input type="text" name="duedate" value="second" hidden>
+                                                <input type="text" name="recipient" value="<?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?>" hidden>
+                                            </div>
+                                            <div class="payment__status">
+                                                <h4 class="title">Status: pending</h4>
+                                                <button name="payment">make payment</button>
+                                            </div>
+                                        </form>
+                                        <form action="../php/payments.inc.php" method="POST" class="payment__details disabled">
+                                            <div>
+                                                <h4 class="title">Third Due Payment</h4>
+                                                <input type="number" name="amount">
+                                                <input type="text" name="id" value="<?=$_GET["applicant_id"]?>" hidden>
+                                                <input type="text" name="duedate" value="third" hidden>
+                                                <input type="text" name="recipient" value="<?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?>" hidden>
+                                            </div>
+                                            <div class="payment__status">
+                                                <h4 class="title">Status: pending</h4>
+                                                <button name="payment">make payment</button>
+                                            </div>
+                                        </form>
+                                        <form class="payment__details disabled" action="../php/payments.inc.php" method="POST">
+                                            <div>
+                                                <h4 class="title">Fourth Due Payment</h4>
+                                                <input type="number" name="amount">
+                                                <input type="text" name="id" value="<?=$_GET["applicant_id"]?>" hidden>
+                                                <input type="text" name="duedate" value="fourth" hidden>
+                                                <input type="text" name="recipient" value="<?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?>" hidden>
+                                            </div>
+                                            <div class="payment__status">
+                                                <h4 class="title">Status: pending</h4>
+                                                <button name="payment">make payment</button>
+                                            </div>
+                                        </form>
+                                        <form action="../php/payments.inc.php" method="POST" class="payment__details disabled">
+                                            <div>
+                                                <h4 class="title">Fifth Due Payment</h4>
+                                                <input type="number" name="amount">
+                                                <input type="text" name="id" value="<?=$_GET["applicant_id"]?>" hidden>
+                                                <input type="text" name="duedate" value="fifth" hidden>
+                                                <input type="text" name="recipient" value="<?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?>" hidden>
+                                            </div>
+                                            <div class="payment__status">
+                                                <h4 class="title">Status: pending</h4>
+                                                <button name="payment">make payment</button>
+                                            </div>
+                                        </form>
+                                        <form class="payment__details" action="../php/payments.inc.php" method="POST">
+                                            <div>
+                                                <h4 class="title">Sixth Due Payment</h4>
+                                                <input type="number" name="amount">
+                                                <input type="text" name="id" value="<?=$_GET["applicant_id"]?>" hidden>
+                                                <input type="text" name="duedate" value="sixth" hidden>
+                                                <input type="text" name="recipient" value="<?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?>" hidden>
+                                            </div>
+                                            <div class="payment__status">
+                                                <h4 class="title">Status: pending</h4>
+                                                <button name="payment">make payment</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            <?php
+                        }elseif($applicant["first_due_date_status"] == "paid" && $applicant["second_due_date_status"] == "paid" &&
+                        $applicant["third_due_date_status"] == "paid" && $applicant["fourth_due_date_status"] == "paid" && 
+                        $applicant["fifth_due_date_status"] != "paid"){
+                            ?>
+                                <div class="payment">
+                                    <div class="payment__card">
+                                        <header>
+                                            <h2 class="h3">Payment Plan</h2>
+                                            <i class="fas fa-times closeForm"></i>
+                                        </header>
+                                        <form action="../php/payments.inc.php" method="POST" class="payment__details disabled">
+                                            <div>
+                                                <h4 class="title">First Due Payment</h4>
+                                                <input type="number" name="amount">
+                                                <input type="text" name="id" value="<?=$_GET["applicant_id"]?>" hidden>
+                                                <input type="text" name="duedate" value="first" hidden>
+                                                <input type="text" name="recipient" value="<?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?>" hidden>
+                                            </div>
+                                            <div class="payment__status">
+                                                <h4 class="title">Status: pending</h4>
+                                                <button name="payment">make payment</button>
+                                            </div>
+                                        </form>
+                                        <form class="payment__details" action="../php/payments.inc.php" method="POST">
+                                            <div>
+                                                <h4 class="title">Second Due Payment</h4>
+                                                <input type="number" name="amount">
+                                                <input type="text" name="id" value="<?=$_GET["applicant_id"]?>" hidden>
+                                                <input type="text" name="duedate" value="second" hidden>
+                                                <input type="text" name="recipient" value="<?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?>" hidden>
+                                            </div>
+                                            <div class="payment__status">
+                                                <h4 class="title">Status: pending</h4>
+                                                <button name="payment">make payment</button>
+                                            </div>
+                                        </form>
+                                        <form action="../php/payments.inc.php" method="POST" class="payment__details">
+                                            <div>
+                                                <h4 class="title">Third Due Payment</h4>
+                                                <input type="number" name="amount">
+                                                <input type="text" name="id" value="<?=$_GET["applicant_id"]?>" hidden>
+                                                <input type="text" name="duedate" value="third" hidden>
+                                                <input type="text" name="recipient" value="<?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?>" hidden>
+                                            </div>
+                                            <div class="payment__status">
+                                                <h4 class="title">Status: pending</h4>
+                                                <button name="payment">make payment</button>
+                                            </div>
+                                        </form>
+                                        <form class="payment__details" action="../php/payments.inc.php" method="POST">
+                                            <div>
+                                                <h4 class="title">Fourth Due Payment</h4>
+                                                <input type="number" name="amount">
+                                                <input type="text" name="id" value="<?=$_GET["applicant_id"]?>" hidden>
+                                                <input type="text" name="duedate" value="fourth" hidden>
+                                                <input type="text" name="recipient" value="<?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?>" hidden>
+                                            </div>
+                                            <div class="payment__status">
+                                                <h4 class="title">Status: pending</h4>
+                                                <button name="payment">make payment</button>
+                                            </div>
+                                        </form>
+                                        <form action="../php/payments.inc.php" method="POST" class="payment__details">
+                                            <div>
+                                                <h4 class="title">Fifth Due Payment</h4>
+                                                <input type="number" name="amount">
+                                                <input type="text" name="id" value="<?=$_GET["applicant_id"]?>" hidden>
+                                                <input type="text" name="duedate" value="fifth" hidden>
+                                                <input type="text" name="recipient" value="<?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?>" hidden>
+                                            </div>
+                                            <div class="payment__status">
+                                                <h4 class="title">Status: pending</h4>
+                                                <button name="payment">make payment</button>
+                                            </div>
+                                        </form>
+                                        <form class="payment__details" action="../php/payments.inc.php" method="POST">
+                                            <div>
+                                                <h4 class="title">Sixth Due Payment</h4>
+                                                <input type="number" name="amount">
+                                                <input type="text" name="id" value="<?=$_GET["applicant_id"]?>" hidden>
+                                                <input type="text" name="duedate" value="sixth" hidden>
+                                                <input type="text" name="recipient" value="<?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?>" hidden>
+                                            </div>
+                                            <div class="payment__status">
+                                                <h4 class="title">Status: pending</h4>
+                                                <button name="payment">make payment</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            <?php
+                        }else if($applicant["first_due_date_status"] == "paid" && $applicant["second_due_date_status"] == "paid" &&
+                        $applicant["third_due_date_status"] == "paid" && $applicant["fourth_due_date_status"] != "paid"){
+                            ?>
+                                <div class="payment">
+                                    <div class="payment__card">
+                                        <header>
+                                            <h2 class="h3">Payment Plan</h2>
+                                            <i class="fas fa-times closeForm"></i>
+                                        </header>
+                                        <form action="../php/payments.inc.php" method="POST" class="payment__details disabled">
+                                            <div>
+                                                <h4 class="title">First Due Payment</h4>
+                                                <input type="number" name="amount">
+                                                <input type="text" name="id" value="<?=$_GET["applicant_id"]?>" hidden>
+                                                <input type="text" name="duedate" value="first" hidden>
+                                                <input type="text" name="recipient" value="<?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?>" hidden>
+                                            </div>
+                                            <div class="payment__status">
+                                                <h4 class="title">Status: pending</h4>
+                                                <button name="payment">make payment</button>
+                                            </div>
+                                        </form>
+                                        <form class="payment__details disabled" action="../php/payments.inc.php" method="POST">
+                                            <div>
+                                                <h4 class="title">Second Due Payment</h4>
+                                                <input type="number" name="amount">
+                                                <input type="text" name="id" value="<?=$_GET["applicant_id"]?>" hidden>
+                                                <input type="text" name="duedate" value="second" hidden>
+                                                <input type="text" name="recipient" value="<?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?>" hidden>
+                                            </div>
+                                            <div class="payment__status">
+                                                <h4 class="title">Status: pending</h4>
+                                                <button name="payment">make payment</button>
+                                            </div>
+                                        </form>
+                                        <form action="../php/payments.inc.php" method="POST" class="payment__details disabled">
+                                            <div>
+                                                <h4 class="title">Third Due Payment</h4>
+                                                <input type="number" name="amount">
+                                                <input type="text" name="id" value="<?=$_GET["applicant_id"]?>" hidden>
+                                                <input type="text" name="duedate" value="third" hidden>
+                                                <input type="text" name="recipient" value="<?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?>" hidden>
+                                            </div>
+                                            <div class="payment__status">
+                                                <h4 class="title">Status: pending</h4>
+                                                <button name="payment">make payment</button>
+                                            </div>
+                                        </form>
+                                        <form class="payment__details disabled" action="../php/payments.inc.php" method="POST">
+                                            <div>
+                                                <h4 class="title">Fourth Due Payment</h4>
+                                                <input type="number" name="amount">
+                                                <input type="text" name="id" value="<?=$_GET["applicant_id"]?>" hidden>
+                                                <input type="text" name="duedate" value="fourth" hidden>
+                                                <input type="text" name="recipient" value="<?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?>" hidden>
+                                            </div>
+                                            <div class="payment__status">
+                                                <h4 class="title">Status: pending</h4>
+                                                <button name="payment">make payment</button>
+                                            </div>
+                                        </form>
+                                        <form action="../php/payments.inc.php" method="POST" class="payment__details">
+                                            <div>
+                                                <h4 class="title">Fifth Due Payment</h4>
+                                                <input type="number" name="amount">
+                                                <input type="text" name="id" value="<?=$_GET["applicant_id"]?>" hidden>
+                                                <input type="text" name="duedate" value="fifth" hidden>
+                                                <input type="text" name="recipient" value="<?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?>" hidden>
+                                            </div>
+                                            <div class="payment__status">
+                                                <h4 class="title">Status: pending</h4>
+                                                <button name="payment">make payment</button>
+                                            </div>
+                                        </form>
+                                        <form class="payment__details disabled" action="../php/payments.inc.php" method="POST">
+                                            <div>
+                                                <h4 class="title">Sixth Due Payment</h4>
+                                                <input type="number" name="amount">
+                                                <input type="text" name="id" value="<?=$_GET["applicant_id"]?>" hidden>
+                                                <input type="text" name="duedate" value="sixth" hidden>
+                                                <input type="text" name="recipient" value="<?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?>" hidden>
+                                            </div>
+                                            <div class="payment__status">
+                                                <h4 class="title">Status: pending</h4>
+                                                <button name="payment">make payment</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            <?php
+                        }else if($applicant["first_due_date_status"] == "paid" && $applicant["second_due_date_status"] == "paid" &&
+                        $applicant["third_due_date_status"] != "paid"){
+                            ?>
+                                <div class="payment">
+                                    <div class="payment__card">
+                                        <header>
+                                            <h2 class="h3">Payment Plan</h2>
+                                            <i class="fas fa-times closeForm"></i>
+                                        </header>
+                                        <form action="../php/payments.inc.php" method="POST" class="payment__details disabled">
+                                            <div>
+                                                <h4 class="title">First Due Payment</h4>
+                                                <input type="number" name="amount">
+                                                <input type="text" name="id" value="<?=$_GET["applicant_id"]?>" hidden>
+                                                <input type="text" name="duedate" value="first" hidden>
+                                                <input type="text" name="recipient" value="<?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?>" hidden>
+                                            </div>
+                                            <div class="payment__status">
+                                                <h4 class="title">Status: pending</h4>
+                                                <button name="payment">make payment</button>
+                                            </div>
+                                        </form>
+                                        <form class="payment__details disabled" action="../php/payments.inc.php" method="POST">
+                                            <div>
+                                                <h4 class="title">Second Due Payment</h4>
+                                                <input type="number" name="amount">
+                                                <input type="text" name="id" value="<?=$_GET["applicant_id"]?>" hidden>
+                                                <input type="text" name="duedate" value="second" hidden>
+                                                <input type="text" name="recipient" value="<?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?>" hidden>
+                                            </div>
+                                            <div class="payment__status">
+                                                <h4 class="title">Status: pending</h4>
+                                                <button name="payment">make payment</button>
+                                            </div>
+                                        </form>
+                                        <form action="../php/payments.inc.php" method="POST" class="payment__details">
+                                            <div>
+                                                <h4 class="title">Third Due Payment</h4>
+                                                <input type="number" name="amount">
+                                                <input type="text" name="id" value="<?=$_GET["applicant_id"]?>" hidden>
+                                                <input type="text" name="duedate" value="third" hidden>
+                                                <input type="text" name="recipient" value="<?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?>" hidden>
+                                            </div>
+                                            <div class="payment__status">
+                                                <h4 class="title">Status: pending</h4>
+                                                <button name="payment">make payment</button>
+                                            </div>
+                                        </form>
+                                        <form class="payment__details disabled" action="../php/payments.inc.php" method="POST">
+                                            <div>
+                                                <h4 class="title">Fourth Due Payment</h4>
+                                                <input type="number" name="amount">
+                                                <input type="text" name="id" value="<?=$_GET["applicant_id"]?>" hidden>
+                                                <input type="text" name="duedate" value="fourth" hidden>
+                                                <input type="text" name="recipient" value="<?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?>" hidden>
+                                            </div>
+                                            <div class="payment__status">
+                                                <h4 class="title">Status: pending</h4>
+                                                <button name="payment">make payment</button>
+                                            </div>
+                                        </form>
+                                        <form action="../php/payments.inc.php" method="POST" class="payment__details disabled">
+                                            <div>
+                                                <h4 class="title">Fifth Due Payment</h4>
+                                                <input type="number" name="amount">
+                                                <input type="text" name="id" value="<?=$_GET["applicant_id"]?>" hidden>
+                                                <input type="text" name="duedate" value="fifth" hidden>
+                                                <input type="text" name="recipient" value="<?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?>" hidden>
+                                            </div>
+                                            <div class="payment__status">
+                                                <h4 class="title">Status: pending</h4>
+                                                <button name="payment">make payment</button>
+                                            </div>
+                                        </form>
+                                        <form class="payment__details disabled" action="../php/payments.inc.php" method="POST">
+                                            <div>
+                                                <h4 class="title">Sixth Due Payment</h4>
+                                                <input type="number" name="amount">
+                                                <input type="text" name="id" value="<?=$_GET["applicant_id"]?>" hidden>
+                                                <input type="text" name="duedate" value="sixth" hidden>
+                                                <input type="text" name="recipient" value="<?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?>" hidden>
+                                            </div>
+                                            <div class="payment__status">
+                                                <h4 class="title">Status: pending</h4>
+                                                <button name="payment">make payment</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            <?php
+                        }else if($applicant["first_due_date_status"] == "paid" && $applicant["second_due_date_status"] != "paid"){
+                            ?>
+                                <div class="payment">
+                                    <div class="payment__card">
+                                        <header>
+                                            <h2 class="h3">Payment Plan</h2>
+                                            <i class="fas fa-times closeForm"></i>
+                                        </header>
+                                        <form action="../php/payments.inc.php" method="POST" class="payment__details disabled">
+                                            <div>
+                                                <h4 class="title">First Due Payment</h4>
+                                                <input type="number" name="amount">
+                                                <input type="text" name="id" value="<?=$_GET["applicant_id"]?>" hidden>
+                                                <input type="text" name="duedate" value="first" hidden>
+                                                <input type="text" name="recipient" value="<?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?>" hidden>
+                                            </div>
+                                            <div class="payment__status">
+                                                <h4 class="title">Status: pending</h4>
+                                                <button name="payment">make payment</button>
+                                            </div>
+                                        </form>
+                                        <form class="payment__details" action="../php/payments.inc.php" method="POST">
+                                            <div>
+                                                <h4 class="title">Second Due Payment</h4>
+                                                <input type="number" name="amount">
+                                                <input type="text" name="id" value="<?=$_GET["applicant_id"]?>" hidden>
+                                                <input type="text" name="duedate" value="second" hidden>
+                                                <input type="text" name="recipient" value="<?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?>" hidden>
+                                            </div>
+                                            <div class="payment__status">
+                                                <h4 class="title">Status: pending</h4>
+                                                <button name="payment">make payment</button>
+                                            </div>
+                                        </form>
+                                        <form action="../php/payments.inc.php" method="POST" class="payment__details disabled">
+                                            <div>
+                                                <h4 class="title">Third Due Payment</h4>
+                                                <input type="number" name="amount">
+                                                <input type="text" name="id" value="<?=$_GET["applicant_id"]?>" hidden>
+                                                <input type="text" name="duedate" value="third" hidden>
+                                                <input type="text" name="recipient" value="<?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?>" hidden>
+                                            </div>
+                                            <div class="payment__status">
+                                                <h4 class="title">Status: pending</h4>
+                                                <button name="payment">make payment</button>
+                                            </div>
+                                        </form>
+                                        <form class="payment__details disabled" action="../php/payments.inc.php" method="POST">
+                                            <div>
+                                                <h4 class="title">Fourth Due Payment</h4>
+                                                <input type="number" name="amount">
+                                                <input type="text" name="id" value="<?=$_GET["applicant_id"]?>" hidden>
+                                                <input type="text" name="duedate" value="fourth" hidden>
+                                                <input type="text" name="recipient" value="<?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?>" hidden>
+                                            </div>
+                                            <div class="payment__status">
+                                                <h4 class="title">Status: pending</h4>
+                                                <button name="payment">make payment</button>
+                                            </div>
+                                        </form>
+                                        <form action="../php/payments.inc.php" method="POST" class="payment__details disabled">
+                                            <div>
+                                                <h4 class="title">Fifth Due Payment</h4>
+                                                <input type="number" name="amount">
+                                                <input type="text" name="id" value="<?=$_GET["applicant_id"]?>" hidden>
+                                                <input type="text" name="duedate" value="fifth" hidden>
+                                                <input type="text" name="recipient" value="<?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?>" hidden>
+                                            </div>
+                                            <div class="payment__status">
+                                                <h4 class="title">Status: pending</h4>
+                                                <button name="payment">make payment</button>
+                                            </div>
+                                        </form>
+                                        <form class="payment__details disabled" action="../php/payments.inc.php" method="POST">
+                                            <div>
+                                                <h4 class="title">Sixth Due Payment</h4>
+                                                <input type="number" name="amount">
+                                                <input type="text" name="id" value="<?=$_GET["applicant_id"]?>" hidden>
+                                                <input type="text" name="duedate" value="sixth" hidden>
+                                                <input type="text" name="recipient" value="<?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?>" hidden>
+                                            </div>
+                                            <div class="payment__status">
+                                                <h4 class="title">Status: pending</h4>
+                                                <button name="payment">make payment</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            <?php
+                        }else if($applicant["first_due_date_status"] != "paid"){
+                            ?>
+                                <div class="payment">
+                                    <div class="payment__card">
+                                        <header>
+                                            <h2 class="h3">Payment Plan</h2>
+                                            <i class="fas fa-times closeForm"></i>
+                                        </header>
+                                        <form action="../php/payments.inc.php" method="POST" class="payment__details">
+                                            <div>
+                                                <h4 class="title">First Due Payment</h4>
+                                                <input type="number" name="amount">
+                                                <input type="text" name="id" value="<?=$_GET["applicant_id"]?>" hidden>
+                                                <input type="text" name="duedate" value="first" hidden>
+                                                <input type="text" name="recipient" value="<?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?>" hidden>
+                                            </div>
+                                            <div class="payment__status">
+                                                <h4 class="title">Status: pending</h4>
+                                                <button name="payment">make payment</button>
+                                            </div>
+                                        </form>
+                                        <form class="payment__details disabled" action="../php/payments.inc.php" method="POST">
+                                            <div>
+                                                <h4 class="title">Second Due Payment</h4>
+                                                <input type="number" name="amount">
+                                                <input type="text" name="id" value="<?=$_GET["applicant_id"]?>" hidden>
+                                                <input type="text" name="duedate" value="second" hidden>
+                                                <input type="text" name="recipient" value="<?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?>" hidden>
+                                            </div>
+                                            <div class="payment__status">
+                                                <h4 class="title">Status: pending</h4>
+                                                <button name="payment">make payment</button>
+                                            </div>
+                                        </form>
+                                        <form action="../php/payments.inc.php" method="POST" class="payment__details disabled">
+                                            <div>
+                                                <h4 class="title">Third Due Payment</h4>
+                                                <input type="number" name="amount">
+                                                <input type="text" name="id" value="<?=$_GET["applicant_id"]?>" hidden>
+                                                <input type="text" name="duedate" value="third" hidden>
+                                                <input type="text" name="recipient" value="<?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?>" hidden>
+                                            </div>
+                                            <div class="payment__status">
+                                                <h4 class="title">Status: pending</h4>
+                                                <button name="payment">make payment</button>
+                                            </div>
+                                        </form>
+                                        <form class="payment__details disabled" action="../php/payments.inc.php" method="POST">
+                                            <div>
+                                                <h4 class="title">Fourth Due Payment</h4>
+                                                <input type="number" name="amount">
+                                                <input type="text" name="id" value="<?=$_GET["applicant_id"]?>" hidden>
+                                                <input type="text" name="duedate" value="fourth" hidden>
+                                                <input type="text" name="recipient" value="<?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?>" hidden>
+                                            </div>
+                                            <div class="payment__status">
+                                                <h4 class="title">Status: pending</h4>
+                                                <button name="payment">make payment</button>
+                                            </div>
+                                        </form>
+                                        <form action="../php/payments.inc.php" method="POST" class="payment__details disabled">
+                                            <div>
+                                                <h4 class="title">Fifth Due Payment</h4>
+                                                <input type="number" name="amount">
+                                                <input type="text" name="id" value="<?=$_GET["applicant_id"]?>" hidden>
+                                                <input type="text" name="duedate" value="fifth" hidden>
+                                                <input type="text" name="recipient" value="<?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?>" hidden>
+                                            </div>
+                                            <div class="payment__status">
+                                                <h4 class="title">Status: pending</h4>
+                                                <button name="payment">make payment</button>
+                                            </div>
+                                        </form>
+                                        <form class="payment__details disabled" action="../php/payments.inc.php" method="POST">
+                                            <div>
+                                                <h4 class="title">Sixth Due Payment</h4>
+                                                <input type="number" name="amount">
+                                                <input type="text" name="id" value="<?=$_GET["applicant_id"]?>" hidden>
+                                                <input type="text" name="duedate" value="sixth" hidden>
+                                                <input type="text" name="recipient" value="<?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?>" hidden>
+                                            </div>
+                                            <div class="payment__status">
+                                                <h4 class="title">Status: pending</h4>
+                                                <button name="payment">make payment</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            <?php
+                        }
+                        
+                ?>
+                <?php
+                    }
+                ?>
+                
             </div>
         </div>
     </div>

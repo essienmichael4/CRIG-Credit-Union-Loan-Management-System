@@ -1233,12 +1233,26 @@ body {
   cursor: pointer;
 }
 .main .payment__card .payment__details {
-  background-color: #ebebeb;
+  background-color: #fff;
   padding: 0.5rem;
   border-radius: 8px;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
   display: flex;
   justify-content: space-between;
+}
+.main .payment__card .payment__details.disabled {
+  background-color: #ebebeb;
+}
+.main .payment__card .payment__details.disabled input {
+  outline: none;
+  border: 1px solid rgba(238, 187, 238, 0.7333333333);
+  border-radius: 3px;
+  background-color: transparent;
+  pointer-events: none;
+}
+.main .payment__card .payment__details.disabled .payment__status button {
+  background-color: rgba(238, 187, 238, 0.7333333333);
+  pointer-events: none;
 }
 .main .payment__card .payment__details .title {
   margin-bottom: 0.7rem;
