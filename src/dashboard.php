@@ -21,17 +21,17 @@
                 <section class="cards flex">
                     <div class="cards__card flex-c">
                         <span><i class="icon icon--first fas fa-arrow-down"></i></span>
-                        <p class="all_loans_total">GH¢ 1,000,000,000.00</p>
+                        <p class="all_loans_total"></p>
                         <h2 class="">All loans</h2>
                     </div>
                     <div class="cards__card flex-c">
                         <span><i class="icon icon--second fas fa-arrow-down"></i></span>
-                        <p class="paid_loans">GH¢ 1,000,000.00</p>
+                        <p class="paid_loans"></p>
                         <h2 class="">All paid loans</h2>
                     </div>
                     <div class="cards__card flex-c">
                         <span><i class="icon icon--third fas fa-arrow-down"></i></span>
-                        <p class="arrears">GH¢ 1,000.00</p>
+                        <p class="arrears"></p>
                         <h2 class="">All unpaid loans</h2>
                     </div>
                     <div class="cards__card flex-c">
@@ -61,3 +61,6 @@
     <script src="../js/unapproved.js"></script>
     <script src="../js/grantloans.js"></script>
     <script src="../js/getlimitedloans.js"></script>
+    <script src="../js/getallarrears.js"></script>
+    <script src="../js/getallloantotal.js"></script>
+    <script src="../js/getallpaidloans.js"></script>

@@ -9,7 +9,7 @@ setInterval(()=>{
                 let data = xhr.response;
 
                 // console.log(data)
-                all_loans__total.textContent = `GH¢ ${data}`;
+                all_loans_total.textContent = `GH¢ ${data}`;
             }
         }
     }

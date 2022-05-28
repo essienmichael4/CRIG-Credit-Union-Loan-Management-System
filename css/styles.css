@@ -383,7 +383,7 @@ body {
   margin: 0 auto;
   background-color: #4d4a4a;
   border-radius: 5px;
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
 }
 .main__header h2 {
   font-weight: 400;
@@ -526,7 +526,7 @@ body {
   margin-bottom: 0.3rem;
   position: relative;
   padding: 1rem 1rem 1rem 1rem;
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
 }
 .main .cards__card:nth-of-type(1) {
   background-color: #4d4a4a;
@@ -773,7 +773,7 @@ body {
   border-radius: 5px;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
 }
 .main .filter button {
   padding: 0.7rem 3rem;

@@ -235,17 +235,19 @@ times.forEach(time =>{
         }else if(timefilter == "month"){
             // months search
             timefilter = "month";
+            let firstmonthday;
+            let secondmonthday;
             let firstmonth= document.querySelector(".monthInput1");
             let secondmonth= document.querySelector(".monthInput2");
 
             firstmonth.addEventListener("input",()=>{
-                firstmonth = firstmonth.value; 
+                firstmonthday = firstmonth.value; 
                 let day2 = secondmonth.value;
                 if(secondmonth.value == ""){
                     day2 = firstmonth;
                 }
                 
-                let params = "startday="+firstmonth+"&endday="+day2+"&loanrequest="+loanfilter;
+                let params = "startmonth="+firstmonthday+"&endmonth="+day2+"&loanrequest="+loanfilter;
 
                 let xhr = new XMLHttpRequest();
                 xhr.open("POST", "../php/getallmonthloans.inc.php");
@@ -261,13 +263,13 @@ times.forEach(time =>{
                 xhr.send(params)
             })
             secondmonth.addEventListener("input",()=>{
-                secondmonth = secondmonth.value;
+                secondmonthday = secondmonth.value;
                 let day1 = firstmonth.value;
                 if(firstmonth.value == ""){
-                    day1 = secondmonth;
+                    day1 = secondmonthday;
                 }
 
-                let params = "startday="+day1+"&endday="+secondmonth+"&loanrequest="+loanfilter;
+                let params = "startmonth="+day1+"&endmonth="+secondmonthday+"&loanrequest="+loanfilter;
 
                 let xhr = new XMLHttpRequest();
                 xhr.open("POST", "../php/getallmonthloans.inc.php");
