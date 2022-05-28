@@ -255,10 +255,11 @@ body {
 .sidebar__nav .nav__list .list__item .item__link {
   display: block;
   width: 100%;
-  padding-left: 1rem;
   color: #4d4a4a;
   text-transform: uppercase;
   position: relative;
+  padding: 0.7rem 0 0.7rem 1rem;
+  cursor: pointer;
 }
 .sidebar__nav .nav__list .list__item .item__link:hover {
   background-color: #4d4a4a;
@@ -267,6 +268,9 @@ body {
 .sidebar__nav .nav__list .list__item .item__link.active {
   color: #ebebeb;
   background-image: linear-gradient(to right, #4d4a4a, #4d4a4a, #4d4a4a, rgba(77, 74, 74, 0.4039215686), white);
+}
+.sidebar__nav .nav__list .list__item .item__link.active i.arrow {
+  color: #4d4a4a;
 }
 .sidebar__nav .nav__list .list__item .item__link.active::before {
   content: "";
@@ -279,6 +283,43 @@ body {
 }
 .sidebar__nav .nav__list .list__item .item__link i {
   margin-right: 1rem;
+}
+.sidebar__nav .nav__list .list__item .item__link i.arrow {
+  margin-left: 95px;
+  color: #4d4a4a;
+}
+.sidebar__nav .nav__list .list__item .item__link ol {
+  display: none;
+  margin-top: 1rem;
+  margin-left: 1rem;
+}
+.sidebar__nav .nav__list .list__item .item__link ol.hide {
+  display: flex;
+  flex-direction: column;
+}
+.sidebar__nav .nav__list .list__item .item__link ol li {
+  padding-right: 1rem;
+}
+.sidebar__nav .nav__list .list__item .item__link ol li a {
+  display: block;
+  font-size: 0.7rem;
+  padding: 0.6rem 0 0.6rem 0.6rem;
+  color: #4d4a4a;
+  margin-bottom: 0.2rem;
+  border-radius: 5px;
+  background-color: #ebebeb;
+}
+.sidebar__nav .nav__list .list__item .item__link ol li a:hover {
+  color: #4d4a4a;
+  background-color: #ebebeb;
+  opacity: 0.7;
+}
+.sidebar__nav .nav__list .list__item .item__link ol li a.active {
+  background-color: #1c64ff;
+  background-image: none;
+}
+.sidebar__nav .nav__list .list__item .item__link ol li a.active::before {
+  width: 0;
 }
 .sidebar__footer {
   align-items: center;

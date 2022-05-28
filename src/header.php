@@ -18,40 +18,151 @@
             </header>
             <nav class="sidebar__nav nav">
                 <ul class="nav__list">
-                <?php
+                    <?php
                         if($_GET['pgname']=="dashboard" || !$_GET['pgname']){
                             echo '<li class="list__item"><a href="?pgname=dashboard" class="item__link active py1"><span><i class="fas fa-home"></i> Dashboard</span></a></li>';
                         }else{
                             echo '<li class="list__item"><a href="?pgname=dashboard" class="item__link py1"><span><i class="fas fa-home"></i> Dashboard</span></a></li>';
                         }
+                    ?>
 
-                        if($_GET['pgname']=="loans" || $_GET['pgname']=="loandetails"){
-                            echo '<li class="list__item "><a href="?pgname=loans" class="item__link active py1"><span><i class="fas fa-piggy-bank"></i> loans</span></a></li>';
-                        }else{
-                            echo '<li class="list__item "><a href="?pgname=loans" class="item__link py1"><span><i class="fas fa-piggy-bank"></i> loans</span></a></li>';
-                        }
+                    <?php
+                        if($_GET['pgname']=="savings" || $_GET['pgname']=="savingsdetails" || $_GET['pgname']=="applysavings"){
+                    ?>
+                        <li class="list__item ">
+                            <div class="item__link active saving_sub py1">
+                                <span>
+                                    <i class="fas fa-home"></i> 
+                                    Savings
+                                    <i class="fas fa-angle-down arrow"></i> 
+                                </span>
+                                <ol class="saving_sub_menus hide">
+                                    
+                                        <?php
+                                            if($_GET['pgname']=="savings" || $_GET['pgname']=="savingsdetails"){
+                                                echo '<li>
+                                                <a href="?pgname=savings" class=" active py1"><span><i class="fas fa-piggy-bank"></i> savings</span></a></li>';
+                                            }else{
+                                                echo '<li>
+                                                <a href="?pgname=savings" class=" py1"><span><i class="fas fa-piggy-bank"></i> savings</span></a></li>';
+                                            }
 
-                        if($_GET['pgname']=="apply"){
-                            echo '<li class="list__item "><a href="?pgname=apply" class="item__link active py1"><span><i class="fas fa-fill"></i> loan Application</span></a></li>';
+                                        ?>
+                                    
+                                    
+                                        <?php
+                                            if($_GET['pgname']=="applysavings"){
+                                                echo '<li>
+                                                <a href="?pgname=applysavings" class="active py1"><span><i class="fas fa-fill"></i> savings Application</span></a></li>';
+                                            }else{
+                                                echo '<li>
+                                                <a href="?pgname=applysavings" class="py1"><span><i class="fas fa-fill"></i> savings Application</span></a></li>';
+                                            }
+                                        ?>
+                                       
+                                </ol>
+                            </div>
+                        </li>
+                    <?php
                         }else{
-                            echo '<li class="list__item "><a href="?pgname=apply" class="item__link py1"><span><i class="fas fa-fill"></i> loan Application</span></li>';
+                    
+                        echo '<li class="list__item ">
+                            <div class="item__link saving_sub py1">
+                                <span>
+                                    <i class="fas fa-home"></i> 
+                                    savings
+                                    <i class="fas fa-angle-down arrow"></i> 
+                                </span>
+                                <ol class="saving_sub_menus">
+                                    <li>
+                                        <a href="?pgname=savings" class="py1"><span><i class="fas fa-piggy-bank"></i> savings</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="?pgname=applysavings" class="py1"><span><i class="fas fa-fill"></i> savings Application</span></a>
+                                    </li>   
+                                </ol>
+                            </div>
+                        </li>';
+                    
                         }
+                    ?>
+
+                    <?php
+                        if($_GET['pgname']=="loans" || $_GET['pgname']=="loandetails" || $_GET['pgname']=="apply"){
+                    ?>
+                        <li class="list__item ">
+                            <div class="item__link active loan_sub py1">
+                                <span>
+                                    <i class="fas fa-home"></i> 
+                                    loans
+                                    <i class="fas fa-angle-down arrow"></i> 
+                                </span>
+                                <ol class="loan_sub_menus hide">
+                                    
+                                        <?php
+                                            if($_GET['pgname']=="loans" || $_GET['pgname']=="loandetails"){
+                                                echo '<li>
+                                                <a href="?pgname=loans" class=" active py1"><span><i class="fas fa-piggy-bank"></i> loans</span></a></li>';
+                                            }else{
+                                                echo '<li>
+                                                <a href="?pgname=loans" class=" py1"><span><i class="fas fa-piggy-bank"></i> loans</span></a></li>';
+                                            }
+
+                                        ?>
+                                    
+                                    
+                                        <?php
+                                            if($_GET['pgname']=="apply"){
+                                                echo '<li>
+                                                <a href="?pgname=apply" class="active py1"><span><i class="fas fa-fill"></i> loan Application</span></a></li>';
+                                            }else{
+                                                echo '<li>
+                                                <a href="?pgname=apply" class="py1"><span><i class="fas fa-fill"></i> loan Application</span></a></li>';
+                                            }
+                                        ?>
+                                       
+                                </ol>
+                            </div>
+                        </li>
+                    <?php
+                        }else{
+                    
+                        echo '<li class="list__item ">
+                            <div class="item__link loan_sub py1">
+                                <span>
+                                    <i class="fas fa-home"></i> 
+                                    loans
+                                    <i class="fas fa-angle-down arrow"></i> 
+                                </span>
+                                <ol class="loan_sub_menus">
+                                    <li>
+                                        <a href="?pgname=loans" class="py1"><span><i class="fas fa-piggy-bank"></i> loans</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="?pgname=apply" class="py1"><span><i class="fas fa-fill"></i> loan Application</span></a>
+                                    </li>   
+                                </ol>
+                            </div>
+                        </li>';
+                    
+                        }
+                    ?>
+
+                    
+
+                    <?php
 
                         if($_GET['pgname']=="users"|| $_GET['pgname']=="useredit"){
                             echo '<li class="list__item "><a href="?pgname=users" class="item__link active py1"><span><i class="fas fa-users"></i> users</span></a></li>';
                         }else{
                             echo '<li class="list__item "><a href="?pgname=users" class="item__link py1"><span><i class="fas fa-users"></i> users</span></a></li>';
                         }
-                ?>
-                    <!-- <li class="list__item "><a href="./index.html" class="item__link active py1"><span><i class="fas fa-home"></i> Dashboard</span></a></li>                     -->
-                    <!-- <li class="list__item "><a href="./loans.html" class="item__link py1"><span><i class="fas fa-home"></i> loans</span></a></li>                    
-                    <li class="list__item "><a href="./apply.html" class="item__link py1"><span><i class="fas fa-home"></i> loan Application</span></a></li>                    
-                    <li class="list__item "><a href="./users.html" class="item__link py1"><span><i class="fas fa-home"></i> users</span></a></li>                    
-                    <li class="list__item "><a href="" class="item__link py1"><span><i class="fas fa-home"></i> home</span></a></li>                     -->
+                    ?>
+                    
                 </ul>
             </nav>
             <footer class="sidebar__footer flex-c">
-                <h3 class=".p">created by Michael Essein</h3>
+                <h3 class=".p">created by Michael Essien</h3>
                 <p>copyrights &copy; 2022</p> 
                 <p>all rights reserved</p>
             </footer>

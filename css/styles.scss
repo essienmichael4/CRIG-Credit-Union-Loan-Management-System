@@ -261,11 +261,11 @@ body{
                 .item__link{
                     display: block;
                     width: 100%;
-                    // background-color: white;
-                    padding-left: 1rem;
                     color: #4d4a4a;
                     text-transform: uppercase;
                     position: relative;
+                    padding: .7rem 0 .7rem 1rem;
+                    cursor: pointer;
 
                     &:hover{
                         background-color: #4d4a4a;
@@ -274,8 +274,11 @@ body{
                     
                     &.active{
                         color: #ebebeb;
-                        // background-color: #4d4a4a;
                         background-image: linear-gradient(to right,#4d4a4a,#4d4a4a ,#4d4a4a ,#4d4a4a67, white);
+                        
+                        i.arrow{
+                            color: #4d4a4a;
+                        }
                     }
 
                     &.active::before{
@@ -290,6 +293,50 @@ body{
 
                     i{
                         margin-right: 1rem;
+                    }
+
+                    i.arrow{
+                        margin-left: 95px;
+                        color: #4d4a4a;
+                    }
+
+                    ol{
+                        display: none;
+                        margin-top: 1rem;
+                        margin-left: 1rem;
+
+                        &.hide{
+                            display: flex;
+                            flex-direction: column;
+                        }
+
+                        li{
+                            padding-right: 1rem;
+                            a{
+                                display: block;
+                                font-size: .7rem;
+                                padding: .6rem 0 .6rem .6rem;
+                                color: #4d4a4a;
+                                margin-bottom: .2rem;
+                                border-radius: 5px;
+                                background-color: #ebebeb;
+                                
+                                &:hover{
+                                    color: #4d4a4a;
+                                    background-color: #ebebeb;
+                                    opacity: .7;
+                                }
+
+                                &.active{
+                                    background-color: #1c64ff;
+                                    background-image: none;
+
+                                    &::before{
+                                        width: 0;
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
                 
@@ -1304,9 +1351,9 @@ body{
                 border: 1px solid #4d4a4a;
                 border-radius: 3px;
 
-                &:focus, &:hover{
-                    // border: 1px solid $secondarylight;
-                }
+                // &:focus, &:hover{
+                //     // border: 1px solid $secondarylight;
+                // }
             }
 
             .box{
