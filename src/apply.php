@@ -261,19 +261,19 @@
                         <div class="form__group">
                             <div class="formControl flex-c">
                                 <label for="">First Due Date</label>
-                                <input type="date" name="first_due_approved">
+                                <input type="date" name="first_due_approved" class="currentStartDay">
                             </div>
                             <div class="formControl flex-c">
                                 <label for="">second Due Date</label>
-                                <input type="date" name="second_due_approved">
+                                <input type="date" name="second_due_approved" class="secondduemonth">
                             </div>
                             <div class="formControl flex-c">
                                 <label for="">third Due Date</label>
-                                <input type="date" name="third_due_approved">
+                                <input type="date" name="third_due_approved" class="thirdduemonth">
                             </div>
                             <div class="formControl flex-c">
                                 <label for="">Fourth Due Date</label>
-                                <input type="date" name="fourth_due_approved">
+                                <input type="date" name="fourth_due_approved" class="fourthduemonth">
                             </div>
                             <div class="formControl flex-c">
                                 <label for="">Fifth Due Date</label>
@@ -533,25 +533,28 @@
                         <div class="form__group">
                             <div class="formControl flex-c">
                                 <label for="">First Due Date</label>
-                                <input type="date" name="first_due_approved">
+                                <input type="date" name="first_due_approved" class="currentStartDay">
                             </div>
                             <div class="formControl flex-c">
                                 <label for="">second Due Date</label>
-                                <input type="date" name="second_due_approved">
+                                <input type="date" name="second_due_approved" class="secondduemonth">
                             </div>
                             <div class="formControl flex-c">
                                 <label for="">third Due Date</label>
-                                <input type="date" name="third_due_approved">
+                                <input type="date" name="third_due_approved" class="thirdduemonth">
                             </div>
                             <div class="formControl flex-c">
                                 <label for="">Fourth Due Date</label>
-                                <input type="date" name="fourth_due_approved">
+                                <input type="date" name="fourth_due_approved" class="fourthduemonth">
                             </div>
-                            <div class="formControl flex-c">
+                            <div>
+                                <a class="btn extension">Extension</a>
+                            </div>
+                            <div class="formControl flex-c hidefirst hiddenone">
                                 <label for="">Fifth Due Date</label>
                                 <input type="date" name="fifth_due_approved">
                             </div>
-                            <div class="formControl flex-c">
+                            <div class="formControl flex-c hidesec hiddentwo">
                                 <label for="">sixth Due Date</label>
                                 <input type="date" name="sixth_due_approved">
                             </div>
@@ -591,3 +594,4 @@
     }
 ?>
 <script src="../js/interest.js"></script>
+<script src="../js/calcdays.js"></script>

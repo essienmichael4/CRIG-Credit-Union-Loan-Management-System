@@ -1086,7 +1086,28 @@ body{
                     grid-template-columns: repeat(3, 1fr);
                 }
             }
+
+            div{
+                .btn{
+                    width: 50%;
+                    padding: .4rem 1rem;
+                    background-color: #4d4a4a;
+                    font-size: .7rem;
+                    box-shadow: none;
+
+                    &:hover{
+                        top: 0;
+                        box-shadow: none;
+                        opacity: .8;
+                    }
+
+
+                }
+            }
             
+            .hiddenone,.hiddentwo{
+                display: none;
+            }
 
             .formControl{
 
@@ -1142,6 +1163,8 @@ body{
                     // justify-content: space-between;
                     align-items: center;
                     width: 100%;
+
+                    
 
                     span{
                         margin-right: 10px;

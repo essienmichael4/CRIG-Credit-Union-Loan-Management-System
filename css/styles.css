@@ -953,6 +953,21 @@ body {
 .main .apply .form__group.less {
   grid-template-columns: repeat(3, 1fr);
 }
+.main .apply .form div .btn {
+  width: 50%;
+  padding: 0.4rem 1rem;
+  background-color: #4d4a4a;
+  font-size: 0.7rem;
+  box-shadow: none;
+}
+.main .apply .form div .btn:hover {
+  top: 0;
+  box-shadow: none;
+  opacity: 0.8;
+}
+.main .apply .form .hiddenone, .main .apply .form .hiddentwo {
+  display: none;
+}
 .main .apply .form .formControl label {
   margin-bottom: 0.5rem;
   font-size: 0.75rem;
