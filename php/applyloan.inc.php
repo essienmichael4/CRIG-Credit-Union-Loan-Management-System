@@ -71,20 +71,14 @@
                     $fullname = $firstname. " " .$lastname;
                     $fullnamerev = $lastname. " " .$firstname;
                     $sql = "SELECT * FROM `applicant` WHERE `first_name` = '{$firstname}' 
-                    and `last_name` = '{$lastname}' and `first_due_date_status` != 'paid' or 
-                    `second_due_date_status` != 'paid' or `third_due_date_status` != 'paid' or
-                    `fourth_due_date_status` != 'paid' or `fifth_due_date_status` != 'paid' or
-                    `sixth_due_date_status` != 'paid'";
+                    and `last_name` = '{$lastname}' and `loan_status` != 'paid'";
                 }else{
                     $fullname = $firstname. " " .$lastname." ".$othernames;
                     $fullnamerev = $lastname. " " .$firstname." ".$othernames;
                     $partialname = $firstname. " " .$lastname;
                     $sql = "SELECT * FROM `applicant` WHERE `first_name` = '{$firstname}' 
                     and `last_name` = '{$lastname}' and `other_name` = '{$othernames}'
-                    and `first_due_date_status` != 'paid' or 
-                    `second_due_date_status` != 'paid' or `third_due_date_status` != 'paid' or
-                    `fourth_due_date_status` != 'paid' or `fifth_due_date_status` != 'paid' or
-                    `sixth_due_date_status` != 'paid'";
+                    and `loan_status` != 'paid'";
                 }
                 $result = mysqli_query($conn, $sql);
                 if(mysqli_num_rows($result)>0){
@@ -93,10 +87,7 @@
                     $sql = "SELECT * FROM `applicant` WHERE `guarantor_fullname_first` = '{$first_guarantor_name}' 
                     or `guarantor_fullname_second` = '{$first_guarantor_name}' or `guarantor_fullname_third` = '{$first_guarantor_name}'
                     or `guarantor_fullname_fourth` = '{$first_guarantor_name}' 
-                    and `first_due_date_status` != 'paid' or 
-                    `second_due_date_status` != 'paid' or `third_due_date_status` != 'paid' or
-                    `fourth_due_date_status` != 'paid' or `fifth_due_date_status` != 'paid' or
-                    `sixth_due_date_status` != 'paid'";
+                    and `loan_status` != 'paid'";
                     
                     $result = mysqli_query($conn, $sql);
                     if(mysqli_num_rows($result)>0){
@@ -105,10 +96,7 @@
                         $sql = "SELECT * FROM `applicant` WHERE `guarantor_fullname_first` = '{$second_guarantor_name}' 
                         or `guarantor_fullname_second` = '{$second_guarantor_name}' or `guarantor_fullname_third` = '{$second_guarantor_name}'
                         or `guarantor_fullname_fourth` = '{$second_guarantor_name}' 
-                        and `first_due_date_status` != 'paid' or 
-                        `second_due_date_status` != 'paid' or `third_due_date_status` != 'paid' or
-                        `fourth_due_date_status` != 'paid' or `fifth_due_date_status` != 'paid' or
-                        `sixth_due_date_status` != 'paid'";
+                        and `loan_status` != 'paid'";
                         
                         $result = mysqli_query($conn, $sql);
                         if(mysqli_num_rows($result)>0){
@@ -117,10 +105,7 @@
                             $sql = "SELECT * FROM `applicant` WHERE `guarantor_fullname_first` = '{$third_guarantor_name}' 
                             or `guarantor_fullname_second` = '{$third_guarantor_name}' or `guarantor_fullname_third` = '{$third_guarantor_name}'
                             or `guarantor_fullname_fourth` = '{$third_guarantor_name}' 
-                            and `first_due_date_status` != 'paid' or 
-                            `second_due_date_status` != 'paid' or `third_due_date_status` != 'paid' or
-                            `fourth_due_date_status` != 'paid' or `fifth_due_date_status` != 'paid' or
-                            `sixth_due_date_status` != 'paid'";
+                            and `loan_status` != 'paid'";
                             
                             $result = mysqli_query($conn, $sql);
                             if(mysqli_num_rows($result)>0){
@@ -129,10 +114,7 @@
                                 $sql = "SELECT * FROM `applicant` WHERE `guarantor_fullname_first` = '{$fourth_guarantor_name}' 
                                 or `guarantor_fullname_second` = '{$fourth_guarantor_name}' or `guarantor_fullname_third` = '{$fourth_guarantor_name}'
                                 or `guarantor_fullname_fourth` = '{$fourth_guarantor_name}' 
-                                and `first_due_date_status` != 'paid' or 
-                                `second_due_date_status` != 'paid' or `third_due_date_status` != 'paid' or
-                                `fourth_due_date_status` != 'paid' or `fifth_due_date_status` != 'paid' or
-                                `sixth_due_date_status` != 'paid'";
+                                and `loan_status` != 'paid'";
                                 
                                 $result = mysqli_query($conn, $sql);
                                 if(mysqli_num_rows($result)>0){
@@ -142,10 +124,7 @@
                                         $sql = "SELECT * FROM `applicant` WHERE `guarantor_fullname_first` = '{$partialname}' 
                                         or `guarantor_fullname_second` = '{$partialname}' or `guarantor_fullname_third` = '{$partialname}'
                                         or `guarantor_fullname_fourth` = '{$partialname}' 
-                                        and `first_due_date_status` != 'paid' or 
-                                        `second_due_date_status` != 'paid' or `third_due_date_status` != 'paid' or
-                                        `fourth_due_date_status` != 'paid' or `fifth_due_date_status` != 'paid' or
-                                        `sixth_due_date_status` != 'paid'";
+                                        and `loan_status` != 'paid'";
                                     }
                                     
                                     $result = mysqli_query($conn, $sql);
@@ -159,10 +138,7 @@
                                     or `guarantor_fullname_fourth` = '{$fullname}' or `guarantor_fullname_first` = '{$fullnamerev}' 
                                     or `guarantor_fullname_second` = '{$fullnamerev}' or `guarantor_fullname_third` = '{$fullnamerev}'
                                     or `guarantor_fullname_fourth` = '{$fullnamerev}' 
-                                    and `first_due_date_status` != 'paid' or 
-                                    `second_due_date_status` != 'paid' or `third_due_date_status` != 'paid' or
-                                    `fourth_due_date_status` != 'paid' or `fifth_due_date_status` != 'paid' or
-                                    `sixth_due_date_status` != 'paid'";
+                                    and `loan_status` != 'paid'";
 
                                     $result = mysqli_query($conn, $sql);
                                     if(mysqli_num_rows($result)>0){
@@ -265,9 +241,7 @@
         || emptyField($second_guarantor_guaranteed_amount)|| emptyField($third_guarantor_name) || emptyField($third_guarantor_phone_number) || emptyField($third_guarantor_staff_number)
         || emptyField($third_guarantor_guaranteed_amount)|| emptyField($fourth_guarantor_name) || emptyField($fourth_guarantor_phone_number) || emptyField($fourth_guarantor_staff_number)
         || emptyField($fourth_guarantor_guaranteed_amount) || emptyField($first_due_approved)
-        || emptyField($second_due_approved) || emptyField($third_due_approved) || emptyField($fourth_due_approved)
-        || emptyField($fifth_due_approved) || emptyField($sixth_due_approved)
-        ){
+        || emptyField($second_due_approved) || emptyField($third_due_approved) || emptyField($fourth_due_approved)){
 
             header("location: ../src/routes.php?pgname=apply&error=emptyInput"); 
 
@@ -285,20 +259,14 @@
                     $fullname = $firstname. " " .$lastname;
                     $fullnamerev = $lastname. " " .$firstname;
                     $sql = "SELECT * FROM `applicant` WHERE `first_name` = '{$firstname}' 
-                    and `last_name` = '{$lastname}' and `first_due_date_status` != 'paid' or 
-                    `second_due_date_status` != 'paid' or `third_due_date_status` != 'paid' or
-                    `fourth_due_date_status` != 'paid' or `fifth_due_date_status` != 'paid' or
-                    `sixth_due_date_status` != 'paid'";
+                    and `last_name` = '{$lastname}' and `loan_status` != 'paid'";
                 }else{
                     $fullname = $firstname. " " .$lastname." ".$othernames;
                     $fullnamerev = $lastname. " " .$firstname." ".$othernames;
                     $partialname = $firstname. " " .$lastname;
                     $sql = "SELECT * FROM `applicant` WHERE `first_name` = '{$firstname}' 
                     and `last_name` = '{$lastname}' and `other_name` = '{$othernames}'
-                    and `first_due_date_status` != 'paid' or 
-                    `second_due_date_status` != 'paid' or `third_due_date_status` != 'paid' or
-                    `fourth_due_date_status` != 'paid' or `fifth_due_date_status` != 'paid' or
-                    `sixth_due_date_status` != 'paid'";
+                    and `loan_status` != 'paid'";
                 }
                 $result = mysqli_query($conn, $sql);
                 if(mysqli_num_rows($result)>0){
@@ -307,10 +275,7 @@
                     $sql = "SELECT * FROM `applicant` WHERE `guarantor_fullname_first` = '{$first_guarantor_name}' 
                     or `guarantor_fullname_second` = '{$first_guarantor_name}' or `guarantor_fullname_third` = '{$first_guarantor_name}'
                     or `guarantor_fullname_fourth` = '{$first_guarantor_name}' 
-                    and `first_due_date_status` != 'paid' or 
-                    `second_due_date_status` != 'paid' or `third_due_date_status` != 'paid' or
-                    `fourth_due_date_status` != 'paid' or `fifth_due_date_status` != 'paid' or
-                    `sixth_due_date_status` != 'paid'";
+                    and `loan_status` != 'paid'";
                     
                     $result = mysqli_query($conn, $sql);
                     if(mysqli_num_rows($result)>0){
@@ -319,10 +284,7 @@
                         $sql = "SELECT * FROM `applicant` WHERE `guarantor_fullname_first` = '{$second_guarantor_name}' 
                         or `guarantor_fullname_second` = '{$second_guarantor_name}' or `guarantor_fullname_third` = '{$second_guarantor_name}'
                         or `guarantor_fullname_fourth` = '{$second_guarantor_name}' 
-                        and `first_due_date_status` != 'paid' or 
-                        `second_due_date_status` != 'paid' or `third_due_date_status` != 'paid' or
-                        `fourth_due_date_status` != 'paid' or `fifth_due_date_status` != 'paid' or
-                        `sixth_due_date_status` != 'paid'";
+                        and `loan_status` != 'paid'";
                         
                         $result = mysqli_query($conn, $sql);
                         if(mysqli_num_rows($result)>0){
@@ -331,10 +293,7 @@
                             $sql = "SELECT * FROM `applicant` WHERE `guarantor_fullname_first` = '{$third_guarantor_name}' 
                             or `guarantor_fullname_second` = '{$third_guarantor_name}' or `guarantor_fullname_third` = '{$third_guarantor_name}'
                             or `guarantor_fullname_fourth` = '{$third_guarantor_name}' 
-                            and `first_due_date_status` != 'paid' or 
-                            `second_due_date_status` != 'paid' or `third_due_date_status` != 'paid' or
-                            `fourth_due_date_status` != 'paid' or `fifth_due_date_status` != 'paid' or
-                            `sixth_due_date_status` != 'paid'";
+                            and `loan_status` != 'paid'";
                             
                             $result = mysqli_query($conn, $sql);
                             if(mysqli_num_rows($result)>0){
@@ -343,10 +302,7 @@
                                 $sql = "SELECT * FROM `applicant` WHERE `guarantor_fullname_first` = '{$fourth_guarantor_name}' 
                                 or `guarantor_fullname_second` = '{$fourth_guarantor_name}' or `guarantor_fullname_third` = '{$fourth_guarantor_name}'
                                 or `guarantor_fullname_fourth` = '{$fourth_guarantor_name}' 
-                                and `first_due_date_status` != 'paid' or 
-                                `second_due_date_status` != 'paid' or `third_due_date_status` != 'paid' or
-                                `fourth_due_date_status` != 'paid' or `fifth_due_date_status` != 'paid' or
-                                `sixth_due_date_status` != 'paid'";
+                                and `loan_status` != 'paid'";
                                 
                                 $result = mysqli_query($conn, $sql);
                                 if(mysqli_num_rows($result)>0){
@@ -356,10 +312,7 @@
                                         $sql = "SELECT * FROM `applicant` WHERE `guarantor_fullname_first` = '{$partialname}' 
                                         or `guarantor_fullname_second` = '{$partialname}' or `guarantor_fullname_third` = '{$partialname}'
                                         or `guarantor_fullname_fourth` = '{$partialname}' 
-                                        and `first_due_date_status` != 'paid' or 
-                                        `second_due_date_status` != 'paid' or `third_due_date_status` != 'paid' or
-                                        `fourth_due_date_status` != 'paid' or `fifth_due_date_status` != 'paid' or
-                                        `sixth_due_date_status` != 'paid'";
+                                        and `loan_status` != 'paid'";
                                     }
                                     
                                     $result = mysqli_query($conn, $sql);
@@ -373,10 +326,7 @@
                                     or `guarantor_fullname_fourth` = '{$fullname}' or `guarantor_fullname_first` = '{$fullnamerev}' 
                                     or `guarantor_fullname_second` = '{$fullnamerev}' or `guarantor_fullname_third` = '{$fullnamerev}'
                                     or `guarantor_fullname_fourth` = '{$fullnamerev}' 
-                                    and `first_due_date_status` != 'paid' or 
-                                    `second_due_date_status` != 'paid' or `third_due_date_status` != 'paid' or
-                                    `fourth_due_date_status` != 'paid' or `fifth_due_date_status` != 'paid' or
-                                    `sixth_due_date_status` != 'paid'";
+                                    and `loan_status` != 'paid'";
 
                                     $result = mysqli_query($conn, $sql);
                                     if(mysqli_num_rows($result)>0){
@@ -438,7 +388,7 @@
         $sixth_due_approved = mysqli_real_escape_string($conn, $_POST["sixth_due_approved"]);
 
         if(emptyField($first_due_approved) || emptyField($second_due_approved) || emptyField($third_due_approved) || 
-        emptyField($fourth_due_approved) || emptyField($fifth_due_approved) || emptyField($sixth_due_approved)){
+        emptyField($fourth_due_approved)){
             header("location: ../src/routes.php?pgname=apply&error=emptyInput"); 
         }else{
 
