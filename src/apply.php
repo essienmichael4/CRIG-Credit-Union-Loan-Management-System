@@ -30,7 +30,7 @@
             <div class="wrapper">
                 <section class="apply">
                     <h3 class="title">Applicant Detials</h3>
-                    <form class="form apply__form" action="../php/applyloan.inc.php" method="POST">
+                    <form class="form apply__form" action="../php/loans/applyloan.inc.php" method="POST">
                         <div class="form__group">
                             <input type="text" name="recipient" value="<?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?>" hidden>
                             <div class="formControl flex-c">
@@ -342,7 +342,7 @@
             <div class="wrapper">
                 <section class="apply">
                     <h3 class="title">Applicant Detials</h3>
-                    <form class="form apply__form" action="../php/applyloan.inc.php" method="POST">
+                    <form class="form apply__form" action="../php/loans/applyloan.inc.php" method="POST">
                         <div class="form__group">
                             <input type="text" name="recipient" value="<?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?>" hidden>
                             <div class="formControl flex-c">

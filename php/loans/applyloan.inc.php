@@ -1,8 +1,8 @@
 <?php
     if(isset($_POST["apply"])){
 
-        include_once("./dbs.inc.php");
-        include_once("./functions.inc.php");
+        include_once("../dbs.inc.php");
+        include_once("../functions.inc.php");
 
         define('LOAN_INTEREST_PERCENTAGE', 0.20);
         define('LOAN_GUARANTEED', 4);
@@ -55,12 +55,12 @@
         || emptyField($third_guarantor_guaranteed_amount)|| emptyField($fourth_guarantor_name) || emptyField($fourth_guarantor_phone_number) || emptyField($fourth_guarantor_staff_number)
         || emptyField($fourth_guarantor_guaranteed_amount)){
 
-            header("location: ../src/routes.php?pgname=apply&error=emptyInput"); 
+            header("location: ../../src/routes.php?pgname=apply&error=emptyInput"); 
 
         }else{
 
             if($membership_status == 'member' && emptyField($membership_code)){
-                header("location: ../src/routes.php?pgname=apply&error=emptyInput"); 
+                header("location: ../../src/routes.php?pgname=apply&error=emptyInput"); 
             }else{
 
                 $fullname = "";
@@ -82,7 +82,7 @@
                 }
                 $result = mysqli_query($conn, $sql);
                 if(mysqli_num_rows($result)>0){
-                    header("location: ../src/routes.php?pgname=apply&error=userhasoutstandingloan"); 
+                    header("location: ../../src/routes.php?pgname=apply&error=userhasoutstandingloan"); 
                 }else{
                     $sql = "SELECT * FROM `applicant` WHERE `guarantor_fullname_first` = '{$first_guarantor_name}' 
                     or `guarantor_fullname_second` = '{$first_guarantor_name}' or `guarantor_fullname_third` = '{$first_guarantor_name}'
@@ -91,7 +91,7 @@
                     
                     $result = mysqli_query($conn, $sql);
                     if(mysqli_num_rows($result)>0){
-                        header("location: ../src/routes.php?pgname=apply&error=firstguarantoroutstanding"); 
+                        header("location: ../../src/routes.php?pgname=apply&error=firstguarantoroutstanding"); 
                     }else{
                         $sql = "SELECT * FROM `applicant` WHERE `guarantor_fullname_first` = '{$second_guarantor_name}' 
                         or `guarantor_fullname_second` = '{$second_guarantor_name}' or `guarantor_fullname_third` = '{$second_guarantor_name}'
@@ -100,7 +100,7 @@
                         
                         $result = mysqli_query($conn, $sql);
                         if(mysqli_num_rows($result)>0){
-                            header("location: ../src/routes.php?pgname=apply&error=secondguarantoroutstanding"); 
+                            header("location: ../../src/routes.php?pgname=apply&error=secondguarantoroutstanding"); 
                         }else{
                             $sql = "SELECT * FROM `applicant` WHERE `guarantor_fullname_first` = '{$third_guarantor_name}' 
                             or `guarantor_fullname_second` = '{$third_guarantor_name}' or `guarantor_fullname_third` = '{$third_guarantor_name}'
@@ -109,7 +109,7 @@
                             
                             $result = mysqli_query($conn, $sql);
                             if(mysqli_num_rows($result)>0){
-                                header("location: ../src/routes.php?pgname=apply&error=thirdguarantoroutstanding"); 
+                                header("location: ../../src/routes.php?pgname=apply&error=thirdguarantoroutstanding"); 
                             }else{
                                 $sql = "SELECT * FROM `applicant` WHERE `guarantor_fullname_first` = '{$fourth_guarantor_name}' 
                                 or `guarantor_fullname_second` = '{$fourth_guarantor_name}' or `guarantor_fullname_third` = '{$fourth_guarantor_name}'
@@ -118,7 +118,7 @@
                                 
                                 $result = mysqli_query($conn, $sql);
                                 if(mysqli_num_rows($result)>0){
-                                    header("location: ../src/routes.php?pgname=apply&error=fourthguarantoroutstanding"); 
+                                    header("location: ../../src/routes.php?pgname=apply&error=fourthguarantoroutstanding"); 
                                 }else{
                                     if($partialname != ""){
                                         $sql = "SELECT * FROM `applicant` WHERE `guarantor_fullname_first` = '{$partialname}' 
@@ -129,7 +129,7 @@
                                     
                                     $result = mysqli_query($conn, $sql);
                                     if(mysqli_num_rows($result)>0){
-                                        header("location: ../src/routes.php?pgname=apply&error=customerguarantoroutstanding"); 
+                                        header("location: ../../src/routes.php?pgname=apply&error=customerguarantoroutstanding"); 
                                         exit();
                                     }
 
@@ -142,7 +142,7 @@
 
                                     $result = mysqli_query($conn, $sql);
                                     if(mysqli_num_rows($result)>0){
-                                        header("location: ../src/routes.php?pgname=apply&error=customerguarantoroutstanding"); 
+                                        header("location: ../../src/routes.php?pgname=apply&error=customerguarantoroutstanding"); 
                                         exit();
                                     }else{
                                         
@@ -165,10 +165,10 @@
                                          '{$recipientname}', '{$customer_due_payment}')";
 
                                          if(mysqli_query($conn, $sql)){
-                                            header("location: ../src/routes.php?pgname=dashboard"); 
+                                            header("location: ../../src/routes.php?pgname=dashboard"); 
                                             exit();
                                          }else{
-                                            header("location: ../src/routes.php?pgname=apply&error=sqlerror"); 
+                                            header("location: ../../src/routes.php?pgname=apply&error=sqlerror"); 
                                             exit();
                                          }
                                     }
@@ -181,8 +181,8 @@
         }
 
     }else if(isset($_POST["approveapply"])){
-        include_once("./dbs.inc.php");
-        include_once("./functions.inc.php");
+        include_once("../dbs.inc.php");
+        include_once("../functions.inc.php");
 
         define('LOAN_INTEREST_PERCENTAGE', 0.20);
         define('LOAN_GUARANTEED', 4);
@@ -243,12 +243,12 @@
         || emptyField($fourth_guarantor_guaranteed_amount) || emptyField($first_due_approved)
         || emptyField($second_due_approved) || emptyField($third_due_approved) || emptyField($fourth_due_approved)){
 
-            header("location: ../src/routes.php?pgname=apply&error=emptyInput"); 
+            header("location: ../../src/routes.php?pgname=apply&error=emptyInput"); 
 
         }else{
 
             if($membership_status == 'member' && emptyField($membership_code)){
-                header("location: ../src/routes.php?pgname=apply&error=emptyInput"); 
+                header("location: ../../src/routes.php?pgname=apply&error=emptyInput"); 
             }else{
 
                 $fullname = "";
@@ -270,7 +270,7 @@
                 }
                 $result = mysqli_query($conn, $sql);
                 if(mysqli_num_rows($result)>0){
-                    header("location: ../src/routes.php?pgname=apply&error=userhasoutstandingloan"); 
+                    header("location: ../../src/routes.php?pgname=apply&error=userhasoutstandingloan"); 
                 }else{
                     $sql = "SELECT * FROM `applicant` WHERE `guarantor_fullname_first` = '{$first_guarantor_name}' 
                     or `guarantor_fullname_second` = '{$first_guarantor_name}' or `guarantor_fullname_third` = '{$first_guarantor_name}'
@@ -279,7 +279,7 @@
                     
                     $result = mysqli_query($conn, $sql);
                     if(mysqli_num_rows($result)>0){
-                        header("location: ../src/routes.php?pgname=apply&error=firstguarantoroutstanding"); 
+                        header("location: ../../src/routes.php?pgname=apply&error=firstguarantoroutstanding"); 
                     }else{
                         $sql = "SELECT * FROM `applicant` WHERE `guarantor_fullname_first` = '{$second_guarantor_name}' 
                         or `guarantor_fullname_second` = '{$second_guarantor_name}' or `guarantor_fullname_third` = '{$second_guarantor_name}'
@@ -288,7 +288,7 @@
                         
                         $result = mysqli_query($conn, $sql);
                         if(mysqli_num_rows($result)>0){
-                            header("location: ../src/routes.php?pgname=apply&error=secondguarantoroutstanding"); 
+                            header("location: ../../src/routes.php?pgname=apply&error=secondguarantoroutstanding"); 
                         }else{
                             $sql = "SELECT * FROM `applicant` WHERE `guarantor_fullname_first` = '{$third_guarantor_name}' 
                             or `guarantor_fullname_second` = '{$third_guarantor_name}' or `guarantor_fullname_third` = '{$third_guarantor_name}'
@@ -297,7 +297,7 @@
                             
                             $result = mysqli_query($conn, $sql);
                             if(mysqli_num_rows($result)>0){
-                                header("location: ../src/routes.php?pgname=apply&error=thirdguarantoroutstanding"); 
+                                header("location: ../../src/routes.php?pgname=apply&error=thirdguarantoroutstanding"); 
                             }else{
                                 $sql = "SELECT * FROM `applicant` WHERE `guarantor_fullname_first` = '{$fourth_guarantor_name}' 
                                 or `guarantor_fullname_second` = '{$fourth_guarantor_name}' or `guarantor_fullname_third` = '{$fourth_guarantor_name}'
@@ -306,7 +306,7 @@
                                 
                                 $result = mysqli_query($conn, $sql);
                                 if(mysqli_num_rows($result)>0){
-                                    header("location: ../src/routes.php?pgname=apply&error=fourthguarantoroutstanding"); 
+                                    header("location: ../../src/routes.php?pgname=apply&error=fourthguarantoroutstanding"); 
                                 }else{
                                     if($partialname != ""){
                                         $sql = "SELECT * FROM `applicant` WHERE `guarantor_fullname_first` = '{$partialname}' 
@@ -317,7 +317,7 @@
                                     
                                     $result = mysqli_query($conn, $sql);
                                     if(mysqli_num_rows($result)>0){
-                                        header("location: ../src/routes.php?pgname=apply&error=customerguarantoroutstanding"); 
+                                        header("location: ../../src/routes.php?pgname=apply&error=customerguarantoroutstanding"); 
                                         exit();
                                     }
 
@@ -330,7 +330,7 @@
 
                                     $result = mysqli_query($conn, $sql);
                                     if(mysqli_num_rows($result)>0){
-                                        header("location: ../src/routes.php?pgname=apply&error=customerguarantoroutstanding"); 
+                                        header("location: ../../src/routes.php?pgname=apply&error=customerguarantoroutstanding"); 
                                         exit();
                                     }else{
                                         $day_approved = date('Y-m-d');
@@ -356,10 +356,10 @@
                                          , '{$fourth_due_approved}', '{$fifth_due_approved}', '{$sixth_due_approved}', '{$recipientname}', '{$day_approved}', '{$approval_status}')";
 
                                          if(mysqli_query($conn, $sql)){
-                                            header("location: ../src/routes.php?pgname=dashboard"); 
+                                            header("location: ../../src/routes.php?pgname=dashboard"); 
                                             exit();
                                          }else{
-                                            header("location: ../src/routes.php?pgname=apply&error=sqlerror"); 
+                                            header("location: ../../src/routes.php?pgname=apply&error=sqlerror"); 
                                             exit();
                                          }
                                     }
@@ -371,8 +371,8 @@
             }
         }
     }else if(isset($_POST["approve"])){
-        include_once("./dbs.inc.php");
-        include_once("./functions.inc.php");
+        include_once("../dbs.inc.php");
+        include_once("../functions.inc.php");
 
         $recipientname = mysqli_real_escape_string($conn, $_POST["recipient"]);
         $day_approved = date('Y-m-d');
@@ -389,7 +389,7 @@
 
         if(emptyField($first_due_approved) || emptyField($second_due_approved) || emptyField($third_due_approved) || 
         emptyField($fourth_due_approved)){
-            header("location: ../src/routes.php?pgname=apply&error=emptyInput"); 
+            header("location: ../../src/routes.php?pgname=apply&error=emptyInput"); 
         }else{
 
             $sql = "UPDATE `applicant` SET `first_due_date` = '{$first_due_approved}', `second_due_date` = '{$second_due_approved}',
@@ -399,13 +399,13 @@
             , `loan_status` = '{$loan_status}' WHERE `id` = '{$applicant_id}'";
 
             if(mysqli_query($conn, $sql)){
-                header("location: ../src/routes.php?pgname=dashboard"); 
+                header("location: ../../src/routes.php?pgname=dashboard"); 
                 exit();
              }else{
-                header("location: ../src/routes.php?pgname=apply&error=sqlerror"); 
+                header("location: ../../src/routes.php?pgname=apply&error=sqlerror"); 
                 exit();
              }
         }
     }else{
-        header("location: ../src/routes.php?pgname=apply");
+        header("location: ../../src/routes.php?pgname=apply");
     }

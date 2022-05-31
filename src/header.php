@@ -27,19 +27,19 @@
                     ?>
 
                     <?php
-                        if($_GET['pgname']=="savings" || $_GET['pgname']=="savingsdetails" || $_GET['pgname']=="applysavings"){
+                        if($_GET['pgname']=="savings" || $_GET['pgname']=="savingdetails" || $_GET['pgname']=="applysavings"){
                     ?>
                         <li class="list__item ">
                             <div class="item__link active saving_sub py1">
                                 <span>
-                                    <i class="fas fa-home"></i> 
+                                <i class="fas fa-th-large"></i>
                                     Savings
                                     <i class="fas fa-angle-down arrow"></i> 
                                 </span>
                                 <ol class="saving_sub_menus hide">
                                     
                                         <?php
-                                            if($_GET['pgname']=="savings" || $_GET['pgname']=="savingsdetails"){
+                                            if($_GET['pgname']=="savings" || $_GET['pgname']=="savingdetails"){
                                                 echo '<li>
                                                 <a href="?pgname=savings" class=" active py1"><span><i class="fas fa-piggy-bank"></i> savings</span></a></li>';
                                             }else{
@@ -53,10 +53,10 @@
                                         <?php
                                             if($_GET['pgname']=="applysavings"){
                                                 echo '<li>
-                                                <a href="?pgname=applysavings" class="active py1"><span><i class="fas fa-fill"></i> savings Application</span></a></li>';
+                                                <a href="?pgname=applysavings" class="active py1"><span><i class="fab fa-wpforms"></i> savings Application</span></a></li>';
                                             }else{
                                                 echo '<li>
-                                                <a href="?pgname=applysavings" class="py1"><span><i class="fas fa-fill"></i> savings Application</span></a></li>';
+                                                <a href="?pgname=applysavings" class="py1"><span><i class="fab fa-wpforms"></i> savings Application</span></a></li>';
                                             }
                                         ?>
                                        
@@ -69,7 +69,7 @@
                         echo '<li class="list__item ">
                             <div class="item__link saving_sub py1">
                                 <span>
-                                    <i class="fas fa-home"></i> 
+                                <i class="fas fa-th-large"></i>
                                     savings
                                     <i class="fas fa-angle-down arrow"></i> 
                                 </span>
@@ -78,7 +78,7 @@
                                         <a href="?pgname=savings" class="py1"><span><i class="fas fa-piggy-bank"></i> savings</span></a>
                                     </li>
                                     <li>
-                                        <a href="?pgname=applysavings" class="py1"><span><i class="fas fa-fill"></i> savings Application</span></a>
+                                        <a href="?pgname=applysavings" class="py1"><span><i class="fab fa-wpforms"></i> savings Application</span></a>
                                     </li>   
                                 </ol>
                             </div>
@@ -93,7 +93,7 @@
                         <li class="list__item ">
                             <div class="item__link active loan_sub py1">
                                 <span>
-                                    <i class="fas fa-home"></i> 
+                                <i class="fas fa-boxes"></i>
                                     loans
                                     <i class="fas fa-angle-down arrow"></i> 
                                 </span>
@@ -102,10 +102,10 @@
                                         <?php
                                             if($_GET['pgname']=="loans" || $_GET['pgname']=="loandetails"){
                                                 echo '<li>
-                                                <a href="?pgname=loans" class=" active py1"><span><i class="fas fa-piggy-bank"></i> loans</span></a></li>';
+                                                <a href="?pgname=loans" class=" active py1"><span><i class="far fa-credit-card"></i> loans</span></a></li>';
                                             }else{
                                                 echo '<li>
-                                                <a href="?pgname=loans" class=" py1"><span><i class="fas fa-piggy-bank"></i> loans</span></a></li>';
+                                                <a href="?pgname=loans" class=" py1"><span><i class="far fa-credit-card"></i> loans</span></a></li>';
                                             }
 
                                         ?>
@@ -130,13 +130,13 @@
                         echo '<li class="list__item ">
                             <div class="item__link loan_sub py1">
                                 <span>
-                                    <i class="fas fa-home"></i> 
+                                <i class="fas fa-boxes"></i>
                                     loans
                                     <i class="fas fa-angle-down arrow"></i> 
                                 </span>
                                 <ol class="loan_sub_menus">
                                     <li>
-                                        <a href="?pgname=loans" class="py1"><span><i class="fas fa-piggy-bank"></i> loans</span></a>
+                                        <a href="?pgname=loans" class="py1"><span><i class="far fa-credit-card"></i> loans</span></a>
                                     </li>
                                     <li>
                                         <a href="?pgname=apply" class="py1"><span><i class="fas fa-fill"></i> loan Application</span></a>
