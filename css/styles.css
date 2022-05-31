@@ -50,6 +50,10 @@ h3, .h3 {
   margin: 1rem 0;
 }
 
+.my_5 {
+  margin: 0.5rem 0;
+}
+
 .my2 {
   margin: 1.5rem 0;
 }
@@ -1519,6 +1523,9 @@ h2.p {
   margin-left: 2rem;
   gap: 1rem;
 }
+.details-head .actions.mnot {
+  margin-left: 0rem;
+}
 .details-head .actions button {
   padding: 0.5rem 1rem;
   border: none;
@@ -1531,6 +1538,10 @@ h2.p {
 }
 .details-head .actions button:nth-last-of-type(2) {
   background-color: #2c2c2c;
+}
+.details-head .actions button.deposite_btn {
+  background-color: #8fff78;
+  color: #4d4a4a;
 }
 .details-head .actions button span {
   margin-right: 0.3rem;
@@ -1582,24 +1593,108 @@ h2.p {
   background-color: #dfdfdf;
 }
 
-.withdraw_form {
+.withdraw_form, .deposite_form {
   position: absolute;
   top: 0;
   bottom: 0;
   right: 0;
-  left: 0;
-  background-color: rgba(255, 255, 255, 0.3137254902);
+  left: 100%;
+  background-color: rgba(0, 0, 0, 0.537254902);
   z-index: 1000;
+  overflow: hidden;
   transition: left 0.5s ease-in-out;
 }
-.withdraw_form.active {
-  left: 100%;
+.withdraw_form.active, .deposite_form.active {
+  left: 0;
 }
-.withdraw_form form {
+.withdraw_form form, .deposite_form form {
   position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
+  top: 1rem;
+  right: 1rem;
+  bottom: 1rem;
   width: 400px;
   background-color: #ffffff;
+  max-height: 650px;
+  padding: 0.3rem 0.3rem;
+}
+.withdraw_form form header, .deposite_form form header {
+  padding: 0.5rem 1rem;
+  background-color: #4d4a4a;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.withdraw_form form header h4, .deposite_form form header h4 {
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  color: #fff;
+}
+.withdraw_form form header a, .deposite_form form header a {
+  display: block;
+  padding: 0.5rem 1rem 1rem 1rem;
+  justify-content: center;
+  color: #fff;
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+.withdraw_form form header a:hover, .deposite_form form header a:hover {
+  opacity: 0.7;
+}
+.withdraw_form form .withdrawal__body, .deposite_form form .withdrawal__body {
+  margin: 2rem 1rem;
+}
+.withdraw_form form .withdrawal__body .error, .deposite_form form .withdrawal__body .error {
+  margin-block: 1rem 2rem;
+}
+.withdraw_form form .withdrawal__body .error p, .deposite_form form .withdrawal__body .error p {
+  text-align: center;
+  background-color: rgba(255, 151, 151, 0.3137254902);
+  padding: 0.4rem;
+  color: red;
+}
+.withdraw_form form .withdrawal__body .form-control, .deposite_form form .withdrawal__body .form-control {
+  padding-block: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid #8a8b8d;
+  margin-bottom: 2rem;
+}
+.withdraw_form form .withdrawal__body .form-control label, .deposite_form form .withdrawal__body .form-control label {
+  letter-spacing: 0.15rem;
+  color: #8a8b8d;
+  border-right: 2px solid #8a8b8d;
+  padding-right: 0.5rem;
+}
+.withdraw_form form .withdrawal__body .form-control label span, .deposite_form form .withdrawal__body .form-control label span {
+  margin-left: 1.5rem;
+}
+.withdraw_form form .withdrawal__body .form-control h4, .deposite_form form .withdrawal__body .form-control h4 {
+  width: 70%;
+  letter-spacing: 0.11rem;
+  color: #8a8b8d;
+}
+.withdraw_form form .withdrawal__body .form-control h4.sw, .deposite_form form .withdrawal__body .form-control h4.sw {
+  width: 55%;
+}
+.withdraw_form form .withdrawal__body .form-control input, .deposite_form form .withdrawal__body .form-control input {
+  width: 60%;
+  padding: 0.3rem 1rem;
+  outline: none;
+  border: none;
+  background: none;
+  font-weight: bolder;
+  letter-spacing: 0.1rem;
+}
+.withdraw_form form .withdrawal__body button, .deposite_form form .withdrawal__body button {
+  margin: 1rem 0;
+  padding: 0.7rem 2.5rem;
+  background-color: #2c2c2c;
+  color: #dfdfdf;
+  border: none;
+  letter-spacing: 0.1rem;
+  cursor: pointer;
+}
+.withdraw_form form .withdrawal__body button:hover, .deposite_form form .withdrawal__body button:hover {
+  opacity: 0.7;
 }/*# sourceMappingURL=styles.css.map */

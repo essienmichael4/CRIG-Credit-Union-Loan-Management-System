@@ -61,3 +61,29 @@ $sql = "INSERT INTO `applicant`(`first_name`, `last_name`, `other_names`, `phone
                                          '{$third_guarantor_name}', '{$third_guarantor_phone_number}', '{$third_guarantor_staff_number}', {$gauranteed_amount},
                                          '{$fourth_guarantor_name}', '{$fourth_guarantor_phone_number}', '{$fourth_guarantor_staff_number}', {$gauranteed_amount},
                                          '{$recipientname}', '{$customer_due_payment}')";
+
+CREATE TABLE `savings`(
+	id	int(13) not null AUTO_INCREMENT PRIMARY KEY,
+    first_name varCHAR(255) not null,
+    last_name varCHAR(255) not null,
+    other_names varCHAR(255) not null,
+    mem_code varCHAR(255) not null UNIQUE,
+    staff_id varCHAR(255) not null,
+    phone varCHAR(255) not null,
+    next_of_kin varCHAR(255) not null,
+    next_of_kin_phone varCHAR(255) not null,
+    balance float not null,
+    day_created datetime not null DEFAULT CURRENT_TIMESTAMP,
+    created_by varCHAR(255) not null,
+    account_status varCHAR(255) not null DEFAULT "active"
+);
+
+CREATE TABLE `transactions`(
+	id int(13) not null AUTO_INCREMENT primary KEY,
+    transaction_type varCHAR(255) not null,
+    amount_transacted float not null,
+    amount_in_account float NOT null,
+    balance_in_account float not null,
+    transaction_day datetime DEFAULT CURRENT_TIMESTAMP,
+    transacted_by varCHAR(255) not null
+);

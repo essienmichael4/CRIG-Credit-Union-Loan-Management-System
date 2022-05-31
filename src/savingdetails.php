@@ -26,8 +26,8 @@
                         <p> Account Details & Statements</p>
                     </div>
                     <div class="actions">
-                        <button><span><i class="fas fa-plus-circle"></i></span> Deposite</button>
-                        <button><span><i class="fas fa-minus-circle"></i></span> Withdrawal</button>
+                        <button class="deposite_btn"><span><i class="fas fa-plus-circle"></i></span> Deposite</button>
+                        <button  class="withdrawal_btn"><span><i class="fas fa-minus-circle"></i></span> Withdrawal</button>
                         <button class="person_btn"><span><i class="fas fa-angle-down"></i></span> Personal Details</button>
                     </div>
                 </div>
@@ -270,10 +270,71 @@
 
                 <div class="withdraw_form ">
                     <form action="">
-                        
+                        <header>
+                            <h4>Withdrawal Form</h4>
+                            <a class="withdrawal_close">	&#8594;</a>
+                        </header>
+
+                        <div class="withdrawal__body">
+                            <div class="error">
+                            <p class="err">This is an error</p>
+                            </div>
+                            
+                            <div class="form-control">
+                                <label for="">Name<span></span></label>
+                                <h4>Michael Essien</h4>
+                            </div>
+                            <div class="form-control">
+                                <label for="">Mem. Code <span></span></label>
+                                <h4 class="sw">Michael Essien</h4>
+                            </div>
+                            <div class="form-control">
+                                <label for="">Balance <span>GH¢</span></label>
+                                <h4 class="sw">Michael Essien</h4>
+                            </div>
+                            <div class="form-control">
+                                <label for="">Amount <span>GH¢</span></label>
+                                <input type="number">
+                            </div>
+                            <button>Withdraw</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="deposite_form ">
+                    <form action="">
+                        <header>
+                            <h4>Deposite Form</h4>
+                            <a class="deposite_close">	&#8594;</a>
+                        </header>
+
+                        <div class="withdrawal__body">
+                            <div class="error">
+                            <p class="err">This is an error</p>
+                            </div>
+                            
+                            <div class="form-control">
+                                <label for="">Name<span></span></label>
+                                <h4>Michael Essien</h4>
+                            </div>
+                            <div class="form-control">
+                                <label for="">Mem. Code <span></span></label>
+                                <h4 class="sw">Michael Essien</h4>
+                            </div>
+                            <div class="form-control">
+                                <label for="">Balance <span>GH¢</span></label>
+                                <h4 class="sw">Michael Essien</h4>
+                            </div>
+                            <div class="form-control">
+                                <label for="">Amount <span>GH¢</span></label>
+                                <input type="number">
+                            </div>
+                            <button>Deposite</button>
+                        </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
     <script src="../js/details.js"></script>
+    <script src="../js/deposite.js"></script>

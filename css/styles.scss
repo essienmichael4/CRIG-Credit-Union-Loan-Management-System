@@ -48,6 +48,9 @@ h3, .h3{
 .my1{
     margin: 1rem 0;
 }
+.my_5{
+    margin: .5rem 0;
+}
 .my2{
     margin: 1.5rem 0;
 }
@@ -1801,6 +1804,10 @@ h2.p{
         display: flex;
         margin-left: 2rem;
         gap: 1rem;
+
+        &.mnot{
+            margin-left: 0rem;
+        }
         
         button{
             padding: .5rem 1rem;
@@ -1817,6 +1824,10 @@ h2.p{
                 background-color: #2c2c2c;
             }
 
+            &.deposite_btn{
+                background-color: #8fff78;
+                color: #4d4a4a;
+            }
             span{
                 margin-right: .3rem;
 
@@ -1882,26 +1893,124 @@ h2.p{
     }
 }
 
-.withdraw_form{
+.withdraw_form, .deposite_form{
     position: absolute;
     top: 0;
     bottom: 0;
     right: 0;
-    left: 0;
-    background-color: #ffffff50;
+    left: 100%;
+    background-color: #00000089;
     z-index: 1000;
+    overflow: hidden;
     transition: left .5s ease-in-out;
 
     &.active{
-        left: 100%;
+        left: 0;
     }
 
     form{
         position: absolute;
-        top: 0;
-        bottom: 0;
-        right: 0;
+        top: 1rem;
+        right: 1rem;
+        bottom: 1rem;
         width: 400px;
         background-color: #ffffff;
+        max-height: 650px;
+        padding: .3rem .3rem;
+
+        header{
+            padding: .5rem 1rem;
+            background-color: #4d4a4a;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            h4{
+                font-size: 1.5rem;
+                text-transform: capitalize;
+                color: #fff;
+            }
+
+            a{
+                display: block;
+                padding: .5rem 1rem 1rem 1rem; 
+                justify-content: center;
+                color: #fff;
+                font-size: 2.5rem;
+                cursor: pointer;
+        
+                &:hover{
+                    opacity: .7;
+                }
+            }
+        }
+
+        .withdrawal__body{
+            margin: 2rem 1rem;
+
+            .error{
+                margin-block: 1rem 2rem;
+                p{
+                    
+                    text-align: center;
+                    background-color: #ff979750;
+                    padding: .4rem;
+                    color: red;
+                }
+            }
+
+            .form-control{
+                padding-block: .5rem;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                border-bottom: 2px solid #8a8b8d;
+                margin-bottom: 2rem;
+
+                label{
+                    letter-spacing: .15rem;
+                    color: #8a8b8d;
+                    border-right:  2px solid #8a8b8d;
+                    padding-right: .5rem;
+                    span{
+                        margin-left: 1.5rem;
+                    }
+                }
+
+                h4{
+                    width: 70%;
+                    letter-spacing: .11rem;
+                    color: #8a8b8d;
+
+                    &.sw{
+                        width: 55%;
+                    }
+                }
+
+                input{
+                    width: 60%;
+                    padding: .3rem 1rem;
+                    outline: none;
+                    border: none;
+                    background: none;
+                    font-weight: bolder;
+                    letter-spacing: .1rem;
+                }
+            }
+
+            button{
+                margin: 1rem 0;
+                padding: .7rem 2.5rem;
+                background-color: #2c2c2c;
+                color: #dfdfdf;
+                border: none;
+                letter-spacing: .1rem;
+                cursor: pointer;
+
+                &:hover{
+                    opacity: .7;
+                }
+            }
+        }
     }
 }
