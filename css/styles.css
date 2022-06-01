@@ -956,7 +956,7 @@ body {
 .main .apply .form__group {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
+  gap: 1rem;
 }
 .main .apply .form__group.less {
   grid-template-columns: repeat(3, 1fr);
@@ -975,6 +975,10 @@ body {
 }
 .main .apply .form .hiddenone, .main .apply .form .hiddentwo {
   display: none;
+}
+.main .apply .form .formControl {
+  background-color: #ebebeb;
+  padding: 1rem 0.6rem;
 }
 .main .apply .form .formControl label {
   margin-bottom: 0.5rem;
@@ -1023,7 +1027,7 @@ body {
   width: 100%;
 }
 .main .apply .form .formControl div span {
-  margin-right: 10px;
+  margin-right: 2px;
   border: 1px solid #a3a2a2;
   padding: 0.4rem 0.5rem;
   border-radius: 4px;
@@ -1710,7 +1714,7 @@ h2.p {
   width: 96.5%;
   margin: 0rem auto;
   transition: all 0.5s ease-in-out;
-  padding: 2rem 1rem;
+  padding: 1rem 0rem;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   overflow: hidden;

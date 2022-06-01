@@ -1102,7 +1102,7 @@ body{
             &__group{
                 display: grid;
                 grid-template-columns: repeat(4, 1fr);
-                gap: 2rem;
+                gap: 1rem;
 
                 &.less{
                     grid-template-columns: repeat(3, 1fr);
@@ -1132,6 +1132,8 @@ body{
             }
 
             .formControl{
+                background-color: #ebebeb;
+                padding: 1rem .6rem;
 
                 label{
                     margin-bottom: .5rem;
@@ -1189,7 +1191,7 @@ body{
                     
 
                     span{
-                        margin-right: 10px;
+                        margin-right: 2px;
                         border: 1px solid #a3a2a2;
                         padding: .4rem .5rem;
                         border-radius: 4px;
@@ -2022,7 +2024,7 @@ h2.p{
     width: 96.5%;
     margin: 0rem auto;
     transition: all .5s ease-in-out;
-    padding: 2rem 1rem;
+    padding: 1rem 0rem;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     overflow: hidden;

@@ -59,7 +59,7 @@
                 </div>
 
                 <div class="details-head">
-                    <div class="actions  mt1">
+                    <div class="actions  mt1 mnot">
                        <h4>Personal Information</h4>
                     </div>
                 </div>
@@ -97,8 +97,11 @@
                     </div>
                     <div class="personal_info">
                         <h4>Next of Kin Phone No.</h4>
+                        <input type="number">
+                    </div>
+                    <div class="personal_info">
+                        <h4>Initial Savings</h4>
                         <input type="text">
-
                     </div>
                     
                     <div class="personal_info bg">

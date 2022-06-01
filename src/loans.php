@@ -18,6 +18,25 @@
                 </div>
             </header>
             <div class="wrapper">
+                <div class="savings__card">
+                    <div class="card">
+                        <p>All Loans</p>
+                        <h4>GH¢ 100,000,000</h4>
+                    </div>
+                    <div class="card">
+                        <p>Paid Loans</p>
+                        <h4>GH¢ 80,000,000</h4>
+                    </div>
+                    <div class="card">
+                        <p>Unpaid Loans</p>
+                        <h4>GH¢ 100,000,000</h4>
+                    </div>
+                    <div class="card">
+                        <p>Interest</p>
+                        <h4>GH¢ 100,000,000</h4>
+                    </div>
+                    
+                </div>
                 <div class="filter flex">
                     <div class="filter__actions">
                         <a href="?pgname=apply" class="active">Loan Application <i class="fas fa-plus"></i></a>
