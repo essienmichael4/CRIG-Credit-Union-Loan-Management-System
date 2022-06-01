@@ -35,7 +35,7 @@
                         header("location: ../src/routes.php?pgname=apply&error=userexists"); 
                     }else{
                         $sql = "INSERT INTO `users`(`first_name`, `last_name`,`other_names`, `email`, `worker_id`, `username`,`role`, `password`) 
-                        VALUES('$firstname','$lastname', ''$othernames,'$email', '$staffnumber', '$username', '$role', '$hashedpwd')";
+                        VALUES('$firstname','$lastname', '$othernames','$email', '$staffnumber', '$username', '$role', '$hashedpwd')";
                 
                         if(mysqli_query($conn, $sql)){
                             header("location: ../src/routes.php?pgname=users"); 

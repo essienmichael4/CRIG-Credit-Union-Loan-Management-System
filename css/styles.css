@@ -1726,6 +1726,13 @@ h2.p {
   position: relative;
   background-color: #ebebeb;
 }
+.apply_savings .personal_info:nth-of-type(1) {
+  background-color: #1c64ff;
+  color: #fff;
+}
+.apply_savings .personal_info:nth-of-type(1) input {
+  border: none;
+}
 .apply_savings .personal_info.bg {
   background-color: #fff;
   padding: 0;

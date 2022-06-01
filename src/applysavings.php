@@ -64,7 +64,12 @@
                     </div>
                 </div>
 
-                <form class="apply_savings">
+                <form class="apply_savings" action="../php/savings/createaccount.inc.php" method="POST">
+                <input type="text" name="processor" value="<?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?>" hidden>
+                    <div class="personal_info">
+                        <h4>Membership Code</h4>
+                        <input type="text">
+                    </div>
                     <div class="personal_info">
                         <h4>First Name</h4>
                         <input type="text">
@@ -78,10 +83,6 @@
                         <input type="text">
                     </div>
                     <div class="personal_info">
-                        <h4>Membership Code</h4>
-                        <input type="text">
-                    </div>
-                    <div class="personal_info">
                         <h4>Staff ID</h4>
                         <input type="text">
                     </div>
@@ -91,21 +92,65 @@
 
                     </div>
                     <div class="personal_info">
+                        <h4>Occupation/Rank</h4>
+                        <input type="text">
+                    </div>
+                    <div class="personal_info">
+                        <h4>Place of Work</h4>
+                        <input type="text">
+                    </div>
+                    <div class="personal_info">
+                        <h4>Division</h4>
+                        <input type="text">
+                    </div>
+                    <div class="personal_info">
+                        <h4>Home Town</h4>
+                        <input type="text">
+                    </div>
+                    <div class="personal_info">
+                        <h4>Address</h4>
+                        <input type="text">
+                    </div>
+                    <div class="personal_info">
+                        <h4>Residential Address</h4>
+                        <input type="text">
+                    </div>
+                    <div class="personal_info">
+                        <h4>Marital Status</h4>
+                        <input type="text">
+                    </div>
+                    <div class="personal_info">
+                        <h4>Name of Spouse(if any)</h4>
+                        <input type="text">
+                    </div>
+                    <div class="personal_info">
+                        <h4>No. of Children</h4>
+                        <input type="text">
+                    </div>
+                    <div class="personal_info">
                         <h4>Next of Kin</h4>
                         <input type="text">
 
+                    </div>
+                    <div class="personal_info">
+                        <h4>Next of Kin Relation</h4>
+                        <input type="number">
                     </div>
                     <div class="personal_info">
                         <h4>Next of Kin Phone No.</h4>
                         <input type="number">
                     </div>
                     <div class="personal_info">
-                        <h4>Initial Savings</h4>
-                        <input type="text">
+                        <h4>Next of Kin Occupation</h4>
+                        <input type="number">
+                    </div>
+                    <div class="personal_info">
+                        <h4>Next of Kin Address</h4>
+                        <input type="number">
                     </div>
                     
                     <div class="personal_info bg">
-                        <button>Create Account</button>
+                        <button name="createaccount">Create Account</button>
                     </div>
                     
                 </form>

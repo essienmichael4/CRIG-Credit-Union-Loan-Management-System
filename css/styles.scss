@@ -2030,12 +2030,22 @@ h2.p{
     overflow: hidden;
     gap: 2rem;
     
+    
 
     .personal_info{
         padding: 1rem;
         color: #4d4a4a;
         position: relative;
         background-color: #ebebeb;
+
+        &:nth-of-type(1){
+            background-color: #1c64ff;
+            color: #fff;
+
+            input{
+                border: none;
+            }
+        }
 
         &.bg{
             background-color: #fff;
