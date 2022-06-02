@@ -348,28 +348,42 @@
                             <a class="deposite_close">	&#8594;</a>
                         </header>
 
-                        <div class="withdrawal__body">
+                        <div class="withdrawal__body dep">
                             <div class="error">
                             <p class="err">This is an error</p>
                             </div>
 
-                            <div class="form-control">
+                            <div class="form-control dep">
                                 <label for="">Mem. Code <span></span></label>
                                 <input type="text" placeholder="member code">
                             </div>
+
+                            <div class="form-control dep">
+                                <label for="">Receipt No.<span></span></label>
+                                <input type="text" placeholder="member code">
+                            </div>
                             
-                            <div class="form-control">
+                            <div class="form-control dep">
                                 <label for="">Name<span></span></label>
                                 <input type="text" placeholder="Name">
                             </div>
                             
-                            <div class="form-control">
+                            <div class="form-control dep">
                                 <label for="">Balance <span>GH¢</span></label>
-                                <h4 class="sw">Michael Essien</h4>
+                                <h4 class="sw"></h4>
                             </div>
-                            <div class="form-control">
+                            
+                            <div class="form-control dep">
                                 <label for="">Amount <span>GH¢</span></label>
                                 <input type="number">
+                            </div>
+                            
+                            <div class="form-control dep">
+                                <label for="">Deposite Type <span></span></label>
+                                <select name="">
+                                    <option value="monthly">Monthly</option>
+                                    <option value="bulk">Bulk</option>
+                                </select>
                             </div>
                             <button>Deposite</button>
                         </div>

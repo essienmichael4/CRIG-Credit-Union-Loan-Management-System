@@ -1953,6 +1953,11 @@ h2.p{
         .withdrawal__body{
             margin: 2rem 1rem;
 
+            &.dep{
+                margin: 1rem 1rem;
+                // margin-top: 1rem;
+            }
+
             .error{
                 margin-block: 1rem 2rem;
                 p{
@@ -1972,6 +1977,10 @@ h2.p{
                 border-bottom: 2px solid #8a8b8d;
                 margin-bottom: 2rem;
 
+                &.dep{
+                    margin-bottom: 1rem;
+                }
+
                 label{
                     letter-spacing: .15rem;
                     color: #8a8b8d;
@@ -1979,6 +1988,17 @@ h2.p{
                     padding-right: .5rem;
                     span{
                         margin-left: 1.5rem;
+                    }
+                }
+
+                select{
+                    padding: .3rem 0rem;
+                    border: none;
+                    outline: none;
+                    width: 55%;
+
+                    option{
+                        padding: .3rem 1rem;
                     }
                 }
 
@@ -2030,7 +2050,9 @@ h2.p{
     overflow: hidden;
     gap: 2rem;
     
-    
+    &.add{
+        grid-template-columns: 3fr 1fr;
+    }
 
     .personal_info{
         padding: 1rem;
@@ -2038,7 +2060,24 @@ h2.p{
         position: relative;
         background-color: #ebebeb;
 
-        &:nth-of-type(1){
+        div{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            span{
+                padding: .35rem .5rem;
+                margin-top: .5rem;
+                border: 1px solid #8a8b8d;  
+                border-radius: 2px;  
+            }
+
+            input{
+                width: 77%;
+            }
+        }
+
+        &.bgb{
             background-color: #1c64ff;
             color: #fff;
 

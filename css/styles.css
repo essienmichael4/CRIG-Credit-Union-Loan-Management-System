@@ -1654,6 +1654,9 @@ h2.p {
 .withdraw_form form .withdrawal__body, .deposite_form form .withdrawal__body {
   margin: 2rem 1rem;
 }
+.withdraw_form form .withdrawal__body.dep, .deposite_form form .withdrawal__body.dep {
+  margin: 1rem 1rem;
+}
 .withdraw_form form .withdrawal__body .error, .deposite_form form .withdrawal__body .error {
   margin-block: 1rem 2rem;
 }
@@ -1671,6 +1674,9 @@ h2.p {
   border-bottom: 2px solid #8a8b8d;
   margin-bottom: 2rem;
 }
+.withdraw_form form .withdrawal__body .form-control.dep, .deposite_form form .withdrawal__body .form-control.dep {
+  margin-bottom: 1rem;
+}
 .withdraw_form form .withdrawal__body .form-control label, .deposite_form form .withdrawal__body .form-control label {
   letter-spacing: 0.15rem;
   color: #8a8b8d;
@@ -1679,6 +1685,15 @@ h2.p {
 }
 .withdraw_form form .withdrawal__body .form-control label span, .deposite_form form .withdrawal__body .form-control label span {
   margin-left: 1.5rem;
+}
+.withdraw_form form .withdrawal__body .form-control select, .deposite_form form .withdrawal__body .form-control select {
+  padding: 0.3rem 0rem;
+  border: none;
+  outline: none;
+  width: 55%;
+}
+.withdraw_form form .withdrawal__body .form-control select option, .deposite_form form .withdrawal__body .form-control select option {
+  padding: 0.3rem 1rem;
 }
 .withdraw_form form .withdrawal__body .form-control h4, .deposite_form form .withdrawal__body .form-control h4 {
   width: 70%;
@@ -1720,17 +1735,34 @@ h2.p {
   overflow: hidden;
   gap: 2rem;
 }
+.apply_savings.add {
+  grid-template-columns: 3fr 1fr;
+}
 .apply_savings .personal_info {
   padding: 1rem;
   color: #4d4a4a;
   position: relative;
   background-color: #ebebeb;
 }
-.apply_savings .personal_info:nth-of-type(1) {
+.apply_savings .personal_info div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.apply_savings .personal_info div span {
+  padding: 0.35rem 0.5rem;
+  margin-top: 0.5rem;
+  border: 1px solid #8a8b8d;
+  border-radius: 2px;
+}
+.apply_savings .personal_info div input {
+  width: 77%;
+}
+.apply_savings .personal_info.bgb {
   background-color: #1c64ff;
   color: #fff;
 }
-.apply_savings .personal_info:nth-of-type(1) input {
+.apply_savings .personal_info.bgb input {
   border: none;
 }
 .apply_savings .personal_info.bg {

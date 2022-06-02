@@ -23,21 +23,7 @@
                     <div class="actions mnot my1">
                        <h3> Savings Application</h3>
                     </div>
-                </div>
-                <!-- <div class="details-head">
-                    <a href="?pgname=savings">	&#8592;</a>
-                    <div class="details-right">
-                        <h2 class="p"><span>Michael Essien</span></h2>
-                        <p> Account Details & Statements</p>
-                    </div>
-                    <div class="actions">
-                        <button class="deposite_btn"><span><i class="fas fa-plus-circle"></i></span> Deposite</button>
-                        <button  class="withdrawal_btn"><span><i class="fas fa-minus-circle"></i></span> Withdrawal</button>
-                        <button class="person_btn"><span><i class="fas fa-angle-down"></i></span> Personal Details</button>
-                    </div>
-                </div> -->
-
-               
+                </div>               
             
                 <div class="savings__card mnot">
                     <div class="card">
@@ -64,95 +50,156 @@
                     </div>
                 </div>
 
-                <form class="apply_savings" action="../php/savings/createaccount.inc.php" method="POST">
-                <input type="text" name="processor" value="<?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?>" hidden>
-                    <div class="personal_info">
-                        <h4>Membership Code</h4>
-                        <input type="text">
+                <form  action="../php/savings/createaccount.inc.php" method="POST">
+                    <div class="apply_savings">
+                        <input type="text" name="processor" value="<?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?>" hidden>
+                        <div class="personal_info bgb">
+                            <h4>Membership Code</h4>
+                            <input type="text" name="memcode" autocomplete="FALSE" placeholder="Membership Code">
+                        </div>
+                        <div class="personal_info">
+                            <h4>First Name</h4>
+                            <input type="text" name="firstname" autocomplete="FALSE" placeholder="First Name">
+                        </div>
+                        <div class="personal_info">
+                            <h4>Last Name</h4>
+                            <input type="text"name="lastname" autocomplete="FALSE" placeholder="Last Name">
+                        </div>
+                        <div class="personal_info">
+                            <h4>Other Names</h4>
+                            <input type="text" name="othernames" autocomplete="FALSE" placeholder="Other Names">
+                        </div>
+                        <div class="personal_info">
+                            <h4>Date of Birth</h4>
+                            <input type="date" name="dateofbirth">
+                        </div>
+                        <div class="personal_info">
+                            <h4>Staff ID</h4>
+                            <input type="text" name="staffid" autocomplete="FALSE" placeholder="Staff ID">
+                        </div>
+                        <div class="personal_info">
+                            <h4>Phone No.</h4>
+                            <div>
+                                <span>+233</span><input type="number" autocomplete="FALSE" name="phonenumber" placeholder="Phone">
+                            </div>
+                        </div>
+                        <div class="personal_info">
+                            <h4>Marital Status</h4>
+                            <input type="text" name="maritalstatus" autocomplete="FALSE" placeholder="Marital Status">
+                        </div>
+                        <div class="personal_info">
+                            <h4>Name of Spouse(if any)</h4>
+                            <input type="text" name="nameofspouse" autocomplete="FALSE" placeholder="Spouse">
+                        </div>
+                        <div class="personal_info">
+                            <h4>No. of Children</h4>
+                            <input type="number" name="children" autocomplete="FALSE" placeholder="Children">
+                        </div>
                     </div>
-                    <div class="personal_info">
-                        <h4>First Name</h4>
-                        <input type="text">
+                    <div class="details-head">
+                        <div class="actions  mt1 mnot">
+                        <h4>Work Information</h4>
+                        </div>
                     </div>
-                    <div class="personal_info">
-                        <h4>Last Name</h4>
-                        <input type="text">
+                    <div class="apply_savings">
+                        <div class="personal_info">
+                            <h4>Occupation/Rank</h4>
+                            <input type="text" name="occupation" autocomplete="FALSE" placeholder="Occupation">
+                        </div>
+                        <div class="personal_info">
+                            <h4>Place of Work</h4>
+                            <input type="text" name="placeofwork" autocomplete="FALSE" placeholder="Place of Work">
+                        </div>
+                        <div class="personal_info">
+                            <h4>Division</h4>
+                            <input type="text" name="division" autocomplete="FALSE" placeholder="Division">
+                        </div>
                     </div>
-                    <div class="personal_info">
-                        <h4>Other Names</h4>
-                        <input type="text">
+                    <div class="details-head">
+                        <div class="actions  mt1 mnot">
+                        <h4>Address Information</h4>
+                        </div>
                     </div>
-                    <div class="personal_info">
-                        <h4>Staff ID</h4>
-                        <input type="text">
+                    <div class="apply_savings add">
+                        <div class="personal_info">
+                            <h4>Address</h4>
+                            <input type="text" name="address" autocomplete="FALSE" placeholder="Address">
+                        </div>
+                        <div class="personal_info">
+                            <h4>Home Town</h4>
+                            <input type="text" name="hometown" autocomplete="FALSE" placeholder="Home Town">
+                        </div>
+                        <div class="personal_info">
+                            <h4>Residential Address</h4>
+                            <input type="text" name="residentialaddress" autocomplete="FALSE" placeholder="Residential Address">
+                        </div>
                     </div>
-                    <div class="personal_info">
-                        <h4>Phone No.</h4>
-                        <input type="text" autocomplete="FALSE">
+                    <div class="details-head">
+                        <div class="actions  mt1 mnot">
+                        <h4>Next of Kin Information</h4>
+                        </div>
+                    </div>
+                    <div class="apply_savings">
+                        <div class="personal_info">
+                            <h4>Next of Kin</h4>
+                            <input type="text" name="nextofkin" placeholder="Next of Kin">
 
+                        </div>
+                        <div class="personal_info">
+                            <h4>Next of Kin Relation</h4>
+                            <input type="text" name="nextofkinrelation" autocomplete="FALSE" placeholder="Relation">
+                        </div>
+                        <div class="personal_info">
+                            <h4>Next of Kin Phone No.</h4>
+                            <div>
+                                <span>+233</span>
+                                <input type="number" name="nextofkinphone" placeholder="Next of Kin Phone">
+                            </div>
+                        </div>
+                        <div class="personal_info">
+                            <h4>Next of Kin Occupation</h4>
+                            <input type="text" name="nextofkinoccupation" autocomplete="FALSE" placeholder="Occupation">
+                        </div>
                     </div>
-                    <div class="personal_info">
-                        <h4>Occupation/Rank</h4>
-                        <input type="text">
+                    <div class="apply_savings add">
+                        <div class="personal_info">
+                            <h4>Next of Kin Address</h4>
+                            <input type="text" name="nextofkinaddress" placeholder="Next of Kin Address">
+                        </div>
                     </div>
-                    <div class="personal_info">
-                        <h4>Place of Work</h4>
-                        <input type="text">
+                    <div class="details-head">
+                        <div class="actions  mt1 mnot">
+                        <h4>Account Information</h4>
+                        </div>
                     </div>
-                    <div class="personal_info">
-                        <h4>Division</h4>
-                        <input type="text">
+                    <div class="apply_savings">
+                        <!-- <div class="personal_info">
+                            <h4>Registration Fee</h4>
+                            <div>
+                                <span>Gh¢</span>
+                                <input type="number" name="regfee" placeholder="">
+                            </div>
+                        </div> -->
+                        <div class="personal_info">
+                            <h4>Bulk Deposite</h4>
+                            <div>
+                                <span>Gh¢</span>
+                                <input type="number" name="bulkdeposite" placeholder="">
+                            </div>
+                        </div>
+                        <div class="personal_info">
+                            <h4>Monthly Deposite</h4>
+                            <div>
+                                <span>Gh¢</span>
+                                <input type="number" name="bulkdeposite" placeholder="">
+                            </div>
+                        </div>
                     </div>
-                    <div class="personal_info">
-                        <h4>Home Town</h4>
-                        <input type="text">
+                    <div class="apply_savings">
+                        <div class="personal_info bg">
+                            <button name="createaccount">Create Account</button>
+                        </div>
                     </div>
-                    <div class="personal_info">
-                        <h4>Address</h4>
-                        <input type="text">
-                    </div>
-                    <div class="personal_info">
-                        <h4>Residential Address</h4>
-                        <input type="text">
-                    </div>
-                    <div class="personal_info">
-                        <h4>Marital Status</h4>
-                        <input type="text">
-                    </div>
-                    <div class="personal_info">
-                        <h4>Name of Spouse(if any)</h4>
-                        <input type="text">
-                    </div>
-                    <div class="personal_info">
-                        <h4>No. of Children</h4>
-                        <input type="text">
-                    </div>
-                    <div class="personal_info">
-                        <h4>Next of Kin</h4>
-                        <input type="text">
-
-                    </div>
-                    <div class="personal_info">
-                        <h4>Next of Kin Relation</h4>
-                        <input type="number">
-                    </div>
-                    <div class="personal_info">
-                        <h4>Next of Kin Phone No.</h4>
-                        <input type="number">
-                    </div>
-                    <div class="personal_info">
-                        <h4>Next of Kin Occupation</h4>
-                        <input type="number">
-                    </div>
-                    <div class="personal_info">
-                        <h4>Next of Kin Address</h4>
-                        <input type="number">
-                    </div>
-                    
-                    <div class="personal_info bg">
-                        <button name="createaccount">Create Account</button>
-                    </div>
-                    
                 </form>
             </div>
         </div>
