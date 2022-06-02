@@ -344,7 +344,7 @@
                 <div class="deposite_form ">
                     <form action="">
                         <header>
-                            <h4>Deposite Form</h4>
+                            <h4>Deposit Form</h4>
                             <a class="deposite_close">	&#8594;</a>
                         </header>
 
@@ -379,13 +379,13 @@
                             </div>
                             
                             <div class="form-control dep">
-                                <label for="">Deposite Type <span></span></label>
-                                <select name="depositetype">
+                                <label for="">Deposit Type <span></span></label>
+                                <select name="deposittype">
                                     <option value="monthly">Monthly</option>
                                     <option value="bulk">Bulk</option>
                                 </select>
                             </div>
-                            <button>Deposite</button>
+                            <button name="deposit">Deposit</button>
                         </div>
                     </form>
                 </div>
