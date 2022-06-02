@@ -38,61 +38,82 @@
                         <p>cqc112345321323</p>
                     </div>
                     <div class="personal_info">
-                        <h4>Mem. Code</h4>
-                        <p>cqc112345321323</p>
-                    </div>
-                    <div class="personal_info">
-                        <h4>Mem. Code</h4>
-                        <p>cqc112345321323</p>
-                    </div>
-                    <div class="personal_info">
-                        <h4>Mem. Code</h4>
-                        <p>cqc112345321323</p>
-                    </div>
-                    <div class="personal_info">
-                        <h4>Mem. Code</h4>
-                        <p>cqc112345321323</p>
-                    </div>
-                    <div class="personal_info">
-                        <h4>Mem. Code</h4>
-                        <p>cqc112345321323</p>
-                    </div>
-                    <div class="personal_info">
                         <h4>Staff ID</h4>
                         <p>cqc112345321323</p>
                     </div>
                     <div class="personal_info">
-                        <h4>Contact</h4>
-                        <p>+233 263436049</p>
+                        <h4>Date of Birth</h4>
+                        <p>cqc112345321323</p>
                     </div>
                     <div class="personal_info">
-                        <h4>Contact</h4>
-                        <p>+233 263436049</p>
+                        <h4>Phone Number</h4>
+                        <p>02345321323</p>
                     </div>
                     <div class="personal_info">
-                        <h4>Contact</h4>
-                        <p>+233 263436049</p>
+                        <h4>Marital Status</h4>
+                        <p>Married</p>
                     </div>
                     <div class="personal_info">
-                        <h4>Contact</h4>
-                        <p>+233 263436049</p>
+                        <h4>Name of Spouse</h4>
+                        <p>Jane Doe</p>
                     </div>
                     <div class="personal_info">
-                        <h4>Contact</h4>
-                        <p>+233 263436049</p>
+                        <h4>Number of Children</h4>
+                        <p>3</p>
                     </div>
                     <div class="personal_info">
-                        <h4>Contact</h4>
-                        <p>+233 263436049</p>
+                        <h4>Occupation</h4>
+                        <p>Driver</p>
                     </div>
                     <div class="personal_info">
-                        <h4>Contact</h4>
-                        <p>+233 263436049</p>
+                        <h4>Place of Work</h4>
+                        <p>GPRTU</p>
                     </div>
                     <div class="personal_info">
-                        <h4>Contact</h4>
-                        <p>+233 263436049</p>
+                        <h4>Division</h4>
+                        <p>C@ Station</p>
                     </div>
+                    <div class="personal_info">
+                        <h4>Address</h4>
+                        <p>P. O. box bt 548</p>
+                    </div>
+                    <div class="personal_info">
+                        <h4>Residential Address</h4>
+                        <p>121 n2/c2</p>
+                    </div>
+                    <div class="personal_info">
+                        <h4>Hometown</h4>
+                        <p>New Tafo</p>
+                    </div>
+                    <div class="personal_info">
+                        <h4>Next of Kin</h4>
+                        <p>John Doe</p>
+                    </div>
+                    <div class="personal_info">
+                        <h4>Next of Kin Relation</h4>
+                        <p>Brother</p>
+                    </div>
+                    <div class="personal_info">
+                        <h4>Next of Kin Phone</h4>
+                        <p>0262623569</p>
+                    </div>
+                    <div class="personal_info">
+                        <h4>Next of Kin Address</h4>
+                        <p></p>
+                    </div>
+                    <div class="personal_info">
+                        <h4>Next of Kin Occupation</h4>
+                        <p>Banker</p>
+                    </div>
+                    <div class="personal_info">
+                        <h4>Account Created On:</h4>
+                        <p>22-2-2022</p>
+                    </div>
+                    <div class="personal_info">
+                        <h4>Account Created By:</h4>
+                        <p>Jane Foster</p>
+                    </div>
+
                 </div>
             
                 <div class="savings__card">
@@ -308,26 +329,42 @@
                             <a class="deposite_close">	&#8594;</a>
                         </header>
 
-                        <div class="withdrawal__body">
+                        <div class="withdrawal__body dep">
                             <div class="error">
                             <p class="err">This is an error</p>
                             </div>
-                            
-                            <div class="form-control">
-                                <label for="">Name<span></span></label>
-                                <h4>Michael Essien</h4>
-                            </div>
-                            <div class="form-control">
+
+                            <div class="form-control dep">
                                 <label for="">Mem. Code <span></span></label>
-                                <h4 class="sw">Michael Essien</h4>
+                                <input type="text" placeholder="member code">
                             </div>
-                            <div class="form-control">
+
+                            <div class="form-control dep">
+                                <label for="">Receipt No.<span></span></label>
+                                <input type="text" placeholder="member code">
+                            </div>
+                            
+                            <div class="form-control dep">
+                                <label for="">Name<span></span></label>
+                                <input type="text" placeholder="Name">
+                            </div>
+                            
+                            <div class="form-control dep">
                                 <label for="">Balance <span>GH¢</span></label>
-                                <h4 class="sw">Michael Essien</h4>
+                                <h4 class="sw"></h4>
                             </div>
-                            <div class="form-control">
+                            
+                            <div class="form-control dep">
                                 <label for="">Amount <span>GH¢</span></label>
                                 <input type="number">
+                            </div>
+                            
+                            <div class="form-control dep">
+                                <label for="">Deposite Type <span></span></label>
+                                <select name="">
+                                    <option value="monthly">Monthly</option>
+                                    <option value="bulk">Bulk</option>
+                                </select>
                             </div>
                             <button>Deposite</button>
                         </div>
