@@ -360,7 +360,7 @@
 
                             <div class="form-control dep">
                                 <label for="">Receipt No.<span></span></label>
-                                <input type="text" placeholder="member code">
+                                <input type="text" placeholder="" name="receiptnum">
                             </div>
                             
                             <div class="form-control dep">
@@ -380,7 +380,7 @@
                             
                             <div class="form-control dep">
                                 <label for="">Deposite Type <span></span></label>
-                                <select name="">
+                                <select name="depositetype">
                                     <option value="monthly">Monthly</option>
                                     <option value="bulk">Bulk</option>
                                 </select>
