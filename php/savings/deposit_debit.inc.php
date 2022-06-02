@@ -3,6 +3,7 @@
         include_once("../dbs.inc.php");
         include_once("../functions.inc.php");
 
+        $processor = mysqli_real_escape_string($conn,$_POST["processor"]);
         $memcode = mysqli_real_escape_string($conn,$_POST["memcode"]);
         $receiptnumber = mysqli_real_escape_string($conn,$_POST["receiptnum"]);
         $depositamount = (float)mysqli_real_escape_string($conn,$_POST["deposit"]);
@@ -42,6 +43,7 @@
         include_once("../dbs.inc.php");
         include_once("../functions.inc.php");
 
+        $processor = mysqli_real_escape_string($conn,$_POST["processor"]);
         $memcode = mysqli_real_escape_string($conn,$_POST["memcode"]);
         // $receiptnumber = mysqli_real_escape_string($conn,$_POST["receiptnum"]);
         $debitamount = (float)mysqli_real_escape_string($conn,$_POST["deposit"]);

@@ -298,8 +298,9 @@
 
                         <div class="withdrawal__body">
                             <div class="error">
-                            <p class="err">This is an error</p>
+                                <p class="err">This is an error</p>
                             </div>
+                            <input type="text" name="processor" value="<?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?>" hidden>
                             
                             <div class="form-control">
                                 <label for="">Name<span></span></label>
@@ -331,8 +332,9 @@
 
                         <div class="withdrawal__body dep">
                             <div class="error">
-                            <p class="err">This is an error</p>
+                                <p class="err">This is an error</p>
                             </div>
+                            <input type="text" name="processor" value="<?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?>" hidden>
 
                             <div class="form-control dep">
                                 <label for="">Mem. Code <span></span></label>

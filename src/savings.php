@@ -317,7 +317,7 @@
                             <div class="error">
                             <p class="err">This is an error</p>
                             </div>
-
+                            <input type="text" name="processor" value="<?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?>" hidden>
                             <div class="form-control">
                                 <label for="">Mem. Code <span></span></label>
                                 <input type="text" placeholder="member code">
@@ -352,7 +352,7 @@
                             <div class="error">
                             <p class="err">This is an error</p>
                             </div>
-
+                            <input type="text" name="processor" value="<?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?>" hidden>
                             <div class="form-control dep">
                                 <label for="">Mem. Code <span></span></label>
                                 <input type="text" placeholder="member code">
