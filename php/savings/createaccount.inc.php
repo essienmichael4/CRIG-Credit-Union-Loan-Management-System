@@ -34,8 +34,8 @@
         $bulkbalance = 0;
         $monthlybalance = 0;
 
-        if(emptyField($firstname) || emptyField($lastname) || emptyField($othernames) ||
-            emptyField($email) || emptyField($staffid) || emptyField($phonenumber)
+        if(emptyField($firstname) || emptyField($lastname) ||
+            emptyField($email) ||  emptyField($phonenumber)
             || emptyField($nextofkin) || emptyField($nextofkinphone) || emptyField($memcode)||
             emptyField($address) || emptyField($residentialaddress) || emptyField($maritalstatus)||
             emptyField($dateofbirth) || emptyField($nextofkinaddress) || emptyField($hometown)||

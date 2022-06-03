@@ -1712,6 +1712,13 @@ h2.p {
   font-weight: bolder;
   letter-spacing: 0.1rem;
 }
+.withdraw_form form .withdrawal__body a, .deposite_form form .withdrawal__body a {
+  display: block;
+  padding: 0.2rem 0.5rem;
+  background-color: #1c64ff;
+  color: #fff;
+  cursor: pointer;
+}
 .withdraw_form form .withdrawal__body button, .deposite_form form .withdrawal__body button {
   margin: 1rem 0;
   padding: 0.7rem 2.5rem;

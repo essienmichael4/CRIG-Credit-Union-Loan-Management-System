@@ -47,12 +47,13 @@
         $memcode = mysqli_real_escape_string($conn,$_POST["memcode"]);
         // $receiptnumber = mysqli_real_escape_string($conn,$_POST["receiptnum"]);
         $debitamount = (float)mysqli_real_escape_string($conn,$_POST["deposit"]);
-        $deposittype = mysqli_real_escape_string($conn,$_POST["deposittype"]);
+        // $deposittype = mysqli_real_escape_string($conn,$_POST["deposittype"]);
         $transaction_type = "debit";
         $balance = 0;
         $initialbalance = 0;
 
-        $sql = "SELECT * FROM `savings` WHERE `mem_code` = '{$memcode}' OR `staff_id` = '{$memcode}';";
+        $sql = "SELECT * FROM `savings` WHERE `mem_code` = '{$memcode}' OR 
+        `staff_id` = '{$memcode}';";
                 
         $result = mysqli_query($conn, $sql);
     

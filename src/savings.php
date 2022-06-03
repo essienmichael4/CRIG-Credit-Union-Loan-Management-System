@@ -69,11 +69,10 @@
                             <tr>
                                 <th>Member ID</th>
                                 <th>Member Name</th>
+                                <th>Staff ID</th>
                                 <th>Contact</th>
-                                <th>Member Name</th>
                                 <th>Balance</th>
-                                <th>Member Name</th>
-                                <th>Member Name</th>
+                                <th>Account Status</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -104,210 +103,12 @@
                                 <td>Unknown</td>
                                 <td>Unknown</td>
                             </tr>
-                            <tr>
-                                <td>cqc1234567465</td>
-                                <td><a href="">Michael Essien</a> </td>
-                                <td>+233 263436049</td>
-                                <td>Unknown</td>
-                                <td>GH¢ 1,500</td>
-                                <td>Unknown</td>
-                                <td>Unknown</td>
-                            </tr>
-                            <tr>
-                                <td>cqc1234567465</td>
-                                <td><a href="">Michael Essien</a> </td>
-                                <td>+233 263436049</td>
-                                <td>Unknown</td>
-                                <td>GH¢ 1,500</td>
-                                <td>Unknown</td>
-                                <td>Unknown</td>
-                            </tr>
-                            <tr>
-                                <td>cqc1234567465</td>
-                                <td><a href="">Michael Essien</a> </td>
-                                <td>+233 263436049</td>
-                                <td>Unknown</td>
-                                <td>GH¢ 1,500</td>
-                                <td>Unknown</td>
-                                <td>Unknown</td>
-                            </tr>
-                            <tr>
-                                <td>cqc1234567465</td>
-                                <td><a href="">Michael Essien</a> </td>
-                                <td>+233 263436049</td>
-                                <td>Unknown</td>
-                                <td>GH¢ 1,500</td>
-                                <td>Unknown</td>
-                                <td>Unknown</td>
-                            </tr>
-                            <tr>
-                                <td>cqc1234567465</td>
-                                <td><a href="">Michael Essien</a> </td>
-                                <td>+233 263436049</td>
-                                <td>Unknown</td>
-                                <td>GH¢ 1,500</td>
-                                <td>Unknown</td>
-                                <td>Unknown</td>
-                            </tr>
-                            <tr>
-                                <td>cqc1234567465</td>
-                                <td><a href="">Michael Essien</a> </td>
-                                <td>+233 263436049</td>
-                                <td>Unknown</td>
-                                <td>GH¢ 1,500</td>
-                                <td>Unknown</td>
-                                <td>Unknown</td>
-                            </tr>
-                            <tr>
-                                <td>cqc1234567465</td>
-                                <td><a href="">Michael Essien</a> </td>
-                                <td>+233 263436049</td>
-                                <td>Unknown</td>
-                                <td>GH¢ 1,500</td>
-                                <td>Unknown</td>
-                                <td>Unknown</td>
-                            </tr>
-                            <tr>
-                                <td>cqc1234567465</td>
-                                <td><a href="">Michael Essien</a> </td>
-                                <td>+233 263436049</td>
-                                <td>Unknown</td>
-                                <td>GH¢ 1,500</td>
-                                <td>Unknown</td>
-                                <td>Unknown</td>
-                            </tr>
-                            <tr>
-                                <td>cqc1234567465</td>
-                                <td><a href="">Michael Essien</a> </td>
-                                <td>+233 263436049</td>
-                                <td>Unknown</td>
-                                <td>GH¢ 1,500</td>
-                                <td>Unknown</td>
-                                <td>Unknown</td>
-                            </tr>
-                            <tr>
-                                <td>cqc1234567465</td>
-                                <td><a href="">Michael Essien</a> </td>
-                                <td>+233 263436049</td>
-                                <td>Unknown</td>
-                                <td>GH¢ 1,500</td>
-                                <td>Unknown</td>
-                                <td>Unknown</td>
-                            </tr>
-                            <tr>
-                                <td>cqc1234567465</td>
-                                <td><a href="">Michael Essien</a> </td>
-                                <td>+233 263436049</td>
-                                <td>Unknown</td>
-                                <td>GH¢ 1,500</td>
-                                <td>Unknown</td>
-                                <td>Unknown</td>
-                            </tr>
-                            <tr>
-                                <td>cqc1234567465</td>
-                                <td><a href="">Michael Essien</a> </td>
-                                <td>+233 263436049</td>
-                                <td>Unknown</td>
-                                <td>GH¢ 1,500</td>
-                                <td>Unknown</td>
-                                <td>Unknown</td>
-                            </tr>
-                            <tr>
-                                <td>cqc1234567465</td>
-                                <td><a href="">Michael Essien</a> </td>
-                                <td>+233 263436049</td>
-                                <td>Unknown</td>
-                                <td>GH¢ 1,500</td>
-                                <td>Unknown</td>
-                                <td>Unknown</td>
-                            </tr>
-                            <tr>
-                                <td>cqc1234567465</td>
-                                <td><a href="">Michael Essien</a> </td>
-                                <td>+233 263436049</td>
-                                <td>Unknown</td>
-                                <td>GH¢ 1,500</td>
-                                <td>Unknown</td>
-                                <td>Unknown</td>
-                            </tr>
-                            <tr>
-                                <td>cqc1234567465</td>
-                                <td><a href="">Michael Essien</a> </td>
-                                <td>+233 263436049</td>
-                                <td>Unknown</td>
-                                <td>GH¢ 1,500</td>
-                                <td>Unknown</td>
-                                <td>Unknown</td>
-                            </tr>
-                            <tr>
-                                <td>cqc1234567465</td>
-                                <td><a href="">Michael Essien</a> </td>
-                                <td>+233 263436049</td>
-                                <td>Unknown</td>
-                                <td>GH¢ 1,500</td>
-                                <td>Unknown</td>
-                                <td>Unknown</td>
-                            </tr>
-                            <tr>
-                                <td>cqc1234567465</td>
-                                <td><a href="">Michael Essien</a> </td>
-                                <td>+233 263436049</td>
-                                <td>Unknown</td>
-                                <td>GH¢ 1,500</td>
-                                <td>Unknown</td>
-                                <td>Unknown</td>
-                            </tr>
-                            <tr>
-                                <td>cqc1234567465</td>
-                                <td><a href="">Michael Essien</a> </td>
-                                <td>+233 263436049</td>
-                                <td>Unknown</td>
-                                <td>GH¢ 1,500</td>
-                                <td>Unknown</td>
-                                <td>Unknown</td>
-                            </tr>
-                            <tr>
-                                <td>cqc1234567465</td>
-                                <td><a href="">Michael Essien</a> </td>
-                                <td>+233 263436049</td>
-                                <td>Unknown</td>
-                                <td>GH¢ 1,500</td>
-                                <td>Unknown</td>
-                                <td>Unknown</td>
-                            </tr>
-                            <tr>
-                                <td>cqc1234567465</td>
-                                <td><a href="">Michael Essien</a> </td>
-                                <td>+233 263436049</td>
-                                <td>Unknown</td>
-                                <td>GH¢ 1,500</td>
-                                <td>Unknown</td>
-                                <td>Unknown</td>
-                            </tr>
-                            <tr>
-                                <td>cqc1234567465</td>
-                                <td><a href="">Michael Essien</a> </td>
-                                <td>+233 263436049</td>
-                                <td>Unknown</td>
-                                <td>GH¢ 1,500</td>
-                                <td>Unknown</td>
-                                <td>Unknown</td>
-                            </tr>
-                            <tr>
-                                <td>cqc1234567465</td>
-                                <td><a href="">Michael Essien</a> </td>
-                                <td>+233 263436049</td>
-                                <td>Unknown</td>
-                                <td>GH¢ 1,500</td>
-                                <td>Unknown</td>
-                                <td>Unknown</td>
-                            </tr>
                         </tbody>
                     </table>
                 </section>
 
                 <div class="withdraw_form ">
-                    <form action="">
+                    <form action="../php/savings/deposit_debit.inc.php" method="POST">
                         <header>
                             <h4>Withdrawal Form</h4>
                             <a class="withdrawal_close">	&#8594;</a>
@@ -315,17 +116,18 @@
 
                         <div class="withdrawal__body">
                             <div class="error">
-                            <p class="err">This is an error</p>
+                            <!-- <p class="err">This is an error</p> -->
                             </div>
                             <input type="text" name="processor" value="<?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?>" hidden>
                             <div class="form-control">
                                 <label for="">Mem. Code <span></span></label>
-                                <input type="text" placeholder="member code">
+                                <input type="text" name="memcode" placeholder="member code">
+                                <a>search</a>
                             </div>
                             
                             <div class="form-control">
                                 <label for="">Name<span></span></label>
-                                <input type="text" placeholder="Name">
+                                <input type="text" name="name" placeholder="Name">
                             </div>
                             
                             <div class="form-control">
@@ -334,15 +136,15 @@
                             </div>
                             <div class="form-control">
                                 <label for="">Amount <span>GH¢</span></label>
-                                <input type="number">
+                                <input type="number" name="debitamount">
                             </div>
-                            <button>Withdraw</button>
+                            <button name="deit">Withdraw</button>
                         </div>
                     </form>
                 </div>
 
                 <div class="deposite_form ">
-                    <form action="">
+                    <form action="../php/savings/deposit_debit.inc.php" method="POST">
                         <header>
                             <h4>Deposit Form</h4>
                             <a class="deposite_close">	&#8594;</a>
@@ -350,22 +152,24 @@
 
                         <div class="withdrawal__body dep">
                             <div class="error">
-                            <p class="err">This is an error</p>
+                            <!-- <p class="err">This is an error</p> -->
                             </div>
                             <input type="text" name="processor" value="<?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?>" hidden>
                             <div class="form-control dep">
                                 <label for="">Mem. Code <span></span></label>
-                                <input type="text" placeholder="member code">
+                                <input type="text" name="memcode" placeholder="member code">
+                                <a>search</a>
                             </div>
 
                             <div class="form-control dep">
                                 <label for="">Receipt No.<span></span></label>
                                 <input type="text" placeholder="" name="receiptnum">
+                                
                             </div>
                             
                             <div class="form-control dep">
                                 <label for="">Name<span></span></label>
-                                <input type="text" placeholder="Name">
+                                <input type="text" name="name" placeholder="Name">
                             </div>
                             
                             <div class="form-control dep">
