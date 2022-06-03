@@ -79,9 +79,7 @@
                         </div>
                         <div class="personal_info">
                             <h4>Phone No.</h4>
-                            <div>
-                                <span>+233</span><input type="number" autocomplete="FALSE" name="phonenumber" placeholder="Phone">
-                            </div>
+                            <input type="number" autocomplete="FALSE" name="phonenumber" placeholder="Phone">
                         </div>
                         <div class="personal_info">
                             <h4>Marital Status</h4>
@@ -151,10 +149,8 @@
                         </div>
                         <div class="personal_info">
                             <h4>Next of Kin Phone No.</h4>
-                            <div>
-                                <span>+233</span>
                                 <input type="number" name="nextofkinphone" placeholder="Next of Kin Phone">
-                            </div>
+                            
                         </div>
                         <div class="personal_info">
                             <h4>Next of Kin Occupation</h4>
@@ -191,8 +187,12 @@
                             <h4>Monthly Deposite</h4>
                             <div>
                                 <span>Gh¢</span>
-                                <input type="number" name="bulkdeposite" placeholder="">
+                                <input type="number" name="monthlydeposite" placeholder="">
                             </div>
+                        </div>
+                        <div class="personal_info">
+                            <h4>Receipt No.</h4>
+                            <input type="number" autocomplete="FALSE" name="receiptnumber" placeholder="Receipt">
                         </div>
                     </div>
                     <div class="apply_savings">
