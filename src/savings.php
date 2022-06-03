@@ -83,7 +83,6 @@
                                 <td>Unknown</td>
                                 <td>GH¢ 891,500,000</td>
                                 <td>Unknown</td>
-                                <td>Unknown</td>
                             </tr>
                             <tr>
                                 <td>cqc1234567465</td>
@@ -92,7 +91,6 @@
                                 <td>Unknown</td>
                                 <td>GH¢ 1,500</td>
                                 <td>Unknown</td>
-                                <td>Unknown</td>
                             </tr>
                             <tr>
                                 <td>cqc1234567465</td>
@@ -100,7 +98,6 @@
                                 <td>+233 263436049</td>
                                 <td>Unknown</td>
                                 <td>GH¢ 1,500</td>
-                                <td>Unknown</td>
                                 <td>Unknown</td>
                             </tr>
                         </tbody>
@@ -115,30 +112,30 @@
                         </header>
 
                         <div class="withdrawal__body">
-                            <div class="error">
+                            <div class="error deberror">
                             <!-- <p class="err">This is an error</p> -->
                             </div>
                             <input type="text" name="processor" value="<?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?>" hidden>
                             <div class="form-control">
                                 <label for="">Mem. Code <span></span></label>
-                                <input type="text" name="memcode" placeholder="member code">
-                                <a>search</a>
+                                <input type="text" name="memcode" class="debmemcode" placeholder="member code">
+                                <a class="searchdebmember">search</a>
                             </div>
                             
                             <div class="form-control">
                                 <label for="">Name<span></span></label>
-                                <input type="text" name="name" placeholder="Name">
+                                <h4 class="sw memname"></h4>
                             </div>
                             
                             <div class="form-control">
                                 <label for="">Balance <span>GH¢</span></label>
-                                <h4 class="sw">Michael Essien</h4>
+                                <h4 class="sw membal">Michael Essien</h4>
                             </div>
                             <div class="form-control">
                                 <label for="">Amount <span>GH¢</span></label>
                                 <input type="number" name="debitamount">
                             </div>
-                            <button name="deit">Withdraw</button>
+                            <button name="debit">Withdraw</button>
                         </div>
                     </form>
                 </div>
@@ -151,14 +148,14 @@
                         </header>
 
                         <div class="withdrawal__body dep">
-                            <div class="error">
+                            <div class="error depositerror">
                             <!-- <p class="err">This is an error</p> -->
                             </div>
                             <input type="text" name="processor" value="<?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?>" hidden>
                             <div class="form-control dep">
                                 <label for="">Mem. Code <span></span></label>
-                                <input type="text" name="memcode" placeholder="member code">
-                                <a>search</a>
+                                <input type="text" name="memcode" placeholder="member code" class="depmemcode">
+                                <a class="searchdepmember">search</a>
                             </div>
 
                             <div class="form-control dep">
@@ -169,12 +166,12 @@
                             
                             <div class="form-control dep">
                                 <label for="">Name<span></span></label>
-                                <input type="text" name="name" placeholder="Name">
+                                <h4 class="sw depmemname"></h4>
                             </div>
                             
                             <div class="form-control dep">
                                 <label for="">Balance <span>GH¢</span></label>
-                                <h4 class="sw"></h4>
+                                <h4 class="sw depmembal"></h4>
                             </div>
                             
                             <div class="form-control dep">
@@ -197,6 +194,7 @@
         </div>
     </div>
     <script src="../js/searchUtils.js"></script>
+    <script src="../js/searchmember.js"></script>
     <!-- <script src="../js/getallloans.js"></script> -->
     <script src="../js/filters.js"></script>
     <script src="../js/deposite.js"></script>

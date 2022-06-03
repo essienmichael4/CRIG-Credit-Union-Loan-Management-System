@@ -1,8 +1,11 @@
 <?php
     include_once("./dbs.inc.php");
     include_once("./functions.inc.php");
+    $transactiontype = "deposit";
+    $deposittype=  "monthly";
 
-    $sql = "SELECT * FROM `savings` ORDER BY `id` DESC;";
+    $sql = "SELECT * FROM `transactions` WHERE `transaction_type` = '{$transactiontype}'
+    AND `deposite_type` = '{$deposittype}' ORDER BY `id` DESC;";
 
     $result = mysqli_query($conn, $sql);
 
