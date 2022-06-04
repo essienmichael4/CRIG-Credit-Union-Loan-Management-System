@@ -25,11 +25,11 @@
         $nextofkinrelation = mysqli_real_escape_string($conn,$_POST["nextofkinrelation"]);
         $nextofkinoccupation = mysqli_real_escape_string($conn,$_POST["nextofkinoccupation"]);
         $nextofkinaddress = mysqli_real_escape_string($conn,$_POST["nextofkinaddress"]);
-        $bulkdeposite = (float)mysqli_real_escape_string($conn,$_POST["bulkdeposite"]);
-        $monthlydeposite = (float)mysqli_real_escape_string($conn,$_POST["monthlydeposite"]);
+        $bulkdeposit = (float)mysqli_real_escape_string($conn,$_POST["bulkdeposite"]);
+        $monthlydeposit = (float)mysqli_real_escape_string($conn,$_POST["monthlydeposite"]);
         $receiptnumber = mysqli_real_escape_string($conn,$_POST["receiptnumber"]);
-        $deposite = "deposite";
-        $depositetype = "bulk";
+        $deposit = "deposit";
+        $deposittype = "bulk";
         $initialbalance = 0;
         $balance = 0;
         $bulkbalance = 0;
@@ -46,13 +46,13 @@
             exit();
         }
 
-        if(!empty($bulkdeposite)){
-            $balance = $balance + $bulkdeposite;
+        if(!empty($bulkdeposit)){
+            $balance = $balance + $bulkdeposit;
             $bulkbalance = $balance;
         }
-        if(!empty($monthlydeposite)){
-            $balance = $balance + $monthlydeposite;
-            $monthlybalance = $balance + $monthlydeposite;
+        if(!empty($monthlydeposit)){
+            $balance = $balance + $monthlydeposit;
+            $monthlybalance = $balance + $monthlydeposit;
         }
 
         $sql = "INSERT INTO `savings`(`first_name`, `last_name`,`other_names`, `mem_code`, 
@@ -67,22 +67,22 @@
         $balance,'$processor')";
             
         if(mysqli_query($conn, $sql)){
-            if($balance != 0 && !empty($bulkdeposite)){
+            if($balance != 0 && !empty($bulkdeposit)){
                 $sql = "INSERT INTO `transactions`(`member_code`, `transaction_type`,
                  `deposit_type`, `amount_transacted`, `amount_in_account`
                 , `balance_in_account`, `transacted_by`, `receipt_number`) 
-                VALUES('$memcode', '$deposite', 
-                '$depositetype', $bulkdeposite ,$initialbalance, $bulkbalance, '$processor','$receiptnumber')";
+                VALUES('$memcode', '$deposit', 
+                '$deposittype', $bulkdeposit ,$initialbalance, $bulkbalance, '$processor','$receiptnumber')";
 
                 $conn->query($sql);
             }
-            if($balance != 0 && !empty($monthlydeposite)){
-                $depositetype = "monthly";
+            if($balance != 0 && !empty($monthlydeposit)){
+                $deposittype = "monthly";
                 $sql = "INSERT INTO `transactions`(`member_code`, `transaction_type`,
                  `deposit_type`, `amount_transacted`, `amount_in_account`
                 , `balance_in_account`, `transacted_by`, `receipt_number`) 
-                VALUES('$memcode', '$deposite', 
-                '$depositetype', $monthlydeposite , $initialbalance, $monthlybalance, '$processor','$receiptnumber')";
+                VALUES('$memcode', '$deposit', 
+                '$deposittype', $monthlydeposit , $initialbalance, $monthlybalance, '$processor','$receiptnumber')";
             
                 $conn->query($sql);
             }

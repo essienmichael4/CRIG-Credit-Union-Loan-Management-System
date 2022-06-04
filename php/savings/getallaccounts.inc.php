@@ -1,6 +1,6 @@
 <?php
-    include_once("./dbs.inc.php");
-    include_once("./functions.inc.php");
+    include_once("../dbs.inc.php");
+    include_once("../functions.inc.php");
 
     $sql = "SELECT * FROM `savings` ORDER BY `id` DESC;";
 
@@ -11,11 +11,11 @@
     $rows = "";
 
     while($res = mysqli_fetch_assoc($result)){
-        $row .= "<tr>
+        $rows .= "<tr>
                     <td>{$res['mem_code']}</td>
                     <td><a href='?pgname=savingdetails&account_id={$res['id']}'>{$res['first_name']} {$res['last_name']} {$res['other_names']}</a> </td>
                     <td>{$res['staff_id']}</td>
-                    <td>{$res['phone_number']}</td>
+                    <td>{$res['phone']}</td>
                     <td>GH¢ {$res['balance']}</td>
                     <td>{$res['account_status']}</td>
                 </tr>"; 

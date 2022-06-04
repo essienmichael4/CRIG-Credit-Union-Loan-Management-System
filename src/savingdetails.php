@@ -1,4 +1,14 @@
-        <div class="main">
+    <?php
+        $id = $_GET["account_id"];
+        include_once("../php/dbs.inc.php");
+
+        $sql = "SELECT * FROM `savings` WHERE `id` = {$id}";
+        $result = mysqli_query($conn, $sql);
+        $account = mysqli_fetch_assoc($result);
+        $memcode = $account["mem_code"];
+    ?>
+    <input type="text" class="account_code" value="<?=$memcode?>" hidden>
+    <div class="main">
             <header class="main__header flex px1">
                 <h2 class="">Savings</h2>
                 <form class="search" action="../php/search.php" method="POST">
@@ -22,7 +32,7 @@
                 <div class="details-head">
                     <a href="?pgname=savings">	&#8592;</a>
                     <div class="details-right">
-                        <h2 class="p"><span>Michael Essien</span></h2>
+                        <h2 class="p"><span><?=$account["first_name"].' '.$account["last_name"].' '.$account["other_names"]?></span></h2>
                         <p> Account Details & Statements</p>
                     </div>
                     <div class="actions">
@@ -35,83 +45,83 @@
                 <div class="personal__details">
                     <div class="personal_info">
                         <h4>Mem. Code</h4>
-                        <p>cqc112345321323</p>
+                        <p><?=$account["mem_code"]?></p>
                     </div>
                     <div class="personal_info">
                         <h4>Staff ID</h4>
-                        <p>cqc112345321323</p>
+                        <p><?=$account["staff_id"]?></p>
                     </div>
                     <div class="personal_info">
                         <h4>Date of Birth</h4>
-                        <p>cqc112345321323</p>
+                        <p><?=$account["date_of_birth"]?></p>
                     </div>
                     <div class="personal_info">
                         <h4>Phone Number</h4>
-                        <p>02345321323</p>
+                        <p><?=$account["phone"]?></p>
                     </div>
                     <div class="personal_info">
                         <h4>Marital Status</h4>
-                        <p>Married</p>
+                        <p><?=$account["marital_status"]?></p>
                     </div>
                     <div class="personal_info">
                         <h4>Name of Spouse</h4>
-                        <p>Jane Doe</p>
+                        <p><?=$account["name_of_spouse"]?></p>
                     </div>
                     <div class="personal_info">
                         <h4>Number of Children</h4>
-                        <p>3</p>
+                        <p><?=$account["number_of_children"]?></p>
                     </div>
                     <div class="personal_info">
                         <h4>Occupation</h4>
-                        <p>Driver</p>
+                        <p><?=$account["occupation"]?></p>
                     </div>
                     <div class="personal_info">
                         <h4>Place of Work</h4>
-                        <p>GPRTU</p>
+                        <p><?=$account["place_of_work"]?></p>
                     </div>
                     <div class="personal_info">
                         <h4>Division</h4>
-                        <p>C@ Station</p>
+                        <p><?=$account["division"]?></p>
                     </div>
                     <div class="personal_info">
                         <h4>Address</h4>
-                        <p>P. O. box bt 548</p>
+                        <p><?=$account["address"]?></p>
                     </div>
                     <div class="personal_info">
                         <h4>Residential Address</h4>
-                        <p>121 n2/c2</p>
+                        <p><?=$account["residential_address"]?></p>
                     </div>
                     <div class="personal_info">
                         <h4>Hometown</h4>
-                        <p>New Tafo</p>
+                        <p><?=$account["home_town"]?></p>
                     </div>
                     <div class="personal_info">
                         <h4>Next of Kin</h4>
-                        <p>John Doe</p>
+                        <p><?=$account["next_of_kin"]?></p>
                     </div>
                     <div class="personal_info">
                         <h4>Next of Kin Relation</h4>
-                        <p>Brother</p>
+                        <p><?=$account["next_of_kin_relation"]?></p>
                     </div>
                     <div class="personal_info">
                         <h4>Next of Kin Phone</h4>
-                        <p>0262623569</p>
+                        <p><?=$account["next_of_kin_phone"]?></p>
                     </div>
                     <div class="personal_info">
                         <h4>Next of Kin Address</h4>
-                        <p></p>
+                        <p><?=$account["next_of_kin_address"]?></p>
                     </div>
                     <div class="personal_info">
                         <h4>Next of Kin Occupation</h4>
-                        <p>Banker</p>
+                        <p><?=$account["next_of_kin_occupation"]?></p>
                     </div>
                     <div class="personal_info">
                         <h4>Account Created On:</h4>
-                        <p>22-2-2022</p>
+                        <p><?=$account["day_created"]?></p>
                     </div>
                     <div class="personal_info">
                         <h4>Account Created By:</h4>
-                        <p>Jane Foster</p>
+                        <p><?=$account["created_by"]?></p>
                     </div>
 
                 </div>
@@ -155,138 +165,13 @@
                 <div class=" account-details">
                     <h2 class="account-title">Transactions</h2>
                     <div class="actions">
-                        <button>All Transactions</button>
-                        <button>Deposites</button>
-                        <button>Withdrawals</button>
+                        <button class="getalltransactions">All Transactions</button>
+                        <button class="getalldeposit">Deposites</button>
+                        <button class="getalldebit">Withdrawals</button>
                     </div>
                 </div>
                 <section class="savings__table">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Date</th>
-                                <th>Transaction Type</th>
-                                <th>Previous Balance</th>
-                                <th>Deposite/Debit</th>
-                                <th>Balance</th>
-                                <th>Teller</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>cqc1234567465</td>
-                                <td><a href="?pgname=savingdetails">Michael Essien</a> </td>
-                                <td>+233 263436049</td>
-                                <td>Unknown</td>
-                                <td>GH¢ 891,500,000</td>
-                                <td>Unknown</td>
-                            </tr>
-                            <tr>
-                                <td>cqc1234567465</td>
-                                <td><a href="">Michael Essien</a> </td>
-                                <td>+233 263436049</td>
-                                <td>Unknown</td>
-                                <td>GH¢ 1,500</td>
-                                <td>Unknown</td>
-                            </tr>
-                            <tr>
-                                <td>cqc1234567465</td>
-                                <td><a href="">Michael Essien</a> </td>
-                                <td>+233 263436049</td>
-                                <td>Unknown</td>
-                                <td>GH¢ 1,500</td>
-                                <td>Unknown</td>
-                            </tr>
-                            <tr>
-                                <td>cqc1234567465</td>
-                                <td><a href="">Michael Essien</a> </td>
-                                <td>+233 263436049</td>
-                                <td>Unknown</td>
-                                <td>GH¢ 1,500</td>
-                                <td>Unknown</td>
-                            </tr>
-                            <tr>
-                                <td>cqc1234567465</td>
-                                <td><a href="">Michael Essien</a> </td>
-                                <td>+233 263436049</td>
-                                <td>Unknown</td>
-                                <td>GH¢ 1,500</td>
-                                <td>Unknown</td>
-                            </tr>
-                            <tr>
-                                <td>cqc1234567465</td>
-                                <td><a href="">Michael Essien</a> </td>
-                                <td>+233 263436049</td>
-                                <td>Unknown</td>
-                                <td>GH¢ 1,500</td>
-                                <td>Unknown</td>
-                            </tr>
-                            <tr>
-                                <td>cqc1234567465</td>
-                                <td><a href="">Michael Essien</a> </td>
-                                <td>+233 263436049</td>
-                                <td>Unknown</td>
-                                <td>GH¢ 1,500</td>
-                                <td>Unknown</td>
-                            </tr>
-                            <tr>
-                                <td>cqc1234567465</td>
-                                <td><a href="">Michael Essien</a> </td>
-                                <td>+233 263436049</td>
-                                <td>Unknown</td>
-                                <td>GH¢ 1,500</td>
-                                <td>Unknown</td>
-                            </tr>
-                            <tr>
-                                <td>cqc1234567465</td>
-                                <td><a href="">Michael Essien</a> </td>
-                                <td>+233 263436049</td>
-                                <td>Unknown</td>
-                                <td>GH¢ 1,500</td>
-                                <td>Unknown</td>
-                            </tr>
-                            <tr>
-                                <td>cqc1234567465</td>
-                                <td><a href="">Michael Essien</a> </td>
-                                <td>+233 263436049</td>
-                                <td>Unknown</td>
-                                <td>GH¢ 1,500</td>
-                                <td>Unknown</td>
-                            </tr>
-                            <tr>
-                                <td>cqc1234567465</td>
-                                <td><a href="">Michael Essien</a> </td>
-                                <td>+233 263436049</td>
-                                <td>Unknown</td>
-                                <td>GH¢ 1,500</td>
-                                <td>Unknown</td>
-                            </tr>
-                            <tr>
-                                <td>cqc1234567465</td>
-                                <td><a href="">Michael Essien</a> </td>
-                                <td>+233 263436049</td>
-                                <td>Unknown</td>
-                                <td>GH¢ 1,500</td>
-                                <td>Unknown</td>
-                            </tr>
-                            <tr>
-                                <td>cqc1234567465</td>
-                                <td><a href="">Michael Essien</a> </td>
-                                <td>+233 263436049</td>
-                                <td>Unknown</td>
-                                <td>GH¢ 1,500</td>
-                                <td>Unknown</td>
-                            </tr>
-                            <tr>
-                                <td>cqc1234567465</td>
-                                <td><a href="">Michael Essien</a> </td>
-                                <td>+233 263436049</td>
-                                <td>Unknown</td>
-                                <td>GH¢ 1,500</td>
-                                <td>Unknown</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    
                 </section>
 
                 <div class="withdraw_form ">
@@ -377,3 +262,4 @@
     </div>
     <script src="../js/details.js"></script>
     <script src="../js/deposite.js"></script>
+    <script src="../js/transactions.js"></script>

@@ -64,56 +64,18 @@
                     </div>
                 </div>
                 <section class="savings__table">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Member ID</th>
-                                <th>Member Name</th>
-                                <th>Staff ID</th>
-                                <th>Contact</th>
-                                <th>Balance</th>
-                                <th>Account Status</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>cqc1234567465</td>
-                                <td><a href="?pgname=savingdetails">Michael Essien</a> </td>
-                                <td>+233 263436049</td>
-                                <td>Unknown</td>
-                                <td>GH¢ 891,500,000</td>
-                                <td>Unknown</td>
-                            </tr>
-                            <tr>
-                                <td>cqc1234567465</td>
-                                <td><a href="">Michael Essien</a> </td>
-                                <td>+233 263436049</td>
-                                <td>Unknown</td>
-                                <td>GH¢ 1,500</td>
-                                <td>Unknown</td>
-                            </tr>
-                            <tr>
-                                <td>cqc1234567465</td>
-                                <td><a href="">Michael Essien</a> </td>
-                                <td>+233 263436049</td>
-                                <td>Unknown</td>
-                                <td>GH¢ 1,500</td>
-                                <td>Unknown</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    
                 </section>
 
                 <div class="withdraw_form ">
                     <form action="../php/savings/deposit_debit.inc.php" method="POST">
                         <header>
                             <h4>Withdrawal Form</h4>
-                            <a class="withdrawal_close">	&#8594;</a>
+                            <a class="withdrawal_close">&#8594;</a>
                         </header>
 
                         <div class="withdrawal__body">
                             <div class="error deberror">
-                            <!-- <p class="err">This is an error</p> -->
                             </div>
                             <input type="text" name="processor" value="<?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?>" hidden>
                             <div class="form-control">
@@ -149,7 +111,6 @@
 
                         <div class="withdrawal__body dep">
                             <div class="error depositerror">
-                            <!-- <p class="err">This is an error</p> -->
                             </div>
                             <input type="text" name="processor" value="<?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?>" hidden>
                             <div class="form-control dep">
@@ -195,6 +156,7 @@
     </div>
     <script src="../js/searchUtils.js"></script>
     <script src="../js/searchmember.js"></script>
+    <script src="../js/accounts.js"></script>
     <!-- <script src="../js/getallloans.js"></script> -->
     <script src="../js/filters.js"></script>
     <script src="../js/deposite.js"></script>
