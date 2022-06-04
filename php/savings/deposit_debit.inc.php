@@ -45,9 +45,7 @@
 
         $processor = mysqli_real_escape_string($conn,$_POST["processor"]);
         $memcode = mysqli_real_escape_string($conn,$_POST["memcode"]);
-        // $receiptnumber = mysqli_real_escape_string($conn,$_POST["receiptnum"]);
         $debitamount = (float)mysqli_real_escape_string($conn,$_POST["deposit"]);
-        // $deposittype = mysqli_real_escape_string($conn,$_POST["deposittype"]);
         $transaction_type = "debit";
         $balance = 0;
         $initialbalance = 0;
@@ -65,6 +63,11 @@
             $initialbalance = (float)$row["balanace"];
         }
         
+        
+        if($initialbalance < $debitamount){
+            header("location: ../src/routes.php?pgname=savings&error=overdraft"); 
+            exit();
+        }
         $balance = $initialbalance - $debitamount;
 
         $sql = "INSERT INTO `transactions`(`member_code`, `transaction_type`,
@@ -76,10 +79,13 @@
             $sql = "UPDATE `savings` SET `balance` = $balance WHERE `member_code` = '$memcode'";
             if(mysqli_query($conn, $sql)){
                 header("location: ../src/routes.php?pgname=savings"); 
+                exit();
             }else{
                 header("location: ../src/routes.php?pgname=savings&error=sqlerror"); 
+                exit();
             }
         }
     }else{
-        header("location: ../src/routes.php?pgname=savings"); 
+        header("location: ../src/routes.php?pgname=savings");
+        exit();
     }
