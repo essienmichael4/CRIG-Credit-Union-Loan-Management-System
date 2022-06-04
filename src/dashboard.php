@@ -18,7 +18,7 @@
                 </div>
             </header>
             <div class="wrapper">
-                <section class="cards flex">
+                <!-- <section class="cards flex">
                     <div class="cards__card flex-c">
                         <span><i class="icon icon--first fas fa-arrow-down"></i></span>
                         <p class="all_loans_total"></p>
@@ -39,8 +39,26 @@
                         <p>GH¢ 1,000.00</p>
                         <h2 class="">Interest on Loans</h2>
                     </div>
+                </section> -->
+                <div class="savings__card">
+                    <div class="card">
+                        <p>All Funds</p>
+                        <h4>GH¢ 100,000,000</h4>
+                    </div>
+                    <div class="card">
+                        <p>Current Account</p>
+                        <h4>GH¢ 80,000,000</h4>
+                    </div>
+                    <div class="card">
+                        <p>All Loans</p>
+                        <h4 class="all_loans_total"></h4>
+                    </div>
+                    <div class="card">
+                        <p>All Paid Loans</p>
+                        <h4 class="paid_loans"></h4>
+                    </div>
                     
-                </section>
+                </div>
 
                 <section class="unapproved__table">
                     <input type='text' name="user" value="<?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?>" hidden />
