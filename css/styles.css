@@ -1485,6 +1485,10 @@ body {
   background-color: #8fff78;
   color: #4d4a4a;
 }
+.account-details .actions button:nth-last-of-type(4) {
+  background-color: #ff78d7;
+  color: #4d4a4a;
+}
 .account-details .actions button span {
   margin-right: 0.3rem;
 }

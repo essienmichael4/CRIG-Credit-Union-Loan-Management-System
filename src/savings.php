@@ -63,6 +63,15 @@
                         <a class="time year">Y</a>
                     </div>
                 </div>
+                <div class=" account-details">
+                    <h2 class="account-title">Accounts</h2>
+                    <div class="actions">
+                        <button class="getallaccounts">Accounts</button>
+                        <button class="getalltransactions">All Transactions</button>
+                        <button class="getalldeposit">Deposites</button>
+                        <button class="getalldebit">Withdrawals</button>
+                    </div>
+                </div>
                 <section class="savings__table">
                     
                 </section>

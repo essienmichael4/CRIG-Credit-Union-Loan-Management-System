@@ -1752,6 +1752,10 @@ body{
                 background-color: #8fff78;
                 color: #4d4a4a;
             }
+            &:nth-last-of-type(4){
+                background-color: #ff78d7;
+                color: #4d4a4a;
+            }
 
             span{
                 margin-right: .3rem;
@@ -2131,3 +2135,4 @@ h2.p{
         }
     }
 }
+

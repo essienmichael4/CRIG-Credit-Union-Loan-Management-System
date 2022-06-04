@@ -16,7 +16,7 @@
                     <td><a href='?pgname=savingdetails&account_id={$res['id']}'>{$res['first_name']} {$res['last_name']} {$res['other_names']}</a> </td>
                     <td>{$res['staff_id']}</td>
                     <td>{$res['phone']}</td>
-                    <td>GH¢ {$res['balance']}</td>
+                    <td>{$res['balance']}</td>
                     <td>{$res['account_status']}</td>
                 </tr>"; 
     }
@@ -28,7 +28,7 @@
                         <th>Member Name</th>
                         <th>Staff ID</th>
                         <th>Contact</th>
-                        <th>Balance</th>
+                        <th>Balance GH¢</th>
                         <th>Account Status</th>
                     </tr>
                 </thead>
