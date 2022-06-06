@@ -4,7 +4,7 @@
     $memcode = mysqli_real_escape_string($conn,$_POST["memcode"]);
     $transactiontype = "deposit";
 
-    $sql = "SELECT * FROM `transactions` WHERE `member_code` = '{$memcode}' OR `staff_id` = '{$memcode}' AND 
+    $sql = "SELECT * FROM `transactions` WHERE `member_code` = '{$memcode}' AND 
     `transaction_type` = '$transactiontype' ORDER BY `id` DESC;";
 
     $result = mysqli_query($conn, $sql);
@@ -14,12 +14,16 @@
     $rows = "";
 
     while($res = mysqli_fetch_assoc($result)){
+        $amount_in_account = number_format($res['amount_in_account'],2);
+        $amount_transacted = number_format($res['amount_transacted'],2);
+        $balance_in_account = number_format($res['balance_in_account'],2);
+
         $rows .= "<tr>
                     <td>{$res['transaction_day']}</td>
                     <td>{$res['transaction_type']} </td>
-                    <td>{$res['amount_in_account']}</td>
-                    <td>{$res['amount_transacted']}</td>
-                    <td>{$res['balance_in_account']}</td>
+                    <td>{$amount_in_account}</td>
+                    <td>{$amount_transacted}</td>
+                    <td>{$balance_in_account}</td>
                     <td>{$res['transacted_by']}</td>
                 </tr>"; 
     }

@@ -11,12 +11,13 @@
     $rows = "";
 
     while($res = mysqli_fetch_assoc($result)){
+        $balance = number_format($res['balance'],2);
         $rows .= "<tr>
                     <td>{$res['mem_code']}</td>
                     <td><a href='?pgname=savingdetails&account_id={$res['id']}'>{$res['first_name']} {$res['last_name']} {$res['other_names']}</a> </td>
                     <td>{$res['staff_id']}</td>
                     <td>{$res['phone']}</td>
-                    <td>{$res['balance']}</td>
+                    <td>{$balance}</td>
                     <td>{$res['account_status']}</td>
                 </tr>"; 
     }

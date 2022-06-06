@@ -13,17 +13,21 @@
     $rows = "";
 
     while($res = mysqli_fetch_assoc($result)){
-        $sql = "SELECT * FROM `savings` WHERE `mem_code` = '{$res['member_code']}' OR `staff_id` = '{$res['staff_id']}';";
+        $sql = "SELECT * FROM `savings` WHERE `mem_code` = '{$res['member_code']}' OR `staff_id` = '{$res['member_code']}';";
         $result = mysqli_query($conn, $sql);
         $account = mysqli_fetch_assoc($result);
+        $amount_in_account = number_format($res['amount_in_account'],2);
+        $amount_transacted = number_format($res['amount_transacted'],2);
+        $balance_in_account = number_format($res['balance_in_account'],2);
+
         $rows .= "<tr>
                     <td>{$res['transaction_day']}</td>
                     <td>{$res['member_code']}</td>
                     <td><a href='?pgname=savingdetails&account_id={$account['id']}'>{$account['first_name']} {$account['last_name']} {$account['other_names']}</a> </td>
                     <td>{$res['transaction_type']} </td>
-                    <td>{$res['amount_in_account']}</td>
-                    <td>{$res['amount_transacted']}</td>
-                    <td>{$res['balance_in_account']}</td>
+                    <td>{$amount_in_account}</td>
+                    <td>{$amount_transacted}</td>
+                    <td>{$balance_in_account}</td>
                     <td>{$res['transacted_by']}</td>
                 </tr>"; 
     }

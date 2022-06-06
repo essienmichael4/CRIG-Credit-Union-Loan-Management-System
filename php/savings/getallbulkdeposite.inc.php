@@ -1,6 +1,7 @@
 <?php
     include_once("./dbs.inc.php");
     include_once("./functions.inc.php");
+    // $memcode = mysqli_real_escape_string($conn,$_POST["memcode"]);
     $deposittype=  "monthly";
 
     $sql = "SELECT * FROM `transactions` WHERE `transaction_type` = '{$transactiontype}'
@@ -13,12 +14,13 @@
     $rows = "";
 
     while($res = mysqli_fetch_assoc($result)){
+        $balance = number_format($res['balance'],2);
         $row .= "<tr>
                     <td>{$res['mem_code']}</td>
                     <td><a href='?pgname=savingdetails&account_id={$res['id']}'>{$res['first_name']} {$res['last_name']} {$res['other_names']}</a> </td>
                     <td>{$res['staff_id']}</td>
                     <td>{$res['phone_number']}</td>
-                    <td>GH¢ {$res['balance']}</td>
+                    <td>GH¢ {$balance}</td>
                     <td>{$res['account_status']}</td>
                 </tr>"; 
     }
