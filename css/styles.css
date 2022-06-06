@@ -980,6 +980,22 @@ body {
   background-color: #ebebeb;
   padding: 1rem 0.6rem;
 }
+.main .apply .form .formControl.bgb {
+  background-color: #1c64ff;
+}
+.main .apply .form .formControl.bgb label {
+  color: #dfdfdf;
+}
+.main .apply .form .formControl.bgb div span {
+  margin-left: 15px;
+  margin-right: 0;
+  cursor: pointer;
+  background-color: #fff;
+  border: none;
+}
+.main .apply .form .formControl.bgb div span i {
+  color: #a3a2a2;
+}
 .main .apply .form .formControl label {
   margin-bottom: 0.5rem;
   font-size: 0.75rem;

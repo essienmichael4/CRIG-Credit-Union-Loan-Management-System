@@ -4,7 +4,7 @@
     $memcode = mysqli_real_escape_string($conn,$_POST["memcode"]);
     $transactiontype = "deposit";
 
-    $sql = "SELECT * FROM `transactions` WHERE `member_code` = '{$memcode}' AND 
+    $sql = "SELECT * FROM `transactions` WHERE `member_code` = '{$memcode}' OR `staff_id` = '{$memcode}' AND 
     `transaction_type` = '$transactiontype' ORDER BY `id` DESC;";
 
     $result = mysqli_query($conn, $sql);

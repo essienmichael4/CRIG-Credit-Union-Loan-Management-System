@@ -1135,6 +1135,28 @@ body{
                 background-color: #ebebeb;
                 padding: 1rem .6rem;
 
+                &.bgb{
+                    background-color: #1c64ff;
+
+                    label{
+                        color: #dfdfdf;
+                    }
+
+                    div{    
+                        span{
+                            margin-left: 15px;
+                            margin-right: 0;
+                            cursor: pointer;
+                            background-color: #fff;
+                            border: none;
+
+                            i{
+                                color: #a3a2a2;
+                            }
+                        }
+                    }
+                }
+
                 label{
                     margin-bottom: .5rem;
                     font-size: .75rem;

@@ -34,6 +34,10 @@
                         <div class="form__group">
                             <input type="text" name="recipient" value="<?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?>" hidden>
                             <div class="formControl flex-c">
+                                <label for="">Member Code CQC.</label>
+                                <input type="text" name="memcode" placeholder="Member Code CQC" value="<?=$applicant["member_code"]?>">
+                            </div>
+                            <div class="formControl flex-c">
                                 <label for="">First name</label>
                                 <input type="text" name="firstname" placeholder="First Name" value="<?=$applicant["first_name"]?>">
                             </div>
@@ -51,10 +55,7 @@
                                     <span>+233</span><input type="text" name="phone" placeholder="eg. 201234567" value="<?=$applicant["phone_number"]?>">
                                 </div>
                             </div>
-                            <div class="formControl flex-c">
-                                <label for="">Member Code CQC.</label>
-                                <input type="text" name="memcode" placeholder="Member Code CQC" value="<?=$applicant["member_code"]?>">
-                            </div>
+                            
                             <div class="formControl flex-c">
                                 <label for="">Work Place</label>
                                 <input type="text" placeholder="Work Place" name="workplace" value="<?=$applicant["work_place"]?>">
@@ -345,6 +346,12 @@
                     <form class="form apply__form" action="../php/loans/applyloan.inc.php" method="POST">
                         <div class="form__group">
                             <input type="text" name="recipient" value="<?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?>" hidden>
+                            <div class="formControl flex-c bgb">
+                                <label for="">Member Code CQC.</label>
+                                <div>
+                                    <input type="text" class="applicant-search" name="memcode" placeholder="Member Code CQC"><span><i class="fas fa-search search-applicant"></i></span>
+                                </div>
+                            </div>
                             <div class="formControl flex-c">
                                 <label for="">First name</label>
                                 <input type="text" name="firstname" placeholder="First Name">
@@ -360,13 +367,10 @@
                             <div class="formControl flex-c">
                                 <label for="">Phone Number</label>
                                 <div>
-                                    <span>+233</span><input type="text" name="phone" placeholder="eg. 201234567">
+                                    <input type="text" name="phone" placeholder="eg. 201234567">
                                 </div>
                             </div>
-                            <div class="formControl flex-c">
-                                <label for="">Member Code CQC.</label>
-                                <input type="text" name="memcode" placeholder="Member Code CQC">
-                            </div>
+                            
                             <div class="formControl flex-c">
                                 <label for="">Work Place</label>
                                 <input type="text" placeholder="Work Place" name="workplace">
@@ -438,18 +442,21 @@
 
                         <h3 class="title my2">Guarantor Detials</h3>
                         <div class="form__group">
+                            <div class="formControl flex-c bgb">
+                                <label for="">Guarantor's Staff No. (1st)</label>
+                                <div>
+                                    <input type="text" name="first_guarantor_staff_number" placeholder="Staff No."><span><i class="fas fa-search"></i></span>
+                                </div>
+                            </div>
                             <div class="formControl flex-c">
                                 <label for="">Guarantor's name (1st)</label>
                                 <input type="text" name="first_guarantor_name" placeholder="Guarantor's name">
                             </div>
-                            <div class="formControl flex-c">
-                                <label for="">Guarantor's Staff No. (1st)</label>
-                                <input type="text" name="first_guarantor_staff_number" placeholder="Staff No.">
-                            </div>
+                            
                             <div class="formControl flex-c">
                                 <label for="">Guarantor's Phone (1st)</label>
                                 <div>
-                                    <span>+233</span><input type="text" name="first_guarantor_phone_number" placeholder="eg. 201234567">
+                                    <input type="text" name="first_guarantor_phone_number" placeholder="eg. 201234567">
                                 </div>
                             </div>
                             <div class="formControl flex-c">
@@ -459,18 +466,20 @@
                                     <input type="number" name="first_guarantor_guaranteed_amount" class="guaranteed1" placeholder="Amount">
                                 </div>
                             </div>
+                            <div class="formControl flex-c bgb">
+                                <label for="">Guarantor's Staff No. (2nd)</label>
+                                <div>
+                                    <input type="text" name="second_guarantor_staff_number" placeholder="Staff No."><span><i class="fas fa-search"></i></span>
+                                </div>
+                            </div>
                             <div class="formControl flex-c">
                                 <label for="">Guarantor's name (2nd)</label>
                                 <input type="text" name="second_guarantor_name" placeholder="Guarantor's name">
                             </div>
-                            <div class="formControl flex-c">
-                                <label for="">Guarantor's Staff No. (2nd)</label>
-                                <input type="text" name="second_guarantor_staff_number" placeholder="Staff No.">
-                            </div>
+                            
                             <div class="formControl flex-c">
                                 <label for="">Guarantor's Phone (2nd)</label>
                                 <div>
-                                    <span>+233</span>
                                     <input type="text" name="second_guarantor_phone_number" placeholder="eg. 201234567">
                                 </div>
                             </div>
@@ -481,18 +490,20 @@
                                     <input type="number" name="second_guarantor_guaranteed_amount" class="guaranteed2" placeholder="Amount">
                                 </div>
                             </div>
+                            <div class="formControl flex-c bgb">
+                                <label for="">Guarantor's Staff No. (3rd)</label>
+                                <div>
+                                    <input type="text" name="third_guarantor_staff_number" placeholder="Staff No."><span><i class="fas fa-search"></i></span>
+                                </div>
+                            </div>
                             <div class="formControl flex-c">
                                 <label for="">Guarantor's name (3rd)</label>
                                 <input type="text" name="third_guarantor_name" placeholder="Guarantor's name">
                             </div>
-                            <div class="formControl flex-c">
-                                <label for="">Guarantor's Staff No. (3rd)</label>
-                                <input type="text" name="third_guarantor_staff_number" placeholder="Staff No.">
-                            </div>
+                            
                             <div class="formControl flex-c">
                                 <label for="">Guarantor's Phone (3rd)</label>
                                 <div>
-                                    <span>+233</span>
                                     <input type="text" name="third_guarantor_phone_number" placeholder="eg. 201234567">
                                 </div>
                             </div>
@@ -503,18 +514,20 @@
                                     <input type="number" name="third_guarantor_guaranteed_amount" class="guaranteed3" placeholder="Amount">
                                 </div>
                             </div>
+                            <div class="formControl flex-c bgb">
+                                <label for="">Guarantor's Staff No. (4th)</label>
+                                <div>
+                                    <input type="text" name="fourth_guarantor_staff_number" placeholder="Staff No."><span><i class="fas fa-search"></i></span>
+                                </div>
+                            </div>
                             <div class="formControl flex-c">
                                 <label for="">Guarantor's name (4th)</label>
                                 <input type="text" name="fourth_guarantor_name" placeholder="Guarantor's name">
                             </div>
-                            <div class="formControl flex-c">
-                                <label for="">Guarantor's Staff No. (4th)</label>
-                                <input type="text" name="fourth_guarantor_staff_number" placeholder="Staff No.">
-                            </div>
+                            
                             <div class="formControl flex-c">
                                 <label for="">Guarantor's Phone (4th)</label>
                                 <div>
-                                    <span>+233</span>
                                     <input type="text" name="fourth_guarantor_phone_number" placeholder="eg. 201234567">
                                 </div>
                             </div>

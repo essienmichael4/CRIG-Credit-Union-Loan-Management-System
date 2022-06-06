@@ -11,7 +11,7 @@
     $rows = "";
 
     while($res = mysqli_fetch_assoc($result)){
-        $sql = "SELECT * FROM `savings` WHERE `mem_code` = '{$res['member_code']}';";
+        $sql = "SELECT * FROM `savings` WHERE `mem_code` = '{$res['member_code']}' OR `staff_id` = '{$res['staff_id']}';";
         $result = mysqli_query($conn, $sql);
         $account = mysqli_fetch_assoc($result);
         $rows .= "<tr>

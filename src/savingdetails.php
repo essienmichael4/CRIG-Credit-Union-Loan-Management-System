@@ -133,7 +133,7 @@
                     </div>
                     <div class="card">
                         <p>Current Account</p>
-                        <h4>GH¢ 80,000,000</h4>
+                        <h4>GH¢ <?=$account["balance"]?></h4>
                     </div>
                     <div class="card">
                         <p>All Funds</p>
@@ -175,7 +175,7 @@
                 </section>
 
                 <div class="withdraw_form ">
-                    <form action="">
+                    <form action="../php/savings/deposit_debit_account.inc.php" method="POST">
                         <header>
                             <h4>Withdrawal Form</h4>
                             <a class="withdrawal_close">	&#8594;</a>
@@ -183,33 +183,33 @@
 
                         <div class="withdrawal__body">
                             <div class="error">
-                                <p class="err">This is an error</p>
+                                <!-- <p class="err">This is an error</p> -->
                             </div>
                             <input type="text" name="processor" value="<?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?>" hidden>
-                            
+                            <input type="text" name="account_id" value="<?=$_GET["account_id"]?>" hidden>
                             <div class="form-control">
                                 <label for="">Name<span></span></label>
-                                <h4>Michael Essien</h4>
+                                <h4><?=$account["first_name"].' '.$account["last_name"].' '.$account["other_names"]?></h4>
                             </div>
                             <div class="form-control">
                                 <label for="">Mem. Code <span></span></label>
-                                <h4 class="sw">Michael Essien</h4>
+                                <h4 class="sw"><?=$account["mem_code"]?></h4>
                             </div>
                             <div class="form-control">
                                 <label for="">Balance <span>GH¢</span></label>
-                                <h4 class="sw">Michael Essien</h4>
+                                <h4 class="sw"><?=$account["balance"]?></h4>
                             </div>
                             <div class="form-control">
                                 <label for="">Amount <span>GH¢</span></label>
                                 <input type="number">
                             </div>
-                            <button>Withdraw</button>
+                            <button name="debit">Withdraw</button>
                         </div>
                     </form>
                 </div>
 
                 <div class="deposite_form ">
-                    <form action="">
+                    <form action="../php/savings/deposit_debit_account.inc.php" method="POST">
                         <header>
                             <h4>Deposite Form</h4>
                             <a class="deposite_close">	&#8594;</a>
@@ -217,28 +217,24 @@
 
                         <div class="withdrawal__body dep">
                             <div class="error">
-                                <p class="err">This is an error</p>
+                                <!-- <p class="err">This is an error</p> -->
                             </div>
                             <input type="text" name="processor" value="<?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?>" hidden>
+                            <input type="text" name="account_id" value="<?=$_GET["account_id"]?>" hidden>
 
                             <div class="form-control dep">
                                 <label for="">Mem. Code <span></span></label>
-                                <input type="text" placeholder="member code">
-                            </div>
-
-                            <div class="form-control dep">
-                                <label for="">Receipt No.<span></span></label>
-                                <input type="text" placeholder="member code">
+                                <input type="text" value="<?=$account["mem_code"]?>">
                             </div>
                             
                             <div class="form-control dep">
                                 <label for="">Name<span></span></label>
-                                <input type="text" placeholder="Name">
+                                <h4><?=$account["first_name"].' '.$account["last_name"].' '.$account["other_names"]?></h4>
                             </div>
                             
                             <div class="form-control dep">
                                 <label for="">Balance <span>GH¢</span></label>
-                                <h4 class="sw"></h4>
+                                <h4 class="sw"><?=$account["balance"]?></h4>
                             </div>
                             
                             <div class="form-control dep">
@@ -253,7 +249,11 @@
                                     <option value="bulk">Bulk</option>
                                 </select>
                             </div>
-                            <button>Deposite</button>
+                            <div class="form-control dep">
+                                <label for="">Receipt No.<span></span></label>
+                                <input type="text">
+                            </div>
+                            <button name="deposit">Deposite</button>
                         </div>
                     </form>
                 </div>

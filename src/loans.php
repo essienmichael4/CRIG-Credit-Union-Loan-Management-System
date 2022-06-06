@@ -21,15 +21,15 @@
                 <div class="savings__card">
                     <div class="card">
                         <p>All Loans</p>
-                        <h4>GH¢ 100,000,000</h4>
+                        <h4 class="all_loans_total"></h4>
                     </div>
                     <div class="card">
-                        <p>Paid Loans</p>
-                        <h4>GH¢ 80,000,000</h4>
+                        <p>All Paid Loans</p>
+                        <h4 class="paid_loans"></h4>
                     </div>
                     <div class="card">
                         <p>Unpaid Loans</p>
-                        <h4>GH¢ 100,000,000</h4>
+                        <h4 class="arrears"></h4>
                     </div>
                     <div class="card">
                         <p>Interest</p>
@@ -75,3 +75,7 @@
     <script src="../js/searchUtils.js"></script>
     <script src="../js/getallloans.js"></script>
     <script src="../js/filters.js"></script>
+    <script src="../js/getlimitedloans.js"></script>
+    <script src="../js/getallarrears.js"></script>
+    <script src="../js/getallloantotal.js"></script>
+    <script src="../js/getallpaidloans.js"></script>
