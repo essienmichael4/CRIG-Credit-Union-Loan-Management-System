@@ -27,6 +27,12 @@
                     <form action="../php/logout.inc.php"><button type="submit">logout</button></form>
                 </div>
             </header>
+            <div class="toast_container">
+                <div class="toast">
+                    <p class="error"></p>
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
             <div class="wrapper">
                 <section class="apply">
                     <h3 class="title">Applicant Detials</h3>
@@ -340,6 +346,12 @@
                     <form action="../php/logout.inc.php"><button type="submit">logout</button></form>
                 </div>
             </header>
+            <div class="toast_container">
+                <div class="toast">
+                    <p class="error"></p>
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
             <div class="wrapper">
                 <section class="apply">
                     <h3 class="title">Applicant Detials</h3>
@@ -448,7 +460,7 @@
                             <div class="formControl flex-c bgb">
                                 <label for="">Guarantor's Staff No. (1st)</label>
                                 <div>
-                                    <input type="text" class="gaurantoroneid" name="first_guarantor_staff_number" placeholder="Staff No.">
+                                    <input type="text" class="gaurantoroneid" name="first_guarantor_staff_number" placeholder="Mem. Code/Staff No.">
                                     <span class="gaurantoronesearch"><i class="fas fa-search "></i></span>
                                 </div>
                             </div>
@@ -471,7 +483,7 @@
                             <div class="formControl flex-c bgb">
                                 <label for="">Guarantor's Staff No. (2nd)</label>
                                 <div>
-                                    <input type="text"  class="gaurantortwoid" name="second_guarantor_staff_number" placeholder="Staff No.">
+                                    <input type="text"  class="gaurantortwoid" name="second_guarantor_staff_number" placeholder="Mem. Code/Staff No.">
                                     <span class="gaurantortwosearch"><i class="fas fa-search"></i></span>
                                 </div>
                             </div>
@@ -494,7 +506,7 @@
                             <div class="formControl flex-c bgb">
                                 <label for="">Guarantor's Staff No. (3rd)</label>
                                 <div>
-                                    <input type="text"  class="gaurantorthreeid" name="third_guarantor_staff_number" placeholder="Staff No.">
+                                    <input type="text"  class="gaurantorthreeid" name="third_guarantor_staff_number" placeholder="Mem. Code/Staff No.">
                                     <span class="gaurantorthreesearch"><i class="fas fa-search"></i></span>
                                 </div>
                             </div>
@@ -517,7 +529,7 @@
                             <div class="formControl flex-c bgb">
                                 <label for="">Guarantor's Staff No. (4th)</label>
                                 <div>
-                                    <input type="text" class="gaurantorfourid" name="fourth_guarantor_staff_number" placeholder="Staff No.">
+                                    <input type="text" class="gaurantorfourid" name="fourth_guarantor_staff_number" placeholder="Mem. Code/Staff No.">
                                     <span class="gaurantorfoursearch"><i class="fas fa-search"></i></span>
                                 </div>
                             </div>
@@ -608,3 +620,13 @@
 <script src="../js/interest.js"></script>
 <script src="../js/calcdays.js"></script>
 <script src="../js/searchmemberandgaurator.js"></script>
+<script>
+    let toast = document.querySelector(".toast_container");
+    
+    setInterval(()=>{
+        setTimeout(()=>{
+            toast.classList.remove("active");
+        }, 5000)
+        
+    },9000)
+</script>

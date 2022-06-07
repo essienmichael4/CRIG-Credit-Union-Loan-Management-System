@@ -23,10 +23,11 @@ membersearch.addEventListener("click",()=>{
             if(xhr.status == 200){
                 data = xhr.response;
                 
-                if(data === "false"){
-                    let error = "Member code incorrect or member doesn't exist";
-                    // deperror.innerHTML = `<p class="err">${error}</p>`;
-                    console.log(error);
+                if(data == "false"){
+                    let toast = document.querySelector(".toast_container");
+                    let toastmsg = document.querySelector(".toast_container .toast .error");
+                    toastmsg.textContent = "Member code incorrect or member doesn't exist";
+                    toast.classList.add("active");
                     return;
                 }
 
@@ -69,9 +70,10 @@ staffsearch.addEventListener("click",()=>{
                 data = xhr.response;
 
                 if(data === "false"){
-                    let error = "Member code incorrect or member doesn't exist";
-                    // deperror.innerHTML = `<p class="err">${error}</p>`;
-                    console.log(error);
+                    let toast = document.querySelector(".toast_container");
+                    let toastmsg = document.querySelector(".toast_container .toast .error");
+                    toastmsg.textContent = "Staff number is incorrect or staff does not seem to exist";
+                    toast.classList.add("active");
                     return;
                 }
 
@@ -97,9 +99,13 @@ staffsearch.addEventListener("click",()=>{
 
 gaurantoronesearch.addEventListener("click",()=>{
     let data;
-    let memcode = document.querySelector("gaurantoroneid").value;
+    let memcode = document.querySelector(".gaurantoroneid").value;
 
     if(memcode == ""){
+        let toast = document.querySelector(".toast_container");
+        let toastmsg = document.querySelector(".toast_container .toast .error");
+        toastmsg.textContent = "Guarantor one member code cannot be empty";
+        toast.classList.add("active");
         return;
     }
 
@@ -114,9 +120,10 @@ gaurantoronesearch.addEventListener("click",()=>{
                 data = xhr.response;
 
                 if(data === "false"){
-                    let error = "Member code incorrect or member doesn't exist";
-                    // deperror.innerHTML = `<p class="err">${error}</p>`;
-                    console.log(error);
+                    let toast = document.querySelector(".toast_container");
+                    let toastmsg = document.querySelector(".toast_container .toast .error");
+                    toastmsg.textContent = "Guarantor member code is incorrect or it does not seem to exist";
+                    toast.classList.add("active");
                     return;
                 }
 
@@ -134,9 +141,13 @@ gaurantoronesearch.addEventListener("click",()=>{
 
 gaurantortwosearch.addEventListener("click",()=>{
     let data;
-    let memcode = document.querySelector("gaurantortwoid").value;
+    let memcode = document.querySelector(".gaurantortwoid").value;
 
     if(memcode == ""){
+        let toast = document.querySelector(".toast_container");
+        let toastmsg = document.querySelector(".toast_container .toast .error");
+        toastmsg.textContent = "Guarantor two member code cannot be empty";
+        toast.classList.add("active");
         return;
     }
 
@@ -151,9 +162,10 @@ gaurantortwosearch.addEventListener("click",()=>{
                 data = xhr.response;
 
                 if(data === "false"){
-                    let error = "Member code incorrect or member doesn't exist";
-                    // deperror.innerHTML = `<p class="err">${error}</p>`;
-                    console.log(error);
+                    let toast = document.querySelector(".toast_container");
+                    let toastmsg = document.querySelector(".toast_container .toast .error");
+                    toastmsg.textContent = "Guarantor member code is incorrect or it does not seem to exist";
+                    toast.classList.add("active");
                     return;
                 }
 
@@ -171,9 +183,13 @@ gaurantortwosearch.addEventListener("click",()=>{
 
 gaurantorthreesearch.addEventListener("click",()=>{
     let data;
-    let memcode = document.querySelector("gaurantorthreeid").value;
+    let memcode = document.querySelector(".gaurantorthreeid").value;
 
     if(memcode == ""){
+        let toast = document.querySelector(".toast_container");
+        let toastmsg = document.querySelector(".toast_container .toast .error");
+        toastmsg.textContent = "Guarantor three member code cannot be empty";
+        toast.classList.add("active");
         return;
     }
 
@@ -188,9 +204,10 @@ gaurantorthreesearch.addEventListener("click",()=>{
                 data = xhr.response;
 
                 if(data === "false"){
-                    let error = "Member code incorrect or member doesn't exist";
-                    // deperror.innerHTML = `<p class="err">${error}</p>`;
-                    console.log(error);
+                    let toast = document.querySelector(".toast_container");
+                    let toastmsg = document.querySelector(".toast_container .toast .error");
+                    toastmsg.textContent = "Guarantor member code is incorrect or it does not seem to exist";
+                    toast.classList.add("active");
                     return;
                 }
 
@@ -208,9 +225,13 @@ gaurantorthreesearch.addEventListener("click",()=>{
 
 gaurantorfoursearch.addEventListener("click",()=>{
     let data;
-    let memcode = document.querySelector("gaurantorfourid").value;
+    let memcode = document.querySelector(".gaurantorfourid").value;
 
     if(memcode == ""){
+        let toast = document.querySelector(".toast_container");
+        let toastmsg = document.querySelector(".toast_container .toast .error");
+        toastmsg.textContent = "Guarantor four member code is connot be empty";
+        toast.classList.add("active");
         return;
     }
 
@@ -225,9 +246,10 @@ gaurantorfoursearch.addEventListener("click",()=>{
                 data = xhr.response;
 
                 if(data === "false"){
-                    let error = "Member code incorrect or member doesn't exist";
-                    // deperror.innerHTML = `<p class="err">${error}</p>`;
-                    console.log(error);
+                    let toast = document.querySelector(".toast_container");
+                    let toastmsg = document.querySelector(".toast_container .toast .error");
+                    toastmsg.textContent = "Guarantor member code is incorrect or it does not seem to exist";
+                    toast.classList.add("active");
                     return;
                 }
 

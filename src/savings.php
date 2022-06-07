@@ -17,6 +17,12 @@
                     <form action="../php/logout.inc.php"><button type="submit">logout</button></form>
                 </div>
             </header>
+            <div class="toast_container active">
+                <div class="toast">
+                    <p class="error">Error: Member code is incorrect or member not ofund in database</p>
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
             <div class="wrapper">
                 <div class="savings__card">
                     <div class="card">
@@ -169,3 +175,11 @@
     <!-- <script src="../js/getallloans.js"></script> -->
     <script src="../js/filters.js"></script>
     <script src="../js/deposite.js"></script>
+
+    <script>
+        let toast = document.querySelector(".toast_container");
+        
+        setTimeout(()=>{
+            toast.classList.remove("active");
+        },5000)
+    </script>

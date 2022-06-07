@@ -1822,4 +1822,44 @@ h2.p {
 }
 .apply_savings .personal_info button:hover {
   opacity: 0.7;
+}
+
+.toast_container {
+  position: fixed;
+  top: 3rem;
+  right: -320px;
+  z-index: 2000;
+  background-color: #ebebeb;
+  padding: 0.5rem;
+  width: 300px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+  transition: right 0.5s ease-in-out;
+}
+.toast_container.active {
+  right: 1rem;
+}
+.toast_container .toast {
+  background-color: white;
+  position: relative;
+  padding-inline: 0.5rem 2rem;
+  padding-block: 0.7rem;
+  border-radius: 3px;
+}
+.toast_container .toast p.error {
+  color: rgb(247, 58, 58);
+}
+.toast_container .toast p.success {
+  color: rgb(68, 253, 83);
+}
+.toast_container .toast i {
+  position: absolute;
+  top: 0.3rem;
+  right: 0.5rem;
+  font-size: 0.7rem;
+  cursor: pointer;
 }/*# sourceMappingURL=styles.css.map */

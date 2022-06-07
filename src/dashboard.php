@@ -17,6 +17,7 @@
                     <form action="../php/logout.inc.php"><button type="submit">logout</button></form>
                 </div>
             </header>
+            
             <div class="wrapper">
                 <!-- <section class="cards flex">
                     <div class="cards__card flex-c">
