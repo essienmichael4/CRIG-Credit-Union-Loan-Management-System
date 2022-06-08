@@ -411,3 +411,44 @@
                 "</tbody>
             </table>";
     }
+
+    function checkGuarantorStatus($conn, $search, $amount){
+        $sql = "SELECT SUM(`guaranteed_amount_first`, `guaranteed_amount_second`,
+                    `guaranteed_amount_third`, `guaranteed_amount_fourth`) AS guaranteed FROM `applicant` 
+                    WHERE `guarantor_staffnum_first` = '{$search}' 
+                    or `guarantor_staffnum_second` = '{$search}' or `guarantor_staffnum_third` = '{$search}'
+                    or `guarantor_staffnum_fourth` = '{$search}' 
+                    and `loan_status` != 'paid'";
+
+        $result = mysqli_query($conn, $sql);
+        $sum = mysqli_fetch_assoc($result);
+        $guaranteed = (float)$sum["guaranteed"];
+        $guaranteed = $guaranteed + $amount;
+
+        $sql = "SELECT * FROM `savings` WHERE `mem_code` = '{$search}' OR `staff_id` = '{$search}';";
+
+        $result2 = mysqli_query($conn, $sql);
+        $row = mysqli_fetch_assoc($result2);
+
+        $balance = (float)$row["balance"];
+
+        if($balance < $guaranteed){
+            return false;
+        }else{
+            return true;
+        }
+    }
+
+    function checkApplicantStatus($conn, $search, $search2){
+        $sql = "SELECT * FROM `applicant` WHERE 
+        `member_code` = '{$search}' OR `staff_id` = '{$search}'
+        `member_code` = '{$search2}' OR `staff_id` = '{$search2}' 
+        and `loan_status` != 'paid';";
+        $result2 = mysqli_query($conn, $sql);
+
+        if(mysqli_num_rows($result2) > 0){
+            return false;
+        }else{
+            return true;
+        }
+    }

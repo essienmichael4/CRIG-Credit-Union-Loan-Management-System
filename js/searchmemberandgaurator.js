@@ -100,6 +100,9 @@ staffsearch.addEventListener("click",()=>{
 gaurantoronesearch.addEventListener("click",()=>{
     let data;
     let memcode = document.querySelector(".gaurantoroneid").value;
+    let memcode2 = document.querySelector(".gaurantortwoid").value;
+    let memcode3 = document.querySelector(".gaurantorthreeid").value;
+    let memcode4 = document.querySelector(".gaurantorfourid").value;
 
     if(memcode == ""){
         let toast = document.querySelector(".toast_container");
@@ -107,6 +110,11 @@ gaurantoronesearch.addEventListener("click",()=>{
         toastmsg.textContent = "Guarantor one member code cannot be empty";
         toast.classList.add("active");
         return;
+    }else if(memcode == memcode2 || memcode == memcode3 || memcode == memcode4){
+        let toast = document.querySelector(".toast_container");
+        let toastmsg = document.querySelector(".toast_container .toast .error");
+        toastmsg.textContent = "Guarantor already guaranting for the loan";
+        toast.classList.add("active");
     }
 
     let params = "memcode="+memcode;
@@ -142,6 +150,9 @@ gaurantoronesearch.addEventListener("click",()=>{
 gaurantortwosearch.addEventListener("click",()=>{
     let data;
     let memcode = document.querySelector(".gaurantortwoid").value;
+    let memcode1 = document.querySelector(".gaurantoroneid").value;
+    let memcode3 = document.querySelector(".gaurantorthreeid").value;
+    let memcode4 = document.querySelector(".gaurantorfourid").value;
 
     if(memcode == ""){
         let toast = document.querySelector(".toast_container");
@@ -149,6 +160,11 @@ gaurantortwosearch.addEventListener("click",()=>{
         toastmsg.textContent = "Guarantor two member code cannot be empty";
         toast.classList.add("active");
         return;
+    }else if(memcode == memcode1 || memcode == memcode3 || memcode == memcode4){
+        let toast = document.querySelector(".toast_container");
+        let toastmsg = document.querySelector(".toast_container .toast .error");
+        toastmsg.textContent = "Guarantor already guaranting for the loan";
+        toast.classList.add("active");
     }
 
     let params = "memcode="+memcode;
@@ -184,6 +200,9 @@ gaurantortwosearch.addEventListener("click",()=>{
 gaurantorthreesearch.addEventListener("click",()=>{
     let data;
     let memcode = document.querySelector(".gaurantorthreeid").value;
+    let memcode1 = document.querySelector(".gaurantoroneid").value;
+    let memcode2 = document.querySelector(".gaurantortwoid").value;
+    let memcode4 = document.querySelector(".gaurantorfourid").value;
 
     if(memcode == ""){
         let toast = document.querySelector(".toast_container");
@@ -191,6 +210,11 @@ gaurantorthreesearch.addEventListener("click",()=>{
         toastmsg.textContent = "Guarantor three member code cannot be empty";
         toast.classList.add("active");
         return;
+    }else if(memcode == memcode1 || memcode == memcode2 || memcode == memcode4){
+        let toast = document.querySelector(".toast_container");
+        let toastmsg = document.querySelector(".toast_container .toast .error");
+        toastmsg.textContent = "Guarantor already guaranting for the loan";
+        toast.classList.add("active");
     }
 
     let params = "memcode="+memcode;
@@ -226,6 +250,9 @@ gaurantorthreesearch.addEventListener("click",()=>{
 gaurantorfoursearch.addEventListener("click",()=>{
     let data;
     let memcode = document.querySelector(".gaurantorfourid").value;
+    let memcode1 = document.querySelector(".gaurantoroneid").value;
+    let memcode2 = document.querySelector(".gaurantortwoid").value;
+    let memcode3 = document.querySelector(".gaurantorthreeid").value;
 
     if(memcode == ""){
         let toast = document.querySelector(".toast_container");
@@ -233,6 +260,11 @@ gaurantorfoursearch.addEventListener("click",()=>{
         toastmsg.textContent = "Guarantor four member code is connot be empty";
         toast.classList.add("active");
         return;
+    }else if(memcode == memcode1 || memcode == memcode3 || memcode == memcode2){
+        let toast = document.querySelector(".toast_container");
+        let toastmsg = document.querySelector(".toast_container .toast .error");
+        toastmsg.textContent = "Guarantor already guaranting for the loan";
+        toast.classList.add("active");
     }
 
     let params = "memcode="+memcode;

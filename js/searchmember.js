@@ -21,8 +21,10 @@ searchdepmember.addEventListener("click",()=>{
                 name = xhr.response;
                 
                 if(name === "false"){
-                    let error = "Member code incorrect or member doesn't exist";
-                    deperror.innerHTML = `<p class="err">${error}</p>`;
+                    let toast = document.querySelector(".toast_container");
+                    let toastmsg = document.querySelector(".toast_container .toast .error");
+                    toastmsg.textContent = "Member code incorrect or member doesn't exist";
+                    toast.classList.add("active");
                     return
                 }else{
                     depmemname.textContent = name;
@@ -65,8 +67,10 @@ searchdebmember.addEventListener("click",()=>{
             if(xhr.status == 200){
                 name = xhr.response;
                 if(name === "false"){
-                    let error = "Member code incorrect or member doesn't exist";
-                    deberror.innerHTML = `<p class="err">${error}</p>`;
+                    let toast = document.querySelector(".toast_container");
+                    let toastmsg = document.querySelector(".toast_container .toast .error");
+                    toastmsg.textContent = "Member code incorrect or member doesn't exist";
+                    toast.classList.add("active");
                     return
                 }else{
                     debmemname.textContent = name;

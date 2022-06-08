@@ -17,9 +17,9 @@
                     <form action="../php/logout.inc.php"><button type="submit">logout</button></form>
                 </div>
             </header>
-            <div class="toast_container active">
+            <div class="toast_container ">
                 <div class="toast">
-                    <p class="error">Error: Member code is incorrect or member not ofund in database</p>
+                    <p class="error"></p>
                     <i class="fas fa-times"></i>
                 </div>
             </div>
@@ -179,7 +179,10 @@
     <script>
         let toast = document.querySelector(".toast_container");
         
-        setTimeout(()=>{
-            toast.classList.remove("active");
-        },5000)
+        setInterval(()=>{
+            setTimeout(()=>{
+                toast.classList.remove("active");
+            }, 5000)
+            
+        },9000)
     </script>
