@@ -98,11 +98,11 @@
                 $row = "<td class='tc'><span class='paid'>paid</span></td>";
             }
 
-            $arrears = (float)$res["loan_to_be_payed"] - (float)$res["loan_arrears"];
+            $arrears = (float)$res["loan_to_be_payed"] - (float)$res["loan_paid"];
 
             $rows .= "<tr>
                         <td>{$res['id']}</td>
-                        <td><a href='?pgname=apply&applicant_id={$res['id']}'>{$res['first_name']} {$res['last_name']} {$res['other_names']}</a></td>
+                        <td><a href='?pgname=loandetails&applicant_id={$res['id']}'>{$res['first_name']} {$res['last_name']} {$res['other_names']}</a></td>
                         <td>+233{$res['phone_number']}</td>
                         <td>{$res['work_place']}</td>
                         <td>{$applicant_due}</td>

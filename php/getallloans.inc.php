@@ -133,7 +133,7 @@
                 $row = "<td class='tc'><span class='paid'>paid</span></td>";
             }
 
-            $arrears = (float)$res["loan_to_be_payed"] - (float)$res["loan_arrears"];
+            $arrears = (float)$res["loan_to_be_payed"] - (float)$res["loan_paid"];
 
             $rows .= "<tr>
                         <td>{$res['id']}</td>

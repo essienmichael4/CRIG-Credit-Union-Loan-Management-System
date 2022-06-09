@@ -41,15 +41,15 @@
                             <input type="text" name="recipient" value="<?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?>" hidden>
                             <div class="formControl flex-c">
                                 <label for="">Member Code CQC.</label>
-                                <input type="text" name="memcode" placeholder="Member Code CQC" value="<?=$applicant["member_code"]?>">
+                                <input type="text" name="memcode" required placeholder="Member Code CQC" value="<?=$applicant["member_code"]?>">
                             </div>
                             <div class="formControl flex-c">
                                 <label for="">First name</label>
-                                <input type="text" name="firstname" placeholder="First Name" value="<?=$applicant["first_name"]?>">
+                                <input type="text" name="firstname" required placeholder="First Name" value="<?=$applicant["first_name"]?>">
                             </div>
                             <div class="formControl flex-c">
                                 <label for="">Last name</label>
-                                <input type="text" name="lastname" placeholder="Last Name" value="<?=$applicant["last_name"]?>">
+                                <input type="text" name="lastname" required placeholder="Last Name" value="<?=$applicant["last_name"]?>">
                             </div>
                             <div class="formControl flex-c">
                                 <label for="">Other names</label>
@@ -58,13 +58,13 @@
                             <div class="formControl flex-c">
                                 <label for="">Phone Number</label>
                                 <div>
-                                    <span>+233</span><input type="text" name="phone" placeholder="eg. 201234567" value="<?=$applicant["phone_number"]?>">
+                                    <span>+233</span><input type="text" required name="phone" placeholder="eg. 201234567" value="<?=$applicant["phone_number"]?>">
                                 </div>
                             </div>
                             
                             <div class="formControl flex-c">
                                 <label for="">Work Place</label>
-                                <input type="text" placeholder="Work Place" name="workplace" value="<?=$applicant["work_place"]?>">
+                                <input type="text" placeholder="Work Place" required name="workplace" value="<?=$applicant["work_place"]?>">
                             </div>
                             <div class="formControl flex-c">
                                 <label for="">Staff No.</label>
@@ -78,7 +78,7 @@
                                 ?>
                                 <div class="flex">
                                     <div class="flex">
-                                        <input type="radio" name="membership" value="<?=$applicant["member_status"]?>"> <p>Member</p>
+                                        <input type="radio" name="membership" checked> <p>Member</p>
                                     </div>
     
                                     <div class="flex">
@@ -98,7 +98,7 @@
                                     </div>
     
                                     <div class="flex">
-                                        <input type="radio" name="membership" value="<?=$applicant["member_status"]?>"> <p>Non-Member</p>
+                                        <input type="radio" name="membership" checked> <p>Non-Member</p>
                                     </div>
     
                                     <div class="flex">
@@ -118,7 +118,7 @@
                                     </div>
     
                                     <div class="flex">
-                                        <input type="radio" name="membership" value="<?=$applicant["member_status"]?>"> <p>Casual</p>
+                                        <input type="radio" name="membership" checked> <p>Casual</p>
                                     </div>
                                 </div>
                                 <?php
@@ -130,21 +130,21 @@
                                 <label for="">Loan Amount</label>
                                 <div>
                                     <span>GH¢</span>
-                                    <input type="number" class="loan" placeholder="Amount" name="loanreq" value="<?=$applicant["loan_amount"]?>">
+                                    <input type="number" class="loan" required placeholder="Amount" name="loanreq" value="<?=$applicant["loan_amount"]?>">
                                 </div>
                             </div>
                             <div class="formControl flex-c">
                                 <label for="">Loan Interest (*20%)</label>
                                 <div>
                                     <span>GH¢</span>
-                                    <input type="number" class="interest" name="loaninterest" value="<?=$applicant["loan_interest"]?>">
+                                    <input type="number" class="interest" required name="loaninterest" value="<?=$applicant["loan_interest"]?>">
                                 </div>
                             </div>
                             <div class="formControl flex-c">
                                 <label for="">Expected Amount</label>
                                 <div>
                                     <span>GH¢</span>
-                                    <input type="number" name="totalloan" class="total" value="<?=$applicant["loan_to_be_payed"]?>">
+                                    <input type="number" name="totalloan" class="total" required value="<?=$applicant["loan_to_be_payed"]?>">
                                 </div>
                             </div>
                             <div class="formControl flex-c">
@@ -161,13 +161,13 @@
                             </div>
                             <div class="formControl flex-c">
                                 <label for="">First Due Date</label>
-                                <input type="date" name="customerdue" value="<?=$applicant["applicant_first_due_date"]?>">
+                                <input type="date" name="customerdue" required value="<?=$applicant["applicant_first_due_date"]?>">
                             </div>
 
 
                             <div class="formControl flex-c">
                                 <label for="">Purpose for the loan</label>
-                                <textarea name="purpose" id="" cols="30" rows="10" value="<?=$applicant["purpose"]?>"></textarea>
+                                <textarea name="purpose" id="" cols="30" rows="10" required><?=$applicant["purpose"]?></textarea>
                             </div>
                         </div>
 
@@ -175,89 +175,89 @@
                         <div class="form__group">
                             <div class="formControl flex-c">
                                 <label for="">Guarantor's name (1st)</label>
-                                <input type="text" name="first_guarantor_name" placeholder="Guarantor's name" value="<?=$applicant["guarantor_fullname_first"]?>">
+                                <input type="text" name="first_guarantor_name" required placeholder="Guarantor's name" value="<?=$applicant["guarantor_fullname_first"]?>">
                             </div>
                             <div class="formControl flex-c">
                                 <label for="">Guarantor's Staff No. (1st)</label>
-                                <input type="text" name="first_guarantor_staff_number" placeholder="Staff No." value="<?=$applicant["guarantor_staffnum_first"]?>">
+                                <input type="text" name="first_guarantor_staff_number" required placeholder="Staff No." value="<?=$applicant["guarantor_staffnum_first"]?>">
                             </div>
                             <div class="formControl flex-c">
                                 <label for="">Guarantor's Phone (1st)</label>
                                 <div>
-                                    <span>+233</span><input type="text" name="first_guarantor_phone_number" placeholder="eg. 201234567" value="<?=$applicant["guarantor_phone_first"]?>">
+                                    <span>+233</span><input type="text" required name="first_guarantor_phone_number" placeholder="eg. 201234567" value="<?=$applicant["guarantor_phone_first"]?>">
                                 </div>
                             </div>
                             <div class="formControl flex-c">
                                 <label for="">Guaranteed Amount (1st)</label>
                                 <div>
                                     <span>GH¢</span>
-                                    <input type="number" name="first_guarantor_guaranteed_amount" class="guaranteed1" placeholder="Amount" value="<?=$applicant["guaranteed_amount_first"]?>">
+                                    <input type="number" name="first_guarantor_guaranteed_amount" required class="guaranteed1" placeholder="Amount" value="<?=$applicant["guaranteed_amount_first"]?>">
                                 </div>
                             </div>
                             <div class="formControl flex-c">
                                 <label for="">Guarantor's name (2nd)</label>
-                                <input type="text" name="second_guarantor_name" placeholder="Guarantor's name" value="<?=$applicant["guarantor_fullname_second"]?>">
+                                <input type="text" name="second_guarantor_name" required placeholder="Guarantor's name" value="<?=$applicant["guarantor_fullname_second"]?>">
                             </div>
                             <div class="formControl flex-c">
                                 <label for="">Guarantor's Staff No. (2nd)</label>
-                                <input type="text" name="second_guarantor_staff_number" placeholder="Staff No." value="<?=$applicant["guarantor_staffnum_second"]?>">
+                                <input type="text" name="second_guarantor_staff_number" required placeholder="Staff No." value="<?=$applicant["guarantor_staffnum_second"]?>">
                             </div>
                             <div class="formControl flex-c">
                                 <label for="">Guarantor's Phone (2nd)</label>
                                 <div>
                                     <span>+233</span>
-                                    <input type="text" name="second_guarantor_phone_number" placeholder="eg. 201234567" value="<?=$applicant["guarantor_phone_second"]?>">
+                                    <input type="text" name="second_guarantor_phone_number" required placeholder="eg. 201234567" value="<?=$applicant["guarantor_phone_second"]?>">
                                 </div>
                             </div>
                             <div class="formControl flex-c">
                                 <label for="">Guaranteed Amount (2nd)</label>
                                 <div>
                                     <span>GH¢</span>
-                                    <input type="number" name="second_guarantor_guaranteed_amount" class="guaranteed2" placeholder="Amount" value="<?=$applicant["guaranteed_amount_second"]?>">
+                                    <input type="number" required name="second_guarantor_guaranteed_amount" class="guaranteed2" placeholder="Amount" value="<?=$applicant["guaranteed_amount_second"]?>">
                                 </div>
                             </div>
                             <div class="formControl flex-c">
                                 <label for="">Guarantor's name (3rd)</label>
-                                <input type="text" name="third_guarantor_name" placeholder="Guarantor's name" value="<?=$applicant["guarantor_fullname_third"]?>">
+                                <input type="text" required name="third_guarantor_name" placeholder="Guarantor's name" value="<?=$applicant["guarantor_fullname_third"]?>">
                             </div>
                             <div class="formControl flex-c">
                                 <label for="">Guarantor's Staff No. (3rd)</label>
-                                <input type="text" name="third_guarantor_staff_number" placeholder="Staff No." value="<?=$applicant["guarantor_staffnum_third"]?>">
+                                <input type="text" required name="third_guarantor_staff_number" placeholder="Staff No." value="<?=$applicant["guarantor_staffnum_third"]?>">
                             </div>
                             <div class="formControl flex-c">
                                 <label for="">Guarantor's Phone (3rd)</label>
                                 <div>
                                     <span>+233</span>
-                                    <input type="text" name="third_guarantor_phone_number" placeholder="eg. 201234567" value="<?=$applicant["guarantor_phone_third"]?>">
+                                    <input type="text" required name="third_guarantor_phone_number" placeholder="eg. 201234567" value="<?=$applicant["guarantor_phone_third"]?>">
                                 </div>
                             </div>
                             <div class="formControl flex-c">
                                 <label for="">Guaranteed Amount (3rd)</label>
                                 <div>
                                     <span>GH¢</span>
-                                    <input type="number" name="third_guarantor_guaranteed_amount" class="guaranteed3" placeholder="Amount" value="<?=$applicant["guaranteed_amount_third"]?>">
+                                    <input type="number" required name="third_guarantor_guaranteed_amount" class="guaranteed3" placeholder="Amount" value="<?=$applicant["guaranteed_amount_third"]?>">
                                 </div>
                             </div>
                             <div class="formControl flex-c">
                                 <label for="">Guarantor's name (4th)</label>
-                                <input type="text" name="fourth_guarantor_name" placeholder="Guarantor's name" value="<?=$applicant["guarantor_fullname_fourth"]?>">
+                                <input type="text"required name="fourth_guarantor_name" placeholder="Guarantor's name" value="<?=$applicant["guarantor_fullname_fourth"]?>">
                             </div>
                             <div class="formControl flex-c">
                                 <label for="">Guarantor's Staff No. (4th)</label>
-                                <input type="text" name="fourth_guarantor_staff_number" placeholder="Staff No." value="<?=$applicant["guarantor_staffnum_fourth"]?>">
+                                <input type="text"required name="fourth_guarantor_staff_number" placeholder="Staff No." value="<?=$applicant["guarantor_staffnum_fourth"]?>">
                             </div>
                             <div class="formControl flex-c">
                                 <label for="">Guarantor's Phone (4th)</label>
                                 <div>
                                     <span>+233</span>
-                                    <input type="text" name="fourth_guarantor_phone_number" placeholder="eg. 201234567" value="<?=$applicant["guarantor_phone_fourth"]?>">
+                                    <input type="text"required name="fourth_guarantor_phone_number" placeholder="eg. 201234567" value="<?=$applicant["guarantor_phone_fourth"]?>">
                                 </div>
                             </div>
                             <div class="formControl flex-c">
                                 <label for="">Guaranteed Amount (4th)</label>
                                 <div>
                                     <span>GH¢</span>
-                                    <input type="number" name="fourth_guarantor_guaranteed_amount" class="guaranteed4" placeholder="Amount" value="<?=$applicant["guaranteed_amount_fourth"]?>">
+                                    <input type="number" required name="fourth_guarantor_guaranteed_amount" class="guaranteed4" placeholder="Amount" value="<?=$applicant["guaranteed_amount_fourth"]?>">
                                 </div>
                             </div>
                         </div>
@@ -268,19 +268,19 @@
                         <div class="form__group">
                             <div class="formControl flex-c">
                                 <label for="">First Due Date</label>
-                                <input type="date" name="first_due_approved" class="currentStartDay">
+                                <input type="date" required name="first_due_approved" class="currentStartDay">
                             </div>
                             <div class="formControl flex-c">
                                 <label for="">second Due Date</label>
-                                <input type="date" name="second_due_approved" class="secondduemonth">
+                                <input type="date" required name="second_due_approved" class="secondduemonth">
                             </div>
                             <div class="formControl flex-c">
                                 <label for="">third Due Date</label>
-                                <input type="date" name="third_due_approved" class="thirdduemonth">
+                                <input type="date" required name="third_due_approved" class="thirdduemonth">
                             </div>
                             <div class="formControl flex-c">
                                 <label for="">Fourth Due Date</label>
-                                <input type="date" name="fourth_due_approved" class="fourthduemonth">
+                                <input type="date" required name="fourth_due_approved" class="fourthduemonth">
                             </div>
                             <div class="formControl flex-c">
                                 <label for="">Fifth Due Date</label>
@@ -374,11 +374,11 @@
                             </div>
                             <div class="formControl flex-c">
                                 <label for="">First name</label>
-                                <input type="text" class="first_name" name="firstname" placeholder="First Name">
+                                <input type="text" required class="first_name" name="firstname" placeholder="First Name">
                             </div>
                             <div class="formControl flex-c">
                                 <label for="">Last name</label>
-                                <input type="text" class="last_name" name="lastname" placeholder="Last Name">
+                                <input type="text" required class="last_name" name="lastname" placeholder="Last Name">
                             </div>
                             <div class="formControl flex-c">
                                 <label for="">Other names</label>
@@ -386,12 +386,12 @@
                             </div>
                             <div class="formControl flex-c">
                                 <label for="">Phone Number</label>
-                                <input type="text" name="phone" class="phone" placeholder="eg. 201234567">
+                                <input type="text" required name="phone" class="phone" placeholder="eg. 201234567">
                             </div>
                             
                             <div class="formControl flex-c">
                                 <label for="">Work Place</label>
-                                <input type="text" placeholder="Work Place" class="work" name="workplace">
+                                <input type="text" required placeholder="Work Place" class="work" name="workplace">
                             </div>
                             
                             <div class="formControl flex-c">
@@ -414,21 +414,21 @@
                                 <label for="">Loan Amount</label>
                                 <div>
                                     <span>GH¢</span>
-                                    <input type="number" class="loan" placeholder="Amount" name="loanreq">
+                                    <input type="number" required class="loan" placeholder="Amount" name="loanreq">
                                 </div>
                             </div>
                             <div class="formControl flex-c">
                                 <label for="">Loan Interest (*20%)</label>
                                 <div>
                                     <span>GH¢</span>
-                                    <input type="number" class="interest" value="0" name="loaninterest">
+                                    <input type="number" required class="interest" value="0" name="loaninterest">
                                 </div>
                             </div>
                             <div class="formControl flex-c">
                                 <label for="">Expected Amount</label>
                                 <div>
                                     <span>GH¢</span>
-                                    <input type="number" name="totalloan" class="total" value="0">
+                                    <input type="number" required name="totalloan" class="total" value="0">
                                 </div>
                             </div>
                             <div class="formControl flex-c">
@@ -445,13 +445,13 @@
                             </div>
                             <div class="formControl flex-c">
                                 <label for="">First Due Date</label>
-                                <input type="date" name="customerdue">
+                                <input type="date" required name="customerdue">
                             </div>
 
 
                             <div class="formControl flex-c">
                                 <label for="">Purpose for the loan</label>
-                                <textarea name="purpose" id="" cols="30" rows="10"></textarea>
+                                <textarea name="purpose" required id="" cols="30" rows="10"></textarea>
                             </div>
                         </div>
 
@@ -460,93 +460,93 @@
                             <div class="formControl flex-c bgb">
                                 <label for="">Guarantor's Staff No. (1st)</label>
                                 <div>
-                                    <input type="text" class="gaurantoroneid" name="first_guarantor_staff_number" placeholder="Mem. Code/Staff No.">
+                                    <input type="text" required class="gaurantoroneid" name="first_guarantor_staff_number" placeholder="Mem. Code/Staff No.">
                                     <span class="gaurantoronesearch"><i class="fas fa-search "></i></span>
                                 </div>
                             </div>
                             <div class="formControl flex-c">
                                 <label for="">Guarantor's name (1st)</label>
-                                <input type="text"  class="gaurantoronename" name="first_guarantor_name" placeholder="Guarantor's name">
+                                <input type="text" required  class="gaurantoronename" name="first_guarantor_name" placeholder="Guarantor's name">
                             </div>
                             
                             <div class="formControl flex-c">
                                 <label for="">Guarantor's Phone (1st)</label>
-                                    <input type="text"  class="gaurantoronephone" name="first_guarantor_phone_number" placeholder="eg. 201234567">
+                                    <input type="text" required  class="gaurantoronephone" name="first_guarantor_phone_number" placeholder="eg. 201234567">
                             </div>
                             <div class="formControl flex-c">
                                 <label for="">Guaranteed Amount (1st)</label>
                                 <div>
                                     <span>GH¢</span>
-                                    <input type="number" name="first_guarantor_guaranteed_amount" class="guaranteed1" placeholder="Amount">
+                                    <input type="number" required name="first_guarantor_guaranteed_amount" class="guaranteed1" placeholder="Amount">
                                 </div>
                             </div>
                             <div class="formControl flex-c bgb">
                                 <label for="">Guarantor's Staff No. (2nd)</label>
                                 <div>
-                                    <input type="text"  class="gaurantortwoid" name="second_guarantor_staff_number" placeholder="Mem. Code/Staff No.">
+                                    <input type="text"  required class="gaurantortwoid" name="second_guarantor_staff_number" placeholder="Mem. Code/Staff No.">
                                     <span class="gaurantortwosearch"><i class="fas fa-search"></i></span>
                                 </div>
                             </div>
                             <div class="formControl flex-c">
                                 <label for="">Guarantor's name (2nd)</label>
-                                <input type="text"  class="gaurantortwoname" name="second_guarantor_name" placeholder="Guarantor's name">
+                                <input type="text"  required class="gaurantortwoname" name="second_guarantor_name" placeholder="Guarantor's name">
                             </div>
                             
                             <div class="formControl flex-c">
                                 <label for="">Guarantor's Phone (2nd)</label>
-                                    <input type="text"  class="gaurantortwophone" name="second_guarantor_phone_number" placeholder="eg. 201234567">
+                                    <input type="text"  required class="gaurantortwophone" name="second_guarantor_phone_number" placeholder="eg. 201234567">
                             </div>
                             <div class="formControl flex-c">
                                 <label for="">Guaranteed Amount (2nd)</label>
                                 <div>
                                     <span>GH¢</span>
-                                    <input type="number" name="second_guarantor_guaranteed_amount" class="guaranteed2" placeholder="Amount">
+                                    <input type="number" required name="second_guarantor_guaranteed_amount" class="guaranteed2" placeholder="Amount">
                                 </div>
                             </div>
                             <div class="formControl flex-c bgb">
                                 <label for="">Guarantor's Staff No. (3rd)</label>
                                 <div>
-                                    <input type="text"  class="gaurantorthreeid" name="third_guarantor_staff_number" placeholder="Mem. Code/Staff No.">
+                                    <input type="text"  required class="gaurantorthreeid" name="third_guarantor_staff_number" placeholder="Mem. Code/Staff No.">
                                     <span class="gaurantorthreesearch"><i class="fas fa-search"></i></span>
                                 </div>
                             </div>
                             <div class="formControl flex-c">
                                 <label for="">Guarantor's name (3rd)</label>
-                                <input type="text" class="gaurantorthreename" name="third_guarantor_name" placeholder="Guarantor's name">
+                                <input type="text" required class="gaurantorthreename" name="third_guarantor_name" placeholder="Guarantor's name">
                             </div>
                             
                             <div class="formControl flex-c">
                                 <label for="">Guarantor's Phone (3rd)</label>
-                                    <input type="text" class="gaurantorthreephone" name="third_guarantor_phone_number" placeholder="eg. 201234567">
+                                    <input type="text" required class="gaurantorthreephone" name="third_guarantor_phone_number" placeholder="eg. 201234567">
                             </div>
                             <div class="formControl flex-c">
                                 <label for="">Guaranteed Amount (3rd)</label>
                                 <div>
                                     <span>GH¢</span>
-                                    <input type="number" name="third_guarantor_guaranteed_amount" class="guaranteed3" placeholder="Amount">
+                                    <input type="number" required name="third_guarantor_guaranteed_amount" class="guaranteed3" placeholder="Amount">
                                 </div>
                             </div>
                             <div class="formControl flex-c bgb">
                                 <label for="">Guarantor's Staff No. (4th)</label>
                                 <div>
-                                    <input type="text" class="gaurantorfourid" name="fourth_guarantor_staff_number" placeholder="Mem. Code/Staff No.">
+                                    <input type="text" required class="gaurantorfourid" name="fourth_guarantor_staff_number" placeholder="Mem. Code/Staff No.">
                                     <span class="gaurantorfoursearch"><i class="fas fa-search"></i></span>
                                 </div>
                             </div>
                             <div class="formControl flex-c">
                                 <label for="">Guarantor's name (4th)</label>
-                                <input type="text" class="gaurantorfourname" name="fourth_guarantor_name" placeholder="Guarantor's name">
+                                <input type="text" required class="gaurantorfourname" name="fourth_guarantor_name" placeholder="Guarantor's name">
                             </div>
                             
                             <div class="formControl flex-c">
                                 <label for="">Guarantor's Phone (4th)</label>
-                                    <input type="text" class="gaurantorfourphone" name="fourth_guarantor_phone_number" placeholder="eg. 201234567">
+                                    <input type="text" required class="gaurantorfourphone" name="fourth_guarantor_phone_number" placeholder="eg. 201234567">
                             </div>
                             <div class="formControl flex-c">
                                 <label for="">Guaranteed Amount (4th)</label>
                                 <div>
                                     <span>GH¢</span>
-                                    <input type="number" name="fourth_guarantor_guaranteed_amount" class="guaranteed4" placeholder="Amount">
+                                    <input type="number" required name="fourth_guarantor_guaranteed_amount" class="guaranteed4" placeholder="Amount">
                                 </div>
                             </div>
                         </div>
@@ -557,19 +557,19 @@
                         <div class="form__group">
                             <div class="formControl flex-c">
                                 <label for="">First Due Date</label>
-                                <input type="date" name="first_due_approved" class="currentStartDay">
+                                <input type="date" required name="first_due_approved" class="currentStartDay">
                             </div>
                             <div class="formControl flex-c">
                                 <label for="">second Due Date</label>
-                                <input type="date" name="second_due_approved" class="secondduemonth">
+                                <input type="date" required name="second_due_approved" class="secondduemonth">
                             </div>
                             <div class="formControl flex-c">
                                 <label for="">third Due Date</label>
-                                <input type="date" name="third_due_approved" class="thirdduemonth">
+                                <input type="date" required name="third_due_approved" class="thirdduemonth">
                             </div>
                             <div class="formControl flex-c">
                                 <label for="">Fourth Due Date</label>
-                                <input type="date" name="fourth_due_approved" class="fourthduemonth">
+                                <input type="date" required name="fourth_due_approved" class="fourthduemonth">
                             </div>
                             <div>
                                 <a class="btn extension">Extension</a>
@@ -587,7 +587,8 @@
                             }
                         ?>
 
-                        <div class="action__btn flex">
+                        <div class="apply_savings">
+                        <div class="personal_info bg">
                             <?php
                             if($_SESSION["role"]=="user"){
                             ?>
@@ -608,6 +609,7 @@
                                 }
                             }
                             ?>
+                        </div>
                         </div>
                     </form>
                 </section>

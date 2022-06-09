@@ -78,8 +78,8 @@
     </div>
     <!-- <script src="../js/searchUtils.js"></script> -->
     <script src="../js/unapproved.js"></script>
-    <script src="../js/grantloans.js"></script>
+    <!-- <script src="../js/grantloans.js"></script> -->
     <script src="../js/getlimitedloans.js"></script>
-    <script src="../js/getallarrears.js"></script>
+    <!-- <script src="../js/getallarrears.js"></script> -->
     <script src="../js/getallloantotal.js"></script>
     <script src="../js/getallpaidloans.js"></script>

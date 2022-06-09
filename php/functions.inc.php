@@ -433,10 +433,16 @@
         $balance = (float)$row["balance"];
 
         if($balance < $guaranteed){
+            $sql = "SELECT * FROM `users` WHERE `staff_id` = '{$search}';";
+            $result = mysqli_query($conn, $sql);
+            if(mysqli_num_rows($result)>0){
+                return true;
+            }
             return false;
-        }else{
-            return true;
         }
+        
+        return true;
+        
     }
 
     function checkApplicantStatus($conn, $search, $search2){

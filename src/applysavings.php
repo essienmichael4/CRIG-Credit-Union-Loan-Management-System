@@ -55,15 +55,15 @@
                         <input type="text" name="processor" value="<?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?>" hidden>
                         <div class="personal_info bgb">
                             <h4>Membership Code</h4>
-                            <input type="text" name="memcode" autocomplete="FALSE" placeholder="Membership Code">
+                            <input type="text" name="memcode" required autocomplete="FALSE" placeholder="Membership Code">
                         </div>
                         <div class="personal_info">
                             <h4>First Name</h4>
-                            <input type="text" name="firstname" autocomplete="FALSE" placeholder="First Name">
+                            <input type="text" name="firstname" required autocomplete="FALSE" placeholder="First Name">
                         </div>
                         <div class="personal_info">
                             <h4>Last Name</h4>
-                            <input type="text"name="lastname" autocomplete="FALSE" placeholder="Last Name">
+                            <input type="text"name="lastname" required autocomplete="FALSE" placeholder="Last Name">
                         </div>
                         <div class="personal_info">
                             <h4>Other Names</h4>
@@ -71,7 +71,7 @@
                         </div>
                         <div class="personal_info">
                             <h4>Date of Birth</h4>
-                            <input type="date" name="dateofbirth">
+                            <input type="date" required name="dateofbirth">
                         </div>
                         <div class="personal_info">
                             <h4>Staff ID</h4>
@@ -79,18 +79,18 @@
                         </div>
                         <div class="personal_info">
                             <h4>Phone No.</h4>
-                            <input type="number" autocomplete="FALSE" name="phonenumber" placeholder="Phone">
+                            <input type="number" required autocomplete="FALSE" name="phonenumber" placeholder="Phone">
                         </div>
                         <div class="personal_info">
                             <h4>Marital Status</h4>
-                            <input type="text" name="maritalstatus" autocomplete="FALSE" placeholder="Marital Status">
+                            <input type="text" name="maritalstatus" required autocomplete="FALSE" placeholder="Marital Status">
                         </div>
                         <div class="personal_info">
                             <h4>Name of Spouse(if any)</h4>
                             <input type="text" name="nameofspouse" autocomplete="FALSE" placeholder="Spouse">
                         </div>
                         <div class="personal_info">
-                            <h4>No. of Children</h4>
+                            <h4>No. of Children(if any)</h4>
                             <input type="number" name="children" autocomplete="FALSE" placeholder="Children">
                         </div>
                     </div>
@@ -102,15 +102,15 @@
                     <div class="apply_savings">
                         <div class="personal_info">
                             <h4>Occupation/Rank</h4>
-                            <input type="text" name="occupation" autocomplete="FALSE" placeholder="Occupation">
+                            <input type="text" name="occupation" required autocomplete="FALSE" placeholder="Occupation">
                         </div>
                         <div class="personal_info">
                             <h4>Place of Work</h4>
-                            <input type="text" name="placeofwork" autocomplete="FALSE" placeholder="Place of Work">
+                            <input type="text" name="placeofwork" required autocomplete="FALSE" placeholder="Place of Work">
                         </div>
                         <div class="personal_info">
                             <h4>Division</h4>
-                            <input type="text" name="division" autocomplete="FALSE" placeholder="Division">
+                            <input type="text" name="division" required autocomplete="FALSE" placeholder="Division">
                         </div>
                     </div>
                     <div class="details-head">
@@ -121,11 +121,11 @@
                     <div class="apply_savings add">
                         <div class="personal_info">
                             <h4>Address</h4>
-                            <input type="text" name="address" autocomplete="FALSE" placeholder="Address">
+                            <input type="text" name="address" required autocomplete="FALSE" placeholder="Address">
                         </div>
                         <div class="personal_info">
                             <h4>Home Town</h4>
-                            <input type="text" name="hometown" autocomplete="FALSE" placeholder="Home Town">
+                            <input type="text" name="hometown" required autocomplete="FALSE" placeholder="Home Town">
                         </div>
                         <div class="personal_info">
                             <h4>Residential Address</h4>
@@ -140,21 +140,21 @@
                     <div class="apply_savings">
                         <div class="personal_info">
                             <h4>Next of Kin</h4>
-                            <input type="text" name="nextofkin" placeholder="Next of Kin">
+                            <input type="text" required name="nextofkin" placeholder="Next of Kin">
 
                         </div>
                         <div class="personal_info">
                             <h4>Next of Kin Relation</h4>
-                            <input type="text" name="nextofkinrelation" autocomplete="FALSE" placeholder="Relation">
+                            <input type="text" required name="nextofkinrelation" autocomplete="FALSE" placeholder="Relation">
                         </div>
                         <div class="personal_info">
                             <h4>Next of Kin Phone No.</h4>
-                                <input type="number" name="nextofkinphone" placeholder="Next of Kin Phone">
+                                <input type="number" required name="nextofkinphone" placeholder="Next of Kin Phone">
                             
                         </div>
                         <div class="personal_info">
                             <h4>Next of Kin Occupation</h4>
-                            <input type="text" name="nextofkinoccupation" autocomplete="FALSE" placeholder="Occupation">
+                            <input type="text" required name="nextofkinoccupation" autocomplete="FALSE" placeholder="Occupation">
                         </div>
                     </div>
                     <div class="apply_savings add">

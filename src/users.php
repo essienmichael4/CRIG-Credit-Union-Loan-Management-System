@@ -138,7 +138,7 @@
                         <input type="text" name="email" placeholder="Email">
                     </div>
                     <div class="formControl flex-c">
-                        <label for="">Staff No.</label>
+                        <label for="">Member Code/Staff No.</label>
                             <input type="text" name="staff_number" placeholder="Staff No.">
                     </div>
                     <div class="formControl flex-c">

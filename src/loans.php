@@ -75,7 +75,7 @@
     <script src="../js/searchUtils.js"></script>
     <script src="../js/getallloans.js"></script>
     <script src="../js/filters.js"></script>
-    <script src="../js/getlimitedloans.js"></script>
+    <!-- <script src="../js/getlimitedloans.js"></script> -->
     <script src="../js/getallarrears.js"></script>
     <script src="../js/getallloantotal.js"></script>
     <script src="../js/getallpaidloans.js"></script>
