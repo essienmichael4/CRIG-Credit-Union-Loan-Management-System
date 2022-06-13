@@ -35,12 +35,7 @@
         $bulkbalance = 0;
         $monthlybalance = 0;
 
-        if(emptyField($firstname) || emptyField($lastname) ||  emptyField($phonenumber) || emptyField($processor)
-            || emptyField($nextofkin) || emptyField($nextofkinphone) || emptyField($memcode)||
-            emptyField($address) || emptyField($residentialaddress) || emptyField($maritalstatus)||
-            emptyField($dateofbirth) || emptyField($nextofkinaddress) || emptyField($hometown)||
-            emptyField($nextofkinrelation) || emptyField($nextofkinoccupation) ||
-            emptyField($occupation) || emptyField($placeofwork) || emptyField($division)){
+        if(emptyField($firstname) || emptyField($lastname) || emptyField($processor) || emptyField($memcode)){
             
             header("location: ../../src/routes.php?pgname=applysavings&error=emptyinput"); 
             exit();
@@ -89,6 +84,61 @@
             header("location: ../../src/routes.php?pgname=applysavings&success=success"); 
         }else{
             header("location: ../../src/routes.php?pgname=applysavings&error=sqlerror");
+            exit();
+        }
+    }if(isset($_POST['createaccount'])){
+        include_once("../dbs.inc.php");
+        include_once("../functions.inc.php");
+
+        $processor = mysqli_real_escape_string($conn,$_POST["processor"]);
+        $firstname = mysqli_real_escape_string($conn,$_POST["firstname"]);
+        $lastname = mysqli_real_escape_string($conn,$_POST["lastname"]);
+        $othernames = mysqli_real_escape_string($conn,$_POST["othernames"]);
+        $memcode = mysqli_real_escape_string($conn,$_POST["memcode"]);
+        $phonenumber = mysqli_real_escape_string($conn,$_POST["phonenumber"]);
+        $staffid = mysqli_real_escape_string($conn,$_POST["staffid"]);
+        $occupation = mysqli_real_escape_string($conn,$_POST["occupation"]);
+        $placeofwork = mysqli_real_escape_string($conn,$_POST["placeofwork"]);
+        $division = mysqli_real_escape_string($conn,$_POST["division"]);
+        $address = mysqli_real_escape_string($conn,$_POST["address"]);
+        $residentialaddress = mysqli_real_escape_string($conn,$_POST["residentialaddress"]);
+        $maritalstatus = mysqli_real_escape_string($conn,$_POST["maritalstatus"]);
+        $nameofspouse = mysqli_real_escape_string($conn,$_POST["nameofspouse"]);
+        $children = mysqli_real_escape_string($conn,$_POST["children"]);
+        $hometown = mysqli_real_escape_string($conn,$_POST["hometown"]);
+        $dateofbirth = mysqli_real_escape_string($conn,$_POST["dateofbirth"]);
+        $nextofkin = mysqli_real_escape_string($conn,$_POST["nextofkin"]);
+        $nextofkinphone = mysqli_real_escape_string($conn,$_POST["nextofkinphone"]);
+        $nextofkinrelation = mysqli_real_escape_string($conn,$_POST["nextofkinrelation"]);
+        $nextofkinoccupation = mysqli_real_escape_string($conn,$_POST["nextofkinoccupation"]);
+        $nextofkinaddress = mysqli_real_escape_string($conn,$_POST["nextofkinaddress"]);
+        $remarks = mysqli_real_escape_string($conn,$_POST["remarks"]);
+
+        if(emptyField($firstname) || emptyField($lastname) || emptyField($processor) || emptyField($memcode)){
+            
+            header("location: ../../src/routes.php?pgname=applysavings&error=emptyinput"); 
+            exit();
+        }
+
+        $sql = "UPDATE `savings` SET `first_name`='{$firstname}', `last_name` = '{$lastname}',
+        `other_names` = '{$othernames}',
+        `staff_id` = '{$staffid}', `phone` = '{$phonenumber}', `address` = '{$address}',
+        `home_town` = '{$hometown}', `residential_address` = '{$residentialaddress}',
+        `marital_status` = '{$maritalstatus}', `date_of_birth` = '{$dateofbirth}', 
+        `place_of_work` = '{$placeofwork}', `occupation` = '{$occupation}', `division` = '{$division}',
+        `number_of_children` = '{$children}',`next_of_kin` = '{$nextofkin}', `next_of_kin_phone` = '{$nextofkinphone}',
+        `next_of_kin_relation` = '{$nextofkinrelation}', `next_of_kin_occupation` = '{$nextofkinoccupation}', 
+        `next_of_kin_address` = '{$nextofkinaddress}' WHERE  `mem_code` = '{$memcode}'";
+            
+        if(mysqli_query($conn, $sql)){
+            
+            $sql = "INSERT INTO `editedaccounts`(`member_id`, `remarks`, `edited_by`) 
+            VALUES('$memcode', '$remarks', '$processor')";
+
+            $conn->query($sql);
+            header("location: ../../src/routes.php?pgname=savingsdetials&account_id=".$account['id']."&success=success"); 
+        }else{
+            header("location: ../../src/routes.php?pgname=editsavingaccount&account_id=".$account['id']."&error=editerror");
             exit();
         }
     }else{

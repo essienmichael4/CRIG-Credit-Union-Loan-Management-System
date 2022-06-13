@@ -1829,7 +1829,14 @@ h2.p{
         }
         p{
             color: #a3a2a2;
+            margin-left: .5rem;
         }
+    }
+
+    h3{
+        margin-left: 2rem;
+        text-transform: uppercase;
+        color: #1c64ff;
     }
 
     .actions{
@@ -1878,6 +1885,18 @@ h2.p{
         .person_btn.active{
             i{
                 transform: rotate(180deg);
+            }
+        }
+
+        .edit_btn{
+            padding: .5rem 1rem;
+            background-color: #fff;
+            border: 1px solid #4d4a4a;
+            font-size: .8rem;
+            cursor: pointer;
+
+            span{
+                margin-left: 1rem;
             }
         }
     }
@@ -2140,6 +2159,11 @@ h2.p{
             outline: none;
             color: #4d4a4a;
             border-radius: 3px;
+        }
+
+        p{
+            margin-top: 1rem;
+            // background-color: #4d4a4a;
         }
 
         button{

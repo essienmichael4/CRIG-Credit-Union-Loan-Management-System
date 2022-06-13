@@ -1547,6 +1547,12 @@ h2.p {
 }
 .details-head .details-right p {
   color: #a3a2a2;
+  margin-left: 0.5rem;
+}
+.details-head h3 {
+  margin-left: 2rem;
+  text-transform: uppercase;
+  color: #1c64ff;
 }
 .details-head .actions {
   justify-self: flex-end;
@@ -1586,6 +1592,16 @@ h2.p {
 }
 .details-head .actions .person_btn.active i {
   transform: rotate(180deg);
+}
+.details-head .actions .edit_btn {
+  padding: 0.5rem 1rem;
+  background-color: #fff;
+  border: 1px solid #4d4a4a;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+.details-head .actions .edit_btn span {
+  margin-left: 1rem;
 }
 
 .personal__details {
@@ -1810,6 +1826,9 @@ h2.p {
   outline: none;
   color: #4d4a4a;
   border-radius: 3px;
+}
+.apply_savings .personal_info p {
+  margin-top: 1rem;
 }
 .apply_savings .personal_info button {
   margin: 0;

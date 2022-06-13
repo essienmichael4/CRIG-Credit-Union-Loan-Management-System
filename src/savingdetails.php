@@ -40,6 +40,7 @@
                         <button class="deposite_btn"><span><i class="fas fa-plus-circle"></i></span> Deposit</button>
                         <button  class="withdrawal_btn"><span><i class="fas fa-minus-circle"></i></span> Withdrawal</button>
                         <button class="person_btn"><span><i class="fas fa-angle-down"></i></span> Personal Details</button>
+                        <a href="?pgname=editsavingaccount&account_id=<?=$account['id']?>" class="edit_btn">Edit Details <span><i class="fas fa-angle-right"></i></span></a>
                     </div>
                 </div>
 
