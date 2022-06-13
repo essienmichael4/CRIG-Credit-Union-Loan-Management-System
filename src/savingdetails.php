@@ -6,6 +6,7 @@
         $result = mysqli_query($conn, $sql);
         $account = mysqli_fetch_assoc($result);
         $memcode = $account["mem_code"];
+        $balance = number_format($account['balance'],2);
     ?>
     <input type="text" class="account_code" value="<?=$memcode?>" hidden>
     <div class="main">
@@ -36,7 +37,7 @@
                         <p> Account Details & Statements</p>
                     </div>
                     <div class="actions">
-                        <button class="deposite_btn"><span><i class="fas fa-plus-circle"></i></span> Deposite</button>
+                        <button class="deposite_btn"><span><i class="fas fa-plus-circle"></i></span> Deposit</button>
                         <button  class="withdrawal_btn"><span><i class="fas fa-minus-circle"></i></span> Withdrawal</button>
                         <button class="person_btn"><span><i class="fas fa-angle-down"></i></span> Personal Details</button>
                     </div>
@@ -127,22 +128,22 @@
                 </div>
             
                 <div class="savings__card">
-                    <div class="card">
+                    <!-- <div class="card">
                         <p>All Funds</p>
                         <h4>GH¢ 100,000,000</h4>
-                    </div>
+                    </div> -->
                     <div class="card">
                         <p>Current Account</p>
-                        <h4>GH¢ <?=$account["balance"]?></h4>
+                        <h4 class="current_account">GH¢ <?=$balance?></h4>
                     </div>
-                    <div class="card">
+                    <!-- <div class="card">
                         <p>All Funds</p>
                         <h4>GH¢ 100,000,000</h4>
                     </div>
                     <div class="card">
                         <p>All Funds</p>
                         <h4>GH¢ 100,000,000</h4>
-                    </div>
+                    </div> -->
                 </div>
 
                 <!-- <div class="filter flex">
@@ -166,7 +167,7 @@
                     <h2 class="account-title">Transactions</h2>
                     <div class="actions">
                         <button class="getalltransactions">All Transactions</button>
-                        <button class="getalldeposit">Deposites</button>
+                        <button class="getalldeposit">Deposits</button>
                         <button class="getalldebit">Withdrawals</button>
                     </div>
                 </div>
@@ -211,7 +212,7 @@
                 <div class="deposite_form ">
                     <form action="../php/savings/deposit_debit_account.inc.php" method="POST">
                         <header>
-                            <h4>Deposite Form</h4>
+                            <h4>Deposit Form</h4>
                             <a class="deposite_close">	&#8594;</a>
                         </header>
 
@@ -243,7 +244,7 @@
                             </div>
                             
                             <div class="form-control dep">
-                                <label for="">Deposite Type <span></span></label>
+                                <label for="">Deposit Type <span></span></label>
                                 <select name="">
                                     <option value="monthly">Monthly</option>
                                     <option value="bulk">Bulk</option>
@@ -253,7 +254,7 @@
                                 <label for="">Receipt No.<span></span></label>
                                 <input type="text">
                             </div>
-                            <button name="deposit">Deposite</button>
+                            <button name="deposit">Deposit</button>
                         </div>
                     </form>
                 </div>
@@ -263,3 +264,4 @@
     <script src="../js/details.js"></script>
     <script src="../js/deposite.js"></script>
     <script src="../js/transactions.js"></script>
+    <script src="../js/getCurrentAccountBalance.js"></script>

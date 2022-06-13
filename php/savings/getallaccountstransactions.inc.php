@@ -38,7 +38,7 @@
                         <th>Account Name</th>
                         <th>Transaction Type</th>
                         <th>Previous Balance GH¢</th>
-                        <th>Deposite/Debit GH¢</th>
+                        <th>Deposit/Debit GH¢</th>
                         <th>Balance GH¢</th>
                         <th>Teller</th>
                     </tr>

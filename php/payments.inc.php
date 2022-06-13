@@ -19,6 +19,7 @@
 
         $loanarrears = $loanarrears - $amount;
         $loanpaid = $loanpaid + $amount;
+        $guaranted = $loanarrears/4;
 
         if($loanamount <= $loanpaid){
             $loanstatus = "paid";
@@ -27,27 +28,39 @@
         if($time = "first"){
             $sql = "UPDATE `applicant` SET `loan_arrears`={$loanarrears}, `loan_paid` = {$loanpaid},
             `first_due_recipient` = '{$recipient}', `first_due_date_status`= '{$status}'
-            ,`loan_status` = '{$loanstatus}' WHERE id = {$id};";
+            ,`loan_status` = '{$loanstatus}', `guaranteed_amount_first` = '{$guaranted}'
+            , `guaranteed_amount_second` = '{$guaranted}', `guaranteed_amount_third` = '{$guaranted}'
+            , `guaranteed_amount_fourth` = '{$guaranted}' = WHERE id = {$id};";
         }else if($time = "second"){
             $sql = "UPDATE `applicant` SET `loan_arrears`={$loanarrears}, `loan_paid` = {$loanpaid},
             `second_due_recipient` = '{$recipient}', `second_due_date_status`= '{$status}',
-            ,`loan_status` = '{$loanstatus}' WHERE id = {$id};";
+            ,`loan_status` = '{$loanstatus}', `guaranteed_amount_first` = '{$guaranted}'
+            , `guaranteed_amount_second` = '{$guaranted}', `guaranteed_amount_third` = '{$guaranted}'
+            , `guaranteed_amount_fourth` = '{$guaranted}' WHERE id = {$id};";
         }else if($time = "third"){
             $sql = "UPDATE `applicant` SET `loan_arrears`={$loanarrears}, `loan_paid` = {$loanpaid},
             `third_due_recipient` = '{$recipient}', `third_due_date_status`= '{$status}',
-            ,`loan_status` = '{$loanstatus}' WHERE id = {$id};";
+            ,`loan_status` = '{$loanstatus}', `guaranteed_amount_first` = '{$guaranted}'
+            , `guaranteed_amount_second` = '{$guaranted}', `guaranteed_amount_third` = '{$guaranted}'
+            , `guaranteed_amount_fourth` = '{$guaranted}' WHERE id = {$id};";
         }else if($time = "fourth"){
             $sql = "UPDATE `applicant` SET `loan_arrears`={$loanarrears}, `loan_paid` = {$loanpaid},
             `fourth_due_recipient` = '{$recipient}', `fourth_due_date_status`= '{$status}',
-            ,`loan_status` = '{$loanstatus}' WHERE id = {$id};";
+            ,`loan_status` = '{$loanstatus}', `guaranteed_amount_first` = '{$guaranted}'
+            , `guaranteed_amount_second` = '{$guaranted}', `guaranteed_amount_third` = '{$guaranted}'
+            , `guaranteed_amount_fourth` = '{$guaranted}' WHERE id = {$id};";
         }else if($time = "fifth"){
             $sql = "UPDATE `applicant` SET `loan_arrears`={$loanarrears}, `loan_paid` = {$loanpaid},
             `fifth_due_recipient` = '{$recipient}', `fifth_due_date_status`= '{$status}',
-            ,`loan_status` = '{$loanstatus}' WHERE id = {$id};";
+            ,`loan_status` = '{$loanstatus}', `guaranteed_amount_first` = '{$guaranted}'
+            , `guaranteed_amount_second` = '{$guaranted}', `guaranteed_amount_third` = '{$guaranted}'
+            , `guaranteed_amount_fourth` = '{$guaranted}' WHERE id = {$id};";
         }else if($time = "sixth"){
             $sql = "UPDATE `applicant` SET `loan_arrears`={$loanarrears}, `loan_paid` = {$loanpaid},
             `sixth_due_recipient` = '{$recipient}', `sixth_due_date_status`= '{$status}',
-            ,`loan_status` = '{$loanstatus}' WHERE id = {$id};";
+            ,`loan_status` = '{$loanstatus}', `guaranteed_amount_first` = '{$guaranted}'
+            , `guaranteed_amount_second` = '{$guaranted}', `guaranteed_amount_third` = '{$guaranted}'
+            , `guaranteed_amount_fourth` = '{$guaranted}'u WHERE id = {$id};";
         }
 
         if(mysqli_query($conn, $sql)){

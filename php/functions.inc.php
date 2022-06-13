@@ -40,7 +40,7 @@
 
     function loginUser($username, $password, $conn){
 
-        $sql = "SELECT * FROM `users` WHERE username = '$username' or email = '$username' or worker_id = '$username'; ";
+        $sql = "SELECT * FROM `users` WHERE username = '$username' or email = '$username' or staff_id = '$username'; ";
         $result = mysqli_query($conn, $sql);
 
         if(mysqli_num_rows($result)>0){
@@ -55,7 +55,7 @@
                 $_SESSION["firstname"] = $row['first_name'];
                 $_SESSION["lastname"] = $row['last_name'];
                 $_SESSION["othername"] = $row['other_names'];
-                $_SESSION["worker_id"] = $row['workerid'];
+                $_SESSION["worker_id"] = $row['staff_id'];
                 $_SESSION["email"] = $row['email'];
                 $_SESSION["role"] = $row['role'];
                 $_SESSION["uid"] = $row['id'];

@@ -33,7 +33,7 @@
                     </div>
                     <div class="card">
                         <p>Interest</p>
-                        <h4>GH¢ 100,000,000</h4>
+                        <h4 class="interest"></h4>
                     </div>
                     
                 </div>
@@ -79,3 +79,4 @@
     <script src="../js/getallarrears.js"></script>
     <script src="../js/getallloantotal.js"></script>
     <script src="../js/getallpaidloans.js"></script>
+    <script src="../js/getinterest.js"></script>

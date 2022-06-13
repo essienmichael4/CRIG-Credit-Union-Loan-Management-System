@@ -25,23 +25,24 @@
                     </div>
                 </div>               
             
-                <div class="savings__card mnot">
+                <div class="savings__card">
                     <div class="card">
                         <p>All Funds</p>
-                        <h4>GH¢ 100,000,000</h4>
+                        <h4 class="all_funds"></h4>
                     </div>
                     <div class="card">
                         <p>Current Account</p>
-                        <h4>GH¢ 80,000,000</h4>
+                        <h4 class="current_account"></h4>
                     </div>
                     <div class="card">
-                        <p>All Funds</p>
-                        <h4>GH¢ 100,000,000</h4>
+                        <p>Interest</p>
+                        <h4 class="interest"></h4>
                     </div>
                     <div class="card">
-                        <p>All Funds</p>
-                        <h4>GH¢ 100,000,000</h4>
+                        <p>Loans</p>
+                        <h4 class="arrears"></h4>
                     </div>
+                    
                 </div>
 
                 <div class="details-head">
@@ -204,3 +205,7 @@
             </div>
         </div>
     </div>
+    <script src="../js/getcurrentaccount.js"></script>
+    <script src="../js/getallarrears.js"></script>
+    <script src="../js/allfunds.js"></script>
+    <script src="../js/getinterest.js"></script>

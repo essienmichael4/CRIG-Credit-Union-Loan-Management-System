@@ -1,14 +1,13 @@
-let paid_loans = document.querySelector(".paid_loans");
+let interest = document.querySelector(".interest");
 
 window.addEventListener("load",()=>{
     let xhr = new XMLHttpRequest();
-    xhr.open("GET", "../php/getallpaidloans.inc.php", true);
+    xhr.open("GET", "../php/getinterestonloans.inc.php", true);
     xhr.onload = () =>{
         if(xhr.readyState == XMLHttpRequest.DONE){
             if(xhr.status == 200){
                 let data = xhr.response;
-
-                paid_loans.textContent = data;
+                interest.textContent = data;
             }
         }
     }
@@ -17,13 +16,13 @@ window.addEventListener("load",()=>{
 
 setInterval(()=>{
     let xhr = new XMLHttpRequest();
-    xhr.open("GET", "../php/getallpaidloans.inc.php", true);
+    xhr.open("GET", "../php/getinterestonloans.inc.php", true);
     xhr.onload = () =>{
         if(xhr.readyState == XMLHttpRequest.DONE){
             if(xhr.status == 200){
                 let data = xhr.response;
 
-                paid_loans.textContent = data;
+                interest.textContent = data;
             }
         }
     }

@@ -44,11 +44,11 @@
                 <div class="savings__card">
                     <div class="card">
                         <p>All Funds</p>
-                        <h4>GH¢ 100,000,000</h4>
+                        <h4 class="all_funds"></h4>
                     </div>
                     <div class="card">
                         <p>Current Account</p>
-                        <h4>GH¢ 80,000,000</h4>
+                        <h4 class="current_account"></h4>
                     </div>
                     <div class="card">
                         <p>All Loans</p>
@@ -83,3 +83,5 @@
     <!-- <script src="../js/getallarrears.js"></script> -->
     <script src="../js/getallloantotal.js"></script>
     <script src="../js/getallpaidloans.js"></script>
+    <script src="../js/allfunds.js"></script>
+    <script src="../js/getcurrentaccount.js"></script>

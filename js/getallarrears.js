@@ -1,5 +1,19 @@
 let arrears = document.querySelector(".arrears");
 
+window.addEventListener("load",()=>{
+    let xhr = new XMLHttpRequest();
+    xhr.open("GET", "../php/getallarrears.inc.php", true);
+    xhr.onload = () =>{
+        if(xhr.readyState == XMLHttpRequest.DONE){
+            if(xhr.status == 200){
+                let data = xhr.response;
+                arrears.textContent = data;
+            }
+        }
+    }
+    xhr.send()
+})
+
 setInterval(()=>{
     let xhr = new XMLHttpRequest();
     xhr.open("GET", "../php/getallarrears.inc.php", true);
@@ -8,10 +22,9 @@ setInterval(()=>{
             if(xhr.status == 200){
                 let data = xhr.response;
 
-                // console.log(data)
-                arrears.innerHTML = data;
+                arrears.textContent = data;
             }
         }
     }
     xhr.send()
-}, 500)
+}, 500000)
