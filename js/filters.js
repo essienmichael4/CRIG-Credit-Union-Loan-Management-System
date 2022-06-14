@@ -20,7 +20,6 @@ filters.forEach(filter =>{
             filter.classList.toggle("active");
             if(filter.classList.contains("all")){
                 loanfilter = "all";
-                
             }else if(filter.classList.contains("approved")){
                 loanfilter = "approved";
             }else if(filter.classList.contains("due")){
@@ -30,8 +29,9 @@ filters.forEach(filter =>{
             }else{
                 loanfilter = "paid";
             }
+        }
 
-            /*Checks through the times button to see which is clicked and active and make
+        /*Checks through the times button to see which is clicked and active and make
             a post request to retrieve the corresponding data from the database using ajax*/
             times.forEach(time =>{
                 // alltime seaarch
@@ -55,8 +55,8 @@ filters.forEach(filter =>{
                 }else if(time.classList.contains("active") && time.classList.contains("day")){
                     // days seaarch
                     timefilter = "day";
-                    let firstday= document.querySelector(".dayInput1").value;
-                    let secondday= document.querySelector(".dayInput2").value;
+                    let firstday= document.querySelector(".dayInputfirst").value;
+                    let secondday= document.querySelector(".dayInputfirst").value;
 
                     if(firstday == "" && secondday !==""){
                         firstday=secondday;
@@ -125,7 +125,6 @@ filters.forEach(filter =>{
                 }
                
             })
-        }
     })
 })
 
@@ -183,12 +182,12 @@ times.forEach(time =>{
         }else if(timefilter == "day"){
             // days seaarch
             timefilter = "day";
-            let firstday= document.querySelector(".dayInput1");
-            let secondday= document.querySelector(".dayInput2");
+            let firstday= document.querySelector(".dayInputfirst");
+            let secondday= document.querySelector(".dayInputsecond");
 
             firstday.addEventListener("input",()=>{
-                firstday = firstday.value; 
-                let day2 = secondday.value;
+                firstday = document.querySelector(".dayInputfirst").value; 
+                let day2 = document.querySelector(".dayInputsecond").value;
                 if(secondday.value == ""){
                     day2 = firstday;
                 }
@@ -209,8 +208,8 @@ times.forEach(time =>{
                 xhr.send(params)
             })
             secondday.addEventListener("input",()=>{
-                secondday = secondday.value;
-                let day1 = firstday.value;
+                secondday = document.querySelector(".dayInputsecond").value;
+                let day1 = document.querySelector(".dayInputfirst").value;
                 if(firstday.value == ""){
                     day1 = secondday;
                 }
@@ -241,8 +240,8 @@ times.forEach(time =>{
             let secondmonth= document.querySelector(".monthInput2");
 
             firstmonth.addEventListener("input",()=>{
-                firstmonthday = firstmonth.value; 
-                let day2 = secondmonth.value;
+                firstmonthday = document.querySelector(".monthInput1").value; 
+                let day2 = document.querySelector(".monthInput2").value;
                 if(secondmonth.value == ""){
                     day2 = firstmonth;
                 }
@@ -263,8 +262,8 @@ times.forEach(time =>{
                 xhr.send(params)
             })
             secondmonth.addEventListener("input",()=>{
-                secondmonthday = secondmonth.value;
-                let day1 = firstmonth.value;
+                secondmonthday = document.querySelector(".monthInput2").value;
+                let day1 = document.querySelector(".monthInput1").value;
                 if(firstmonth.value == ""){
                     day1 = secondmonthday;
                 }
@@ -292,7 +291,7 @@ times.forEach(time =>{
 
             
             year.addEventListener("input",()=>{
-                year = year.value;
+                year = document.querySelector(".yearInput").value;
 
                 let params = "year="+year+"&loanrequest="+loanfilter;
 

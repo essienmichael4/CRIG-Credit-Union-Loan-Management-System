@@ -11,8 +11,8 @@
             $sql = "SELECT * FROM `applicant` WHERE `approval_status` != '{$approval_pending}' 
             AND `loan_status` != 'NULL' ORDER BY `id` DESC;";
         }else{
-            $sql = "SELECT * FROM `applicant` WHERE `approval_status` != '{$approval_pending}' 
-            AND `loan_status` != '{$sentstatus}' ORDER BY `id` DESC;";
+            $sql = "SELECT * FROM `applicant` WHERE `approval_status` = '{$approval_approved}' 
+            AND `loan_status` = '{$sentstatus}' ORDER BY `id` DESC;";
         }
 
         $result = mysqli_query($conn, $sql);

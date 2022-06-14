@@ -48,8 +48,8 @@
                     </div>
                     <div class="filter__time">
                         <a class="time allTime active">All Time</a>
-                        <input type="date" class="dayInput1">
-                        <input type="date" class="dayInput2">
+                        <input type="date" class="dayInputfirst">
+                        <input type="date" class="dayInputsecond">
                         <input type="month" class="monthInput1">
                         <input type="month" class="monthInput2">
                         <input type="month" class="yearInput">
