@@ -4,8 +4,9 @@
         $approval_pending = "pending";
         $approval_approved  = "approved";
 
-        $sql = "SELECT * FROM `applicant` WHERE `approval_status` = '{$approval_pending}' OR `approval_status` = '{$approval_approved}'
-        AND `loan_status` = 'NULL';";
+        $sql = "SELECT * FROM `applicant` WHERE `approval_status` = '{$approval_pending}' 
+        OR `approval_status` = '{$approval_approved}'
+        AND `granted_status` IS NULL AND `loan_status` IS NULL;";
 
         $result = mysqli_query($conn, $sql);
 
@@ -14,7 +15,7 @@
 
             while($res = mysqli_fetch_assoc($result)){
                $status = $res["approval_status"];
-               $btn = '<button class="grant" onclick="handleGrantLoan('.$res["id"].')">Loan Granted</button>';
+               $btn = '<button class="grant" onclick="handleGrantLoan('.$res["id"].')">Grant Loan</button>';
                 $row = "";
 
                 if($status == "pending"){

@@ -16,9 +16,18 @@
                     <a href=">">edit user</a>
                     <form action="../php/logout.inc.php"><button type="submit">logout</button></form>
                 </div>
+
             </header>
+
+            <div class="toast_container ">
+                <div class="toast">
+                    <p class="error"></p>
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
             
             <div class="wrapper">
+                <input type="text" id="processor" value="<?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?>" hidden>
                 <!-- <section class="cards flex">
                     <div class="cards__card flex-c">
                         <span><i class="icon icon--first fas fa-arrow-down"></i></span>
@@ -85,3 +94,13 @@
     <script src="../js/getallpaidloans.js"></script>
     <script src="../js/allfunds.js"></script>
     <script src="../js/getcurrentaccount.js"></script>
+    <script>
+        let toast = document.querySelector(".toast_container");
+        
+        setInterval(()=>{
+            setTimeout(()=>{
+                toast.classList.remove("active");
+            }, 5000)
+            
+        },9000)
+    </script>

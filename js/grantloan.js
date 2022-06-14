@@ -10,7 +10,6 @@ function handleSold(id){
     xhr.onload = () =>{
         if(xhr.readyState == XMLHttpRequest.DONE){
             if(xhr.status == 200){
-                // location.href = "mainbody.php?pgname=dashboard";
             }
         }
     }

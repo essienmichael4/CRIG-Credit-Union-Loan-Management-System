@@ -266,7 +266,7 @@
         $recipientname = mysqli_real_escape_string($conn, $_POST["recipient"]);
         $day_approved = date('Y-m-d');
         $approval_status = "approved";
-        $loan_status = "pending";
+        // $loan_status = "pending";
 
         $applicant_id = mysqli_real_escape_string($conn, $_POST["applicant_id"]);
         $first_due_approved = mysqli_real_escape_string($conn, $_POST["first_due_approved"]);
@@ -285,7 +285,7 @@
             `third_due_date` = '{$third_due_approved}', `fourth_due_date` = '{$fourth_due_approved}',
             `fifth_due_date` = '{$fifth_due_approved}',`sixth_due_date` = '{$sixth_due_approved}', 
             `approved_by` = '{$recipientname}', `day_approved` = '{$day_approved}', `approval_status` = '{$approval_status}'
-            , `loan_status` = '{$loan_status}' WHERE `id` = '{$applicant_id}'";
+            WHERE `id` = '{$applicant_id}'";
 
             if(mysqli_query($conn, $sql)){
                 header("location: ../../src/routes.php?pgname=dashboard"); 
