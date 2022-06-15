@@ -23,7 +23,7 @@
                 
                 <div class="userdetails">
                     <p><?=$_SESSION["username"]?></p>
-                    <a href=">">edit user</a>
+                    <a href="?pgname=useredit&userid=<?=$_SESSION["uid"]?>">edit user</a>
                     <form action="../php/logout.inc.php"><button type="submit">logout</button></form>
                 </div>
             </header>
@@ -588,28 +588,28 @@
                         ?>
 
                         <div class="apply_savings">
-                        <div class="personal_info bg">
-                            <?php
-                            if($_SESSION["role"]=="user"){
-                            ?>
-                                <!-- <p><?=$_SESSION["usertype"]?></p> -->
-                                <button name="apply">Apply</button>
-                            <?php
-                            }else{
-                                if(isset($_GET["applicant_id"])){
+                            <div class="personal_info bg">
+                                <?php
+                                if($_SESSION["role"]=="user"){
                                 ?>
-                                    <input type="text" name="applicant_id" value="<?=$_GET["applicant_id"]?>" hidden>
-                                    <button name="disapprove" class="disable">disapprove</button>
-                                    <button name="approve">Approve</button>
+                                    <!-- <p><?=$_SESSION["usertype"]?></p> -->
+                                    <button name="apply">Apply</button>
                                 <?php
                                 }else{
-                            ?>
-                                <button name="approveapply">Apply & Approve</button>
-                            <?php
+                                    if(isset($_GET["applicant_id"])){
+                                    ?>
+                                        <input type="text" name="applicant_id" value="<?=$_GET["applicant_id"]?>" hidden>
+                                        <button name="disapprove" class="disable">disapprove</button>
+                                        <button name="approve">Approve</button>
+                                    <?php
+                                    }else{
+                                ?>
+                                    <button name="approveapply">Apply & Approve</button>
+                                <?php
+                                    }
                                 }
-                            }
-                            ?>
-                        </div>
+                                ?>
+                            </div>
                         </div>
                     </form>
                 </section>

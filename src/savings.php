@@ -13,7 +13,7 @@
                 
                 <div class="userdetails">
                     <p><?=$_SESSION["username"]?></p>
-                    <a href=">">edit user</a>
+                    <a href="?pgname=useredit&userid=<?=$_SESSION["uid"]?>">edit user</a>
                     <form action="../php/logout.inc.php"><button type="submit">logout</button></form>
                 </div>
             </header>

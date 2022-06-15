@@ -21,7 +21,7 @@
                 
                 <div class="userdetails">
                     <p><?=$_SESSION["username"]?></p>
-                    <a href=">">edit user</a>
+                    <a href="?pgname=useredit&userid=<?=$_SESSION["uid"]?>">edit user</a>
                     <form action="../php/logout.inc.php"><button type="submit">logout</button></form>
                 </div>
             </header>
@@ -47,7 +47,7 @@
                         </div>
                         <div class="details__card">
                             <h4 class="title">Applicant Membership Status</h4>
-                            <p class="content"><?=$applicant["member_code"]?></p>
+                            <p class="content tt"><?=$applicant["member_code"]?></p>
                         </div>
                         <div class="details__card">
                             <h4 class="title">Applicant Work Place</h4>
@@ -97,7 +97,7 @@
                         </div>
                         <div class="details__card">
                             <h4 class="title">First Gaurantor Staff Num.</h4>
-                            <p class="content"><?=$applicant["guarantor_staffnum_first"]?></p>
+                            <p class="content tt"><?=$applicant["guarantor_staffnum_first"]?></p>
                         </div>
                         <div class="details__card">
                             <h4 class="title">First Gaurantor Contact</h4>
@@ -114,7 +114,7 @@
                         </div>
                         <div class="details__card">
                             <h4 class="title">Second Gaurantor Staff Num.</h4>
-                            <p class="content"><?=$applicant["guarantor_staffnum_second"]?></p>
+                            <p class="content tt"><?=$applicant["guarantor_staffnum_second"]?></p>
                         </div>
                         <div class="details__card">
                             <h4 class="title">Second Gaurantor Contact</h4>
@@ -130,7 +130,7 @@
                         </div>
                         <div class="details__card">
                             <h4 class="title">Third Gaurantor Staff Num.</h4>
-                            <p class="content"><?=$applicant["guarantor_staffnum_third"]?></p>
+                            <p class="content tt"><?=$applicant["guarantor_staffnum_third"]?></p>
                         </div>
                         <div class="details__card">
                             <h4 class="title">Third Gaurantor Contact</h4>
@@ -146,7 +146,7 @@
                         </div>
                         <div class="details__card">
                             <h4 class="title">Fourth Gaurantor Staff Num.</h4>
-                            <p class="content"><?=$applicant["guarantor_staffnum_fourth"]?></p>
+                            <p class="content tt"><?=$applicant["guarantor_staffnum_fourth"]?></p>
                         </div>
                         <div class="details__card">
                             <h4 class="title">Fourth Gaurantor Contact</h4>

@@ -13,29 +13,33 @@
         $staffnumber = mysqli_real_escape_string($conn,$_POST["staff_number"]);
         $role = mysqli_real_escape_string($conn,$_POST["role"]);
         $password = mysqli_real_escape_string($conn,$_POST["password"]);
-        $passwordrep = mysqli_real_escape_string($conn,$_POST["passwordrepeat"]);
+        $passwordrep = mysqli_real_escape_string($conn,$_POST["password_repeat"]);
     
         if(emptyField($firstname) || emptyField($lastname) || emptyField($username) ||
             emptyField($email) || emptyField($staffnumber) || emptyField($phonenumber)
-            || emptyField($role) || emptyField($password) || emptyField($passwordrep)){
-                
-                header("location: ../src/routes.php?pgname=apply&error=emptyinput"); 
+            || emptyField($password) || emptyField($role)|| emptyField($passwordrep)){
+                // echo $firstname." ".$lastname." ".$username." ".$email
+                // ." ".$staffnumber." ".$phonenumber." ".$password." ".$role;
+
+                header("location: ../src/routes.php?pgname=users&error=emptyinput"); 
     
             }else{
                 if($password != $passwordrep){
-                    header("location: ../src/routes.php?pgname=apply&error=pwddonotmatch"); 
+                    header("location: ../src/routes.php?pgname=users&error=pwddonotmatch"); 
+                    echo $firstname." ".$lastname." ".$username." ".$email
+                ." ".$staffnumber." ".$phonenumber." ".$password." ".$role;
                 }else{
                     $hashedpwd = password_hash($pwd, PASSWORD_DEFAULT);
                 
-                    $sql = "SELECT * FROM `users` WHERE `email` = '{$email}' OR `username` = '{$username}' OR `worker_id` = '{$staffnumber}';";
+                    $sql = "SELECT * FROM `users` WHERE `email` = '{$email}' OR `username` = '{$username}' OR `staff_id` = '{$staffnumber}';";
                 
                     $result = mysqli_query($conn, $sql);
                 
                     if($row = mysqli_fetch_assoc($result)){
                         header("location: ../src/routes.php?pgname=apply&error=userexists"); 
                     }else{
-                        $sql = "INSERT INTO `users`(`first_name`, `last_name`,`other_names`, `email`, `worker_id`, `username`,`role`, `password`) 
-                        VALUES('$firstname','$lastname', '$othernames','$email', '$staffnumber', '$username', '$role', '$hashedpwd')";
+                        $sql = "INSERT INTO `users`(`first_name`, `last_name`,`other_names`, `email`, `staff_id`, `username`,`role`, `password`, `status`) 
+                        VALUES('$firstname','$lastname', '$othernames','$email', '$staffnumber', '$username', '$role', '$hashedpwd', 'logged out')";
                 
                         if(mysqli_query($conn, $sql)){
                             header("location: ../src/routes.php?pgname=users"); 

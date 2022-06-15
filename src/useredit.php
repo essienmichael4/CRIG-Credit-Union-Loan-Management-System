@@ -13,7 +13,6 @@
             
             <div class="userdetails">
                 <p><?=$_SESSION["username"]?></p>
-                <a href=">">edit user</a>
                 <form action="../php/logout.inc.php"><button type="submit">logout</button></form>
             </div>
         </header>
@@ -56,7 +55,7 @@
                             </div>
                             <div class="formControl flex-c">
                                 <label for="">Staff No.</label>
-                                <input type="text" placeholder="Staff No." name="staff_number" value="<?=$user["worker_id"]?>">
+                                <input type="text" placeholder="Staff No." name="staff_number" value="<?=$user["staff_id"]?>">
                             </div>
                             <div class="formControl flex-c">
                                 <label for="">Phone Number</label>
@@ -84,8 +83,8 @@
                             <?php
                                 }
                             ?> 
-                            
                         </div>
+                        
                         <div class="new flex-c">
                             <?php
                                 if($user["id"] == $_SESSION["uid"]){
@@ -129,9 +128,11 @@
                             </div>
                         </div>
                     </div>
-                    <div class="action__btn jcs flex">
-                        <button class="mro">Save Changes</button>
-                        <a href="?pgname=users" class="disable">go back</a>
+                    <div class="apply_savings">
+                        <div class="personal_info bg flex">
+                            <button class="mro">Save Changes</button>
+                            <a href="?pgname=users" class="disable">go back</a>
+                        </div>
                     </div>
                     
                 </form>

@@ -48,7 +48,7 @@
 
             $pwdVerify = password_verify($password, $row['password']);
 
-            if($password == $row['password'] || $pwdVerify == "true"){
+            if($password == $row['password'] || $pwdVerify == true){
                 session_start();
                 $status = "logged in";
                 $_SESSION["username"] = $row['username'];

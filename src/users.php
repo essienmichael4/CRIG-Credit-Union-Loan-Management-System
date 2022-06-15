@@ -14,7 +14,7 @@
                 
             <div class="userdetails">
                 <p><?=$_SESSION["username"]?></p>
-                <a href=">">edit user</a>
+                <a href="?pgname=useredit&userid=<?=$_SESSION["uid"]?>">edit user</a>
                 <form action="../php/logout.inc.php"><button type="submit">logout</button></form>
             </div>
         </header>
@@ -142,46 +142,47 @@
                             <input type="text" name="staff_number" placeholder="Staff No.">
                     </div>
                     <div class="formControl flex-c">
-                    <label for="">Phone Number</label>
-                    <div>
-                        <span>+233</span><input type="text" name="phone_number" placeholder="eg. 201234567">
+                        <label for="">Phone Number</label>
+                        <div>
+                            <!-- <span>+233</span> -->
+                            <input type="text" name="phone_number" placeholder="eg. 201234567">
                         </div>
                     </div>
                     <div class="formControl flex-c">
                         <label for="">password</label>
-                    <div>
-                        <input type="password" name="password" class="pwd">
-                        <span class="ml1">
-                            <i class="fas fa-eye password" onclick='passwordShow("pwd")'></i>
-                        </span>
-                            </div>
+                        <div>
+                            <input type="password" name="password" class="pwd">
+                            <span class="ml1">
+                                <i class="fas fa-eye password" onclick='passwordShow("pwd")'></i>
+                            </span>
+                        </div>
                     </div>
                     <div class="formControl flex-c">
                         <label for="">password repeat</label>
-                    <div>
-                        <input type="password" name="password_repeat" class="pwdrep">
+                        <div>
+                            <input type="password" name="password_repeat" class="pwdrep">
                             <span class="ml1">
                                 <i class="fas fa-eye passwordrep" onclick='passwordShowRep("pwdrep")'></i>
                             </span>
                         </div>
-                        </div>
+                    </div>
                     <div class="formControl flex-c">
                         <label for="">Role</label>
 
-                            <select name="role" id="">
+                        <select name="role" id="">
                             <option value="user">User</option>
-                                <option value="admin">Admin</option>
-                                <option value="super">Super Admin</option>
-                            </select>
-                        </div>
-                        
-                    </div>
-                    <div class="action__btn flex">
-                        <button>Add User</button>
+                            <option value="admin">Admin</option>
+                            <option value="super">Super Admin</option>
+                        </select>
                     </div>
 
-                </form>
-            </div>
+                </div>
+                        
+                <div class="action__btn flex">
+                    <button name="adduser">Add User</button>
+                </div>
+                   
+            </form>
         </div>
     </div>   
     <script src="../js/password.js"></script>
