@@ -28,8 +28,8 @@
         <div class="wrapper">
             <section class="apply">
                 <h3 class="title">Edit User</h3>
-                <form class="form apply__form">
-                    <div class="form-container flex">
+                <form class="form apply__form" action="../php/adduser.inc.php" method="POST">
+                    <div class="form-container">
                         <div class="form__group less">
                             <input type="text" name="uid" class="uid" value="<?=$user["id"]?>" hidden>
                             <input type="text" name="sid" class="uid" value="<?=$_SESSION["uid"]?>" hidden>
@@ -45,6 +45,24 @@
                                 <label for="">Other names</label>
                                 <input type="text" placeholder="Other Name" name="other_names" value="<?=$user["other_names"]?>">
                             </div>
+
+                            <?php
+                                if($user["id"] == $_SESSION["uid"]){
+                            ?>
+                                <div class="formControl flex-c">
+                                    <label for="">old password</label>
+                                    <input type="password" name="old_password">
+                                </div>
+                            <?php
+                                }else{
+                            ?>
+                                <div class="formControl flex-c">
+                                    <label for="">new password</label>
+                                    <input type="password"  name="password">
+                                </div>
+                            <?php
+                                }
+                            ?>
                             <div class="formControl flex-c">
                                 <label for="">username</label>
                                 <input type="text" placeholder="Username" name="username" value="<?=$user["username"]?>">
@@ -57,10 +75,28 @@
                                 <label for="">Staff No.</label>
                                 <input type="text" placeholder="Staff No." name="staff_number" value="<?=$user["staff_id"]?>">
                             </div>
+                            <?php
+                                if($user["id"] == $_SESSION["uid"]){
+                            ?>
+                                <div class="formControl flex-c">
+                                    <label for="">new password</label>
+                                    <input type="password"  name="password">
+                                </div>
+                            <?php
+                                }else{
+                            ?>
+                                <div class="formControl flex-c">
+                                    <label for="">confirm new password</label>
+                                    <input type="password"  name="password_repeat">
+                                </div>
+                            <?php
+                                }
+                            ?>
+
                             <div class="formControl flex-c">
                                 <label for="">Phone Number</label>
                                 <div>
-                                    <span>+233</span><input type="text" placeholder="eg. 201234567" name="phone_number" value="<?=$user["phone"]?>">
+                                    <input type="text" placeholder="eg. 201234567" name="phone_number" value="<?=$user["phone"]?>">
                                 </div>
                             </div>
                             <div class="formControl flex-c">
@@ -82,59 +118,65 @@
                             </div>
                             <?php
                                 }
-                            ?> 
-                        </div>
-                        
-                        <div class="new flex-c">
+                            ?>
+                            <!-- <div></div>
+                            <div></div>
+                            <div></div> -->
+
                             <?php
                                 if($user["id"] == $_SESSION["uid"]){
-                            ?>
-                            <div class="formControl flex-c">
-                                <label for="">old password</label>
-                                <input type="password" name="old_password">
-                            </div>
-                            <div class="formControl flex-c">
-                                <label for="">new password</label>
-                                <input type="password"  name="password">
-                            </div>
-                            <div class="formControl flex-c">
-                                <label for="">confirm new password</label>
-                                <input type="password"  name="password_repeat">
-                            </div>
-                            <div class="formControl flex-c">
-                                <button name="userpass" class="btn">change password</button>
-                            </div>
-                            
+                            ?>    
+                                <div class="formControl flex-c">
+                                    <label for="">confirm new password</label>
+                                    <input type="password"  name="password_repeat">
+                                </div>
                             <?php
                                 }else{
+                            ?> 
+                               
+                                <?php
+                                    if($user["id"] != $_SESSION["uid"] && $_SESSION["role"] =="super"){
+                                ?>    
+                                    <button name="adminpass" class="changepass">change password</button>
+                                <?php
+                                    }else{
+                                ?> 
+                                    <button name="userpass" class="changepass">change password</button>
+                            <?php
+                                    }
+                                }
                             ?>
-                            <div class="formControl flex-c">
-                                <label for="">new password</label>
-                                <input type="password"  name="password">
-                            </div>
-                            <div class="formControl flex-c">
-                                <label for="">confirm new password</label>
-                                <input type="password"  name="password_repeat">
-                            </div>
-                            <div class="formControl flex-c">
-                                <button name="adminpass" class="btn">change password</button>
-                            </div>
+                            <button name="edituser" class="savechanges mx2">Save Changes</button>
+                            <a href="?pgname=users" class="goback">go back</a>  
+                            <?php
+                                if($user["id"] != $_SESSION["uid"]){
+                            ?>
+                                <div></div>
+                                    
                             <?php
                                 }
                             ?>
+                            <a class="deleteAccount">delete account</a>
+                            <?php
+                                if($user["id"] == $_SESSION["uid"]){
+                            ?>
+                                <?php
+                                    if($user["id"] != $_SESSION["uid"] && $user["id"] =="superadmin"){
+                                ?>    
+                                    <button name="adminpass" class="changepass">change password</button>
+                                <?php
+                                    }else{
+                                ?> 
+                                <button name="userpass" class="changepass">change password</button>
+                                    
+                            <?php
+                                    }
+                                }
+                            ?>
+                              
+                        </div>
 
-                            <div class="formControl flex-c">
-                                <a class="btn red deleteAccount">delete account</a>
-                            </div>
-                        </div>
                     </div>
-                    <div class="apply_savings">
-                        <div class="personal_info bg flex">
-                            <button class="mro">Save Changes</button>
-                            <a href="?pgname=users" class="disable">go back</a>
-                        </div>
-                    </div>
-                    
                 </form>
             </section>
 

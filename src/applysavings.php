@@ -45,13 +45,20 @@
                     
                 </div>
 
-                <div class="details-head">
+                <!-- <div class="details-head">
                     <div class="actions  mt1 mnot">
                        <h4>Personal Information</h4>
                     </div>
-                </div>
+                </div> -->
 
                 <form  action="../php/savings/createaccount.inc.php" method="POST">
+                <div class="details-head flex js mt1">
+                    <div class="actions  mt1 mnot">
+                       <h4>Personal Information</h4>
+                    </div>
+                     <button name="createaccount" class="savechanges tc">Create Account</button>
+                        
+                </div>
                     <div class="apply_savings">
                         <input type="text" name="processor" value="<?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?>" hidden>
                         <div class="personal_info bgb">

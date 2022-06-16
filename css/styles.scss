@@ -45,6 +45,11 @@ h3, .h3{
     flex-direction: column;
 }
 
+.js{
+    justify-content: space-between;
+    align-items: center;
+}
+
 .my1{
     margin: 1rem 0;
 }
@@ -1075,7 +1080,7 @@ body{
 
     .apply{
         width: 99%;
-        margin: 1rem auto 1rem auto;
+        margin: 2rem auto 1rem auto;
         padding: 0 1rem;
 
         .title{
@@ -1105,7 +1110,8 @@ body{
                 gap: 1rem;
 
                 &.less{
-                    grid-template-columns: repeat(3, 1fr);
+                    // margin-top: 2rem;
+                    gap: 2rem 1rem;
                 }
             }
 
@@ -1167,7 +1173,7 @@ body{
                 select{
                     padding: .3rem .5rem;
                     width: 60%;
-                    margin-bottom: 2rem;
+                    // margin-bottom: 2rem;
                     border: 1px solid #a3a2a2;
                     cursor: pointer;
                     border-radius: 4px;
@@ -2185,19 +2191,26 @@ h2.p{
             // background-color: #4d4a4a;
         }
 
-        button{
+        button,a{
+           
             margin: 0;
             padding: .7rem 2.5rem;
             background-color: #2c2c2c;
             color: #dfdfdf;
             border: none;
             letter-spacing: .1rem;
+            word-wrap: none;
             // margin-left: 1rem;
             cursor: pointer;
 
             &:hover{
                 opacity: .7;
             }
+        }
+
+        a{
+             display: block;
+            width: 100%;
         }
     }
 }
@@ -2246,11 +2259,84 @@ h2.p{
     }
 }
 
-.disable{
-    background-color: rgba(80, 82, 80, 0.5);
-    // display: inline-block;
-    margin-left: 2rem;
+// .disable{
+//     background-color: rgba(80, 82, 80, 0.5);
+//     display: block;
+//     // margin-left: 2rem;
+//     &:hover{
+//         background-color: black;
+//     }
+// }
+
+.deleteAccount{
+    background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: .8rem;
+    font-weight: 500;
+    color: #dfdfdf;
+    text-transform: capitalize;
+    cursor: pointer;
+
     &:hover{
-        background-color: black;
+        opacity: .8;
+    }
+}
+
+.goback{
+    background-color: #969696;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: .8rem;
+    font-weight: 500;
+    color: #dfdfdf;
+    text-transform: capitalize;
+    cursor: pointer;
+
+    &:hover{
+        background-color: #000000;
+    }
+}
+
+.changepass{
+    background-color: #1cff2f;
+    display: flex;
+    height: 2.5rem;
+    align-items: center;
+    justify-content: center;
+    padding: .8rem;
+    font-weight: 500;
+    color: #4d4a4a;
+    text-transform: capitalize;
+    outline: none;
+    border: none;
+    cursor: pointer;
+
+    &:hover{
+        opacity: .8;
+    }
+}
+.savechanges{
+    background-color: #000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: .8rem;
+    font-weight: 500;
+    color: #ffffff;
+    text-transform: capitalize;
+    outline: none;
+    border: none;
+    cursor: pointer;
+
+    &.tc{
+        padding: .6rem 2rem;
+        background-color: #2c2c2c;
+    }
+
+    &:hover{
+        opacity: .8;
     }
 }

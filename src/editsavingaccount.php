@@ -70,6 +70,7 @@
                     <div class="apply_savings">
                         <input type="text" name="processor" value="<?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?>" hidden>
                         <input type="text" name="memcode" value="<?=$account['mem_code']?>" hidden>
+                        <input type="text" name="uid" value="<?=$account['id']?>" hidden>
                         <div class="personal_info bgb">
                             <h4>Membership Code</h4>
                             <p><?=$account['mem_code']?></p>

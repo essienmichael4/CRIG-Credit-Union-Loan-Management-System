@@ -86,10 +86,11 @@
             header("location: ../../src/routes.php?pgname=applysavings&error=sqlerror");
             exit();
         }
-    }if(isset($_POST['createaccount'])){
+    }if(isset($_POST['editaccount'])){
         include_once("../dbs.inc.php");
         include_once("../functions.inc.php");
 
+        $uid = mysqli_real_escape_string($conn,$_POST["uid"]);
         $processor = mysqli_real_escape_string($conn,$_POST["processor"]);
         $firstname = mysqli_real_escape_string($conn,$_POST["firstname"]);
         $lastname = mysqli_real_escape_string($conn,$_POST["lastname"]);
@@ -132,11 +133,12 @@
             
         if(mysqli_query($conn, $sql)){
             
-            $sql = "INSERT INTO `editedaccounts`(`member_id`, `remarks`, `edited_by`) 
+            $sql = "INSERT INTO `editedaccount`(`member_id`, `remarks`, `edited_by`) 
             VALUES('$memcode', '$remarks', '$processor')";
 
             $conn->query($sql);
-            header("location: ../../src/routes.php?pgname=savingsdetials&account_id=".$account['id']."&success=success"); 
+            header("location: ../../src/routes.php?pgname=savingdetails&account_id=".$uid."&success=success"); 
+            exit();
         }else{
             header("location: ../../src/routes.php?pgname=editsavingaccount&account_id=".$account['id']."&error=editerror");
             exit();

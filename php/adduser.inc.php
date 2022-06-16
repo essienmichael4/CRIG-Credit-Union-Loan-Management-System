@@ -18,18 +18,14 @@
         if(emptyField($firstname) || emptyField($lastname) || emptyField($username) ||
             emptyField($email) || emptyField($staffnumber) || emptyField($phonenumber)
             || emptyField($password) || emptyField($role)|| emptyField($passwordrep)){
-                // echo $firstname." ".$lastname." ".$username." ".$email
-                // ." ".$staffnumber." ".$phonenumber." ".$password." ".$role;
-
                 header("location: ../src/routes.php?pgname=users&error=emptyinput"); 
-    
+                exit();
             }else{
                 if($password != $passwordrep){
                     header("location: ../src/routes.php?pgname=users&error=pwddonotmatch"); 
-                    echo $firstname." ".$lastname." ".$username." ".$email
-                ." ".$staffnumber." ".$phonenumber." ".$password." ".$role;
+                    exit();
                 }else{
-                    $hashedpwd = password_hash($pwd, PASSWORD_DEFAULT);
+                    $hashedpwd = password_hash($password, PASSWORD_DEFAULT);
                 
                     $sql = "SELECT * FROM `users` WHERE `email` = '{$email}' OR `username` = '{$username}' OR `staff_id` = '{$staffnumber}';";
                 
@@ -37,14 +33,19 @@
                 
                     if($row = mysqli_fetch_assoc($result)){
                         header("location: ../src/routes.php?pgname=apply&error=userexists"); 
+                        exit();
                     }else{
-                        $sql = "INSERT INTO `users`(`first_name`, `last_name`,`other_names`, `email`, `staff_id`, `username`,`role`, `password`, `status`) 
-                        VALUES('$firstname','$lastname', '$othernames','$email', '$staffnumber', '$username', '$role', '$hashedpwd', 'logged out')";
+                        $sql = "INSERT INTO `users`(`first_name`, `last_name`,`other_names`, 
+                        `email`, `staff_id`, `username`,`role`, `password`, `status`, `phone`) 
+                        VALUES('$firstname','$lastname', '$othernames','$email', '$staffnumber',
+                         '$username', '$role', '$hashedpwd', 'logged out', '$phonenmber')";
                 
                         if(mysqli_query($conn, $sql)){
                             header("location: ../src/routes.php?pgname=users"); 
+                            exit();
                         }else{
                             header("location: ../src/routes.php?pgname=users&error=sqlerror"); 
+                            exit();
                         }
                     }
                 }
@@ -66,7 +67,7 @@
         $staffnumber = mysqli_real_escape_string($conn,$_POST["staff_number"]);
         $role = mysqli_real_escape_string($conn,$_POST["role"]);
         $password = mysqli_real_escape_string($conn,$_POST["password"]);
-        $passwordrep = mysqli_real_escape_string($conn,$_POST["passwordrepeat"]);
+        $passwordrep = mysqli_real_escape_string($conn,$_POST["password_repeat"]);
 
         $sql = "SELECT * FROM `users` WHERE `id` = {$uid};";
 
@@ -167,14 +168,14 @@
     }else if(isset($_POST["userpass"])){
         include_once("./dbs.inc.php");
 
-        $oldPassword = mysqli_real_escape_string($conn,$_POST["oldPassword"]);
+        $oldPassword = mysqli_real_escape_string($conn,$_POST["old_Password"]);
         $newPassword = mysqli_real_escape_string($conn,$_POST["password"]);
-        $repPassword = mysqli_real_escape_string($conn,$_POST["passwordrepeat"]);
+        $repPassword = mysqli_real_escape_string($conn,$_POST["password_repeat"]);
         
         $id = mysqli_real_escape_string($conn,$_POST["uid"]);
 
         if($newPassword != $repPassword){
-            header("Location: ../src/route.php?pgname=users&useredit=".$uid."error=passdonotmatch");
+            header("Location: ../src/route.php?pgname=useredit&userid=".$uid."error=passdonotmatch");
             exit();
             
         }else{
@@ -207,14 +208,12 @@
         include_once("./dbs.inc.php");
 
         $newPassword = mysqli_real_escape_string($conn,$_POST["password"]);
-        $repPassword = mysqli_real_escape_string($conn,$_POST["passwordrepeat"]);
+        $repPassword = mysqli_real_escape_string($conn,$_POST["password_repeat"]);
         
         $id = mysqli_real_escape_string($conn,$_POST["uid"]);
 
         if($newPassword != $repPassword){
-
-            
-            header("Location: ../src/route.php?pgname=users&useredit=".$uid."error=passdonotmatch");
+            header("Location: ../src/route.php?pgname=useredit&userid=".$uid."error=passdonotmatch");
             exit();
         }else{
             $sql = "SELECT * FROM `users` WHERE `id` = $id;";

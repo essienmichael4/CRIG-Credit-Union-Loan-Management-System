@@ -46,6 +46,11 @@ h3, .h3 {
   flex-direction: column;
 }
 
+.js {
+  justify-content: space-between;
+  align-items: center;
+}
+
 .my1 {
   margin: 1rem 0;
 }
@@ -931,7 +936,7 @@ body {
 }
 .main .apply {
   width: 99%;
-  margin: 1rem auto 1rem auto;
+  margin: 2rem auto 1rem auto;
   padding: 0 1rem;
 }
 .main .apply .title {
@@ -959,7 +964,7 @@ body {
   gap: 1rem;
 }
 .main .apply .form__group.less {
-  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem 1rem;
 }
 .main .apply .form div .btn {
   width: 50%;
@@ -1005,7 +1010,6 @@ body {
 .main .apply .form .formControl select {
   padding: 0.3rem 0.5rem;
   width: 60%;
-  margin-bottom: 2rem;
   border: 1px solid #a3a2a2;
   cursor: pointer;
   border-radius: 4px;
@@ -1846,17 +1850,22 @@ h2.p {
 .apply_savings .personal_info p {
   margin-top: 1rem;
 }
-.apply_savings .personal_info button {
+.apply_savings .personal_info button, .apply_savings .personal_info a {
   margin: 0;
   padding: 0.7rem 2.5rem;
   background-color: #2c2c2c;
   color: #dfdfdf;
   border: none;
   letter-spacing: 0.1rem;
+  word-wrap: none;
   cursor: pointer;
 }
-.apply_savings .personal_info button:hover {
+.apply_savings .personal_info button:hover, .apply_savings .personal_info a:hover {
   opacity: 0.7;
+}
+.apply_savings .personal_info a {
+  display: block;
+  width: 100%;
 }
 
 .toast_container {
@@ -1899,10 +1908,71 @@ h2.p {
   cursor: pointer;
 }
 
-.disable {
-  background-color: rgba(80, 82, 80, 0.5);
-  margin-left: 2rem;
+.deleteAccount {
+  background-color: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem;
+  font-weight: 500;
+  color: #dfdfdf;
+  text-transform: capitalize;
+  cursor: pointer;
 }
-.disable:hover {
-  background-color: black;
+.deleteAccount:hover {
+  opacity: 0.8;
+}
+
+.goback {
+  background-color: #969696;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem;
+  font-weight: 500;
+  color: #dfdfdf;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+.goback:hover {
+  background-color: #000000;
+}
+
+.changepass {
+  background-color: #1cff2f;
+  display: flex;
+  height: 2.5rem;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem;
+  font-weight: 500;
+  color: #4d4a4a;
+  text-transform: capitalize;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+.changepass:hover {
+  opacity: 0.8;
+}
+
+.savechanges {
+  background-color: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem;
+  font-weight: 500;
+  color: #ffffff;
+  text-transform: capitalize;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+.savechanges.tc {
+  padding: 0.6rem 2rem;
+  background-color: #2c2c2c;
+}
+.savechanges:hover {
+  opacity: 0.8;
 }/*# sourceMappingURL=styles.css.map */
