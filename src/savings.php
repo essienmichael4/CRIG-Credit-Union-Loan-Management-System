@@ -178,6 +178,7 @@
     <script src="../js/getallarrears.js"></script>
     <script src="../js/allfunds.js"></script>
     <script src="../js/getinterest.js"></script>
+    <script src="../js/sort.js"></script>
 
     <script>
         let toast = document.querySelector(".toast_container");

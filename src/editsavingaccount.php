@@ -68,6 +68,11 @@
 
                 <form  action="../php/savings/createaccount.inc.php" method="POST">
                     <div class="apply_savings">
+                        <div class="personal_info bg">
+                            <button type="submit" name="partialedit">Edit Account</button>
+                        </div>
+                    </div>
+                    <div class="apply_savings">
                         <input type="text" name="processor" value="<?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?>" hidden>
                         <input type="text" name="memcode" value="<?=$account['mem_code']?>" hidden>
                         <input type="text" name="uid" value="<?=$account['id']?>" hidden>

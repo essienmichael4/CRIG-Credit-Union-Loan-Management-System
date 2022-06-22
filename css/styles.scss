@@ -116,8 +116,6 @@ h3, .h3{
     padding:0 2rem;
 }
 
-
-
 body{
     font-family: 'System ui', arial;
     font-size: var(--font-size_s);
@@ -1710,7 +1708,6 @@ body{
         border-collapse: collapse;
         
         thead{
-            // border-bottom: 2px solid #4d4a4a;
             padding: 1rem;
             tr{
                 border-bottom: 2px solid #4d4a4a;
@@ -1719,6 +1716,13 @@ body{
                     text-transform: capitalize;
                     letter-spacing: .055rem;
                     font-size: .8rem;
+
+                    &.orderby{
+                        cursor: pointer;
+                    }
+                    &.orderby:hover{
+                        opacity: .8;
+                    }
                 }
             }
         }
@@ -2258,15 +2262,6 @@ h2.p{
         }
     }
 }
-
-// .disable{
-//     background-color: rgba(80, 82, 80, 0.5);
-//     display: block;
-//     // margin-left: 2rem;
-//     &:hover{
-//         background-color: black;
-//     }
-// }
 
 .deleteAccount{
     background-color: red;

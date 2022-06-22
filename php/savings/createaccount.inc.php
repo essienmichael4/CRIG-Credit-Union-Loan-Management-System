@@ -1,5 +1,5 @@
 <?php
-    if(isset($_POST['createaccount'])){
+    if(isset($_POST['createaccount']) || isset($_POST['partialaccount'])){
         include_once("../dbs.inc.php");
         include_once("../functions.inc.php");
 
@@ -82,11 +82,12 @@
                 $conn->query($sql);
             }
             header("location: ../../src/routes.php?pgname=applysavings&success=success"); 
+            exit();
         }else{
             header("location: ../../src/routes.php?pgname=applysavings&error=sqlerror");
             exit();
         }
-    }if(isset($_POST['editaccount'])){
+    }if(isset($_POST['editaccount']) || isset($_POST['partialedit'])){
         include_once("../dbs.inc.php");
         include_once("../functions.inc.php");
 
@@ -145,4 +146,5 @@
         }
     }else{
         header("location: ../src/routes.php?pgname=applysavings"); 
+        exit();
     }

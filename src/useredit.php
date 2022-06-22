@@ -192,8 +192,7 @@
                     <div class="box">
                         <a class="cancelbtn">Cancel</a>
                         <button type="submit" name="deleteuser" class="deletebtn">Delete This User Account</button>
-                    </div>
-                    
+                    </div>       
                 </form>
             </div>
         </div>

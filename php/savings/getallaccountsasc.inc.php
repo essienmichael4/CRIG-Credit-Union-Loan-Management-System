@@ -2,7 +2,7 @@
     include_once("../dbs.inc.php");
     include_once("../functions.inc.php");
 
-    $sql = "SELECT * FROM `savings` ORDER BY `id` DESC;";
+    $sql = "SELECT * FROM `savings` ORDER BY `id` ASC;";
 
     $result = mysqli_query($conn, $sql);
 
@@ -25,7 +25,7 @@
     echo $data = "<table>
                 <thead>
                     <tr>
-                        <th class='orderby' onclick='sort()'>Member ID &#9674;</th>
+                        <th class='orderby asc' onclick='sort()'>Member ID &#9674;</th>
                         <th>Member Name</th>
                         <th>Staff ID</th>
                         <th>Contact</th>

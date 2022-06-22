@@ -56,7 +56,7 @@
                     <div class="actions  mt1 mnot">
                        <h4>Personal Information</h4>
                     </div>
-                     <button name="createaccount" class="savechanges tc">Create Account</button>
+                     <button name="partialaccount" class="savechanges tc">Create Account</button>
                         
                 </div>
                     <div class="apply_savings">

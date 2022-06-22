@@ -1457,6 +1457,12 @@ body {
   letter-spacing: 0.055rem;
   font-size: 0.8rem;
 }
+.savings__table table thead tr th.orderby {
+  cursor: pointer;
+}
+.savings__table table thead tr th.orderby:hover {
+  opacity: 0.8;
+}
 .savings__table table tbody tr {
   margin-top: 0.5rem;
   color: #4d4a4a;
