@@ -1981,4 +1981,113 @@ h2.p {
 }
 .savechanges:hover {
   opacity: 0.8;
+}
+
+.wrapper404 {
+  height: min(100vh, 850px);
+  width: 100%;
+  background-color: #90ee90;
+}
+.wrapper404 header {
+  height: 5rem;
+  display: flex;
+  align-items: center;
+}
+.wrapper404 header a {
+  padding: 0.5rem 0.5rem;
+  margin-left: 1rem;
+  color: #4d4a4a;
+}
+.wrapper404 header a:hover {
+  background-color: rgba(138, 139, 141, 0.3411764706);
+}
+.wrapper404 header a span {
+  font-size: 3rem;
+}
+.wrapper404 .content {
+  width: 100%;
+  height: calc(100% - 5rem);
+  padding: 0 8rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.wrapper404 .content__body {
+  margin-top: -3rem;
+  padding: 2rem 1rem;
+}
+.wrapper404 .content__body span {
+  display: block;
+  font-size: 2rem;
+  letter-spacing: 0.2rem;
+  margin: 0 0 3rem 0;
+  color: #2c2c2c;
+}
+.wrapper404 .content__body h1 {
+  font-size: 3rem;
+  margin: 2rem 0;
+}
+.wrapper404 .content__body p {
+  font-size: 1rem;
+  margin: 3rem 0;
+}
+.wrapper404 .content__body a {
+  margin: 2rem 0;
+  background-color: #000000;
+  color: white;
+  padding: 1rem 3rem;
+  font-size: 1rem;
+}
+.wrapper404 .content__body a:hover {
+  opacity: 0.7;
+}
+.wrapper404 .content__image {
+  margin-top: -5rem;
+}
+.wrapper404 .content__image img {
+  width: 260px;
+  -webkit-animation: float 2s infinite alternate;
+          animation: float 2s infinite alternate;
+}
+.wrapper404 .content__image .shadow {
+  margin-top: 2rem;
+  width: 180px;
+  height: 2rem;
+  background-color: #2c2c2c;
+  border-radius: 50%;
+  filter: blur(10px);
+  -webkit-animation: shadow 2s infinite alternate;
+          animation: shadow 2s infinite alternate;
+}
+@-webkit-keyframes float {
+  0% {
+    transform: translateY(30px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes float {
+  0% {
+    transform: translateY(30px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@-webkit-keyframes shadow {
+  0% {
+    transform: scale(0.8, 0.8);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+@keyframes shadow {
+  0% {
+    transform: scale(0.8, 0.8);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
 }/*# sourceMappingURL=styles.css.map */

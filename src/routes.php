@@ -7,7 +7,7 @@
         header("location: ../index.php");
     }else{
         // Routing of the web application after sucessful login
-        require("header.php");// gets header file
+        
 
         // Setting of initial page name
         $controller = "dashboard";
@@ -22,12 +22,14 @@
 
         //Checks if file exists and routes to the veiw
         if(file_exists("./".$controller.".php")){
+            require("header.php");// gets header file
             require("./".$controller.".php");
+            require("footer.php");// gets footer file
         }else{
-            $controller = "404";
+            $controller = "_404";
             require("./".$controller.".php");
         }
 
-        require("footer.php");// gets footer file
+        
     }
 ?>
