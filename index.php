@@ -10,11 +10,11 @@
 
     <link rel="stylesheet" href="./css/fontawesome.min.css">
     <link rel="stylesheet" href="./css/all.min.css">
-    <title>CQC</title>
+    <title>CRIG QUALITY CLUB</title>
 </head>
 <body>
         <div class="hero">
-            <h1>CQC - LOAN MANAGEMENT</h1>
+            <h1>CRIG QUALITY CLUB MANAGEMENT SYSTEM</h1>
             <form action="./php/login.inc.php" method="POST" class="login">
                 <h2>Welcome back...</h2>
                 <p>Please enter your username or email or worker id and password.</p>

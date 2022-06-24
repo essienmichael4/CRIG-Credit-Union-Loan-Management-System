@@ -271,7 +271,7 @@ body {
   color: #4d4a4a;
   text-transform: uppercase;
   position: relative;
-  padding: 0.7rem 0 0.7rem 1rem;
+  padding: 1rem 0 1rem 1rem;
   cursor: pointer;
 }
 .sidebar__nav .nav__list .list__item .item__link:hover {

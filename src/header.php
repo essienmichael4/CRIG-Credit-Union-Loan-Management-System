@@ -14,7 +14,7 @@
     <div class="container">
         <aside class="sidebar">
             <header class="sidebar__header header p1">
-                <h1>CQC - Loan</h1>
+                <h1>CRIG QUALITY CLUB</h1>
             </header>
             <nav class="sidebar__nav nav">
                 <ul class="nav__list">
@@ -27,7 +27,7 @@
                     ?>
 
                     <?php
-                        if($_GET['pgname']=="savings" || $_GET['pgname']=="savingdetails" || $_GET['pgname']=="applysavings"){
+                        if($_GET['pgname']=="savings" || $_GET['pgname']=="savingdetails"|| $_GET['pgname']=="editsavingaccount" || $_GET['pgname']=="applysavings"){
                     ?>
                         <li class="list__item ">
                             <div class="item__link active saving_sub py1">
@@ -147,8 +147,6 @@
                     
                         }
                     ?>
-
-                    
 
                     <?php
 
