@@ -120,7 +120,7 @@
                     <form action="../php/savings/deposit_debit.inc.php" method="POST">
                         <header>
                             <h4>Deposit Form</h4>
-                            <a class="deposite_close">	&#8594;</a>
+                            <a class="deposite_close">&#8594;</a>
                         </header>
 
                         <div class="withdrawal__body dep">
@@ -151,7 +151,7 @@
                             
                             <div class="form-control dep">
                                 <label for="">Amount <span>GH¢</span></label>
-                                <input type="number">
+                                <input type="number" name="deposite_amount">
                             </div>
                             
                             <div class="form-control dep">

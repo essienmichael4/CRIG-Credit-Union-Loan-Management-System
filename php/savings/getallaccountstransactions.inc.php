@@ -1,6 +1,6 @@
 <?php
-    include_once("../dbs.inc.php");
-    include_once("../functions.inc.php");
+    include("../dbs.inc.php");
+    include("../functions.inc.php");
 
     $sql = "SELECT * FROM `transactions` ORDER BY `id` DESC;";
 
@@ -11,9 +11,9 @@
     $rows = "";
 
     while($res = mysqli_fetch_assoc($result)){
-        $sql = "SELECT * FROM `savings` WHERE `mem_code` = '{$res['member_code']}' OR `staff_id` = '{$res['member_code']}';";
-        $result = mysqli_query($conn, $sql);
-        $account = mysqli_fetch_assoc($result);
+        $sql1 = "SELECT * FROM `savings` WHERE `mem_code` = '{$res['member_code']}' OR `staff_id` = '{$res['member_code']}' LIMIT 1;";
+        $result1 = mysqli_query($conn, $sql1);
+        $account = mysqli_fetch_assoc($result1);
         $amount_in_account = number_format($res['amount_in_account'],2);
         $amount_transacted = number_format($res['amount_transacted'],2);
         $balance_in_account = number_format($res['balance_in_account'],2);

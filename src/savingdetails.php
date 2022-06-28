@@ -34,7 +34,8 @@
                     <a href="?pgname=savings">	&#8592;</a>
                     <div class="details-right">
                         <h2 class="p"><span><?=$account["first_name"].' '.$account["last_name"].' '.$account["other_names"]?></span></h2>
-                        <p> Account Details & Statements</p>
+                        
+                        <p><?=$account["mem_code"]?></p>
                     </div>
                     <div class="actions">
                         <button class="deposite_btn"><span><i class="fas fa-plus-circle"></i></span> Deposit</button>
@@ -137,6 +138,7 @@
                         <p>Current Account</p>
                         <h4 class="current_account">GH¢ <?=$balance?></h4>
                     </div>
+                    <p> Account Details & Statements</p>
                     <!-- <div class="card">
                         <p>All Funds</p>
                         <h4>GH¢ 100,000,000</h4>
@@ -167,9 +169,9 @@
                 <div class=" account-details">
                     <h2 class="account-title">Transactions</h2>
                     <div class="actions">
-                        <button class="getalltransactions">All Transactions</button>
-                        <button class="getalldeposit">Deposits</button>
-                        <button class="getalldebit">Withdrawals</button>
+                        <button class="getalltransactions" name="<?=$_GET["account_id"]?>">All Transactions</button>
+                        <button class="getalldeposit" name="<?=$_GET["account_id"]?>">Deposits</button>
+                        <button class="getalldebit" name="<?=$_GET["account_id"]?>">Withdrawals</button>
                     </div>
                 </div>
                 <section class="savings__table">
@@ -196,6 +198,7 @@
                             <div class="form-control">
                                 <label for="">Mem. Code <span></span></label>
                                 <h4 class="sw"><?=$account["mem_code"]?></h4>
+                                <input type="text" name="memcode" value="<?=$account["mem_code"]?>" hidden>
                             </div>
                             <div class="form-control">
                                 <label for="">Balance <span>GH¢</span></label>
@@ -203,7 +206,7 @@
                             </div>
                             <div class="form-control">
                                 <label for="">Amount <span>GH¢</span></label>
-                                <input type="number">
+                                <input type="number" name="debitamount">
                             </div>
                             <button name="debit">Withdraw</button>
                         </div>
@@ -226,7 +229,8 @@
 
                             <div class="form-control dep">
                                 <label for="">Mem. Code <span></span></label>
-                                <input type="text" value="<?=$account["mem_code"]?>">
+                                <h4  class="sw"><?=$account["mem_code"]?></h4>
+                                <input type="text" name="memcode" value="<?=$account["mem_code"]?>" hidden>
                             </div>
                             
                             <div class="form-control dep">
@@ -241,19 +245,19 @@
                             
                             <div class="form-control dep">
                                 <label for="">Amount <span>GH¢</span></label>
-                                <input type="number">
+                                <input type="number" name="depositamount">
                             </div>
                             
                             <div class="form-control dep">
                                 <label for="">Deposit Type <span></span></label>
-                                <select name="">
+                                <select name="deposittype">
                                     <option value="monthly">Monthly</option>
                                     <option value="bulk">Bulk</option>
                                 </select>
                             </div>
                             <div class="form-control dep">
                                 <label for="">Receipt No.<span></span></label>
-                                <input type="text">
+                                <input type="text" name="receiptnum">
                             </div>
                             <button name="deposit">Deposit</button>
                         </div>
@@ -264,5 +268,5 @@
     </div>
     <script src="../js/details.js"></script>
     <script src="../js/deposite.js"></script>
-    <script src="../js/transactions.js"></script>
+    <script src="../js/getaccounttransactions.js"></script>
     <script src="../js/getCurrentAccountBalance.js"></script>

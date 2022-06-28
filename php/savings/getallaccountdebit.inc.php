@@ -2,7 +2,7 @@
     include_once("../dbs.inc.php");
     include_once("../functions.inc.php");
     $memcode = mysqli_real_escape_string($conn,$_POST["memcode"]);
-    $transactiontype = "withdrawal";
+    $transactiontype = "debit";
 
     $sql = "SELECT * FROM `transactions` WHERE `member_code` = '{$memcode}' AND 
     `transaction_type` = '$transactiontype' ORDER BY `id` DESC;";

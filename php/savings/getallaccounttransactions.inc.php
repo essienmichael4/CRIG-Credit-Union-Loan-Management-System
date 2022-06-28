@@ -2,7 +2,9 @@
     include_once("../dbs.inc.php");
     include_once("../functions.inc.php");
 
-    $sql = "SELECT * FROM `transactions` ORDER BY `id` DESC;";
+    $memcode = mysqli_real_escape_string($conn,$_POST["memcode"]);
+
+    $sql = "SELECT * FROM `transactions` WHERE `member_code` = '{$memcode}' ORDER BY `id` DESC;";
     $result = mysqli_query($conn, $sql);
 
     $data = "";
