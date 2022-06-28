@@ -2,8 +2,7 @@
     include_once("../dbs.inc.php");
     include_once("../functions.inc.php");
 
-    $sql = "SELECT * FROM `savings` ORDER BY `id` DESC;";
-
+    $sql = "SELECT * FROM `savings` ORDER BY `staff_id` DESC";
     $result = mysqli_query($conn, $sql);
 
     $data = "";
