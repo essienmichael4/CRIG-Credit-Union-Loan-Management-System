@@ -111,6 +111,10 @@
                                 <label for="">Amount <span>GH¢</span></label>
                                 <input type="number" name="debitamount">
                             </div>
+                            <div class="form-control">
+                                <label for="">Date <span></span></label>
+                                <input type="date" name="debitdate">
+                            </div>
                             <button name="debit">Withdraw</button>
                         </div>
                     </form>
@@ -160,6 +164,10 @@
                                     <option value="monthly">Monthly</option>
                                     <option value="bulk">Bulk</option>
                                 </select>
+                            </div>
+                            <div class="form-control">
+                                <label for="">Date <span></span></label>
+                                <input type="date" name="depositdate">
                             </div>
                             <button name="deposit">Deposit</button>
                         </div>

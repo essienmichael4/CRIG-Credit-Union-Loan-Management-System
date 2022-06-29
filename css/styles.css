@@ -1485,6 +1485,9 @@ body {
 .savings__table table tbody tr td.tc {
   text-align: center;
 }
+.savings__table table tbody tr td.tu {
+  text-transform: capitalize;
+}
 .savings__table table tbody tr td a {
   color: #4d4a4a;
   font-weight: bold;

@@ -20,11 +20,11 @@
 
         $rows .= "<tr>
                     <td>{$res['transaction_day']}</td>
-                    <td>{$res['transaction_type']} </td>
+                    <td class='tu'>{$res['transaction_type']} </td>
                     <td>{$amount_in_account}</td>
                     <td>{$amount_transacted}</td>
                     <td>{$balance_in_account}</td>
-                    <td>{$res['transacted_by']}</td>
+                    <td class='tu'>{$res['transacted_by']}</td>
                 </tr>"; 
     }
 

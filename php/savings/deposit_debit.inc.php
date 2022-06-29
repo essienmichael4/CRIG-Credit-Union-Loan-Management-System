@@ -3,14 +3,20 @@
         include_once("../dbs.inc.php");
         include_once("../functions.inc.php");
 
-        echo $processor = mysqli_real_escape_string($conn,$_POST["processor"]);
-        echo $memcode = mysqli_real_escape_string($conn,$_POST["memcode"]);
-        echo $receiptnumber = mysqli_real_escape_string($conn,$_POST["receiptnum"]);
-        echo $depositamount = (float)mysqli_real_escape_string($conn,$_POST["deposite_amount"]);
-        echo $deposittype = mysqli_real_escape_string($conn,$_POST["deposittype"]);
-        echo $transaction_type = "deposit";
-        echo $balance = 0;
-        echo $initialbalance = 0;
+        $processor = mysqli_real_escape_string($conn,$_POST["processor"]);
+        $memcode = mysqli_real_escape_string($conn,$_POST["memcode"]);
+        $receiptnumber = mysqli_real_escape_string($conn,$_POST["receiptnum"]);
+        $depositamount = (float)mysqli_real_escape_string($conn,$_POST["deposite_amount"]);
+        $deposittype = mysqli_real_escape_string($conn,$_POST["deposittype"]);
+        $depositdate = mysqli_real_escape_string($conn,$_POST["depositdate"]);
+        $transaction_type = "deposit";
+        $balance = 0;
+        $initialbalance = 0;
+
+        if(empty($depositdate)){
+            header("location: ../../src/routes.php?pgname=savings&error=dateerror"); 
+            exit();
+        }
 
         echo $sql = "SELECT * FROM `savings` WHERE `mem_code` = '{$memcode}' OR `staff_id` = '{$memcode}';";
                 
@@ -19,6 +25,7 @@
         var_dump($result);
         if(mysqli_num_rows($result)<1){
             header("location: ../../src/routes.php?pgname=savings&error=memcodenotfound"); 
+            exit();
         }else{
             $row = mysqli_fetch_assoc($result);
             $initialbalance = (float)$row["balance"];
@@ -28,9 +35,9 @@
 
         $sql = "INSERT INTO `transactions`(`member_code`, `receipt_number`, `transaction_type`,
             `deposit_type`, `amount_transacted`, `amount_in_account`
-        , `balance_in_account`, `transacted_by`) 
+        , `balance_in_account`, `transacted_by`, `transaction_day`) 
         VALUES('$memcode', '$receiptnumber','$transaction_type', 
-        '$deposittype', $depositamount ,$initialbalance, $balance, '$processor')";
+        '$deposittype', $depositamount ,$initialbalance, $balance, '$processor', '$depositdate')";
 
         if( mysqli_query($conn, $sql)){
             $sql = "UPDATE `savings` SET `balance` = $balance WHERE `mem_code` = '$memcode'";
@@ -47,9 +54,15 @@
         $processor = mysqli_real_escape_string($conn,$_POST["processor"]);
         $memcode = mysqli_real_escape_string($conn,$_POST["memcode"]);
         $debitamount = (float)mysqli_real_escape_string($conn,$_POST["debitamount"]);
+        $debitdate = mysqli_real_escape_string($conn,$_POST["debitdate"]);
         $transaction_type = "debit";
         $balance = 0;
         $initialbalance = 0;
+
+        if(empty($debitdate)){
+            header("location: ../../src/routes.php?pgname=savings&error=dateerror"); 
+            exit();
+        }
 
         $sql = "SELECT * FROM `savings` WHERE `mem_code` = '{$memcode}' OR 
         `staff_id` = '{$memcode}';";
@@ -72,8 +85,8 @@
         $balance = $initialbalance - $debitamount;
 
         $sql = "INSERT INTO `transactions`(`member_code`, `transaction_type`,
-         `amount_transacted`, `amount_in_account`, `balance_in_account`, `transacted_by`) 
-        VALUES('$memcode', '$transaction_type', $debitamount ,$initialbalance, $balance, '$processor')";
+         `amount_transacted`, `amount_in_account`, `balance_in_account`, `transacted_by`, `transaction_day`) 
+        VALUES('$memcode', '$transaction_type', $debitamount ,$initialbalance, $balance, '$processor', '$debitdate')";
 
         if( mysqli_query($conn, $sql)){
             $sql = "UPDATE `savings` SET `balance` = $balance WHERE `mem_code` = '$memcode'";

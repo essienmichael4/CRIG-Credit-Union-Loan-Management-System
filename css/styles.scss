@@ -1752,6 +1752,10 @@ body{
                     &.tc{
                         text-align: center;
                     }
+
+                    &.tu{
+                        text-transform: capitalize;
+                    }
     
                     a{
                         color: #4d4a4a;

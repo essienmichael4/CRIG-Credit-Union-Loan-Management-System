@@ -16,11 +16,11 @@
     while($res = mysqli_fetch_assoc($result)){
         $rows .= "<tr>
                     <td>{$res['transaction_day']}</td>
-                    <td>{$res['transaction_type']} </td>
+                    <td class='tu'>{$res['transaction_type']} </td>
                     <td>{$res['amount_in_account']}</td>
                     <td>{$res['amount_transacted']}</td>
                     <td>{$res['balance_in_account']}</td>
-                    <td>{$res['transacted_by']}</td>
+                    <td class='tu'>{$res['transacted_by']}</td>
                 </tr>"; 
     }
 

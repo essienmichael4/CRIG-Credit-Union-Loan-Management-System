@@ -26,11 +26,11 @@
                     <td>{$res['transaction_day']}</td>
                     <td>{$res['member_code']}</td>
                     <td><a href='?pgname=savingdetails&account_id={$account['id']}'>{$account['first_name']} {$account['last_name']} {$account['other_names']}</a> </td>
-                    <td>{$res['transaction_type']} </td>
+                    <td class='tu'>{$res['transaction_type']} </td>
                     <td>{$amount_in_account}</td>
                     <td>{$amount_transacted}</td>
                     <td>{$balance_in_account}</td>
-                    <td>{$res['transacted_by']}</td>
+                    <td class='tu'>{$res['transacted_by']}</td>
                 </tr>"; 
     }
 
