@@ -7,7 +7,7 @@
         $account_id = mysqli_real_escape_string($conn,$_POST["account_id"]);
         $memcode = mysqli_real_escape_string($conn,$_POST["memcode"]);
         $receiptnumber = mysqli_real_escape_string($conn,$_POST["receiptnum"]);
-        $depositamount = (float)mysqli_real_escape_string($conn,$_POST["depositamount"]);
+        $depositamount = mysqli_real_escape_string($conn,$_POST["depositamount"]);
         $deposittype = mysqli_real_escape_string($conn,$_POST["deposittype"]);
         $depositdate = mysqli_real_escape_string($conn,$_POST["depositdate"]);
         $transaction_type = "deposit";
@@ -18,6 +18,13 @@
             header("location: ../../src/routes.php?pgname=savings&error=dateerror"); 
             exit();
         }
+
+        if(!(float)$depositamount){
+            header("location: ../../src/routes.php?pgname=savings&error=inputamounterror"); 
+            exit();
+        }
+
+        $depositamount = (float)$depositamount;
 
         $sql = "SELECT * FROM `savings` WHERE `mem_code` = '{$memcode}' OR `staff_id` = '{$memcode}';";
                 
@@ -53,7 +60,7 @@
         $processor = mysqli_real_escape_string($conn,$_POST["processor"]);        
         $account_id = mysqli_real_escape_string($conn,$_POST["account_id"]);
         $memcode = mysqli_real_escape_string($conn,$_POST["memcode"]);
-        $debitamount = (float)mysqli_real_escape_string($conn,$_POST["debitamount"]);
+        $debitamount = mysqli_real_escape_string($conn,$_POST["debitamount"]);
         $debitdate = mysqli_real_escape_string($conn,$_POST["debitdate"]);
         $transaction_type = "debit";
         $balance = 0;
@@ -63,6 +70,13 @@
             header("location: ../../src/routes.php?pgname=savings&error=dateerror"); 
             exit();
         }
+
+        if(!(float)$debitamount){
+            header("location: ../../src/routes.php?pgname=savings&error=inputamounterror"); 
+            exit();
+        }
+
+        $debitamount = (float)$debitamount;
 
         $sql = "SELECT * FROM `savings` WHERE `mem_code` = '{$memcode}' OR 
         `staff_id` = '{$memcode}';";

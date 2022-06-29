@@ -206,7 +206,7 @@
                             </div>
                             <div class="form-control">
                                 <label for="">Amount <span>GH¢</span></label>
-                                <input type="number" name="debitamount">
+                                <input type="text" name="debitamount">
                             </div>
                             <div class="form-control">
                                 <label for="">Date <span></span></label>
@@ -249,9 +249,8 @@
                             
                             <div class="form-control dep">
                                 <label for="">Amount <span>GH¢</span></label>
-                                <input type="number" name="depositamount">
+                                <input type="text" name="depositamount">
                             </div>
-                            
                             <div class="form-control dep">
                                 <label for="">Deposit Type <span></span></label>
                                 <select name="deposittype">
