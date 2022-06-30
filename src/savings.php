@@ -70,9 +70,14 @@
                 </div>
                 <div class=" account-details">
                     <h2 class="account-title">Accounts</h2>
+                    <!-- <div class="searchname"><input type="text" class="namesort"></div> -->
                     <div class="actions">
+                        <div class="searchname">
+                            <input type="text" class="namesort">
+                            <i class="fas fa-search"></i>
+                        </div>
                         <button class="getallaccounts">Accounts</button>
-                        <button class="getalltransactions">All Transactions</button>
+                        <button class="getalltransactions">Transactions</button>
                         <button class="getalldeposit">Deposits</button>
                         <button class="getalldebit">Withdrawals</button>
                     </div>
@@ -187,6 +192,7 @@
     <script src="../js/allfunds.js"></script>
     <script src="../js/getinterest.js"></script>
     <script src="../js/sort.js"></script>
+    <script src="../js/sortname.js"></script>
 
     <script>
         let toast = document.querySelector(".toast_container");

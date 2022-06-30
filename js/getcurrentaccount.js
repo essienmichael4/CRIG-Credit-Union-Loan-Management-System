@@ -22,7 +22,6 @@ setInterval(()=>{
             if(xhr.status == 200){
                 let data = xhr.response;
 
-                // console.log(data)
                 currentAccount.textContent = data;
             }
         }

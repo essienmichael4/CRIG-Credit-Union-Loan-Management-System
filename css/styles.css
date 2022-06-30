@@ -2098,4 +2098,26 @@ h2.p {
   100% {
     transform: scale(1, 1);
   }
+}
+
+.searchname {
+  display: flex;
+  align-items: center;
+  border: 1px solid #8a8b8d;
+  width: 14rem;
+  padding: 0 0.5rem;
+  border-radius: 0.3rem;
+  position: relative;
+}
+.searchname input {
+  outline: none;
+  border: none;
+  color: #4d4a4a;
+  padding-right: 0.5rem;
+  border-right: 1px solid #8a8b8d;
+}
+.searchname i {
+  position: absolute;
+  top: 0.55rem;
+  right: 0.8rem;
 }/*# sourceMappingURL=styles.css.map */

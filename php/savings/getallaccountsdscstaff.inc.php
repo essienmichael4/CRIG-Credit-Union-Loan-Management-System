@@ -32,7 +32,7 @@
                         <th>Account Status</th>
                     </tr>
                 </thead>
-                <tbody>"
+                <tbody class='accounttable'>"
                     .$rows.
                 "</tbody>
             </table>";
