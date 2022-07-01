@@ -29,25 +29,6 @@
             </header>
             
             <div class="wrapper">
-                <!-- <div class="savings__card">
-                    <div class="card">
-                        <p>All Funds</p>
-                        <h4 class="all_funds"></h4>
-                    </div>
-                    <div class="card">
-                        <p>Current Account</p>
-                        <h4 class="current_account"></h4>
-                    </div>
-                    <div class="card">
-                        <p>Interest</p>
-                        <h4 class="interest"></h4>
-                    </div>
-                    <div class="card">
-                        <p>Loans</p>
-                        <h4 class="arrears"></h4>
-                    </div>
-                    
-                </div> -->
                 <div class="details-head">
                     <a href="?pgname=savingdetails&account_id=<?=$account['id']?>">	&#8592;</a>
                     

@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../css/fontawesome.min.css">
     <link rel="stylesheet" href="../css/all.min.css">
 </head>
-<body>
+<body class="dark">
     <div class="container">
         <aside class="sidebar">
             <header class="sidebar__header header p1">

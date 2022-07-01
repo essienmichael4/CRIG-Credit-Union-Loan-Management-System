@@ -12,13 +12,47 @@
   --font-size_l: 1.2rem;
   --font-size_xl: 1.5rem;
   --font-size_xxl: 2rem;
-  --color-primary: blue;
-  --color-secondary: red;
-  --color-dark-1: black;
-  --color-dark-2: rgba(0, 0, 0, 0.842);
-  --color-white-1: white;
-  --color-white-2: #ebebeb;
-  --dark: #4d4a4a;
+  --color-blackbg-100: #040404;
+  --color-blackbg-200: #8a8b8d;
+  --color-blackbg-300: #4d4a4a;
+  --color-blackbg-400: #000000;
+  --color-whitebg-100: #a3a2a2;
+  --color-whitebg-200: #dfdfdf;
+  --color-whitebg-300: #ebebeb;
+  --color-whitebg-400: #ffffff;
+  --text-dark-100: #4d4a4a;
+  --text-dark-200: #8a8b8d;
+  --text-dark-300: #4d4a4a;
+  --text-dark-400: #000000;
+  --text-light-100: #a3a2a2;
+  --text-light-200: #dfdfdf;
+  --text-light-300: #ebebeb;
+  --text-light-400: #ffffff;
+  --text-light: #4d4d4d;
+  --color-accent-1: #1c64ff;
+  --color-accent-2: #1cff2f;
+  --color-accent-3: #ff1cbb;
+  --color-accent-4: #ff371c;
+}
+
+body.dark {
+  --color-blackbg-100: #a3a2a2;
+  --color-blackbg-200: #dfdfdf;
+  --color-blackbg-300: #ebebeb;
+  --color-blackbg-400: #ffffff;
+  --color-whitebg-100: #040404;
+  --color-whitebg-200: #8a8b8d;
+  --color-whitebg-300: #4d4a4a;
+  --color-whitebg-400: #000000;
+  --text-dark-100: #a3a2a2;
+  --text-dark-200: #dfdfdf;
+  --text-dark-300: #ebebeb;
+  --text-dark-400: #ffffff;
+  --text-light: #ebebeb;
+  --text-light-100: #040404;
+  --text-light-200: #8a8b8d;
+  --text-light-300: #4d4a4a;
+  --text-light-400: #000000;
 }
 
 h1, .h1 {
@@ -136,7 +170,7 @@ body {
   font-size: var(--font-size_s);
   width: 100%;
   position: relative;
-  background-color: black;
+  background-color: var(--color-whitebg-400);
 }
 
 .container {
@@ -242,16 +276,17 @@ body {
   max-height: 750px;
   position: absolute;
   top: 0;
-  background-color: #ebebeb;
+  background-color: var(--color-whitebg-300);
 }
 .sidebar__header {
   margin-bottom: 1rem;
-  background-color: #4d4a4a;
-  margin: 0.3rem 0.3rem 1.5rem 0.3rem;
+  background-color: var(--color-whitebg-400);
+  margin: 0.6rem 0.3rem 1.5rem 0.3rem;
   border-radius: 7px;
+  padding: 1.5rem 1rem;
 }
 .sidebar__header h1 {
-  color: #ebebeb;
+  color: var(--text-dark-300);
   font-size: 1rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -268,22 +303,22 @@ body {
 .sidebar__nav .nav__list .list__item .item__link {
   display: block;
   width: 100%;
-  color: #4d4a4a;
+  color: var(--text-dark-300);
   text-transform: uppercase;
   position: relative;
   padding: 1rem 0 1rem 1rem;
   cursor: pointer;
 }
 .sidebar__nav .nav__list .list__item .item__link:hover {
-  background-color: #4d4a4a;
-  color: #ebebeb;
+  background-color: var(--color-blackbg-300);
+  color: var(--text-light-300);
 }
 .sidebar__nav .nav__list .list__item .item__link.active {
-  color: #ebebeb;
-  background-image: linear-gradient(to right, #4d4a4a, #4d4a4a, #4d4a4a, rgba(77, 74, 74, 0.4039215686), white);
+  color: var(--text-light-300);
+  background-image: linear-gradient(to right, var(--color-blackbg-300), var(--color-blackbg-300), var(--color-blackbg-300), rgba(77, 74, 74, 0.4039215686), var(--color-whitebg-400));
 }
 .sidebar__nav .nav__list .list__item .item__link.active i.arrow {
-  color: #4d4a4a;
+  color: var(--text-dark-300);
 }
 .sidebar__nav .nav__list .list__item .item__link.active::before {
   content: "";
@@ -292,14 +327,14 @@ body {
   left: 0;
   bottom: 0;
   width: 5px;
-  background-color: red;
+  background-color: var(--color-accent-1);
 }
 .sidebar__nav .nav__list .list__item .item__link i {
   margin-right: 1rem;
 }
 .sidebar__nav .nav__list .list__item .item__link i.arrow {
   margin-left: 95px;
-  color: #4d4a4a;
+  color: var(--text-dark-300);
 }
 .sidebar__nav .nav__list .list__item .item__link ol {
   display: none;
@@ -317,18 +352,18 @@ body {
   display: block;
   font-size: 0.7rem;
   padding: 0.6rem 0 0.6rem 0.6rem;
-  color: #4d4a4a;
+  color: var(--text-dark-300);
   margin-bottom: 0.2rem;
   border-radius: 5px;
-  background-color: #ebebeb;
+  background-color: var(--color-whitebg-300);
 }
 .sidebar__nav .nav__list .list__item .item__link ol li a:hover {
-  color: #4d4a4a;
-  background-color: #ebebeb;
+  color: var(--text-dark-300);
+  background-color: var(--color-whitebg-300);
   opacity: 0.7;
 }
 .sidebar__nav .nav__list .list__item .item__link ol li a.active {
-  background-color: #1c64ff;
+  background-color: var(--color-accent-1);
   background-image: none;
 }
 .sidebar__nav .nav__list .list__item .item__link ol li a.active::before {
@@ -339,11 +374,11 @@ body {
   position: absolute;
   bottom: 0;
   padding: 1rem 1rem;
-  background-color: #4d4a4a;
+  background-color: var(--color-blackbg-300);
   margin: 1rem;
   border-radius: 5px;
-  color: #ebebeb;
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.7);
+  color: var(--text-light-300);
+  box-shadow: 5px 5px 15px rgba(var(--color-blackbg-400), 0.7);
 }
 .sidebar__footer h3 {
   font-size: 0.8rem;
@@ -361,28 +396,28 @@ body {
 .btn {
   padding: 0.7rem 3rem;
   width: 100%;
-  background-color: #1c64ff;
+  background-color: var(--color-accent-1);
   border: none;
-  color: #ebebeb;
+  color: var(--text-light-300);
   position: relative;
   top: 0;
   transition: all 0.5s ease-in-out;
   text-transform: uppercase;
   border-radius: 4px;
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+  box-shadow: 5px 5px 15px rgba(var(--color-blackbg-400), 0.5);
   cursor: pointer;
 }
 .btn.red {
-  background-color: rgb(253, 70, 70);
+  background-color: var(--color-accent-4);
 }
 .btn:hover.red {
-  background-color: red;
-  box-shadow: 0px 0px 15px red;
+  background-color: var(--color-accent-4);
+  box-shadow: 0px 0px 15px var(--color-accent-4);
 }
 .btn:hover {
-  background-color: blue;
+  background-color: var(--color-accent-1);
   top: -2px;
-  box-shadow: 0px 0px 15px blue;
+  box-shadow: 0px 0px 15px var(--color-accent-1);
 }
 
 .form-container {
@@ -402,7 +437,7 @@ body {
 
 .main {
   width: calc(100% - 230px);
-  background-color: white;
+  background-color: var(--color-whitebg-400);
   height: 100%;
   margin-left: 230px;
   position: relative;
@@ -423,7 +458,7 @@ body {
 }
 .main .wrapper h2.h4 {
   letter-spacing: 0.15rem;
-  color: #1c64ff;
+  color: var(--color-accent-1);
 }
 .main__header {
   position: -webkit-sticky;
@@ -435,13 +470,13 @@ body {
   align-items: center;
   justify-content: space-between;
   margin: 0 auto;
-  background-color: #ebebeb;
+  background-color: var(--color-whitebg-300);
   border-radius: 5px;
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
 }
 .main__header h2 {
   font-weight: 400;
-  color: #4d4a4a;
+  color: var(--text-dark-300);
   text-transform: uppercase;
 }
 .main__header .search {
@@ -451,7 +486,7 @@ body {
   padding: 0.3rem 0;
   width: 500px;
   min-width: 300px;
-  background-color: #fff;
+  background-color: var(--color-whitebg-400);
   border-radius: 4px;
 }
 .main__header .search__input {
@@ -459,17 +494,18 @@ body {
   letter-spacing: 1px;
   width: 78%;
   padding: 0.2rem 0.5rem 0.2rem 0.5rem;
-  background-color: transparent;
+  background: transparent;
+  background-color: var(--color-whitebg-400);
   outline: none;
   border: none;
-  color: #4d4a4a;
+  color: var(--text-dark-300);
 }
 .main__header .search__btn {
   width: 20%;
   padding: 0.3rem 0;
   margin-right: 0.2rem;
-  background-color: #4d4a4a;
-  color: #ebebeb;
+  background-color: var(--color-blackbg-300);
+  color: var(--text-light-300);
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -481,13 +517,13 @@ body {
   width: 200px;
   min-width: 150px;
   height: 35px;
-  background-color: #fff;
+  background-color: var(--color-whitebg-400);
   position: relative;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
-  color: #4d4a4a;
+  color: var(--text-dark-300);
   cursor: pointer;
   align-items: center;
 }
@@ -497,18 +533,18 @@ body {
   position: relative;
   left: -10px;
   border: 3px solid rgba(77, 74, 74, 0.5);
-  background-color: #fff;
+  background-color: var(--color-whitebg-400);
   border-radius: 50%;
   font-size: 1.5rem;
-  color: #4d4a4a;
+  color: var(--text-dark-300);
   align-items: center;
   justify-content: center;
 }
 .main__header .user p {
-  color: #4d4a4a;
+  color: var(--text-dark-300);
 }
 .main__header .user i {
-  color: #4d4a4a;
+  color: var(--text-dark-300);
   position: absolute;
   right: 1rem;
 }
@@ -517,7 +553,7 @@ body {
   right: 1rem;
   top: 4rem;
   background-color: white;
-  border: 1px solid #8a8b8d;
+  border: 1px solid var(--text-dark-200);
   border-radius: 5px;
   overflow: hidden;
   display: none;
@@ -531,18 +567,18 @@ body {
 .main__header .userdetails p {
   padding: 0.3rem 0;
   width: 100%;
-  color: #4d4a4a;
+  color: var(--text-dark-300);
   display: flex;
   align-items: center;
   justify-content: center;
-  border-bottom: 1px solid #ebebeb;
+  border-bottom: 1px solid var(--color-whitebg-300);
 }
 .main__header .userdetails a {
   margin: 0.2rem;
   font-size: 0.8rem;
   padding: 0.4rem 0 !important;
   width: 100%;
-  color: #8a8b8d;
+  color: var(--text-dark-200);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -550,12 +586,12 @@ body {
   letter-spacing: 1px;
 }
 .main__header .userdetails a:hover, .main__header .userdetails a:focus {
-  background-color: #ebebeb;
-  color: black;
+  background-color: var(--color-whitebg-300);
+  color: var(--text-dark-400);
 }
 .main__header .userdetails button {
   padding: 0.3rem 4rem;
-  color: #8a8b8d;
+  color: var(--text-dark-200);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -568,92 +604,8 @@ body {
   text-transform: capitalize;
 }
 .main__header .userdetails button:hover, .main__header .userdetails button:focus {
-  background-color: #ebebeb;
-  color: black;
-}
-.main .cards {
-  width: 99%;
-  margin: 0.5rem auto;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-.main .cards__card {
-  width: 270px;
-  background-color: #ebebeb;
-  border-radius: 8px;
-  margin-bottom: 0.3rem;
-  position: relative;
-  padding: 1rem 1rem 1rem 1rem;
-  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
-}
-.main .cards__card:nth-of-type(1) {
-  background-color: #4d4a4a;
-}
-.main .cards__card:nth-of-type(1) .icon--first {
-  color: rgb(27, 94, 236);
-  transform: rotate(225deg);
-  padding: 0.5rem;
-  background-color: rgba(27, 94, 236, 0.2);
-  border-radius: 50%;
-}
-.main .cards__card:nth-of-type(1) .icon__primary {
-  color: white;
-}
-.main .cards__card:nth-of-type(1) p {
-  color: #ebebeb;
-}
-.main .cards__card:nth-of-type(1) h2 {
-  color: #ebebeb;
-}
-.main .cards__card:nth-of-type(1) h2 span {
-  border: 1px solid #ebebeb;
-}
-.main .cards__card:nth-of-type(3) .icon__primary {
-  color: red;
-}
-.main .cards__card .icon {
-  padding: 0.5rem;
-  font-size: 16px;
-  margin-bottom: 1rem;
-}
-.main .cards__card .icon--second {
-  color: green;
-  transform: rotate(45deg);
-  background-color: rgba(27, 236, 27, 0.2);
-  border-radius: 50%;
-}
-.main .cards__card .icon--third {
-  color: red;
-  transform: rotate(225deg);
-  background-color: rgba(236, 41, 27, 0.2);
-  border-radius: 50%;
-}
-.main .cards__card .icon--fourth {
-  color: rgb(255, 1, 175);
-  transform: rotate(135deg);
-  background-color: rgba(240, 12, 221, 0.2);
-  border-radius: 50%;
-}
-.main .cards__card .icon__primary {
-  color: green;
-  font-size: 40px;
-  margin: 1rem 0;
-}
-.main .cards__card p {
-  font-size: 1rem;
-  margin-bottom: 0rem;
-  font-weight: 400;
-  color: #4d4a4a;
-}
-.main .cards__card h2 {
-  font-weight: 400;
-  display: flex;
-  align-items: center;
-  color: #4d4a4a;
-  text-transform: capitalize;
-  font-size: var(--font-size_s);
-  margin-left: 0;
+  background-color: var(--color-whitebg-300);
+  color: var(--text-dark-400);
 }
 .main__table, .main .unapproved__table {
   width: 99%;
@@ -778,19 +730,19 @@ body {
 .main .action__btn a {
   background-color: #ff641c;
   padding: 0.4rem 1rem;
-  color: #ebebeb;
+  color: var(--text-light-300);
   border-radius: 4px;
 }
 .main .action__btn a i {
   margin-left: 0.5rem;
 }
 .main .action__btn a.disable {
-  background-color: #4d4a4a;
+  background-color: var(--color-blackbg-300);
   margin-left: 1rem;
   padding: 0.7rem 1rem;
 }
 .main .action__btn a.disable:hover {
-  background-color: #000000;
+  background-color: var(--color-blackbg-400);
   top: -2px;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
 }
@@ -798,9 +750,9 @@ body {
   cursor: pointer;
   padding: 0.7rem 3rem;
   margin-left: 1rem;
-  background-color: #1c64ff;
+  background-color: var(--color-accent-1);
   border: none;
-  color: #ebebeb;
+  color: var(--text-light-300);
   position: relative;
   top: 0;
   transition: all 0.5s ease-in-out;
@@ -812,15 +764,15 @@ body {
   margin-left: 0;
 }
 .main .action__btn button:hover {
-  background-color: blue;
+  background-color: var(--color-accent-1);
   top: -2px;
-  box-shadow: 0px 0px 15px blue;
+  box-shadow: 0px 0px 15px var(--color-accent-1);
 }
 .main .action__btn button.disable {
-  background-color: #4d4a4a;
+  background-color: var(--color-blackbg-300);
 }
 .main .action__btn button.disable:hover {
-  background-color: #000000;
+  background-color: var(--color-blackbg-400);
   top: -2px;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
 }
@@ -828,7 +780,7 @@ body {
   width: 99%;
   margin: 0.7rem auto;
   padding: 1rem;
-  background-color: #ebebeb;
+  background-color: var(--color-whitebg-300);
   border-radius: 5px;
   justify-content: space-between;
   align-items: center;
@@ -837,9 +789,9 @@ body {
 .main .filter button {
   padding: 0.7rem 3rem;
   margin-left: 1rem;
-  background-color: #1c64ff;
+  background-color: var(--color-accent-1);
   border: none;
-  color: #ebebeb;
+  color: var(--text-light-300);
   position: relative;
   top: 0;
   transition: all 0.5s ease-in-out;
@@ -848,22 +800,22 @@ body {
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
 }
 .main .filter button:hover {
-  background-color: blue;
+  background-color: var(--color-accent-1);
   top: -2px;
-  box-shadow: 0px 0px 15px blue;
+  box-shadow: 0px 0px 15px var(--color-accent-1);
 }
 .main .filter button.disable {
-  background-color: #4d4a4a;
+  background-color: var(--color-blackbg-300);
 }
 .main .filter button.disable:hover {
-  background-color: #000000;
+  background-color: var(--color-blackbg-400);
   top: -2px;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
 }
 .main .filter__actions a:nth-of-type(1).active {
-  background-color: #1c64ff;
+  background-color: var(--color-accent-1);
   padding: 0.4rem 1rem;
-  color: #ebebeb;
+  color: var(--text-light-300);
   border-radius: 4px;
   cursor: pointer;
 }
@@ -884,21 +836,21 @@ body {
   padding: 0.4rem 0;
   font-weight: 700;
   position: relative;
-  color: #4d4a4a;
+  color: var(--text-dark-300);
   transition: all 0.5s ease-in-out;
   isolation: isolate;
   cursor: pointer;
 }
 .main .filter__actions a.active {
-  color: #1c64ff;
-  border-bottom: 2px solid #1c64ff;
+  color: var(--color-accent-1);
+  border-bottom: 2px solid var(--color-accent-1);
 }
 .main .filter__actions a:not(.active)::before {
   position: absolute;
   content: "";
   bottom: 0;
   width: 0%;
-  background-color: #4d4a4a;
+  background-color: var(--color-blackbg-300);
   height: 2px;
   transition: all 0.5s ease-in-out;
 }
@@ -912,32 +864,32 @@ body {
   width: 25px;
   height: 25px;
   margin-block: 0.2rem;
-  background-color: #8a8b8d;
+  background-color: var(--color-blackbg-200);
   border-radius: 3px;
-  color: #ebebeb;
+  color: var(--text-light-300);
   cursor: pointer;
 }
 .main .filter__time .day.active, .main .filter__time .year.active, .main .filter__time .month.active {
-  background-color: rgba(0, 128, 0, 0.7);
+  background-color: var(--color-accent-2);
 }
 .main .filter__time input {
   border: none;
   padding: 0.2rem 0.5rem;
-  background-color: #4d4a4a;
-  color: #ebebeb;
+  background-color: var(--color-blackbg-300);
+  color: var(--text-light-300);
   outline: none;
   border-radius: 3px;
   display: none;
 }
 .main .filter__time a:nth-of-type(1) {
   padding: 0.35rem 0.5rem;
-  color: #4d4a4a;
+  color: var(--text-dark-300);
   border-radius: 4px;
   cursor: pointer;
 }
 .main .filter__time a:nth-of-type(1).active {
-  background-color: rgba(0, 128, 0, 0.7);
-  color: #ebebeb;
+  background-color: var(--color-accent-2);
+  color: var(--text-light-300);
 }
 .main .apply {
   width: 99%;
@@ -948,7 +900,7 @@ body {
   font-size: 1rem;
   position: relative;
   isolation: isolate;
-  color: #4d4a4a;
+  color: var(--text-dark-300);
 }
 .main .apply .title::before {
   position: absolute;
@@ -957,7 +909,7 @@ body {
   left: 0;
   height: 2px;
   width: 20px;
-  background-color: #4d4a4a;
+  background-color: var(--color-blackbg-300);
 }
 .main .apply .form {
   margin-top: 2rem;
@@ -974,7 +926,7 @@ body {
 .main .apply .form div .btn {
   width: 50%;
   padding: 0.4rem 1rem;
-  background-color: #4d4a4a;
+  background-color: var(--color-blackbg-300);
   font-size: 0.7rem;
   box-shadow: none;
 }
@@ -987,35 +939,35 @@ body {
   display: none;
 }
 .main .apply .form .formControl {
-  background-color: #ebebeb;
+  background-color: var(--color-whitebg-300);
   padding: 1rem 0.6rem;
 }
 .main .apply .form .formControl.bgb {
-  background-color: #1c64ff;
+  background-color: var(--color-accent-1);
 }
 .main .apply .form .formControl.bgb label {
-  color: #dfdfdf;
+  color: var(--color-blackbg-400);
 }
 .main .apply .form .formControl.bgb div span {
   margin-left: 15px;
   margin-right: 0;
   cursor: pointer;
-  background-color: #fff;
+  background-color: var(--color-whitebg-400);
   border: none;
 }
 .main .apply .form .formControl.bgb div span i {
-  color: #a3a2a2;
+  color: var(--text-dark-100);
 }
 .main .apply .form .formControl label {
   margin-bottom: 0.5rem;
   font-size: 0.75rem;
   text-transform: capitalize;
-  color: #1c64ff;
+  color: var(--color-accent-1);
 }
 .main .apply .form .formControl select {
   padding: 0.3rem 0.5rem;
   width: 60%;
-  border: 1px solid #a3a2a2;
+  border: 1px solid var(--color-whitebg-100);
   cursor: pointer;
   border-radius: 4px;
   box-shadow: 2px 2px 3px rgba(77, 74, 74, 0.5);
@@ -1029,12 +981,13 @@ body {
   border-radius: 0px;
 }
 .main .apply .form .formControl input[type=text], .main .apply .form .formControl input[type=password], .main .apply .form .formControl input[type=date], .main .apply .form .formControl input[type=month], .main .apply .form .formControl input[type=number] {
-  border: 1px solid #a3a2a2;
+  border: 1px solid var(--color-whitebg-100);
   padding: 0.4rem 0.5rem;
-  color: #4d4a4a;
+  color: var(--text-dark-300);
   outline: none;
   border-radius: 3px;
   letter-spacing: 0.08rem;
+  background-color: var(--color-whitebg-400);
   box-shadow: 2px 2px 3px rgba(77, 74, 74, 0.5);
 }
 .main .apply .form .formControl textarea {
@@ -1042,9 +995,10 @@ body {
   resize: none;
   padding: 0.4rem 0.5rem;
   border-radius: 3px;
-  color: #4d4a4a;
-  border: 1px solid #a3a2a2;
+  color: var(--text-dark-300);
+  border: 1px solid var(--color-whitebg-100);
   outline: none;
+  background-color: var(--color-whitebg-400);
   box-shadow: 2px 2px 3px rgba(77, 74, 74, 0.5);
 }
 .main .apply .form .formControl div {
@@ -1053,7 +1007,7 @@ body {
 }
 .main .apply .form .formControl div span {
   margin-right: 2px;
-  border: 1px solid #a3a2a2;
+  border: 1px solid var(--color-whitebg-100);
   padding: 0.4rem 0.5rem;
   border-radius: 4px;
   box-shadow: 2px 2px 3px rgba(77, 74, 74, 0.5);
@@ -1074,13 +1028,13 @@ body {
 .main .main__user form {
   width: 70%;
   height: 80%;
-  background-color: #ebebeb;
+  background-color: var(--color-whitebg-300);
   border-radius: 5px;
   overflow: hidden;
 }
 .main .main__user form header {
   height: 3.5rem;
-  background-color: #4d4a4a;
+  background-color: var(--color-blackbg-300);
   align-items: center;
   justify-content: space-between;
   padding: 0 1.5rem;
@@ -1089,7 +1043,7 @@ body {
   font-size: 1rem;
   position: relative;
   isolation: isolate;
-  color: #ebebeb;
+  color: var(--text-light-300);
   text-transform: uppercase;
 }
 .main .main__user form header .title::before {
@@ -1099,10 +1053,10 @@ body {
   left: 0;
   height: 3px;
   width: 20px;
-  background-color: #1c64ff;
+  background-color: var(--color-accent-1);
 }
 .main .main__user form header i {
-  color: #ebebeb;
+  color: var(--text-light-300);
   cursor: pointer;
 }
 .main .main__user form .form__group {
@@ -1116,12 +1070,12 @@ body {
   margin-bottom: 0.5rem;
   font-size: 0.75rem;
   text-transform: capitalize;
-  color: #1c64ff;
+  color: var(--color-accent-1);
 }
 .main .main__user form .formControl input[type=text], .main .main__user form .formControl input[type=password], .main .main__user form .formControl input[type=date], .main .main__user form .formControl input[type=month], .main .main__user form .formControl input[type=number] {
-  border: 1px solid #a3a2a2;
+  border: 1px solid var(--color-whitebg-100);
   padding: 0.4rem 0.5rem;
-  color: #4d4a4a;
+  color: var(--text-dark-300);
   outline: none;
   border-radius: 3px;
   letter-spacing: 0.08rem;
@@ -1132,8 +1086,8 @@ body {
   resize: none;
   padding: 0.4rem 0.5rem;
   border-radius: 3px;
-  color: #4d4a4a;
-  border: 1px solid #a3a2a2;
+  color: var(--text-dark-300);
+  border: 1px solid var(--color-whitebg-100);
   outline: none;
   box-shadow: 2px 2px 3px rgba(77, 74, 74, 0.5);
 }
@@ -1141,7 +1095,7 @@ body {
   padding: 0.3rem 0.5rem;
   width: 60%;
   margin-bottom: 2rem;
-  border: 1px solid #a3a2a2;
+  border: 1px solid var(--color-whitebg-100);
   cursor: pointer;
   border-radius: 4px;
   box-shadow: 2px 2px 3px rgba(77, 74, 74, 0.5);
@@ -1163,7 +1117,7 @@ body {
 }
 .main .main__user form .formControl div span {
   margin-right: 10px;
-  border: 1px solid #a3a2a2;
+  border: 1px solid var(--color-whitebg-100);
   padding: 0.4rem 0.5rem;
   border-radius: 4px;
   box-shadow: 2px 2px 3px rgba(77, 74, 74, 0.5);
@@ -1176,7 +1130,7 @@ body {
   cursor: pointer;
 }
 .main .main__user form .formControl div i.active::before {
-  color: #4d4a4a;
+  color: var(--text-dark-300);
   content: "\f070";
 }
 .main .main__user form .action__btn {
@@ -1197,7 +1151,7 @@ body {
 .main .deleteUser .delContainer {
   padding: 2rem;
   width: 40%;
-  background-color: #ebebeb;
+  background-color: var(--color-whitebg-300);
   height: 50%;
   display: flex;
   flex-direction: column;
@@ -1218,7 +1172,7 @@ body {
   padding: 0.5rem 0.5rem;
   margin-bottom: 0.3rem;
   outline: none;
-  border: 1px solid #4d4a4a;
+  border: 1px solid var(--color-blackbg-300);
   border-radius: 3px;
 }
 .main .deleteUser .delContainer .box {
@@ -1229,54 +1183,53 @@ body {
 .main .deleteUser .delContainer .box a {
   margin-top: 3rem;
   padding: 0.5rem 1rem;
-  color: #ebebeb;
+  color: var(--text-light-300);
   display: flex;
   align-items: center;
   justify-content: center;
   border: none;
   outline: none;
-  background-color: #4d4a4a;
+  background-color: var(--color-blackbg-300);
   font-size: 0.8rem;
   text-transform: uppercase;
   cursor: pointer;
   border-radius: 2px;
 }
 .main .deleteUser .delContainer .box a:hover, .main .deleteUser .delContainer .box a:focus {
-  background-color: #000000;
+  background-color: var(--color-blackbg-400);
 }
 .main .deleteUser .delContainer .box button {
   margin-top: 3rem;
   padding: 0.5rem 1rem;
-  color: #ebebeb;
+  color: var(--text-light-300);
   display: flex;
   align-items: center;
   justify-content: center;
   border: none;
   outline: none;
-  background-color: rgb(247, 56, 56);
+  background-color: var(--color-accent-4);
   font-size: 0.8rem;
   text-transform: uppercase;
   cursor: pointer;
   border-radius: 2px;
 }
 .main .deleteUser .delContainer .box button:hover, .main .deleteUser .delContainer .box button:focus {
-  background-color: red;
+  opacity: 0.7;
 }
 .main .details {
   width: 96.5%;
   margin: 2rem auto;
-  background-color: #4d4a4a;
+  background-color: var(--color-whitebg-300);
   transition: all 0.5s ease-in-out;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   overflow: hidden;
-  border: 1px solid #4d4a4a;
   gap: 2rem;
   padding: 2rem;
 }
 .main .details__card {
   padding: 1rem;
-  color: #dfdfdf;
+  color: var(--text-light-200);
   position: relative;
 }
 .main .details__card .title {
@@ -1290,10 +1243,10 @@ body {
   bottom: 0;
   left: -2.2rem;
   width: 3px;
-  background-color: #dfdfdf;
+  background-color: var(--color-whitebg-200);
 }
 .main .details__card p {
-  color: #ebebeb;
+  color: var(--text-dark-300);
   text-transform: capitalize;
 }
 .main .details__card p.tt {
@@ -1310,8 +1263,8 @@ body {
 .main .action-head button {
   padding: 0.4rem 1rem;
   cursor: pointer;
-  background-color: #1c64ff;
-  color: #ffffff;
+  background-color: var(--color-accent-1);
+  color: var(--text-light-400);
   outline: none;
   border: none;
   border-radius: 3px;
@@ -1326,13 +1279,13 @@ body {
   z-index: 1000;
 }
 .main .payment__card {
-  background-color: #ffffff;
+  background-color: var(--color-whitebg-400);
   width: 400px;
 }
 .main .payment__card header {
   padding: 0.3rem;
-  background-color: #4d4a4a;
-  color: #ffffff;
+  background-color: var(--color-blackbg-300);
+  color: var(--text-light-400);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1342,7 +1295,7 @@ body {
   cursor: pointer;
 }
 .main .payment__card .payment__details {
-  background-color: #fff;
+  background-color: var(--color-whitebg-400);
   padding: 0.5rem;
   border-radius: 8px;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
@@ -1350,17 +1303,17 @@ body {
   justify-content: space-between;
 }
 .main .payment__card .payment__details.disabled {
-  background-color: #ebebeb;
+  background-color: var(--color-whitebg-300);
 }
 .main .payment__card .payment__details.disabled input {
   outline: none;
-  border: 1px solid rgba(238, 187, 238, 0.7333333333);
+  border: 1px solid var(--color-whitebg-300);
   border-radius: 3px;
   background-color: transparent;
   pointer-events: none;
 }
 .main .payment__card .payment__details.disabled .payment__status button {
-  background-color: rgba(238, 187, 238, 0.7333333333);
+  background-color: var(--color-whitebg-300);
   pointer-events: none;
 }
 .main .payment__card .payment__details .title {
@@ -1369,7 +1322,7 @@ body {
 .main .payment__card .payment__details input {
   padding: 0.3rem 0.5rem;
   outline: none;
-  border: 1px solid #4d4a4a;
+  border: 1px solid var(--color-blackbg-300);
   border-radius: 3px;
   background-color: transparent;
 }
@@ -1382,8 +1335,8 @@ body {
   justify-self: flex-end;
   padding: 0.4rem 0.5rem;
   cursor: pointer;
-  background-color: #1c64ff;
-  color: #ffffff;
+  background-color: var(--color-accent-1);
+  color: var(--text-light-400);
   outline: none;
   border: none;
   border-radius: 3px;
@@ -1404,7 +1357,7 @@ body {
   margin: 0.5rem auto;
 }
 .savings__card .card {
-  border: 1px solid #dfdfdf;
+  border: 1px solid var(--color-whitebg-200);
   padding: 1rem;
   border-radius: 7px;
   position: relative;
@@ -1416,25 +1369,32 @@ body {
   bottom: 13px;
   left: -1px;
   width: 4px;
-  background-color: #1c64ff;
+  background-color: var(--color-accent-1);
 }
 .savings__card .card:nth-of-type(2)::before {
-  background-color: #1cff2f;
+  background-color: var(--color-accent-2);
 }
 .savings__card .card:nth-of-type(3)::before {
-  background-color: #ff1cbb;
+  background-color: var(--color-accent-3);
 }
 .savings__card .card:nth-of-type(4)::before {
-  background-color: #ff371c;
+  background-color: var(--color-accent-4);
 }
 .savings__card .card p {
   font-size: 0.7rem;
   margin-bottom: 1rem;
-  color: #8a8b8d;
+  color: var(--text-dark-200);
 }
 .savings__card .card h4 {
   font-size: 1rem;
   font-weight: 600;
+  color: var(--text-dark-300);
+}
+.savings__card h3 {
+  display: flex;
+  align-items: center;
+  color: var(--color-accent-1);
+  font-weight: 300;
 }
 
 .savings__table {
@@ -1452,9 +1412,10 @@ body {
 }
 .savings__table table thead {
   padding: 1rem;
+  color: var(--text-dark-300);
 }
 .savings__table table thead tr {
-  border-bottom: 2px solid #4d4a4a;
+  border-bottom: 2px solid var(--color-blackbg-300);
 }
 .savings__table table thead tr th {
   padding: 1rem 0.5rem;
@@ -1470,14 +1431,14 @@ body {
 }
 .savings__table table tbody tr {
   margin-top: 0.5rem;
-  color: #4d4a4a;
+  color: var(--text-dark-300);
 }
 .savings__table table tbody tr:hover {
-  background-color: #2c2c2c;
-  color: #ebebeb;
+  background-color: var(--color-blackbg-200);
+  color: var(--text-light-300);
 }
 .savings__table table tbody tr:hover a {
-  color: #ebebeb;
+  color: var(--text-light-300);
 }
 .savings__table table tbody tr td {
   padding: 1rem 0.5rem;
@@ -1489,19 +1450,19 @@ body {
   text-transform: capitalize;
 }
 .savings__table table tbody tr td a {
-  color: #4d4a4a;
+  color: var(--text-dark-300);
   font-weight: bold;
 }
 .savings__table table tbody tr td a.edit {
   padding: 0.2rem 0.8rem;
   margin-left: 5px;
   cursor: pointer;
-  color: #ebebeb;
-  background-color: #1c64ff;
+  color: var(--text-light-300);
+  background-color: var(--color-accent-1);
   border-radius: 4px;
 }
 .savings__table table tbody tr td a.edit:hover {
-  background-color: blue;
+  opacity: 0.7;
 }
 
 .account-details {
@@ -1514,7 +1475,7 @@ body {
 }
 .account-details .account-title {
   font-size: 1.1rem;
-  color: #4d4a4a;
+  color: var(--text-dark-300);
 }
 .account-details .actions {
   justify-self: flex-end;
@@ -1525,19 +1486,20 @@ body {
 .account-details .actions button {
   padding: 0.5rem 1rem;
   border: none;
-  background-color: #1c64ff;
+  background-color: var(--color-accent-1);
   color: #ebebeb;
 }
 .account-details .actions button:nth-last-of-type(1) {
-  background-color: #2c2c2c;
+  background-color: var(--color-blackbg-300);
+  color: var(--text-white-300);
 }
 .account-details .actions button:nth-last-of-type(3) {
-  background-color: #8fff78;
+  background-color: var(--color-accent-2);
   color: #4d4a4a;
 }
 .account-details .actions button:nth-last-of-type(4) {
-  background-color: #ff78d7;
-  color: #4d4a4a;
+  background-color: var(--color-accent-3);
+  color: var(--text-dark-300);
 }
 .account-details .actions button span {
   margin-right: 0.3rem;
@@ -1550,7 +1512,7 @@ body {
 h2.p {
   margin: 0.5rem 1rem 0 1rem;
   font-size: 1.1rem;
-  color: #4d4a4a;
+  color: var(--text-dark-300);
 }
 
 .details-head {
@@ -1564,7 +1526,7 @@ h2.p {
   padding: 0.5rem 1rem 1rem 1rem;
   justify-content: center;
   margin-right: 2rem;
-  color: #000000;
+  color: var(--text-dark-400);
   font-size: 2.5rem;
 }
 .details-head a:hover {
@@ -1577,16 +1539,17 @@ h2.p {
 .details-head .details-right .p {
   margin: 0.5rem;
   font-size: 1.1rem;
-  color: #4d4a4a;
+  color: var(--text-dark-300);
 }
 .details-head .details-right p {
-  color: #a3a2a2;
+  color: var(--text-dark-100);
   margin-left: 0.5rem;
 }
 .details-head h3 {
   margin-left: 2rem;
   text-transform: uppercase;
-  color: #1c64ff;
+  color: var(--color-accent-1);
+  font-weight: 300;
 }
 .details-head .actions {
   justify-self: flex-end;
@@ -1597,21 +1560,24 @@ h2.p {
 .details-head .actions.mnot {
   margin-left: 0rem;
 }
+.details-head .actions h4 {
+  color: var(--text-dark-300);
+}
 .details-head .actions button {
   padding: 0.5rem 1rem;
   border: none;
-  background-color: #4d4a4a;
-  color: #ebebeb;
+  background-color: var(--color-blackbg-300);
+  color: var(--text-light-400);
 }
 .details-head .actions button:nth-last-of-type(3) {
-  background-color: #8fff78;
+  background-color: var(--color-accent-2);
   color: #4d4a4a;
 }
 .details-head .actions button:nth-last-of-type(2) {
-  background-color: #2c2c2c;
+  background-color: var(--color-blackbg-300);
 }
 .details-head .actions button.deposite_btn {
-  background-color: #8fff78;
+  background-color: var(--color-accent-2);
   color: #4d4a4a;
 }
 .details-head .actions button span {
@@ -1629,8 +1595,8 @@ h2.p {
 }
 .details-head .actions .edit_btn {
   padding: 0.5rem 1rem;
-  background-color: #fff;
-  border: 1px solid #4d4a4a;
+  background-color: var(--color-whitebg-400);
+  border: 1px solid var(--color-blackbg-300);
   font-size: 0.8rem;
   cursor: pointer;
 }
@@ -1641,13 +1607,13 @@ h2.p {
 .personal__details {
   width: 96.5%;
   margin: 0 auto;
-  background-color: #4d4a4a;
+  background-color: var(--color-whitebg-300);
   transition: all 0.5s ease-in-out;
   height: 0;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   overflow: hidden;
-  border: 1px solid #4d4a4a;
+  border: 1px solid var(--color-blackbg-300);
   gap: 2rem;
 }
 .personal__details.active {
@@ -1657,7 +1623,7 @@ h2.p {
 }
 .personal__details .personal_info {
   padding: 1rem;
-  color: #dfdfdf;
+  color: var(--text-light);
   position: relative;
 }
 .personal__details .personal_info h4 {
@@ -1671,7 +1637,7 @@ h2.p {
   bottom: 0;
   left: -2.2rem;
   width: 3px;
-  background-color: #dfdfdf;
+  background-color: var(--color-whitebg-200);
 }
 
 .withdraw_form, .deposite_form {
@@ -1694,13 +1660,13 @@ h2.p {
   right: 1rem;
   bottom: 1rem;
   width: 400px;
-  background-color: #ffffff;
+  background-color: var(--color-whitebg-400);
   max-height: 650px;
   padding: 0.3rem 0.3rem;
 }
 .withdraw_form form header, .deposite_form form header {
   padding: 0.5rem 1rem;
-  background-color: #4d4a4a;
+  background-color: var(--color-blackbg-300);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1708,13 +1674,13 @@ h2.p {
 .withdraw_form form header h4, .deposite_form form header h4 {
   font-size: 1.5rem;
   text-transform: capitalize;
-  color: #fff;
+  color: var(--color-whitebg-400);
 }
 .withdraw_form form header a, .deposite_form form header a {
   display: block;
   padding: 0.5rem 1rem 1rem 1rem;
   justify-content: center;
-  color: #fff;
+  color: var(--text-light-400);
   font-size: 2.5rem;
   cursor: pointer;
 }
@@ -1734,14 +1700,14 @@ h2.p {
   text-align: center;
   background-color: rgba(255, 151, 151, 0.3137254902);
   padding: 0.4rem;
-  color: red;
+  color: var(--color-accent-4);
 }
 .withdraw_form form .withdrawal__body .form-control, .deposite_form form .withdrawal__body .form-control {
   padding-block: 0.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 2px solid #8a8b8d;
+  border-bottom: 2px solid var(--color-blackbg-200);
   margin-bottom: 2rem;
 }
 .withdraw_form form .withdrawal__body .form-control.dep, .deposite_form form .withdrawal__body .form-control.dep {
@@ -1749,8 +1715,8 @@ h2.p {
 }
 .withdraw_form form .withdrawal__body .form-control label, .deposite_form form .withdrawal__body .form-control label {
   letter-spacing: 0.15rem;
-  color: #8a8b8d;
-  border-right: 2px solid #8a8b8d;
+  color: var(--text-dark-200);
+  border-right: 2px solid var(--color-blackbg-200);
   padding-right: 0.5rem;
 }
 .withdraw_form form .withdrawal__body .form-control label span, .deposite_form form .withdrawal__body .form-control label span {
@@ -1768,7 +1734,7 @@ h2.p {
 .withdraw_form form .withdrawal__body .form-control h4, .deposite_form form .withdrawal__body .form-control h4 {
   width: 70%;
   letter-spacing: 0.11rem;
-  color: #8a8b8d;
+  color: var(--text-dark-200);
 }
 .withdraw_form form .withdrawal__body .form-control h4.sw, .deposite_form form .withdrawal__body .form-control h4.sw {
   width: 55%;
@@ -1785,15 +1751,15 @@ h2.p {
 .withdraw_form form .withdrawal__body a, .deposite_form form .withdrawal__body a {
   display: block;
   padding: 0.2rem 0.5rem;
-  background-color: #1c64ff;
-  color: #fff;
+  background-color: var(--color-accent-1);
+  color: var(--text-light-400);
   cursor: pointer;
 }
 .withdraw_form form .withdrawal__body button, .deposite_form form .withdrawal__body button {
   margin: 1rem 0;
   padding: 0.7rem 2.5rem;
-  background-color: #2c2c2c;
-  color: #dfdfdf;
+  background-color: var(--color-blackbg-300);
+  color: var(--text-light-200);
   border: none;
   letter-spacing: 0.1rem;
   cursor: pointer;
@@ -1817,9 +1783,9 @@ h2.p {
 }
 .apply_savings .personal_info {
   padding: 1rem;
-  color: #4d4a4a;
+  color: var(--text-dark-300);
   position: relative;
-  background-color: #ebebeb;
+  background-color: var(--color-whitebg-300);
 }
 .apply_savings .personal_info div {
   display: flex;
@@ -1829,21 +1795,21 @@ h2.p {
 .apply_savings .personal_info div span {
   padding: 0.35rem 0.5rem;
   margin-top: 0.5rem;
-  border: 1px solid #8a8b8d;
+  border: 1px solid var(--color-blackbg-200);
   border-radius: 2px;
 }
 .apply_savings .personal_info div input {
   width: 77%;
 }
 .apply_savings .personal_info.bgb {
-  background-color: #1c64ff;
-  color: #fff;
+  background-color: var(--color-accent-1);
+  color: var(--text-light-400);
 }
 .apply_savings .personal_info.bgb input {
   border: none;
 }
 .apply_savings .personal_info.bg {
-  background-color: #fff;
+  background-color: var(--color-whitebg-400);
   padding: 0;
 }
 .apply_savings .personal_info h4 {
@@ -1855,10 +1821,10 @@ h2.p {
   width: 100%;
   margin-top: 0.5rem;
   padding: 0.4rem 0.5rem;
-  background-color: #fff;
-  border: 1px solid #a8a8a8;
+  background-color: var(--color-whitebg-400);
+  border: 1px solid var(--color-blackbg-200);
   outline: none;
-  color: #4d4a4a;
+  color: var(--text-dark-300);
   border-radius: 3px;
 }
 .apply_savings .personal_info p {
@@ -1867,8 +1833,8 @@ h2.p {
 .apply_savings .personal_info button, .apply_savings .personal_info a {
   margin: 0;
   padding: 0.7rem 2.5rem;
-  background-color: #2c2c2c;
-  color: #dfdfdf;
+  background-color: var(--color-blackbg-300);
+  color: var(--text-light-200);
   border: none;
   letter-spacing: 0.1rem;
   word-wrap: none;
@@ -1887,7 +1853,7 @@ h2.p {
   top: 3rem;
   right: -320px;
   z-index: 2000;
-  background-color: #ebebeb;
+  background-color: var(--color-whitebg-300);
   padding: 0.5rem;
   width: 300px;
   border-radius: 8px;
@@ -1902,17 +1868,17 @@ h2.p {
   right: 1rem;
 }
 .toast_container .toast {
-  background-color: white;
+  background-color: var(--color-whitebg-400);
   position: relative;
   padding-inline: 0.5rem 2rem;
   padding-block: 0.7rem;
   border-radius: 3px;
 }
 .toast_container .toast p.error {
-  color: rgb(247, 58, 58);
+  color: var(--color-accent-4);
 }
 .toast_container .toast p.success {
-  color: rgb(68, 253, 83);
+  color: var(--color-accent-2);
 }
 .toast_container .toast i {
   position: absolute;
@@ -1923,13 +1889,13 @@ h2.p {
 }
 
 .deleteAccount {
-  background-color: red;
+  background-color: var(--color-accent-4);
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 0.8rem;
   font-weight: 500;
-  color: #dfdfdf;
+  color: var(--text-light-200);
   text-transform: capitalize;
   cursor: pointer;
 }
@@ -1938,29 +1904,29 @@ h2.p {
 }
 
 .goback {
-  background-color: #969696;
+  background-color: var(--color-blackbg-200);
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 0.8rem;
   font-weight: 500;
-  color: #dfdfdf;
+  color: var(--text-light-200);
   text-transform: capitalize;
   cursor: pointer;
 }
 .goback:hover {
-  background-color: #000000;
+  background-color: var(--color-blackbg-400);
 }
 
 .changepass {
-  background-color: #1cff2f;
+  background-color: var(--color-accent-2);
   display: flex;
   height: 2.5rem;
   align-items: center;
   justify-content: center;
   padding: 0.8rem;
   font-weight: 500;
-  color: #4d4a4a;
+  color: var(--text-dark-300);
   text-transform: capitalize;
   outline: none;
   border: none;
@@ -1971,13 +1937,13 @@ h2.p {
 }
 
 .savechanges {
-  background-color: #000000;
+  background-color: var(--color-blackbg-400);
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 0.8rem;
   font-weight: 500;
-  color: #ffffff;
+  color: var(--text-light-400);
   text-transform: capitalize;
   outline: none;
   border: none;
@@ -1985,7 +1951,7 @@ h2.p {
 }
 .savechanges.tc {
   padding: 0.6rem 2rem;
-  background-color: #2c2c2c;
+  background-color: var(--color-blackbg-300);
 }
 .savechanges:hover {
   opacity: 0.8;
@@ -2004,10 +1970,10 @@ h2.p {
 .wrapper404 header a {
   padding: 0.5rem 0.5rem;
   margin-left: 1rem;
-  color: #4d4a4a;
+  color: var(--text-dark-300);
 }
 .wrapper404 header a:hover {
-  background-color: rgba(138, 139, 141, 0.3411764706);
+  opacity: 0.7;
 }
 .wrapper404 header a span {
   font-size: 3rem;
@@ -2029,7 +1995,7 @@ h2.p {
   font-size: 2rem;
   letter-spacing: 0.2rem;
   margin: 0 0 3rem 0;
-  color: #2c2c2c;
+  color: var(--text-dark-300);
 }
 .wrapper404 .content__body h1 {
   font-size: 3rem;
@@ -2041,8 +2007,8 @@ h2.p {
 }
 .wrapper404 .content__body a {
   margin: 2rem 0;
-  background-color: #000000;
-  color: white;
+  background-color: var(--color-blackbg-400);
+  color: var(--text-light-400);
   padding: 1rem 3rem;
   font-size: 1rem;
 }
@@ -2061,7 +2027,7 @@ h2.p {
   margin-top: 2rem;
   width: 180px;
   height: 2rem;
-  background-color: #2c2c2c;
+  background-color: var(--color-blackbg-300);
   border-radius: 50%;
   filter: blur(10px);
   -webkit-animation: shadow 2s infinite alternate;
@@ -2103,7 +2069,7 @@ h2.p {
 .searchname {
   display: flex;
   align-items: center;
-  border: 1px solid #8a8b8d;
+  border: 1px solid var(--color-blackbg-200);
   width: 14rem;
   padding: 0 0.5rem;
   border-radius: 0.3rem;
@@ -2112,11 +2078,13 @@ h2.p {
 .searchname input {
   outline: none;
   border: none;
-  color: #4d4a4a;
+  color: var(--text-dark-300);
   padding-right: 0.5rem;
-  border-right: 1px solid #8a8b8d;
+  border-right: 1px solid var(--color-blackbg-200);
+  background-color: transparent;
 }
 .searchname i {
+  color: var(--color-blackbg-200);
   position: absolute;
   top: 0.55rem;
   right: 0.8rem;

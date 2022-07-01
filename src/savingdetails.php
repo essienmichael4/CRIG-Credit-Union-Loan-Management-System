@@ -138,7 +138,7 @@
                         <p>Current Account</p>
                         <h4 class="current_account">GH¢ <?=$balance?></h4>
                     </div>
-                    <p> Account Details & Statements</p>
+                    <h3 class="headline"> Account Details & Statements</h3>
                     <!-- <div class="card">
                         <p>All Funds</p>
                         <h4>GH¢ 100,000,000</h4>
