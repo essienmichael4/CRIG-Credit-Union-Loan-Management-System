@@ -1229,7 +1229,7 @@ body {
 }
 .main .details__card {
   padding: 1rem;
-  color: var(--text-light-200);
+  color: var(--text-dark-200);
   position: relative;
 }
 .main .details__card .title {
