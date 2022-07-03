@@ -1680,6 +1680,15 @@ body{
                             }
                         }
                     }
+
+                    button{
+                        padding: .3rem 1rem;
+                        margin: 0 auto;
+                        background-color: var(--color-accent-2);
+                        border: none;
+                        outline: none;
+                        cursor: pointer;
+                    }
                 }
             }
         }

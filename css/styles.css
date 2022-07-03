@@ -1464,6 +1464,14 @@ body {
 .savings__table table tbody tr td a.edit:hover {
   opacity: 0.7;
 }
+.savings__table table tbody tr td button {
+  padding: 0.3rem 1rem;
+  margin: 0 auto;
+  background-color: var(--color-accent-2);
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
 
 .account-details {
   width: 99%;
