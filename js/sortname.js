@@ -11,7 +11,7 @@ fetch("../php/savings/getallaccountslist.inc.php")
                 <td>${account.staff_id}</td>
                 <td>${account.phone}</td>
                 <td>${account.balance}</td>
-                <td>${account.account_status}</td>
+                <td><button onclick='disablemember({$res['id']})'>${account.account_status}</button></td>
             </tr>`
 
             let name = `${account.first_name} ${account.last_name} ${account.other_names}`;
