@@ -1,4 +1,5 @@
-<div class="main">
+<input type='text' name="user" value="<?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?>" hidden />
+    <div class="main">
             <header class="main__header flex px1">
                 <h2 class="">Savings</h2>
                 <form class="search" action="../php/search.php" method="POST">
@@ -203,4 +204,20 @@
             }, 5000)
             
         },9000)
+
+        function disablemember(id){
+            let params = "id="+id+"&user="+user;
+
+            let xhr = new XMLHttpRequest();
+            xhr.open("POST", "../php/savings/disablemember.inc.php");
+            xhr.setRequestHeader("Content-type", 'application/x-www-form-urlencoded');
+            xhr.onload = () =>{
+                if(xhr.readyState == XMLHttpRequest.DONE){
+                    if(xhr.status == 200){
+                        location.href = "routes.php?pgname=savings";
+                    }
+                }
+            }
+            xhr.send(params)
+        }
     </script>
