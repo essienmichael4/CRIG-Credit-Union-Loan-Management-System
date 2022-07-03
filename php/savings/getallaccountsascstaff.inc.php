@@ -1,8 +1,9 @@
 <?php
     include_once("../dbs.inc.php");
     include_once("../functions.inc.php");
+    $status = "disabled";
 
-    $sql = "SELECT * FROM `savings` ORDER BY `staff_id` ASC";
+    $sql = "SELECT * FROM `savings` WHERE `account_status` != '{$status}' ORDER BY `staff_id` ASC";
     $result = mysqli_query($conn, $sql);
 
     $data = "";
@@ -17,7 +18,7 @@
                     <td>{$res['staff_id']}</td>
                     <td>{$res['phone']}</td>
                     <td>{$balance}</td>
-                    <td>{$res['account_status']}</td>
+                    <td><button onclick='disablemember({$res['id']})'>{$res['account_status']}</button></td>
                 </tr>"; 
     }
 
