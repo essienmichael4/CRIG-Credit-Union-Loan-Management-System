@@ -87,3 +87,12 @@ CREATE TABLE `transactions`(
     transaction_day datetime DEFAULT CURRENT_TIMESTAMP,
     transacted_by varCHAR(255) not null
 );
+
+CREATE TABLE `expenses`(
+	id int not null AUTO_INCREMENT PRIMARY key,
+    item_name varchar(255) not null,
+    item_price float not null,
+    purpose text,
+    day_added date not null,
+    added_by varchar(255) not null
+)

@@ -43,8 +43,6 @@
                     </div>                    
                 </div>
 
-                
-
                 <div class="filter savings flex">
                     <div class="filter__actions">
                         <a href="?pgname=applysavings" class="active">Add Expense<i class="fas fa-plus"></i></a>
@@ -76,16 +74,45 @@
                         <button class="getalldebit">Withdrawals</button> -->
                     </div>
                 </div>
-                <section class="savings__table">
+                <div class="table_wrapper">
+                    <section class="savings__table">
                     
-                </section>
+                    </section>
+                    <form class="add_expense">
+                        <header>
+                            <h3>Add New Expense</h3>
+                        </header>
+                        <input type="text" id="processor" value="<?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?>" hidden>
+                        <div class="body">
+                            <div class="form_control">
+                                <label for="">Item's Name</label>
+                                <input type="text" name="items" placeholder="Item Name">
+                            </div>
+                            <div class="form_control">
+                                <label for="">Item Price</label>
+                                <input type="text" name="price" placeholder="Price">
+                            </div>
+                            <div class="form_control">
+                                <label for="">Purpose</label>
+                                <textarea name="purpose" id="" cols="30" rows="10"></textarea>
+                            </div>
+                            <div class="form_control">
+                                <label for="">Day Added</label>
+                                <input type="date" name="dayadded">
+                            </div>
+
+                            <button name="addexpense">Add Expense</button>
+                        </div>
+                    </form>
+                </div>
+                
 
             </div>
         </div>
     </div>
     <script src="../js/searchUtils.js"></script>
     <script src="../js/searchmember.js"></script>
-    <script src="../js/accounts.js"></script>
+    <script src="../js/expenses.js"></script>
     <!-- <script src="../js/getallloans.js"></script> -->
     <script src="../js/filters.js"></script>
     <script src="../js/deposite.js"></script>
@@ -93,8 +120,8 @@
     <script src="../js/getallarrears.js"></script>
     <script src="../js/allfunds.js"></script>
     <script src="../js/getinterest.js"></script>
-    <script src="../js/sort.js"></script>
-    <script src="../js/sortname.js"></script>
+    <!-- <script src="../js/sort.js"></script> -->
+    <!-- <script src="../js/sortname.js"></script> -->
 
     <script>
         let toast = document.querySelector(".toast_container");

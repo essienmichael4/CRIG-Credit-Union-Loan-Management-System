@@ -2,7 +2,7 @@
     $id = $_POST["id"];
     $user = $_POST["user"];
     include_once("../dbs.inc.php");
-    $status = "disable";
+    $status = "disabled";
     $date = date('Y-m-d h:i:s');
 
     $sql = "UPDATE `savings` SET `account_status` = '{$status}' WHERE `id` = {$id};";

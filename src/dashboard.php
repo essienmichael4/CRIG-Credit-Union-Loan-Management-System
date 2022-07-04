@@ -28,28 +28,7 @@
             
             <div class="wrapper">
                 <input type="text" id="processor" value="<?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?>" hidden>
-                <!-- <section class="cards flex">
-                    <div class="cards__card flex-c">
-                        <span><i class="icon icon--first fas fa-arrow-down"></i></span>
-                        <p class="all_loans_total"></p>
-                        <h2 class="">All loans</h2>
-                    </div>
-                    <div class="cards__card flex-c">
-                        <span><i class="icon icon--second fas fa-arrow-down"></i></span>
-                        <p class="paid_loans"></p>
-                        <h2 class="">All paid loans</h2>
-                    </div>
-                    <div class="cards__card flex-c">
-                        <span><i class="icon icon--third fas fa-arrow-down"></i></span>
-                        <p class="arrears"></p>
-                        <h2 class="">All unpaid loans</h2>
-                    </div>
-                    <div class="cards__card flex-c">
-                        <span><i class="icon icon--fourth fas fa-arrow-down"></i></span>
-                        <p>GH¢ 1,000.00</p>
-                        <h2 class="">Interest on Loans</h2>
-                    </div>
-                </section> -->
+
                 <div class="savings__card">
                     <div class="card">
                         <p>All Funds</p>
@@ -73,9 +52,6 @@
                 <section class="unapproved__table">
                     <input type='text' name="user" value="<?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?>" hidden />
                 </section>
-
-                
-
 
                 <section class="main__table">
                 </section>

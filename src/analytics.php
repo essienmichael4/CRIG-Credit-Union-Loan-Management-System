@@ -87,7 +87,8 @@
     <script src="../js/allfunds.js"></script>
     <script src="../js/getinterest.js"></script>
     <script src="../js/sort.js"></script>
-    <script src="../js/sortname.js"></script>
+    <!-- <script src="../js/sortname.js"></script> -->
+    <script src="../js/sortnameanalytics.js"></script>
 
     <script>
         let toast = document.querySelector(".toast_container");
