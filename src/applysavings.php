@@ -1,6 +1,6 @@
 <?php
     include_once("../php/dbs.inc.php");
-    $sql = "SELECT * FROM `savings` ORDER BY `mem_code` DESC LIMIT 1;";
+    $sql = "SELECT MAX(`mem_code`) as `mem_code` FROM `savings`;";
 
     $result = mysqli_query($conn, $sql);
     $res = mysqli_fetch_assoc($result);
@@ -9,6 +9,13 @@
     $memcode = explode("cqc", $memcode);
     $member = end($memcode);
     $member = (int)$member + 1;
+    if($member<10){
+        $member = "000".$member;
+    }else if($member<100){
+        $member = "00".$member;
+    }elseif($member<1000){
+        $member = "0".$member;
+    }
 ?>
 <div class="main">
     <header class="main__header flex px1">
