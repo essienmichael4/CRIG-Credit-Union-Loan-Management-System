@@ -6,7 +6,7 @@
     $res = mysqli_fetch_assoc($result);
     $memcode = $res["mem_code"];
 
-    $memcode = explode("cqc", $memcode);
+    $memcode = explode("CQC", $memcode);
     $member = end($memcode);
     $member = (int)$member + 1;
     if($member<10){
