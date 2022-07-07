@@ -38,7 +38,7 @@
         $bulkbalance = 0;
         $monthlybalance = 0;
 
-        if(emptyField($firstname) || emptyField($lastname) || emptyField($processor) || emptyField($memcode)){
+        if(emptyField($firstname) || emptyField($lastname) || emptyField($processor) || emptyField($memcode) || emptyField($dayadded)){
             header("location: ../../src/routes.php?pgname=applysavings&error=emptyinput"); 
             exit();
         }
@@ -49,7 +49,7 @@
         }
         if(!empty($monthlydeposit)){
             $balance = $balance + $monthlydeposit;
-            $monthlybalance = $balance + $monthlydeposit;
+            $monthlybalance = $balance;
         }
 
         $sql = "INSERT INTO `savings`(`first_name`, `last_name`,`other_names`, `mem_code`, 
@@ -68,9 +68,9 @@
             if($balance != 0 && !empty($bulkdeposit)){
                 $sql = "INSERT INTO `transactions`(`member_code`, `transaction_type`,
                  `deposit_type`, `amount_transacted`, `amount_in_account`
-                , `balance_in_account`, `transacted_by`, `receipt_number`) 
+                , `balance_in_account`, `transacted_by`, `receipt_number`, `transaction_day`) 
                 VALUES('$memcode', '$deposit', 
-                '$deposittype', $bulkdeposit ,$initialbalance, $bulkbalance, '$processor','$receiptnumber')";
+                '$deposittype', $bulkdeposit ,$initialbalance, $bulkbalance, '$processor','$receiptnumber', '$dayadded')";
 
                 $conn->query($sql);
             }
@@ -78,9 +78,9 @@
                 $deposittype = "monthly";
                 $sql = "INSERT INTO `transactions`(`member_code`, `transaction_type`,
                  `deposit_type`, `amount_transacted`, `amount_in_account`
-                , `balance_in_account`, `transacted_by`, `receipt_number`) 
+                , `balance_in_account`, `transacted_by`, `receipt_number`, , `transaction_day`) 
                 VALUES('$memcode', '$deposit', 
-                '$deposittype', $monthlydeposit , $initialbalance, $monthlybalance, '$processor','$receiptnumber')";
+                '$deposittype', $monthlydeposit , $initialbalance, $monthlybalance, '$processor','$receiptnumber', '$dayadded')";
             
                 $conn->query($sql);
             }

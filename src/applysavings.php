@@ -230,7 +230,7 @@
                 </div>
                 <div class="personal_info">
                     <h4>Date Added</h4>
-                    <input type="date" name="dayadded">
+                    <input type="date" name="dayadded" required>
                 </div>
             </div>
             <div class="apply_savings">
