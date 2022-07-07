@@ -5,13 +5,22 @@ fetch("../php/savings/allaccountlist.inc.php")
     .then(res => res.json())
     .then(data => 
         accountsname = data.map((account)=>{
+
+            let status = account.account_status;
+            let row;
+            if(status=="active" || status=="new"){
+                row = `<td><button onclick="disablemember({${account.id})">${account.account_status}</button></td>`;
+            }else{
+                row = `<td><button onclick="activatemember(${account.id})">${account.account_status}</button></td>`;
+            }
+
             let accountrow = `<tr>
                 <td>${account.mem_code}</td>
                 <td><a href='?pgname=savingdetails&account_id=${account.id}'>${account.first_name} ${account.last_name} ${account.other_names}</a> </td>
                 <td>${account.staff_id}</td>
                 <td>${account.phone}</td>
                 <td>${account.balance}</td>
-                <td><button onclick='disablemember({$res['id']})'>${account.account_status}</button></td>
+                ${row}
             </tr>`
 
             let name = `${account.first_name} ${account.last_name} ${account.other_names}`;
