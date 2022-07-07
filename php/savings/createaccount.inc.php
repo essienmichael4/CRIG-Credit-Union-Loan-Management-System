@@ -20,15 +20,18 @@
         $children = mysqli_real_escape_string($conn,$_POST["children"]);
         $hometown = mysqli_real_escape_string($conn,$_POST["hometown"]);
         $dateofbirth = mysqli_real_escape_string($conn,$_POST["dateofbirth"]);
+        $dayadded = mysqli_real_escape_string($conn,$_POST["dayadded"]);
         $nextofkin = mysqli_real_escape_string($conn,$_POST["nextofkin"]);
         $nextofkinphone = mysqli_real_escape_string($conn,$_POST["nextofkinphone"]);
         $nextofkinrelation = mysqli_real_escape_string($conn,$_POST["nextofkinrelation"]);
         $nextofkinoccupation = mysqli_real_escape_string($conn,$_POST["nextofkinoccupation"]);
         $nextofkinaddress = mysqli_real_escape_string($conn,$_POST["nextofkinaddress"]);
+        $registration = (float)mysqli_real_escape_string($conn,$_POST["registration"]);
         $bulkdeposit = (float)mysqli_real_escape_string($conn,$_POST["bulkdeposite"]);
         $monthlydeposit = (float)mysqli_real_escape_string($conn,$_POST["monthlydeposite"]);
         $receiptnumber = mysqli_real_escape_string($conn,$_POST["receiptnumber"]);
         $deposit = "deposit";
+        $status = "new";
         $deposittype = "bulk";
         $initialbalance = 0;
         $balance = 0;
@@ -36,7 +39,6 @@
         $monthlybalance = 0;
 
         if(emptyField($firstname) || emptyField($lastname) || emptyField($processor) || emptyField($memcode)){
-            
             header("location: ../../src/routes.php?pgname=applysavings&error=emptyinput"); 
             exit();
         }
@@ -54,12 +56,13 @@
         `staff_id`, `phone`, `address`, `home_town`, `residential_address`, `marital_status`
         , `date_of_birth`, `place_of_work`, `occupation`, `division`, `number_of_children`,
         `next_of_kin`, `next_of_kin_phone`, `next_of_kin_relation`
-        , `next_of_kin_occupation`, `next_of_kin_address`, `balance`, `created_by`) 
+        , `next_of_kin_occupation`, `next_of_kin_address`, `balance`, `created_by`, `day_created`, 
+        `registration_fee`, `account_status`) 
         VALUES('$firstname','$lastname', '$othernames','$memcode', '$staffid', 
         '$phonenumber', '$address', '$hometown','$residentialaddress','$maritalstatus',
         '$dateofbirth','$placeofwork','$occupation','$division','$children','$nextofkin',
         '$nextofkinphone','$nextofkinrelation','$nextofkinoccupation','$nextofkinaddress',
-        $balance,'$processor')";
+        $balance,'$processor', '$dayadded', $registration, '$status')";
             
         if(mysqli_query($conn, $sql)){
             if($balance != 0 && !empty($bulkdeposit)){

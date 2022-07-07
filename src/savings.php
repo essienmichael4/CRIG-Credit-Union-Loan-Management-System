@@ -117,6 +117,10 @@
                                 <label for="">Amount <span>GH¢</span></label>
                                 <input type="text" name="debitamount">
                             </div>
+                            <div class="form-control dep">
+                                <label for="">Cheque No.<span></span></label>
+                                <input type="text" placeholder="" name="chequenum">
+                            </div>
                             <div class="form-control">
                                 <label for="">Date <span></span></label>
                                 <input type="date" name="debitdate">
@@ -146,7 +150,6 @@
                             <div class="form-control dep">
                                 <label for="">Receipt No.<span></span></label>
                                 <input type="text" placeholder="" name="receiptnum">
-                                
                             </div>
                             
                             <div class="form-control dep">

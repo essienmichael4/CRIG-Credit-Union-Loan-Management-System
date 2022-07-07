@@ -14,13 +14,18 @@
         $balance = 0;
         $initialbalance = 0;
 
+        if(empty($receiptnumber)){
+            header("location: ../../src/routes.php?pgname=savingdetails&account_id={$account_id}&error=receipterror"); 
+            exit();
+        }
+
         if(empty($depositdate)){
-            header("location: ../../src/routes.php?pgname=savings&error=dateerror"); 
+            header("location: ../../src/routes.php?pgname=savingdetails&account_id={$account_id}&error=dateerror"); 
             exit();
         }
 
         if(!(float)$depositamount){
-            header("location: ../../src/routes.php?pgname=savings&error=inputamounterror"); 
+            header("location: ../../src/routes.php?pgname=savingdetails&account_id={$account_id}&error=inputamounterror"); 
             exit();
         }
 
@@ -60,6 +65,7 @@
         $processor = mysqli_real_escape_string($conn,$_POST["processor"]);        
         $account_id = mysqli_real_escape_string($conn,$_POST["account_id"]);
         $memcode = mysqli_real_escape_string($conn,$_POST["memcode"]);
+        $receiptnumber = mysqli_real_escape_string($conn,$_POST["chequenum"]);
         $debitamount = mysqli_real_escape_string($conn,$_POST["debitamount"]);
         $debitdate = mysqli_real_escape_string($conn,$_POST["debitdate"]);
         $transaction_type = "debit";
@@ -67,12 +73,17 @@
         $initialbalance = 0;
 
         if(empty($debitdate)){
-            header("location: ../../src/routes.php?pgname=savings&error=dateerror"); 
+            header("location: ../../src/routes.php?pgname=savingdetails&account_id={$account_id}&error=dateerror"); 
+            exit();
+        }
+
+        if(empty($receiptnumber)){
+            header("location: ../../src/routes.php?pgname=savingdetails&account_id={$account_id}&error=receipterror"); 
             exit();
         }
 
         if(!(float)$debitamount){
-            header("location: ../../src/routes.php?pgname=savings&error=inputamounterror"); 
+            header("location: ../../src/routes.php?pgname=savingdetails&account_id={$account_id}&error=inputamounterror"); 
             exit();
         }
 
@@ -98,10 +109,10 @@
         }
         $balance = $initialbalance - $debitamount;
 
-        $sql = "INSERT INTO `transactions`(`member_code`, `transaction_type`,
+        $sql = "INSERT INTO `transactions`(`member_code`, `receipt_number`, `transaction_type`,
          `amount_transacted`, `amount_in_account`
         , `balance_in_account`, `transacted_by`, `transaction_day`) 
-        VALUES('$memcode', '$transaction_type', $debitamount ,$initialbalance, $balance, '$processor', '$debitdate')";
+        VALUES('$memcode', '$receiptnumber', '$transaction_type', $debitamount ,$initialbalance, $balance, '$processor', '$debitdate')";
 
         if( mysqli_query($conn, $sql)){
             $sql = "UPDATE `savings` SET `balance` = $balance WHERE `mem_code` = '$memcode'";
@@ -114,6 +125,6 @@
             }
         }
     }else{
-        header("location: ../../src/routes.php?pgname=savings");
+        header("location: ../../src/routes.php?pgname=savingdetails&account_id={$account_id}");
         exit();
     }

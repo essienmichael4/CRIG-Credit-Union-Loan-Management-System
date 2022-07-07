@@ -204,6 +204,13 @@
                     </div>
                 </div> -->
                 <div class="personal_info">
+                    <h4>Registration Fee</h4>
+                    <div>
+                        <span>Gh¢</span>
+                        <input type="number" name="registration" placeholder="">
+                    </div>
+                </div>
+                <div class="personal_info">
                     <h4>Bulk Deposite</h4>
                     <div>
                         <span>Gh¢</span>
@@ -220,6 +227,10 @@
                 <div class="personal_info">
                     <h4>Receipt No.</h4>
                     <input type="number" autocomplete="FALSE" name="receiptnumber" placeholder="Receipt">
+                </div>
+                <div class="personal_info">
+                    <h4>Date Added</h4>
+                    <input type="date" name="dayadded">
                 </div>
             </div>
             <div class="apply_savings">

@@ -13,6 +13,11 @@
         $balance = 0;
         $initialbalance = 0;
 
+        if(empty($receiptnumber)){
+            header("location: ../../src/routes.php?pgname=savings&error=receipterror"); 
+            exit();
+        }
+
         if(empty($depositdate)){
             header("location: ../../src/routes.php?pgname=savings&error=dateerror"); 
             exit();
@@ -62,9 +67,15 @@
         $memcode = mysqli_real_escape_string($conn,$_POST["memcode"]);
         $debitamount = mysqli_real_escape_string($conn,$_POST["debitamount"]);
         $debitdate = mysqli_real_escape_string($conn,$_POST["debitdate"]);
+        $receiptnumber = mysqli_real_escape_string($conn,$_POST["chequenum"]);
         $transaction_type = "debit";
         $balance = 0;
         $initialbalance = 0;
+
+        if(empty($receiptnumber)){
+            header("location: ../../src/routes.php?pgname=savings&error=receipterror"); 
+            exit();
+        }
 
         if(empty($debitdate)){
             header("location: ../../src/routes.php?pgname=savings&error=dateerror"); 
