@@ -16,6 +16,7 @@
     while($res = mysqli_fetch_assoc($result)){
         $rows .= "<tr>
                     <td>{$res['transaction_day']}</td>
+                    <td>{$res['receipt_number']}</td>
                     <td class='tu'>{$res['transaction_type']} </td>
                     <td>{$res['amount_in_account']}</td>
                     <td>{$res['amount_transacted']}</td>
@@ -28,6 +29,7 @@
                 <thead>
                     <tr>
                         <th>Date</th>
+                        <th>Cheque</th>
                         <th>Transaction Type</th>
                         <th>Previous Balance GH¢</th>
                         <th>Debit GH¢</th>

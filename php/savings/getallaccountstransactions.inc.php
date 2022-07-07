@@ -55,7 +55,7 @@
                         <th>Date</th>
                         <th>Member ID</th>
                         <th>Account Name</th>
-                        <th>Receipt</th>
+                        <th>Receipt/Cheque</th>
                         <th>Transaction Type</th>
                         <th>Previous Balance GH¢</th>
                         <th>Deposit/Debit GH¢</th>

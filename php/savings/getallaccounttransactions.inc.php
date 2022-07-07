@@ -47,7 +47,7 @@
                 <thead>
                     <tr>
                         <th>Date</th>
-                        <th>Receipt</th>
+                        <th>Receipt/Cheque</th>
                         <th>Transaction Type</th>
                         <th>Previous Balance GH¢</th>
                         <th>Deposit/Debit GH¢</th>

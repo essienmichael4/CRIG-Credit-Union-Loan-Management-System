@@ -24,6 +24,7 @@
                     <td>{$res['transaction_day']}</td>
                     <td>{$res['member_code']}</td>
                     <td><a href='?pgname=savingdetails&account_id={$account['id']}'>{$account['first_name']} {$account['last_name']} {$account['other_names']}</a> </td>
+                    <td>{$res['receipt_number']}</td>
                     <td class='tu'>{$res['transaction_type']} </td>
                     <td>{$amount_in_account}</td>
                     <td>{$amount_transacted}</td>
@@ -36,8 +37,10 @@
                 <thead>
                     <tr>
                         <th>Date</th>
+
                         <th>Member ID</th>
                         <th>Account Name</th>
+                        <th>Cheque</th>
                         <th>Transaction Type</th>
                         <th>Previous Balance GH¢</th>
                         <th>Debit GH¢</th>

@@ -273,7 +273,7 @@ body {
 .sidebar {
   width: 230px;
   height: 100%;
-  max-height: 750px;
+  max-height: 780px;
   position: absolute;
   top: 0;
   background-color: var(--color-whitebg-300);
