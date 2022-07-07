@@ -78,7 +78,7 @@
                 $deposittype = "monthly";
                 $sql = "INSERT INTO `transactions`(`member_code`, `transaction_type`,
                  `deposit_type`, `amount_transacted`, `amount_in_account`
-                , `balance_in_account`, `transacted_by`, `receipt_number`, , `transaction_day`) 
+                , `balance_in_account`, `transacted_by`, `receipt_number`, `transaction_day`) 
                 VALUES('$memcode', '$deposit', 
                 '$deposittype', $monthlydeposit , $initialbalance, $monthlybalance, '$processor','$receiptnumber', '$dayadded')";
             
