@@ -1668,6 +1668,7 @@ h2.p {
   right: 1rem;
   bottom: 1rem;
   width: 400px;
+  overflow-y: scroll;
   background-color: var(--color-whitebg-400);
   max-height: 650px;
   padding: 0.3rem 0.3rem;

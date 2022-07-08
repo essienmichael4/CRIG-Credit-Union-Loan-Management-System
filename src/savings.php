@@ -146,11 +146,6 @@
                                 <input type="text" name="memcode" placeholder="member code" class="depmemcode">
                                 <a class="searchdepmember">search</a>
                             </div>
-
-                            <div class="form-control dep">
-                                <label for="">Receipt No.<span></span></label>
-                                <input type="text" placeholder="" name="receiptnum">
-                            </div>
                             
                             <div class="form-control dep">
                                 <label for="">Name<span></span></label>
@@ -166,6 +161,11 @@
                                 <label for="">Amount <span>GH¢</span></label>
                                 <input type="text" name="deposite_amount">
                             </div>
+
+                            <div class="form-control dep">
+                                <label for="">Receipt No.<span></span></label>
+                                <input type="text" placeholder="" name="receiptnum">
+                            </div>
                             
                             <div class="form-control dep">
                                 <label for="">Deposit Type <span></span></label>
@@ -177,6 +177,10 @@
                             <div class="form-control">
                                 <label for="">Date <span></span></label>
                                 <input type="date" name="depositdate">
+                            </div>
+                            <div class="form-control">
+                                <label for="">Description <span></span></label>
+                                <input type="text" name="description">
                             </div>
                             <button name="deposit">Deposit</button>
                         </div>

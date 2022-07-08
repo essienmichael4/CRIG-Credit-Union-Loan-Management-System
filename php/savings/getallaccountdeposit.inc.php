@@ -24,6 +24,7 @@
                     <td>{$res['transaction_day']}</td>
                     <td>{$res['receipt_number']}</td>
                     <td class='tu'>{$res['transaction_type']} / {$res['deposit_type']}</td>
+                    <td>{$res['description']}</td>
                     <td>{$amount_in_account}</td>
                     <td>{$amount_transacted}</td>
                     <td>{$balance_in_account}</td>
@@ -34,6 +35,7 @@
                     <td>{$res['transaction_day']}</td>
                     <td>{$res['receipt_number']}</td>
                     <td class='tu'>{$res['transaction_type']} </td>
+                    <td>{$res['description']}</td>
                     <td>{$amount_in_account}</td>
                     <td>{$amount_transacted}</td>
                     <td>{$balance_in_account}</td>
@@ -50,6 +52,7 @@
                     <th>Date</th>
                     <th>Receipt</th>
                     <th>Transaction Type</th>
+                    <th>Description</th>
                         <th>Previous Balance GH¢</th>
                         <th>Deposit GH¢</th>
                         <th>Balance GH¢</th>

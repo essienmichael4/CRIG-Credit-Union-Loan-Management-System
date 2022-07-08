@@ -256,19 +256,24 @@
                                 <input type="text" name="depositamount">
                             </div>
                             <div class="form-control dep">
+                                <label for="">Receipt No.<span></span></label>
+                                <input type="text" name="receiptnum">
+                            </div>
+                            <div class="form-control dep">
                                 <label for="">Deposit Type <span></span></label>
                                 <select name="deposittype">
                                     <option value="monthly">Monthly</option>
                                     <option value="bulk">Bulk</option>
                                 </select>
                             </div>
-                            <div class="form-control dep">
-                                <label for="">Receipt No.<span></span></label>
-                                <input type="text" name="receiptnum">
-                            </div>
+                            
                             <div class="form-control">
                                 <label for="">Date <span></span></label>
                                 <input type="date" name="depositdate">
+                            </div>
+                            <div class="form-control">
+                                <label for="">Description <span></span></label>
+                                <input type="text" name="description">
                             </div>
                             <button name="deposit">Deposit</button>
                         </div>

@@ -10,6 +10,7 @@
         $depositamount = mysqli_real_escape_string($conn,$_POST["depositamount"]);
         $deposittype = mysqli_real_escape_string($conn,$_POST["deposittype"]);
         $depositdate = mysqli_real_escape_string($conn,$_POST["depositdate"]);
+        $description = mysqli_real_escape_string($conn,$_POST["description"]);
         $transaction_type = "deposit";
         $balance = 0;
         $initialbalance = 0;
@@ -46,9 +47,10 @@
 
         $sql = "INSERT INTO `transactions`(`member_code`, `receipt_number`, `transaction_type`,
             `deposit_type`, `amount_transacted`, `amount_in_account`
-        , `balance_in_account`, `transacted_by`, `transaction_day`) 
+        , `balance_in_account`, `transacted_by`, `transaction_day`, `description`) 
         VALUES('$memcode', '$receiptnumber','$transaction_type', 
-        '$deposittype', $depositamount ,$initialbalance, $balance, '$processor', '$depositdate')";
+        '$deposittype', $depositamount ,$initialbalance, $balance, '$processor', '$depositdate'
+        , '$description')";
 
         if( mysqli_query($conn, $sql)){
             $sql = "UPDATE `savings` SET `balance` = $balance WHERE `mem_code` = '$memcode'";
