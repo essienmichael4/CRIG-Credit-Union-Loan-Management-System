@@ -1670,7 +1670,7 @@ h2.p {
   width: 400px;
   overflow-y: scroll;
   background-color: var(--color-whitebg-400);
-  max-height: 650px;
+  max-height: 750px;
   padding: 0.3rem 0.3rem;
 }
 .withdraw_form form header, .deposite_form form header {

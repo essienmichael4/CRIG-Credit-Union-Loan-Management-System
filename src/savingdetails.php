@@ -251,9 +251,9 @@
                                 <h4 class="sw"><?=$account["balance"]?></h4>
                             </div>
                             
-                            <div class="form-control dep">
-                                <label for="">Amount <span>GH¢</span></label>
-                                <input type="text" name="depositamount">
+                            <div class="form-control">
+                                <label for="">Date <span></span></label>
+                                <input type="date" name="depositdate">
                             </div>
                             <div class="form-control dep">
                                 <label for="">Receipt No.<span></span></label>
@@ -268,12 +268,12 @@
                             </div>
                             
                             <div class="form-control">
-                                <label for="">Date <span></span></label>
-                                <input type="date" name="depositdate">
-                            </div>
-                            <div class="form-control">
                                 <label for="">Description <span></span></label>
                                 <input type="text" name="description">
+                            </div>
+                            <div class="form-control dep">
+                                <label for="">Amount <span>GH¢</span></label>
+                                <input type="text" name="depositamount">
                             </div>
                             <button name="deposit">Deposit</button>
                         </div>

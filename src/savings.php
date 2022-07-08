@@ -157,11 +157,10 @@
                                 <h4 class="sw depmembal"></h4>
                             </div>
                             
-                            <div class="form-control dep">
-                                <label for="">Amount <span>GH¢</span></label>
-                                <input type="text" name="deposite_amount">
+                            <div class="form-control">
+                                <label for="">Date <span></span></label>
+                                <input type="date" name="depositdate">
                             </div>
-
                             <div class="form-control dep">
                                 <label for="">Receipt No.<span></span></label>
                                 <input type="text" placeholder="" name="receiptnum">
@@ -174,13 +173,14 @@
                                     <option value="bulk">Bulk</option>
                                 </select>
                             </div>
-                            <div class="form-control">
-                                <label for="">Date <span></span></label>
-                                <input type="date" name="depositdate">
-                            </div>
+                            
                             <div class="form-control">
                                 <label for="">Description <span></span></label>
                                 <input type="text" name="description">
+                            </div>
+                            <div class="form-control dep">
+                                <label for="">Amount <span>GH¢</span></label>
+                                <input type="text" name="deposite_amount">
                             </div>
                             <button name="deposit">Deposit</button>
                         </div>
