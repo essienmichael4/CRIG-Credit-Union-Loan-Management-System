@@ -182,3 +182,30 @@
                 <p>all rights reserved</p>
             </footer>
         </aside>
+        <div class="main">
+            <header class="main__header flex px1">
+                <h2 class=""><?php
+                if($_GET["pgname"] == "applysavings" || $_GET["pgname"] == "savingdetails" ||
+                $_GET["pgname"] == "editsavingaccount"){
+                    echo "savings";
+                }elseif($_GET["pgname"] == "apply" || $_GET["pgname"] == "loandetails"){
+                    echo "Loans";
+                }  else{
+                    echo $_GET["pgname"];
+                }?></h2>
+                <!-- <form class="search" action="../php/search.php" method="POST">
+                    <input type="text" class="search__input" name="inputsearch" placeholder="Search">
+                    <button name="search" class="search__btn">Search</button>
+                </form> -->
+                <div class="user flex">
+                    <span class="flex">C</span>
+                    <p><?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?></p>
+                    <i class="fas fa-angle-down"></i>
+                </div>
+                
+                <div class="userdetails">
+                    <p><?=$_SESSION["username"]?></p>
+                    <a href="?pgname=useredit&userid=<?=$_SESSION["uid"]?>">edit user</a>
+                    <form action="../php/logout.inc.php"><button type="submit">logout</button></form>
+                </div>
+            </header>

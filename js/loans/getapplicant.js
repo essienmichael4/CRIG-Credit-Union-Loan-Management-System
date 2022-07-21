@@ -50,50 +50,64 @@ applicantname.addEventListener("input", (e)=>{
 gaurantoronename.addEventListener("input", (e)=>{
     let useraccount = e.target.value.toLowerCase();
     let gaurantoroneid = document.querySelector(".gaurantoroneid")
+    let gaurantoronephone = document.querySelector(".gaurantoronephone")
+
     accountsname.forEach(user => {
         if(user.name.toLowerCase().includes(useraccount)){
             gaurantoroneid.value = user.memberid
+            gaurantoronephone.value = user.memberphone
         }
     })
     if(gaurantoronename.value == ""){
         gaurantoroneid.value = ""
+        gaurantoronephone.value = ""
     }
 })
 
 gaurantortwoname.addEventListener("input", (e)=>{
     let useraccount = e.target.value.toLowerCase();
     let gaurantortwoid = document.querySelector(".gaurantortwoid")
+    let gaurantortwophone = document.querySelector(".gaurantortwophone")
+    
     accountsname.forEach(user => {
         if(user.name.toLowerCase().includes(useraccount)){
             gaurantortwoid.value = user.memberid
+            gaurantortwophone.value = user.memberphone
         }
     })
     if(gaurantortwoname.value == ""){
         gaurantortwoid.value = ""
+        gaurantortwophone.value = ""
     }
 })
 
 gaurantorthreename.addEventListener("input", (e)=>{
     let useraccount = e.target.value.toLowerCase();
     let gaurantorthreeid = document.querySelector(".gaurantorthreeid")
+    let gaurantorthreephone = document.querySelector(".gaurantorthreephone")
     accountsname.forEach(user => {
         if(user.name.toLowerCase().includes(useraccount)){
             gaurantorthreeid.value = user.memberid
+            gaurantorthreephone.value = user.memberphone
         }
     })
     if(gaurantorthreename.value == ""){
         gaurantorthreeid.value = ""
+        gaurantorthreephone.value = ""
     }
 })
 gaurantorfourname.addEventListener("input", (e)=>{
     let useraccount = e.target.value.toLowerCase();
     let gaurantorfourid = document.querySelector(".gaurantorfourid")
+    let gaurantorfourphone = document.querySelector(".gaurantorfourphone")
     accountsname.forEach(user => {
         if(user.name.toLowerCase().includes(useraccount)){
             gaurantorfourid.value = user.memberid
+            gaurantorfourphone.value = user.memberphone
         }
     })
     if(gaurantorfourname.value == ""){
         gaurantorfourid.value = ""
+        gaurantorfourphone.value = ""
     }
 })

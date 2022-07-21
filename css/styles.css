@@ -186,6 +186,11 @@ body {
   position: relative;
 }
 
+.btn-action {
+  padding: 0.5rem 2rem;
+  background-color: #90ee90;
+}
+
 .prof_img {
   height: 55px;
   width: 55px;
@@ -914,6 +919,9 @@ body {
   width: 99%;
   margin: 2rem auto 1rem auto;
   padding: 0 1rem;
+}
+.main .apply h3 {
+  margin-bottom: 1rem;
 }
 .main .apply .title {
   font-size: 1rem;

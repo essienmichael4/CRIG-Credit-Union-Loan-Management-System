@@ -6,25 +6,6 @@
             $result = mysqli_query($conn, $sql);
             $applicant = mysqli_fetch_assoc($result);
         ?>
-    <div class="main">
-            <header class="main__header flex px1">
-                <h2 class="">Loans</h2>
-                <form class="search" action="../php/search.php" method="POST">
-                    <input type="text" class="search__input" name="inputsearch" placeholder="Search">
-                    <button name="search" class="search__btn">Search</button>
-                </form>
-                <div class="user flex">
-                    <span class="flex">C</span>
-                    <p><?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?></p>
-                    <i class="fas fa-angle-down"></i>
-                </div>
-                
-                <div class="userdetails">
-                    <p><?=$_SESSION["username"]?></p>
-                    <a href="?pgname=useredit&userid=<?=$_SESSION["uid"]?>">edit user</a>
-                    <form action="../php/logout.inc.php"><button type="submit">logout</button></form>
-                </div>
-            </header>
             <div class="wrapper">
                 <div class="content_wrapper">
                     <div class="content_scroll">
@@ -32,8 +13,6 @@
                             <h2 class="h3">
                                 Loan Details
                             </h2>
-    
-                            <!-- <button class="paybtn">Make Payment</button> -->
                         </div>
     
                         <h2 class="h4">Applicant Detials</h2>

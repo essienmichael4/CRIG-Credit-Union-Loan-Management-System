@@ -8,27 +8,7 @@
         $memcode = $account["mem_code"];
         $balance = number_format($account['balance'],2);
     ?>
-    <input type="text" class="account_code" value="<?=$memcode?>" hidden>
-    <div class="main">
-            <header class="main__header flex px1">
-                <h2 class="">Savings</h2>
-                <form class="search" action="../php/search.php" method="POST">
-                    <input type="text" class="search__input" name="inputsearch" placeholder="Search">
-                    <button name="search" class="search__btn">Search</button>
-                </form>
-                <div class="user flex">
-                    <span class="flex">C</span>
-                    <p><?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?></p>
-                    <i class="fas fa-angle-down"></i>
-                </div>
-                
-                <div class="userdetails">
-                    <p><?=$_SESSION["username"]?></p>
-                    <a href="?pgname=useredit&userid=<?=$_SESSION["uid"]?>">edit user</a>
-                    <form action="../php/logout.inc.php"><button type="submit">logout</button></form>
-                </div>
-            </header>
-            
+    <input type="text" class="account_code" value="<?=$memcode?>" hidden>            
             <div class="wrapper">
                 <div class="details-head">
                     <a href="?pgname=savings">	&#8592;</a>

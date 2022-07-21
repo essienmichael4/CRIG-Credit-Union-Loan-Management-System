@@ -17,25 +17,6 @@
         $member = "0".$member;
     }
 ?>
-<div class="main">
-    <header class="main__header flex px1">
-        <h2 class="">Savings</h2>
-        <form class="search" action="../php/search.php" method="POST">
-            <input type="text" class="search__input" name="inputsearch" placeholder="Search">
-            <button name="search" class="search__btn">Search</button>
-        </form>
-        <div class="user flex">
-            <span class="flex">C</span>
-            <p><?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?></p>
-            <i class="fas fa-angle-down"></i>
-        </div>
-        
-        <div class="userdetails">
-            <p><?=$_SESSION["username"]?></p>
-            <a href="?pgname=useredit&userid=<?=$_SESSION["uid"]?>">edit user</a>
-            <form action="../php/logout.inc.php"><button type="submit">logout</button></form>
-        </div>
-    </header>
     
     <div class="wrapper">
         <div class="details-head">
@@ -200,13 +181,6 @@
                 </div>
             </div>
             <div class="apply_savings">
-                <!-- <div class="personal_info">
-                    <h4>Registration Fee</h4>
-                    <div>
-                        <span>Gh¢</span>
-                        <input type="number" name="regfee" placeholder="">
-                    </div>
-                </div> -->
                 <div class="personal_info">
                     <h4>Registration Fee</h4>
                     <div>

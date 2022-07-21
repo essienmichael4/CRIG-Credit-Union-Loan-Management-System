@@ -1,23 +1,4 @@
 <input type='text' name="user" value="<?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?>" hidden />
-    <div class="main">
-            <header class="main__header flex px1">
-                <h2 class="">Savings</h2>
-                <form class="search" action="../php/search.php" method="POST">
-                    <input type="text" class="search__input" name="inputsearch" placeholder="Search">
-                    <button name="search" class="search__btn">Search</button>
-                </form>
-                <div class="user flex">
-                    <span class="flex">C</span>
-                    <p><?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?></p>
-                    <i class="fas fa-angle-down"></i>
-                </div>
-                
-                <div class="userdetails">
-                    <p><?=$_SESSION["username"]?></p>
-                    <a href="?pgname=useredit&userid=<?=$_SESSION["uid"]?>">edit user</a>
-                    <form action="../php/logout.inc.php"><button type="submit">logout</button></form>
-                </div>
-            </header>
             <div class="toast_container ">
                 <div class="toast">
                     <p class="error"></p>
@@ -48,7 +29,6 @@
                     <div class="actions mnot my_5">
                         <button class="deposite_btn"><span><i class="fas fa-plus-circle"></i></span> Deposit</button>
                         <button  class="withdrawal_btn"><span><i class="fas fa-minus-circle"></i></span> Withdrawal</button>
-                        <!-- <button class="person_btn"><span><i class="fas fa-angle-down"></i></span> Personal Details</button> -->
                     </div>
                 </div>
 
@@ -71,7 +51,6 @@
                 </div>
                 <div class=" account-details">
                     <h2 class="account-title">Accounts</h2>
-                    <!-- <div class="searchname"><input type="text" class="namesort"></div> -->
                     <div class="actions">
                         <div class="searchname">
                             <input type="text" class="namesort">
