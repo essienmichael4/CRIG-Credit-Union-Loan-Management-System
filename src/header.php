@@ -150,17 +150,17 @@
 
                     <?php
                         if($_GET['pgname']=="expenses"){
-                            echo '<li class="list__item"><a href="?pgname=expenses" class="item__link active py1"><span><i class="fas fa-home"></i> Expenses</span></a></li>';
+                            echo '<li class="list__item"><a href="?pgname=expenses" class="item__link active py1"><span><i class="fab fa-bity"></i> Expenses</span></a></li>';
                         }else{
-                            echo '<li class="list__item"><a href="?pgname=expenses" class="item__link py1"><span><i class="fas fa-home"></i> Expenses</span></a></li>';
+                            echo '<li class="list__item"><a href="?pgname=expenses" class="item__link py1"><span><i class="fab fa-bity"></i> Expenses</span></a></li>';
                         }
                     ?>
 
                     <?php
                         if($_GET['pgname']=="analytics"){
-                            echo '<li class="list__item"><a href="?pgname=analytics" class="item__link active py1"><span><i class="fas fa-home"></i> Analytics</span></a></li>';
+                            echo '<li class="list__item"><a href="?pgname=analytics" class="item__link active py1"><span><i class="fas fa-bacon"></i> Analytics</span></a></li>';
                         }else{
-                            echo '<li class="list__item"><a href="?pgname=analytics" class="item__link py1"><span><i class="fas fa-home"></i> Analytics</span></a></li>';
+                            echo '<li class="list__item"><a href="?pgname=analytics" class="item__link py1"><span><i class="fas fa-bacon"></i> Analytics</span></a></li>';
                         }
                     ?>
                     

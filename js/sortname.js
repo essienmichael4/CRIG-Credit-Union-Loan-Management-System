@@ -15,12 +15,18 @@ fetch("../php/savings/getallaccountslist.inc.php")
 
             let accountrow = `<tr>
                 <td>${account.mem_code}</td>
-                <td><a href='?pgname=savingdetails&account_id=${account.id}'>${account.first_name} ${account.last_name} ${account.other_names}</a> </td>
+                <td>
+                    <a href='?pgname=savingdetails&account_id=${account.id}'>
+                    <div class='prof_img'><img src='../assets/${account.account_pic}' alt=''></div>
+                    ${account.first_name} ${account.last_name} ${account.other_names}
+                    </a> 
+                </td>
                 <td>${account.staff_id}</td>
                 <td>${account.phone}</td>
                 <td>${account.balance}</td>
                 ${row}
             </tr>`
+            
 
             let name = `${account.first_name} ${account.last_name} ${account.other_names}`;
             let memberid = account.mem_code;
