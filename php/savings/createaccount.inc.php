@@ -30,6 +30,7 @@
         $bulkdeposit = (float)mysqli_real_escape_string($conn,$_POST["bulkdeposite"]);
         $monthlydeposit = (float)mysqli_real_escape_string($conn,$_POST["monthlydeposite"]);
         $receiptnumber = mysqli_real_escape_string($conn,$_POST["receiptnumber"]);
+        $pic = $_FILES["pic"];
         $deposit = "deposit";
         $status = "new";
         $deposittype = "bulk";
@@ -52,17 +53,88 @@
             $monthlybalance = $balance;
         }
 
+        if(empty(!$pic['name'])){
+            $picName = $studentpic['name'];
+            $picTempName = $studentpic['tmp_name'];
+            $ppicSize = $studentpic['size'];
+            $picError = $studentpic['error'];
+
+            $picExt = explode('.', $picName);
+            $picActExt = strtolower(end($picExt));
+
+            $allowedExt = array('jpg', 'jpeg', 'png');
+            
+            if(in_array($picActExt, $allowedExt)){
+                if($picError === 0){
+                    if($picSize < 5000000){
+                        $picNewName = $first_name."".$lastname."".$othernames.uniqid('',true).".".$ppicActExt;
+                        $fileDes = '../../assets/'.$picNewName;
+
+                        $sql = "INSERT INTO `savings`(`first_name`, `last_name`,`other_names`, `mem_code`, 
+                        `staff_id`, `phone`, `address`, `home_town`, `residential_address`, `marital_status`
+                        , `date_of_birth`, `place_of_work`, `occupation`, `division`, `number_of_children`,
+                        `next_of_kin`, `next_of_kin_phone`, `next_of_kin_relation`
+                        , `next_of_kin_occupation`, `next_of_kin_address`, `balance`, `created_by`, `day_created`, 
+                        `registration_fee`, `account_status`,`account_pic`) 
+                        VALUES('$firstname','$lastname', '$othernames','$memcode', '$staffid', 
+                        '$phonenumber', '$address', '$hometown','$residentialaddress','$maritalstatus',
+                        '$dateofbirth','$placeofwork','$occupation','$division','$children','$nextofkin',
+                        '$nextofkinphone','$nextofkinrelation','$nextofkinoccupation','$nextofkinaddress',
+                        $balance,'$processor', '$dayadded', $registration, '$status', '$picNewName')";
+                            
+                        if(mysqli_query($conn, $sql)){
+                            move_uploaded_file($picTempName, $fileDes);
+                            if($balance != 0 && !empty($bulkdeposit)){
+                                $sql = "INSERT INTO `transactions`(`member_code`, `transaction_type`,
+                                `deposit_type`, `amount_transacted`, `amount_in_account`
+                                , `balance_in_account`, `transacted_by`, `receipt_number`, `transaction_day`) 
+                                VALUES('$memcode', '$deposit', 
+                                '$deposittype', $bulkdeposit ,$initialbalance, $bulkbalance, '$processor','$receiptnumber', '$dayadded')";
+
+                                $conn->query($sql);
+                            }
+                            if($balance != 0 && !empty($monthlydeposit)){
+                                $deposittype = "monthly";
+                                $sql = "INSERT INTO `transactions`(`member_code`, `transaction_type`,
+                                `deposit_type`, `amount_transacted`, `amount_in_account`
+                                , `balance_in_account`, `transacted_by`, `receipt_number`, `transaction_day`) 
+                                VALUES('$memcode', '$deposit', 
+                                '$deposittype', $monthlydeposit , $initialbalance, $monthlybalance, '$processor','$receiptnumber', '$dayadded')";
+                            
+                                $conn->query($sql);
+                            }
+                            header("location: ../../src/routes.php?pgname=applysavings&success=success"); 
+                            exit();
+                        }else{
+                            header("location: ../../src/routes.php?pgname=applysavings&error=sqlerror");
+                            exit();
+                        }
+
+                    }else {
+                        header("Location: ../../src/index.php?pgname=applysavings&error=fileTooBig");
+                        exit();
+                    }
+                }else {
+                    header("Location: ../../src/index.php?pgname=applysavings&success=errorOccured");
+                    exit();   
+                }
+            }else {
+                header("Location: ../../src/index.php?pgname=applysavings&success=typeNotAllowed");
+                exit();
+            }            
+        }
+
         $sql = "INSERT INTO `savings`(`first_name`, `last_name`,`other_names`, `mem_code`, 
         `staff_id`, `phone`, `address`, `home_town`, `residential_address`, `marital_status`
         , `date_of_birth`, `place_of_work`, `occupation`, `division`, `number_of_children`,
         `next_of_kin`, `next_of_kin_phone`, `next_of_kin_relation`
         , `next_of_kin_occupation`, `next_of_kin_address`, `balance`, `created_by`, `day_created`, 
-        `registration_fee`, `account_status`) 
+        `registration_fee`, `account_status`, `account_pic`) 
         VALUES('$firstname','$lastname', '$othernames','$memcode', '$staffid', 
         '$phonenumber', '$address', '$hometown','$residentialaddress','$maritalstatus',
         '$dateofbirth','$placeofwork','$occupation','$division','$children','$nextofkin',
         '$nextofkinphone','$nextofkinrelation','$nextofkinoccupation','$nextofkinaddress',
-        $balance,'$processor', '$dayadded', $registration, '$status')";
+        $balance,'$processor', '$dayadded', $registration, '$status' ,'general.png')";
             
         if(mysqli_query($conn, $sql)){
             if($balance != 0 && !empty($bulkdeposit)){
@@ -117,12 +189,66 @@
         $nextofkinrelation = mysqli_real_escape_string($conn,$_POST["nextofkinrelation"]);
         $nextofkinoccupation = mysqli_real_escape_string($conn,$_POST["nextofkinoccupation"]);
         $nextofkinaddress = mysqli_real_escape_string($conn,$_POST["nextofkinaddress"]);
+        $profile = mysqli_real_escape_string($conn,$_POST["profile"]);
         $remarks = mysqli_real_escape_string($conn,$_POST["remarks"]);
+        $pic = $_FILES["pic"];
 
         if(emptyField($firstname) || emptyField($lastname) || emptyField($processor) || emptyField($memcode)){
-            
             header("location: ../../src/routes.php?pgname=applysavings&error=emptyinput"); 
             exit();
+        }
+
+        if(empty(!$pic['name'])){
+            $picName = $studentpic['name'];
+            $picTempName = $studentpic['tmp_name'];
+            $ppicSize = $studentpic['size'];
+            $picError = $studentpic['error'];
+
+            $picExt = explode('.', $picName);
+            $picActExt = strtolower(end($picExt));
+
+            $allowedExt = array('jpg', 'jpeg', 'png');
+            
+            if(in_array($picActExt, $allowedExt)){
+                if($picError === 0){
+                    if($picSize < 5000000){
+                        $picNewName = $first_name."".$lastname."".$othernames.uniqid('',true).".".$ppicActExt;
+                        $fileDes = '../../assets/'.$picNewName;
+
+                        $sql = "UPDATE `savings` SET `first_name`='{$firstname}', `last_name` = '{$lastname}',
+                        `other_names` = '{$othernames}',
+                        `staff_id` = '{$staffid}', `phone` = '{$phonenumber}', `address` = '{$address}',
+                        `home_town` = '{$hometown}', `residential_address` = '{$residentialaddress}',
+                        `marital_status` = '{$maritalstatus}', `date_of_birth` = '{$dateofbirth}', 
+                        `place_of_work` = '{$placeofwork}', `occupation` = '{$occupation}', `division` = '{$division}',
+                        `number_of_children` = '{$children}',`next_of_kin` = '{$nextofkin}', `next_of_kin_phone` = '{$nextofkinphone}',
+                        `next_of_kin_relation` = '{$nextofkinrelation}', `next_of_kin_occupation` = '{$nextofkinoccupation}', 
+                        `next_of_kin_address` = '{$nextofkinaddress}', `account_pic` = '{$picNewName}' WHERE  `mem_code` = '{$memcode}'";
+                            
+                        if(mysqli_query($conn, $sql)){
+                            move_uploaded_file($picTempName, $fileDes);
+                            if($profile != "general.pnp"){
+                                unlink('../../assets/'.$profile);
+                            }
+                            header("location: ../../src/routes.php?pgname=applysavings&success=success"); 
+                            exit();
+                        }else{
+                            header("location: ../../src/routes.php?pgname=applysavings&error=sqlerror");
+                            exit();
+                        }
+
+                    }else {
+                        header("Location: ../../src/index.php?pgname=applysavings&error=fileTooBig");
+                        exit();
+                    }
+                }else {
+                    header("Location: ../../src/index.php?pgname=applysavings&success=errorOccured");
+                    exit();   
+                }
+            }else {
+                header("Location: ../../src/index.php?pgname=applysavings&success=typeNotAllowed");
+                exit();
+            }            
         }
 
         $sql = "UPDATE `savings` SET `first_name`='{$firstname}', `last_name` = '{$lastname}',

@@ -5,7 +5,7 @@ const filters = document.querySelectorAll(".loanfilter");
 const times = document.querySelectorAll(".time");
 
 // Get the table
-const content = document.querySelector(".main__table");
+const content = document.querySelector(".savings__table");
 
 let timefilter = "";
 let loanfilter = "";

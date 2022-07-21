@@ -17,7 +17,13 @@
         $balance = number_format($res['balance'],2);
         $row .= "<tr>
                     <td>{$res['mem_code']}</td>
-                    <td><a href='?pgname=savingdetails&account_id={$res['id']}'>{$res['first_name']} {$res['last_name']} {$res['other_names']}</a> </td>
+                    <td>{$res['mem_code']}</td>
+                    <td>
+                        <a href='?pgname=savingdetails&account_id={$res['id']}'>
+                        <div class='prof_img'><img src='../assets/{$res['account_pic']}' alt=''></div> 
+                        {$res['first_name']} {$res['last_name']} {$res['other_names']}
+                    </a> 
+                    </td>
                     <td>{$res['staff_id']}</td>
                     <td>{$res['phone_number']}</td>
                     <td>GH¢ {$balance}</td>

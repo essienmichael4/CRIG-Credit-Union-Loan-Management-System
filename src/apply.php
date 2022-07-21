@@ -41,30 +41,24 @@
                             <input type="text" name="recipient" value="<?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?>" hidden>
                             <div class="formControl flex-c">
                                 <label for="">Member Code CQC.</label>
-                                <input type="text" name="memcode" required placeholder="Member Code CQC" value="<?=$applicant["member_code"]?>">
+                                <input type="text" name="memcode" placeholder="Member Code CQC" value="<?=$applicant["member_code"]?>">
                             </div>
+                            <datalist id="accounts">
+                            </datalist>
                             <div class="formControl flex-c">
-                                <label for="">First name</label>
-                                <input type="text" name="firstname" required placeholder="First Name" value="<?=$applicant["first_name"]?>">
-                            </div>
-                            <div class="formControl flex-c">
-                                <label for="">Last name</label>
-                                <input type="text" name="lastname" required placeholder="Last Name" value="<?=$applicant["last_name"]?>">
-                            </div>
-                            <div class="formControl flex-c">
-                                <label for="">Other names</label>
-                                <input type="text" name="othernames" placeholder="Other Name" value="<?=$applicant["other_names"]?>">
+                                <label for="">Applicant name</label>
+                                <input type="text" list="accounts"  class="applicant_name first_name" name="applicant_name" value="<?=$applicant["first_name"]?>">
                             </div>
                             <div class="formControl flex-c">
                                 <label for="">Phone Number</label>
                                 <div>
-                                    <span>+233</span><input type="text" required name="phone" placeholder="eg. 201234567" value="<?=$applicant["phone_number"]?>">
+                                    <span>+233</span><input type="text" name="phone" placeholder="eg. 201234567" value="<?=$applicant["phone_number"]?>">
                                 </div>
                             </div>
                             
                             <div class="formControl flex-c">
                                 <label for="">Work Place</label>
-                                <input type="text" placeholder="Work Place" required name="workplace" value="<?=$applicant["work_place"]?>">
+                                <input type="text" placeholder="Work Place" name="workplace" value="<?=$applicant["work_place"]?>">
                             </div>
                             <div class="formControl flex-c">
                                 <label for="">Staff No.</label>
@@ -164,6 +158,10 @@
                                 <input type="date" name="customerdue" required value="<?=$applicant["applicant_first_due_date"]?>">
                             </div>
 
+                            <div class="formControl flex-c">
+                                <label for="">Applicant Pic</label>
+                                <input type="file" required name="pic">
+                            </div>
 
                             <div class="formControl flex-c">
                                 <label for="">Purpose for the loan</label>
@@ -365,25 +363,15 @@
                                     <span class="search-applicant"><i class="fas fa-search "></i></span>
                                 </div>
                             </div>
-                            <div class="formControl flex-c bgb">
-                                <label for="">Staff No.</label>
-                                <div>
-                                    <input type="text" placeholder="Staff No." class="staff" name="staff_number">
-                                    <span class="search-staff"><i class="fas fa-search"></i></span>
-                                </div>
-                            </div>
+
+                            <datalist id="accounts">
+                            </datalist>
+                            
                             <div class="formControl flex-c">
-                                <label for="">First name</label>
-                                <input type="text" required class="first_name" name="firstname" placeholder="First Name">
+                                <label for="">Applicant name</label>
+                                <input type="text" list="accounts" required class="applicant_name first_name" name="applicant_name" placeholder="Applicant Name">
                             </div>
-                            <div class="formControl flex-c">
-                                <label for="">Last name</label>
-                                <input type="text" required class="last_name" name="lastname" placeholder="Last Name">
-                            </div>
-                            <div class="formControl flex-c">
-                                <label for="">Other names</label>
-                                <input type="text" class="other_names" name="othernames" placeholder="Other Name">
-                            </div>
+                            
                             <div class="formControl flex-c">
                                 <label for="">Phone Number</label>
                                 <input type="text" required name="phone" class="phone" placeholder="eg. 201234567">
@@ -394,6 +382,11 @@
                                 <input type="text" required placeholder="Work Place" class="work" name="workplace">
                             </div>
                             
+                            <div class="formControl flex-c">
+                                <label for="">Staff No.</label>
+                                <input type="text" placeholder="Staff No." class="staff" name="staff_number">
+                            </div>
+
                             <div class="formControl flex-c">
                                 <label for="">Status</label>
                                 <div class="flex">
@@ -448,11 +441,16 @@
                                 <input type="date" required name="customerdue">
                             </div>
 
+                            <div class="formControl flex-c">
+                                <label for="">Applicant Pic</label>
+                                <input type="file" name="pic">
+                            </div>
 
                             <div class="formControl flex-c">
                                 <label for="">Purpose for the loan</label>
                                 <textarea name="purpose" required id="" cols="30" rows="10"></textarea>
                             </div>
+
                         </div>
 
                         <h3 class="title my2">Guarantor Detials</h3>
@@ -466,8 +464,17 @@
                             </div>
                             <div class="formControl flex-c">
                                 <label for="">Guarantor's name (1st)</label>
-                                <input type="text" required  class="gaurantoronename" name="first_guarantor_name" placeholder="Guarantor's name">
+                                <input type="text" required list="savingsaccountfirst"  class="gaurantoronename" name="first_guarantor_name" placeholder="Guarantor's name">
                             </div>
+
+                            <datalist id="savingsaccountfirst">
+                            </datalist>
+                            <datalist id="savingsaccountsecond">
+                            </datalist>
+                            <datalist id="savingsaccountthird">
+                            </datalist>
+                            <datalist id="savingsaccountfourth">
+                            </datalist>
                             
                             <div class="formControl flex-c">
                                 <label for="">Guarantor's Phone (1st)</label>
@@ -489,7 +496,7 @@
                             </div>
                             <div class="formControl flex-c">
                                 <label for="">Guarantor's name (2nd)</label>
-                                <input type="text"  required class="gaurantortwoname" name="second_guarantor_name" placeholder="Guarantor's name">
+                                <input type="text" list="savingsaccountsecond"  required class="gaurantortwoname" name="second_guarantor_name" placeholder="Guarantor's name">
                             </div>
                             
                             <div class="formControl flex-c">
@@ -512,7 +519,7 @@
                             </div>
                             <div class="formControl flex-c">
                                 <label for="">Guarantor's name (3rd)</label>
-                                <input type="text" required class="gaurantorthreename" name="third_guarantor_name" placeholder="Guarantor's name">
+                                <input type="text" list="savingsaccountthird" required class="gaurantorthreename" name="third_guarantor_name" placeholder="Guarantor's name">
                             </div>
                             
                             <div class="formControl flex-c">
@@ -535,7 +542,7 @@
                             </div>
                             <div class="formControl flex-c">
                                 <label for="">Guarantor's name (4th)</label>
-                                <input type="text" required class="gaurantorfourname" name="fourth_guarantor_name" placeholder="Guarantor's name">
+                                <input type="text" list="savingsaccountfourth" required class="gaurantorfourname" name="fourth_guarantor_name" placeholder="Guarantor's name">
                             </div>
                             
                             <div class="formControl flex-c">
@@ -582,6 +589,10 @@
                                 <label for="">sixth Due Date</label>
                                 <input type="date" name="sixth_due_approved">
                             </div>
+                            <div class="formControl flex-c">
+                                <label for="">Approval Date</label>
+                                <input type="date" required name="approval_day">
+                            </div>
                         </div>
                         <?php
                             }
@@ -621,6 +632,7 @@
 ?>
 <script src="../js/interest.js"></script>
 <script src="../js/calcdays.js"></script>
+<script src="../js/loans/getapplicant.js"></script>
 <script src="../js/searchmemberandgaurator.js"></script>
 <script>
     let toast = document.querySelector(".toast_container");

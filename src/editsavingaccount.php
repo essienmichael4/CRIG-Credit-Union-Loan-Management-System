@@ -56,6 +56,7 @@
                     <div class="apply_savings">
                         <input type="text" name="processor" value="<?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?>" hidden>
                         <input type="text" name="memcode" value="<?=$account['mem_code']?>" hidden>
+                        <input type="text" name="profile" value="<?=$account['account_pic']?>" hidden>
                         <input type="text" name="uid" value="<?=$account['id']?>" hidden>
                         <div class="personal_info bgb">
                             <h4>Membership Code</h4>
@@ -96,6 +97,10 @@
                         <div class="personal_info">
                             <h4>No. of Children(if any)</h4>
                             <input type="number" name="children" autocomplete="FALSE" value="<?=$account['number_of_children']?>">
+                        </div>
+                        <div class="personal_info">
+                            <h4>Account Picture</h4>
+                            <input type="file" name="pic">
                         </div>
                     </div>
                     <div class="details-head">

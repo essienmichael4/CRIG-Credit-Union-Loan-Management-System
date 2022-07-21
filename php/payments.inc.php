@@ -4,7 +4,8 @@
 
         $id = $_POST["id"];
         $amount = (float)mysqli_real_escape_string($conn, $_POST["amount"]);
-        $recipient = mysqli_real_escape_string($conn, $_POST["amount"]);
+        $receipt = (float)mysqli_real_escape_string($conn, $_POST["receipt"]);
+        $recipient = mysqli_real_escape_string($conn, $_POST["recipient"]);
         $time = $_POST["duedate"];
         $status = 'paid';
         $loanstatus = "pending";
@@ -25,42 +26,42 @@
             $loanstatus = "paid";
         }
 
-        if($time = "first"){
+        if($time == "first"){
             $sql = "UPDATE `applicant` SET `loan_arrears`={$loanarrears}, `loan_paid` = {$loanpaid},
             `first_due_recipient` = '{$recipient}', `first_due_date_status`= '{$status}'
             ,`loan_status` = '{$loanstatus}', `guaranteed_amount_first` = '{$guaranted}'
             , `guaranteed_amount_second` = '{$guaranted}', `guaranteed_amount_third` = '{$guaranted}'
-            , `guaranteed_amount_fourth` = '{$guaranted}' = WHERE id = {$id};";
-        }else if($time = "second"){
+            , `guaranteed_amount_fourth` = '{$guaranted}', `receipt_1`='$receipt', `amount_payed_1` = $amount WHERE id = {$id} ;";
+        }else if($time == "second"){
             $sql = "UPDATE `applicant` SET `loan_arrears`={$loanarrears}, `loan_paid` = {$loanpaid},
-            `second_due_recipient` = '{$recipient}', `second_due_date_status`= '{$status}',
+            `second_due_recipient` = '{$recipient}', `second_due_date_status`= '{$status}'
             ,`loan_status` = '{$loanstatus}', `guaranteed_amount_first` = '{$guaranted}'
             , `guaranteed_amount_second` = '{$guaranted}', `guaranteed_amount_third` = '{$guaranted}'
-            , `guaranteed_amount_fourth` = '{$guaranted}' WHERE id = {$id};";
-        }else if($time = "third"){
+            , `guaranteed_amount_fourth` = '{$guaranted}', `receipt_2`='$receipt', `amount_payed_2` = $amount  WHERE id = {$id};";
+        }else if($time == "third"){
             $sql = "UPDATE `applicant` SET `loan_arrears`={$loanarrears}, `loan_paid` = {$loanpaid},
-            `third_due_recipient` = '{$recipient}', `third_due_date_status`= '{$status}',
+            `third_due_recipient` = '{$recipient}', `third_due_date_status`= '{$status}'
             ,`loan_status` = '{$loanstatus}', `guaranteed_amount_first` = '{$guaranted}'
             , `guaranteed_amount_second` = '{$guaranted}', `guaranteed_amount_third` = '{$guaranted}'
-            , `guaranteed_amount_fourth` = '{$guaranted}' WHERE id = {$id};";
-        }else if($time = "fourth"){
+            , `guaranteed_amount_fourth` = '{$guaranted}', `receipt_3`='$receipt', `amount_payed_3` = $amount WHERE id = {$id};";
+        }else if($time == "fourth"){
             $sql = "UPDATE `applicant` SET `loan_arrears`={$loanarrears}, `loan_paid` = {$loanpaid},
-            `fourth_due_recipient` = '{$recipient}', `fourth_due_date_status`= '{$status}',
+            `fourth_due_recipient` = '{$recipient}', `fourth_due_date_status`= '{$status}'
             ,`loan_status` = '{$loanstatus}', `guaranteed_amount_first` = '{$guaranted}'
             , `guaranteed_amount_second` = '{$guaranted}', `guaranteed_amount_third` = '{$guaranted}'
-            , `guaranteed_amount_fourth` = '{$guaranted}' WHERE id = {$id};";
-        }else if($time = "fifth"){
+            , `guaranteed_amount_fourth` = '{$guaranted}', `receipt_4`='$receipt', `amount_payed_4` = $amount WHERE id = {$id};";
+        }else if($time == "fifth"){
             $sql = "UPDATE `applicant` SET `loan_arrears`={$loanarrears}, `loan_paid` = {$loanpaid},
-            `fifth_due_recipient` = '{$recipient}', `fifth_due_date_status`= '{$status}',
+            `fifth_due_recipient` = '{$recipient}', `fifth_due_date_status`= '{$status}'
             ,`loan_status` = '{$loanstatus}', `guaranteed_amount_first` = '{$guaranted}'
             , `guaranteed_amount_second` = '{$guaranted}', `guaranteed_amount_third` = '{$guaranted}'
-            , `guaranteed_amount_fourth` = '{$guaranted}' WHERE id = {$id};";
-        }else if($time = "sixth"){
+            , `guaranteed_amount_fourth` = '{$guaranted}', `receipt_5`='$receipt', `amount_payed_5` = $amount WHERE id = {$id};";
+        }else if($time == "sixth"){
             $sql = "UPDATE `applicant` SET `loan_arrears`={$loanarrears}, `loan_paid` = {$loanpaid},
-            `sixth_due_recipient` = '{$recipient}', `sixth_due_date_status`= '{$status}',
+            `sixth_due_recipient` = '{$recipient}', `sixth_due_date_status`= '{$status}'
             ,`loan_status` = '{$loanstatus}', `guaranteed_amount_first` = '{$guaranted}'
             , `guaranteed_amount_second` = '{$guaranted}', `guaranteed_amount_third` = '{$guaranted}'
-            , `guaranteed_amount_fourth` = '{$guaranted}'u WHERE id = {$id};";
+            , `guaranteed_amount_fourth` = '{$guaranted}', `receipt_6`='$receipt', `amount_payed_6` = $amount WHERE id = {$id};";
         }
 
         if(mysqli_query($conn, $sql)){
@@ -69,6 +70,17 @@
             header("location: ../src/routes.php?pgname=loandetails&applicant_id={$id}&message=error"); 
         }
 
-    }else{
+    }else if(isset($_POST["payment_onetime"])){
+        include_once("./dbs.inc.php");
+
+        $id = $_POST["id"];
+        $amount = (float)mysqli_real_escape_string($conn, $_POST["amount_payed"]);
+        $recipient = mysqli_real_escape_string($conn, $_POST["recipient"]);
+        $loan_amount = mysqli_real_escape_string($conn, $_POST["loan_amount"]);
+        $interest_percent = mysqli_real_escape_string($conn, $_POST["interest_percent"]);
+        $new_loan = mysqli_real_escape_string($conn, $_POST["new_loan"]);
+        $receipt_number = mysqli_real_escape_string($conn, $_POST["receipt_number"]);
+    }
+    else{
         header("location: ../src/routes.php?pgname=dashboard");
     }

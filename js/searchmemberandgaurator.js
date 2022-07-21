@@ -51,52 +51,6 @@ membersearch.addEventListener("click",()=>{
     xhr.send(params)
 })
 
-staffsearch.addEventListener("click",()=>{
-    let data;
-    let memcode = document.querySelector(".staff").value;
-
-    if(memcode == ""){
-        return;
-    }
-
-    let params = "memcode="+memcode;
-
-    let xhr = new XMLHttpRequest();
-    xhr.open("POST", "../php/loans/getapplicantinfobystaffid.inc.php");
-    xhr.setRequestHeader("Content-type", 'application/x-www-form-urlencoded');
-    xhr.onload = () =>{
-        if(xhr.readyState == XMLHttpRequest.DONE){
-            if(xhr.status == 200){
-                data = xhr.response;
-
-                if(data === "false"){
-                    let toast = document.querySelector(".toast_container");
-                    let toastmsg = document.querySelector(".toast_container .toast .error");
-                    toastmsg.textContent = "Staff number is incorrect or staff does not seem to exist";
-                    toast.classList.add("active");
-                    return;
-                }
-
-                data = JSON.parse(data);
-                let firstname = data.first_name;
-                let mem_code = data.mem_code;
-                let lastname = data.last_name;
-                let othernames = data.other_names;
-                let phone = data.phone;
-                let work = data.place_of_work;
-
-                document.querySelector(".first_name").value = firstname;
-                document.querySelector(".last_name").value = lastname;
-                document.querySelector(".applicant-search").value = mem_code;
-                document.querySelector(".other_names").value = othernames;
-                document.querySelector(".phone").value = phone;
-                document.querySelector(".work").value = work;
-            }
-        }
-    }
-    xhr.send(params)
-})
-
 gaurantoronesearch.addEventListener("click",()=>{
     let data;
     let memcode = document.querySelector(".gaurantoroneid").value;

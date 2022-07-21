@@ -32,6 +32,7 @@
             <div class="wrapper">
                 <div class="details-head">
                     <a href="?pgname=savings">	&#8592;</a>
+                    <div class="prof_img"><img src="../assets/<?=$account["account_pic"]?>" alt=""></div>
                     <div class="details-right">
                         <h2 class="p"><span><?=$account["first_name"].' '.$account["last_name"].' '.$account["other_names"]?></span></h2>
                         
@@ -130,42 +131,13 @@
                 </div>
             
                 <div class="savings__card">
-                    <!-- <div class="card">
-                        <p>All Funds</p>
-                        <h4>GH¢ 100,000,000</h4>
-                    </div> -->
                     <div class="card">
                         <p>Current Account</p>
                         <h4 class="current_account">GH¢ <?=$balance?></h4>
                     </div>
                     <h3 class="headline"> Account Details & Statements</h3>
-                    <!-- <div class="card">
-                        <p>All Funds</p>
-                        <h4>GH¢ 100,000,000</h4>
-                    </div>
-                    <div class="card">
-                        <p>All Funds</p>
-                        <h4>GH¢ 100,000,000</h4>
-                    </div> -->
                 </div>
 
-                <!-- <div class="filter flex">
-                    <div class="filter__actions">
-                        <a href="?pgname=apply" class="active">Savings Application <i class="fas fa-plus"></i></a>
-                    </div>
-                    <div class="filter__time">
-                        <a class="time allTime active">All Time</a>
-                        <input type="date" class="dayInput1">
-                        <input type="date" class="dayInput2">
-                        <input type="month" class="monthInput1">
-                        <input type="month" class="monthInput2">
-                        <input type="month" class="yearInput">
-                        
-                        <a class="time day">D</a>
-                        <a class="time month">M</a>
-                        <a class="time year">Y</a>
-                    </div>
-                </div> -->
                 <div class=" account-details">
                     <h2 class="account-title">Transactions</h2>
                     <div class="actions">

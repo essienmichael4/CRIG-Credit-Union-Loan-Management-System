@@ -59,15 +59,8 @@
                         <a class="time year">Y</a>
                     </div>
                 </div>
-                <section class="main__table">
-                    <?php
-                        if($_GET["data"]){
-                            require("../php/dbs.inc.php");
-                            require("../php/functions.inc.php");
-
-                            searchQueryloans($conn, $_GET["data"]);
-                        }
-                    ?>
+                <section class="savings__table">
+                    
                 </section>
             </div>
         </div>

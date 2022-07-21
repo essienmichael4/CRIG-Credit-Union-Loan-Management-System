@@ -62,11 +62,19 @@
                 $row = "<td class='tc'><span class='paid'>paid</span></td>";
             }
 
+            $id = "";
+
+            if($res['member_code'] != ""){
+                $id = $res['member_code'];
+            }else{
+                $id = $res['staff_id'];
+            }
+
             $arrears = (float)$res["loan_to_be_payed"] - (float)$res["loan_arrears"];
 
             $rows .= "<tr>
-                        <td>{$res['id']}</td>
-                        <td><a href='?pgname=apply&applicant_id={$res['id']}'>{$res['first_name']} {$res['last_name']} {$res['other_names']}</a></td>
+                        <td>{$id}</td>
+                        <td><a href='?pgname=apply&applicant_id={$res['id']}'>{$res['applicant_name']}</a></td>
                         <td>+233{$res['phone_number']}</td>
                         <td>{$res['work_place']}</td>
                         <td>{$applicant_due}</td>

@@ -25,7 +25,13 @@
         $rows .= "<tr>
                     <td>{$res['transaction_day']}</td>
                     <td>{$res['member_code']}</td>
-                    <td><a href='?pgname=savingdetails&account_id={$account['id']}'>{$account['first_name']} {$account['last_name']} {$account['other_names']}</a> </td>
+                    <td>{$res['mem_code']}</td>
+                    <td>
+                        <a href='?pgname=savingdetails&account_id={$res['id']}'>
+                        <div class='prof_img'><img src='../assets/{$res['account_pic']}' alt=''></div> 
+                        {$res['first_name']} {$res['last_name']} {$res['other_names']}
+                    </a> 
+                    </td>
                     <td class='tu'>{$res['transaction_type']} </td>
                     <td>{$amount_in_account}</td>
                     <td>{$amount_transacted}</td>

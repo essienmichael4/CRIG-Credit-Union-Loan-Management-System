@@ -78,11 +78,11 @@
                     <section class="savings__table">
                     
                     </section>
-                    <form class="add_expense">
+                    <form class="add_expense" action="../php/expenses/expenses.inc.php" method="POST">
                         <header>
                             <h3>Add New Expense</h3>
                         </header>
-                        <input type="text" id="processor" value="<?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?>" hidden>
+                        <input type="text" name="processor" value="<?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?>" hidden>
                         <div class="body">
                             <div class="form_control">
                                 <label for="">Item's Name</label>
@@ -111,11 +111,11 @@
         </div>
     </div>
     <script src="../js/searchUtils.js"></script>
-    <script src="../js/searchmember.js"></script>
+    <!-- <script src="../js/searchmember.js"></script> -->
     <script src="../js/expenses.js"></script>
     <!-- <script src="../js/getallloans.js"></script> -->
     <script src="../js/filters.js"></script>
-    <script src="../js/deposite.js"></script>
+    <!-- <script src="../js/deposite.js"></script> -->
     <script src="../js/getcurrentaccount.js"></script>
     <script src="../js/getallarrears.js"></script>
     <script src="../js/allfunds.js"></script>

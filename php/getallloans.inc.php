@@ -124,27 +124,35 @@
             $row = "";
 
             if($status == "pending"){
-                $row = "<td class='tc'><span class='pending'>pending</span></td>";
+                $row = "<td><span class='pending'>pending</span></td>";
             }else if($status == "due"){
-                $row = "<td class='tc'><span class='due'>due</span></td>";
+                $row = "<td><span class='due'>due</span></td>";
             }else if($status == "overdue"){
-                $row = "<td class='tc'><span class='overdue'>overdue</span></td>";
+                $row = "<td><span class='overdue'>overdue</span></td>";
             }else if($status == "paid"){
-                $row = "<td class='tc'><span class='paid'>paid</span></td>";
+                $row = "<td><span class='paid'>paid</span></td>";
+            }
+
+            $id = "";
+
+            if($res['member_code'] != ""){
+                $id = $res['member_code'];
+            }else{
+                $id = $res['staff_id'];
             }
 
             $arrears = (float)$res["loan_to_be_payed"] - (float)$res["loan_paid"];
 
             $rows .= "<tr>
-                        <td>{$res['id']}</td>
-                        <td><a href='?pgname=loandetails&applicant_id={$res['id']}'>{$res['first_name']} {$res['last_name']} {$res['other_names']}</a></td>
+                        <td>{$id}</td>
+                        <td><a href='?pgname=loandetails&applicant_id={$res['id']}'>{$res['applicant_name']}</a></td>
                         <td>+233{$res['phone_number']}</td>
                         <td>{$res['work_place']}</td>
                         <td>{$applicant_due}</td>
                         <td>{$res['loan_to_be_payed']}</td>
                         <td>{$arrears}</td>
                         {$row}
-                </tr>"; 
+                    </tr>"; 
             }
 
             echo $data = "<table>
@@ -157,7 +165,7 @@
                         <th>Date</th>
                         <th>Amount</th>
                         <th>Arrears</th>
-                        <th class='tc'>Status</th>
+                        <th>Status</th>
                     </tr>
                 </thead>
                 <tbody>"

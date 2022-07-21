@@ -70,7 +70,7 @@
             </div>
         </div> -->
 
-        <form  action="../php/savings/createaccount.inc.php" method="POST">
+        <form  action="../php/savings/createaccount.inc.php" method="POST" enctype="multipart/form-data">
         <div class="details-head flex js mt1">
             <div class="actions  mt1 mnot">
                 <h4>Personal Information</h4>
@@ -119,6 +119,10 @@
                 <div class="personal_info">
                     <h4>No. of Children(if any)</h4>
                     <input type="number" name="children" autocomplete="FALSE" placeholder="Children">
+                </div>
+                <div class="personal_info">
+                    <h4>Account Picture</h4>
+                    <input type="file" name="pic">
                 </div>
             </div>
             <div class="details-head">

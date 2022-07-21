@@ -23,7 +23,7 @@
 
         $sql = "INSERT INTO `expenses`(`item_name`, `item_price`, `purpose`,
             `day_added`, `added_by`) 
-        VALUES('$items', '$itemprice','$purpose', '$dayadded', '$uid')";
+        VALUES('$items', $itemprice,'$purpose', '$dayadded', '$uid')";
 
         if(mysqli_query($conn, $sql)){
             header("location: ../../src/routes.php?pgname=expenses&success=success"); 

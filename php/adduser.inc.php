@@ -112,7 +112,7 @@
             header("location: ../src/routes.php?pgname=users"); 
             exit();
         }else{
-            header("Location: ../src/route.php?pgname=users&userid=".$uid."error=updatefailed");
+            header("Location: ../src/routes.php?pgname=users&userid=".$uid."error=updatefailed");
             exit();
         }
     }else if(isset($_POST["deleteuser"])){
@@ -150,19 +150,19 @@
                         header("Location: ../index.php");
                         exit();
                     }else{
-                        header("Location: ../src/route.php?pgname=users");
+                        header("Location: ../src/routes.php?pgname=users");
                         exit();
                     }
                 }else{
-                    header("Location: ../src/route.php?pgname=users&userid=".$uid."error=sql3error");
+                    header("Location: ../src/routes.php?pgname=users&userid=".$uid."error=sql3error");
                     exit();
                 }
             }else{
-                header("Location: ../src/route.php?pgname=users&userid=".$uid."error=sql2error");
+                header("Location: ../src/routes.php?pgname=users&userid=".$uid."error=sql2error");
                 exit();
             }
         }else{
-            header("Location: ../src/route.php?pgname=users&userid=".$uid."error=pwderror");
+            header("Location: ../src/routes.php?pgname=users&userid=".$uid."error=pwderror");
             exit();
         }
     }else if(isset($_POST["userpass"])){
@@ -175,7 +175,7 @@
         $id = mysqli_real_escape_string($conn,$_POST["uid"]);
 
         if($newPassword != $repPassword){
-            header("Location: ../src/route.php?pgname=useredit&userid=".$uid."error=passdonotmatch");
+            header("Location: ../src/routes.php?pgname=useredit&userid=".$uid."error=passdonotmatch");
             exit();
             
         }else{
@@ -194,11 +194,11 @@
                     header("location: ../src/routes.php?pgname=users"); 
                     exit();
                 }else{
-                    header("Location: ../src/route.php?pgname=useredit&userid=".$uid."error=passupdatefailed");
+                    header("Location: ../src/routes.php?pgname=useredit&userid=".$uid."error=passupdatefailed");
                     exit();
                 }
             }else{
-                header("Location: ../src/route.php?pgname=useredit&userid=".$uid."error=passwrong");
+                header("Location: ../src/routes.php?pgname=useredit&userid=".$uid."error=passwrong");
                 exit();
             }
         }
@@ -213,7 +213,7 @@
         $id = mysqli_real_escape_string($conn,$_POST["uid"]);
 
         if($newPassword != $repPassword){
-            header("Location: ../src/route.php?pgname=useredit&userid=".$uid."error=passdonotmatch");
+            header("Location: ../src/routes.php?pgname=useredit&userid=".$uid."error=passdonotmatch");
             exit();
         }else{
             $sql = "SELECT * FROM `users` WHERE `id` = $id;";
@@ -230,11 +230,11 @@
                     header("location: ../src/routes.php?pgname=users"); 
                     exit();
                 }else{
-                    header("Location: ../src/route.php?pgname=useredit&userid=".$uid."error=passupdatefailed");
+                    header("Location: ../src/routes.php?pgname=useredit&userid=".$uid."error=passupdatefailed");
                     exit();
                 }
             }else{
-                header("Location: ../src/route.php?pgname=useredit&userid=".$uid."error=passwrong");
+                header("Location: ../src/routes.php?pgname=useredit&userid=".$uid."error=passwrong");
                 exit();
             }
         }
