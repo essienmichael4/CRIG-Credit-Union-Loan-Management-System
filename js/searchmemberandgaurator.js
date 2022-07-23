@@ -32,17 +32,13 @@ membersearch.addEventListener("click",()=>{
                 }
 
                 data = JSON.parse(data);
-                let firstname = data.first_name;
+                let firstname = `${data.first_name} ${data.last_name} ${data.other_names}`;
                 let staff_number = data.staff_id;
-                let lastname = data.last_name;
-                let othernames = data.other_names;
                 let phone = data.phone;
                 let work = data.place_of_work;
 
                 document.querySelector(".first_name").value = firstname;
-                document.querySelector(".last_name").value = lastname;
                 document.querySelector(".staff").value = staff_number;
-                document.querySelector(".other_names").value = othernames;
                 document.querySelector(".phone").value = phone;
                 document.querySelector(".work").value = work;
             }

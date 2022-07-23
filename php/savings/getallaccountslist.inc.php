@@ -3,7 +3,7 @@
     include_once("../functions.inc.php");
     $status = "disabled";
 
-    $sql = "SELECT * FROM `savings` WHERE `account_status` != '{$status}';";
+    $sql = "SELECT * FROM `savings` WHERE `account_status` != '{$status}' ORDER BY `id` ASC;";
 
     $result = mysqli_query($conn, $sql);
 
