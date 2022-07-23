@@ -71,15 +71,43 @@
         }
 
     }else if(isset($_POST["payment_onetime"])){
-        include_once("./dbs.inc.php");
+        include_once("../dbs.inc.php");
 
         $id = $_POST["id"];
         $amount = (float)mysqli_real_escape_string($conn, $_POST["amount_payed"]);
         $recipient = mysqli_real_escape_string($conn, $_POST["recipient"]);
-        $loan_amount = mysqli_real_escape_string($conn, $_POST["loan_amount"]);
-        $interest_percent = mysqli_real_escape_string($conn, $_POST["interest_percent"]);
+        $loan_amount = (float)mysqli_real_escape_string($conn, $_POST["loan_amount"]);
+        $interest_percent = (float)mysqli_real_escape_string($conn, $_POST["interest_percent"]);
         $new_loan = mysqli_real_escape_string($conn, $_POST["new_loan"]);
         $receipt_number = mysqli_real_escape_string($conn, $_POST["receipt_number"]);
+        $loanstatus = "paid";
+        $guaranteed = $loanarrears/4;
+        
+        $newloaninterest = $loan_amount * ($interest_percent / 100);
+        $newloantobepayed = $loan_amount + $newloaninterest;
+        $loanarrears = $newloantobepayed;
+        $loanpaid = $amount;
+
+        if(($newloantobepayed - $amount) <= 0){
+            header("location: ../src/routes.php?pgname=loandetails&applicant_id={$id}&error=amountnotreached");
+        }else{
+            $loanarrears = $newloantobepayed - $loan_amount;
+            $guaranted = 0;
+        }
+
+        $sql = "UPDATE `applicant` SET `loan_interest`={$newloaninterest}, `loan_to_be_payed`={$newloantobepayed},`loan_arrears`={$loanarrears}, `loan_paid` = {$loanpaid},
+        `first_due_recipient` = '{$recipient}', `loan_status`= '{$loanstatus}'
+        ,`loan_status` = '{$loanstatus}', `guaranteed_amount_first` = '{$guaranteed}'
+        , `guaranteed_amount_second` = '{$guaranteed}', `guaranteed_amount_third` = '{$guaranteed}'
+        , `guaranteed_amount_fourth` = '{$guaranteed}', 
+        `receipt_one_time`='$receipt', `onetime_payment` = 'onetime' WHERE id = {$id} ;";
+
+        if(mysqli_query($conn, $sql)){
+            header("location: ../src/routes.php?pgname=loandetails&applicant_id={$id}&message=success"); 
+        }else{
+            header("location: ../src/routes.php?pgname=loandetails&applicant_id={$id}&message=error"); 
+        }
+
     }
     else{
         header("location: ../src/routes.php?pgname=dashboard");

@@ -304,7 +304,7 @@
                                 ?>
                             
                             <p>Applicant First Due Payment</p>
-                            <form action="../php/payments.inc.php" method="POST">
+                            <form action="../php/loans/payments.inc.php" method="POST">
                                     <input type="text" name="id" value="<?=$_GET["applicant_id"]?>" hidden>
                                     <input type="text" name="duedate" value="first" hidden>
                                     <input type="text" name="recipient" value="<?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?>" hidden>
@@ -328,7 +328,7 @@
                                 else if($applicant["second_due_date_status"] != "paid"){
                                 ?>
                             <p>Applicant Second Due Payment</p>
-                            <form action="../php/payments.inc.php" method="POST">
+                            <form action="../php/loans/payments.inc.php" method="POST">
                                     <input type="text" name="id" value="<?=$_GET["applicant_id"]?>" hidden>
                                     <input type="text" name="duedate" value="second" hidden>
                                     <input type="text" name="recipient" value="<?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?>" hidden>
@@ -352,7 +352,7 @@
                                 else if($applicant["third_due_date_status"] != "paid"){
                                 ?>
                             <p>Applicant Third Due Payment</p>
-                            <form action="../php/payments.inc.php" method="POST">
+                            <form action="../php/loans/payments.inc.php" method="POST">
                             <input type="text" name="id" value="<?=$_GET["applicant_id"]?>" hidden>
                                     <input type="text" name="duedate" value="third" hidden>
                                     <input type="text" name="recipient" value="<?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?>" hidden>
@@ -376,7 +376,7 @@
                                 else if($applicant["fourth_due_date_status"] != "paid"){
                                 ?>
                             <p>Applicant Fourth Due Payment</p>
-                            <form action="../php/payments.inc.php" method="POST">
+                            <form action="../php/loans/payments.inc.php" method="POST">
                             <input type="text" name="id" value="<?=$_GET["applicant_id"]?>" hidden>
                                     <input type="text" name="duedate" value="fourth" hidden>
                                     <input type="text" name="recipient" value="<?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?>" hidden>
@@ -400,7 +400,7 @@
                                 else if($applicant["fifth_due_date_status"] != "paid" && $applicant["fifth_due_date"] != "0000-00-00"){
                                 ?>
                             <p>Applicant Fifth Due Payment</p>
-                            <form action="../php/payments.inc.php" method="POST">
+                            <form action="../php/loans/payments.inc.php" method="POST">
                             <input type="text" name="id" value="<?=$_GET["applicant_id"]?>" hidden>
                                     <input type="text" name="duedate" value="fifth" hidden>
                                     <input type="text" name="recipient" value="<?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?>" hidden>
@@ -424,7 +424,7 @@
                                 else if($applicant["sixth_due_date_status"] != "paid" && $applicant["sixth_due_date"] != "0000-00-00"){
                                 ?>
                             <p>Applicant Sixth Due Payment</p>
-                            <form action="../php/payments.inc.php" method="POST">
+                            <form action="../php/loans/payments.inc.php" method="POST">
                             <input type="text" name="id" value="<?=$_GET["applicant_id"]?>" hidden>
                                     <input type="text" name="duedate" value="sixth" hidden>
                                     <input type="text" name="recipient" value="<?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?>" hidden>
@@ -446,32 +446,14 @@
                                 <?php
                                 }
                             ?>
-
-                            <!-- <form action="">
-                                <div class="loan-amount">
-                                    <p>Loan Amount</p>
-                                    <p>GH¢ <?=$applicant["loan_arrears"]?></p>
-                                </div>
-                                <div class="form-control">
-                                    <label for="">Amount Payed</label>
-                                    <input type="text" placeholder="Amount payed">
-                                </div>
-                                <div class="form-control">
-                                    <label for="">Reciept Number</label>
-                                    <input type="text" placeholder="Reciept">
-                                </div>
-                                
-                                <button>Make Payment</button>
-                            </form> -->
                         </div>
 
                         <div class="payment_onetime">
                             <h3>One Time Payment</h3>
-                            <!-- <button class="pay" onclick="closepay()">Exit</button> -->
-                            <form action="">
+                            <form method="POST" action="../php/loans/payments.inc.php">
                                 <input type="text" name="id" value="<?=$_GET["applicant_id"]?>" hidden>
                                 <input type="text" name="recipient" value="<?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?>" hidden>
-                                <input type="text" name="loan_amount" value="<?=$applicant["loan_amount"]?>" hidden>
+                                <input type="text" class="loanamount" name="loan_amount" value="<?=$applicant["loan_amount"]?>" hidden>
                                 <div class="loan-amount">
                                     <p>Loan Amount</p>
                                     <p>GH¢ <?=$applicant["loan_amount"]?></p>
@@ -479,12 +461,12 @@
 
                                 <div class="form-control">
                                     <label for="">New Loan Interest (%)</label>
-                                    <input type="text" placeholder="Interest" name="interest_percent">
+                                    <input type="text" class="interest" placeholder="Interest" name="interest_percent">
                                 </div>
 
                                 <div class="form-control">
                                     <label for="">New Loan To Be Payed</label>
-                                    <input type="text" placeholder="New Arrears" name="new_loan">
+                                    <input type="text" class="newloan" placeholder="New Arrears" name="new_loan">
                                 </div>
 
                                 <div class="form-control">
@@ -540,4 +522,16 @@
             payment_form.style.display = "none";
             payment_dates.style.display = "block";
         }
+
+        document.querySelector(".interest").addEventListener("input", ()=>{
+            let loanAmount = document.querySelector(".loanamount").value
+            let interest = document.querySelector(".interest").value
+            let new_loan = document.querySelector(".newloan")
+
+            console.log(loanAmount)
+
+            let newLoan =parseFloat(loanAmount) + (parseFloat(loanAmount) * (parseFloat(interest) / 100))
+
+            new_loan.value = newLoan;
+        })
     </script>

@@ -27,7 +27,11 @@
                             </datalist>
                             <div class="formControl flex-c">
                                 <label for="">Applicant name</label>
-                                <input type="text" list="accounts"  class="applicant_name first_name" name="applicant_name" value="<?=$applicant["first_name"]?>">
+                                <input type="text" list="accounts"  class="applicant_name first_name" name="applicant_name" value="<?=$applicant["applicant_name"]?>">
+                            </div>
+                            <div class="formControl flex-c">
+                                <label for="">Sponsor name</label>
+                                <input type="text" class="" name="sponsor" placeholder="Sponsor Name" value="<?=$applicant["sponsor"]?>">
                             </div>
                             <div class="formControl flex-c">
                                 <label for="">Phone Number</label>
@@ -333,6 +337,10 @@
                             <div class="formControl flex-c">
                                 <label for="">Applicant name</label>
                                 <input type="text" list="accounts" required class="applicant_name first_name" name="applicant_name" placeholder="Applicant Name">
+                            </div>
+                            <div class="formControl flex-c">
+                                <label for="">Sponsor name</label>
+                                <input type="text" class="" name="sponsor" placeholder="Sponsor Name">
                             </div>
                             
                             <div class="formControl flex-c">

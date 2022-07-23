@@ -11,6 +11,7 @@
 
         //CUSTOMER DETAILS
         $applicant_name = mysqli_real_escape_string($conn, $_POST["applicant_name"]);
+        $sponsor = mysqli_real_escape_string($conn, $_POST["sponsor"]);
         $recipientname = mysqli_real_escape_string($conn, $_POST["recipient"]);
         $phone_number = mysqli_real_escape_string($conn, $_POST["phone"]);
         $staff_number = mysqli_real_escape_string($conn, $_POST["staff_number"]);
@@ -108,13 +109,13 @@
                         $picNewName = $applicant_name.uniqid('',true).".".$ppicActExt;
                         $fileDes = '../../assets/'.$picNewName;
 
-                        $sql = "INSERT INTO `applicant`(`applicant_name`, `phone_number`, `member_code`, `staff_id`, 
+                        $sql = "INSERT INTO `applicant`(`applicant_name`,`sponsor`, `phone_number`, `member_code`, `staff_id`, 
                         `work_place`, `member_status`, `purpose`, `loan_amount`, `loan_interest`, `loan_arrears`, `loan_to_be_payed`, `mode_of_payment`,
                         `guarantor_fullname_first`, `guarantor_phone_first`, `guarantor_staffnum_first`, `guaranteed_amount_first`, 
                         `guarantor_fullname_second`, `guarantor_phone_second`, `guarantor_staffnum_second`, `guaranteed_amount_second`, 
                         `guarantor_fullname_third`, `guarantor_phone_third`, `guarantor_staffnum_third`, `guaranteed_amount_third`, 
                         `guarantor_fullname_fourth`, `guarantor_phone_fourth`, `guarantor_staffnum_fourth`, `guaranteed_amount_fourth`, 
-                        `recipient_name`,`applicant_first_due_date`, `applicant_pic`, `approval_status`) VALUES('{$applicant_name}', '{$phone_number}', '{$membership_code}', '{$staff_number}',
+                        `recipient_name`,`applicant_first_due_date`, `applicant_pic`, `approval_status`) VALUES('{$applicant_name}', '$sponsor', '{$phone_number}', '{$membership_code}', '{$staff_number}',
                         '{$work_place}', '{$membership_status}', '{$purpose_of_loan}', {$requested_loan}, {$loan_interest}, {$loan_total}, {$loan_total}, '{$mode_of_payment}',
                         '{$first_guarantor_name}', '{$first_guarantor_phone_number}', '{$first_guarantor_staff_number}', {$gauranteed_amount},
                         '{$second_guarantor_name}', '{$second_guarantor_phone_number}', '{$second_guarantor_staff_number}', {$gauranteed_amount},
@@ -145,7 +146,7 @@
             }            
         }
                 
-        $sql = "INSERT INTO `applicant`(`applicant_name`, `phone_number`, `member_code`, `staff_id`, 
+        $sql = "INSERT INTO `applicant`(`applicant_name`, `sponsor`, `phone_number`, `member_code`, `staff_id`, 
         `work_place`, `member_status`, `purpose`, `loan_amount`, `loan_interest`, `loan_arrears`, 
         `loan_to_be_payed`, `mode_of_payment`,
         `guarantor_fullname_first`, `guarantor_phone_first`, `guarantor_staffnum_first`, `guaranteed_amount_first`, 
@@ -153,7 +154,7 @@
         `guarantor_fullname_third`, `guarantor_phone_third`, `guarantor_staffnum_third`, `guaranteed_amount_third`, 
         `guarantor_fullname_fourth`, `guarantor_phone_fourth`, `guarantor_staffnum_fourth`, `guaranteed_amount_fourth`, 
         `recipient_name`,`applicant_first_due_date`, `applicant_pic`, `approval_status`) 
-        VALUES('{$applicant_name}', '{$phone_number}', '{$membership_code}', '{$staff_number}',
+        VALUES('{$applicant_name}', '$sponsor', '{$phone_number}', '{$membership_code}', '{$staff_number}',
         '{$work_place}', '{$membership_status}', '{$purpose_of_loan}', {$requested_loan}, {$loan_interest}, {$loan_total},
          {$loan_total}, '{$mode_of_payment}',
         '{$first_guarantor_name}', '{$first_guarantor_phone_number}', '{$first_guarantor_staff_number}', {$gauranteed_amount},
@@ -178,6 +179,7 @@
 
         //CUSTOMER DETAILS
         $applicant_name = mysqli_real_escape_string($conn, $_POST["applicant_name"]);
+        $sponsor = mysqli_real_escape_string($conn, $_POST["sponsor"]);
         $recipientname = mysqli_real_escape_string($conn, $_POST["recipient"]);
         $phone_number = mysqli_real_escape_string($conn, $_POST["phone"]);
         $staff_number = mysqli_real_escape_string($conn, $_POST["staff_number"]);
@@ -284,14 +286,14 @@
                         $picNewName = $applicant_name.uniqid('',true).".".$ppicActExt;
                         $fileDes = '../../assets/'.$picNewName;
 
-                        $sql = "INSERT INTO `applicant`(`applicant_name`, `phone_number`, `member_code`, `staff_id`, 
-        `work_place`, `member_status`, `purpose`, `loan_amount`, `loan_interest`, `loan_to_be_payed`,`loan_arrears`, `mode_of_payment`,
+                        $sql = "INSERT INTO `applicant`(`applicant_name`, `sponsor`, `phone_number`, `member_code`, `staff_id`, 
+            `work_place`, `member_status`, `purpose`, `loan_amount`, `loan_interest`, `loan_to_be_payed`,`loan_arrears`, `mode_of_payment`,
             `guarantor_fullname_first`, `guarantor_phone_first`, `guarantor_staffnum_first`, `guaranteed_amount_first`, 
             `guarantor_fullname_second`, `guarantor_phone_second`, `guarantor_staffnum_second`, `guaranteed_amount_second`, 
             `guarantor_fullname_third`, `guarantor_phone_third`, `guarantor_staffnum_third`, `guaranteed_amount_third`, 
             `guarantor_fullname_fourth`, `guarantor_phone_fourth`, `guarantor_staffnum_fourth`, `guaranteed_amount_fourth`, 
             `recipient_name`,`applicant_first_due_date`,`first_due_date`, `second_due_date`, `third_due_date`, `fourth_due_date`,
-            `fifth_due_date`,`sixth_due_date`, `approved_by`, `day_approved`, `approval_status`, `applicant_pic`) VALUES('{$applicant_name}', '{$phone_number}', '{$membership_code}', '{$staff_number}',
+            `fifth_due_date`,`sixth_due_date`, `approved_by`, `day_approved`, `approval_status`, `applicant_pic`) VALUES('{$applicant_name}', '$sponsor', '{$phone_number}', '{$membership_code}', '{$staff_number}',
             '{$work_place}', '{$membership_status}', '{$purpose_of_loan}', {$requested_loan}, {$loan_interest}, {$loan_total}, {$loan_total}, '{$mode_of_payment}',
             '{$first_guarantor_name}', '{$first_guarantor_phone_number}', '{$first_guarantor_staff_number}', {$gauranteed_amount},
             '{$second_guarantor_name}', '{$second_guarantor_phone_number}', '{$second_guarantor_staff_number}', {$gauranteed_amount},
@@ -324,14 +326,14 @@
             }            
         }
 
-        $sql = "INSERT INTO `applicant`(`applicant_name`, `phone_number`, `member_code`, `staff_id`, 
+        $sql = "INSERT INTO `applicant`(`applicant_name`, `sponsor`, `phone_number`, `member_code`, `staff_id`, 
         `work_place`, `member_status`, `purpose`, `loan_amount`, `loan_interest`, `loan_to_be_payed`,`loan_arrears`, `mode_of_payment`,
             `guarantor_fullname_first`, `guarantor_phone_first`, `guarantor_staffnum_first`, `guaranteed_amount_first`, 
             `guarantor_fullname_second`, `guarantor_phone_second`, `guarantor_staffnum_second`, `guaranteed_amount_second`, 
             `guarantor_fullname_third`, `guarantor_phone_third`, `guarantor_staffnum_third`, `guaranteed_amount_third`, 
             `guarantor_fullname_fourth`, `guarantor_phone_fourth`, `guarantor_staffnum_fourth`, `guaranteed_amount_fourth`, 
             `recipient_name`,`applicant_first_due_date`,`first_due_date`, `second_due_date`, `third_due_date`, `fourth_due_date`,
-            `fifth_due_date`,`sixth_due_date`, `approved_by`, `day_approved`, `approval_status`, `applicant_pic`) VALUES('{$applicant_name}', '{$phone_number}', '{$membership_code}', '{$staff_number}',
+            `fifth_due_date`,`sixth_due_date`, `approved_by`, `day_approved`, `approval_status`, `applicant_pic`) VALUES('{$applicant_name}', '$sponsor', '{$phone_number}', '{$membership_code}', '{$staff_number}',
             '{$work_place}', '{$membership_status}', '{$purpose_of_loan}', {$requested_loan}, {$loan_interest}, {$loan_total}, {$loan_total}, '{$mode_of_payment}',
             '{$first_guarantor_name}', '{$first_guarantor_phone_number}', '{$first_guarantor_staff_number}', {$gauranteed_amount},
             '{$second_guarantor_name}', '{$second_guarantor_phone_number}', '{$second_guarantor_staff_number}', {$gauranteed_amount},

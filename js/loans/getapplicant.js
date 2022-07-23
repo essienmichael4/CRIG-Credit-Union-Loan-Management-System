@@ -28,7 +28,7 @@ fetch("./../php/savings/getallaccountslist.inc.php")
         })
     )
 
-applicantname.addEventListener("input", (e)=>{
+applicantname.addEventListener("click", (e)=>{
     let useraccount = e.target.value.toLowerCase();
     let applicantsearch = document.querySelector(".applicant-search")
     let phone = document.querySelector(".phone")
@@ -47,7 +47,7 @@ applicantname.addEventListener("input", (e)=>{
     }
 })
 
-gaurantoronename.addEventListener("input", (e)=>{
+gaurantoronename.addEventListener("click", (e)=>{
     let useraccount = e.target.value.toLowerCase();
     let gaurantoroneid = document.querySelector(".gaurantoroneid")
     let gaurantoronephone = document.querySelector(".gaurantoronephone")
@@ -64,7 +64,7 @@ gaurantoronename.addEventListener("input", (e)=>{
     }
 })
 
-gaurantortwoname.addEventListener("input", (e)=>{
+gaurantortwoname.addEventListener("click", (e)=>{
     let useraccount = e.target.value.toLowerCase();
     let gaurantortwoid = document.querySelector(".gaurantortwoid")
     let gaurantortwophone = document.querySelector(".gaurantortwophone")
@@ -81,7 +81,7 @@ gaurantortwoname.addEventListener("input", (e)=>{
     }
 })
 
-gaurantorthreename.addEventListener("input", (e)=>{
+gaurantorthreename.addEventListener("click", (e)=>{
     let useraccount = e.target.value.toLowerCase();
     let gaurantorthreeid = document.querySelector(".gaurantorthreeid")
     let gaurantorthreephone = document.querySelector(".gaurantorthreephone")
@@ -96,7 +96,7 @@ gaurantorthreename.addEventListener("input", (e)=>{
         gaurantorthreephone.value = ""
     }
 })
-gaurantorfourname.addEventListener("input", (e)=>{
+gaurantorfourname.addEventListener("click", (e)=>{
     let useraccount = e.target.value.toLowerCase();
     let gaurantorfourid = document.querySelector(".gaurantorfourid")
     let gaurantorfourphone = document.querySelector(".gaurantorfourphone")
