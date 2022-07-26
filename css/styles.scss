@@ -1505,6 +1505,10 @@ body{
     grid-template-columns: repeat(4, 1fr);
     gap: 1rem;
 
+    &.odd{
+        grid-template-columns: repeat(5, 1fr);
+    }
+
     &.mnot{
         margin: .5rem auto;
     }

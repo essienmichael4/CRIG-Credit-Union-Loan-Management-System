@@ -3,9 +3,26 @@
     include_once("../functions.inc.php");
     $memcode = mysqli_real_escape_string($conn,$_POST["memcode"]);
     $transactiontype = "debit";
+    $firstdate = date('Y-m-d');
+    $date = date('Y'."-01-16");
+    $sql = "";
 
-    $sql = "SELECT * FROM `transactions` WHERE `member_code` = '{$memcode}' AND 
-    `transaction_type` = '$transactiontype' ORDER BY `id` DESC;";
+    if($firstdate <= date('Y'."-01-15")){
+        $seconddate = date('Y'."-01-14");
+        $date = date("Y");
+        $date = (float)$date - 1;
+        $date = date($date."-01-16"); 
+
+        $sql = "SELECT * FROM `transactions` WHERE `member_code` = '{$memcode}' AND 
+        `transaction_type` = '$transactiontype' AND
+        `transaction_day` BETWEEN '{$date}' AND '{$seconddate}' ORDER BY `id` DESC;";
+    }else{
+
+        $sql = "SELECT * FROM `transactions` WHERE `member_code` = '{$memcode}' AND 
+        `transaction_type` = '$transactiontype' AND
+        `transaction_day` >= '{$date}' ORDER BY `id` DESC;";
+    }
+
 
     $result = mysqli_query($conn, $sql);
 

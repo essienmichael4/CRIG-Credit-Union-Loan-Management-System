@@ -1,8 +1,9 @@
 <?php
     include_once("../dbs.inc.php");
     include_once("../functions.inc.php");
+    $date = date('Y'."-01-16 00:00:00");
 
-    $sql = "SELECT * FROM `expenses` ORDER BY `id` DESC;";
+    $sql = "SELECT * FROM `expenses` WHERE `day_added` >= '{$date}' ORDER BY `id` DESC;";
 
     $result = mysqli_query($conn, $sql);
 

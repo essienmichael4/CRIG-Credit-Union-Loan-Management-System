@@ -8,7 +8,7 @@
     <div class="dashboard_wrapper">
         <input type="text" id="processor" value="<?=$_SESSION["firstname"].' '.$_SESSION["lastname"]?>" hidden>
 
-        <div class="savings__card">
+        <div class="savings__card odd">
             <div class="card">
                 <p>All Funds</p>
                 <h4 class="all_funds"></h4>
@@ -25,7 +25,10 @@
                 <p>All Paid Loans</p>
                 <h4 class="paid_loans"></h4>
             </div>
-            
+            <div class="card">
+                <p>Registration</p>
+                <h4 class="registration_fee"></h4>
+            </div>
         </div>
 
 
@@ -54,10 +57,10 @@
                         <h3>New Members</h3>
                         <p class="new_accounts"></p>
                     </div>
-                    <div class="card">
+                    <!-- <div class="card">
                         <h3>Registration</h3>
                         <p class="registration_fee"></p>
-                    </div>
+                    </div> -->
                     <div class="card">
                         <h3>Loans Awaiting Approval</h3>
                         <p class="awaiting_approval"></p>

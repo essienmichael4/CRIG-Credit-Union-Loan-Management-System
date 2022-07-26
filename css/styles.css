@@ -1316,6 +1316,9 @@ body {
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
 }
+.savings__card.odd {
+  grid-template-columns: repeat(5, 1fr);
+}
 .savings__card.mnot {
   margin: 0.5rem auto;
 }

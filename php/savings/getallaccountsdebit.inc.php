@@ -2,9 +2,24 @@
     include_once("../dbs.inc.php");
     include_once("../functions.inc.php");
     $transactiontype = "debit";
+    $date = date('Y'."-01-16");
+    $sql = "";
+    $firstdate = date('Y-m-d');
 
-    $sql = "SELECT * FROM `transactions` WHERE
-    `transaction_type` = '$transactiontype' ORDER BY `id` DESC;";
+    if($firstdate <= date('Y'."-01-15")){
+        $seconddate = date('Y'."-01-14");
+        $date = date("Y");
+        $date = (float)$date - 1;
+        $date = date($date."-01-16"); 
+        
+        $sql = "SELECT * FROM `transactions` WHERE
+        `transaction_type` = '$transactiontype'  AND
+        `transaction_day` BETWEEN '{$date}' AND '{$seconddate}' ORDER BY `id` DESC;";
+    }else{
+        $sql = "SELECT * FROM `transactions` WHERE
+        `transaction_type` = '$transactiontype' AND
+        `transaction_day` >= '{$date}' ORDER BY `id` DESC;";
+    }
 
     $result = mysqli_query($conn, $sql);
 
@@ -22,12 +37,11 @@
 
         $rows .= "<tr>
                     <td>{$res['transaction_day']}</td>
-                    <td>{$res['member_code']}</td>
-                    <td>{$res['mem_code']}</td>
+                    <td>{$account['mem_code']}</td>
                     <td>
-                        <a href='?pgname=savingdetails&account_id={$res['id']}'>
-                        <div class='prof_img'><img src='../assets/{$res['account_pic']}' alt=''></div> 
-                        {$res['first_name']} {$res['last_name']} {$res['other_names']}
+                        <a href='?pgname=savingdetails&account_id={$account['id']}'>
+                        <div class='prof_img'><img src='../assets/{$account['account_pic']}' alt=''></div> 
+                        {$account['first_name']} {$account['last_name']} {$account['other_names']}
                     </a> 
                     </td>
                     <td>{$res['receipt_number']}</td>

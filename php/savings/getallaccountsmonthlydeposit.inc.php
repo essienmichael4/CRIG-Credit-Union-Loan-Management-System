@@ -1,12 +1,26 @@
 <?php
     include_once("../dbs.inc.php");
     include_once("../functions.inc.php");
-    // $memcode = mysqli_real_escape_string($conn,$_POST["memcode"]);
     $transactiontype = "deposit";
     $deposittype = "monthly";
+    $firstdate = date('Y-m-d');
+    $date = date('Y'."-01-16");
+    $sql = "";
 
-    $sql = "SELECT * FROM `transactions` WHERE
-    `transaction_type` = '$transactiontype' AND `deposit_type` = '$deposittype' ORDER BY `id` DESC;";
+    if($firstdate <= date('Y'."-01-15")){
+        $seconddate = date('Y'."-01-14");
+        $date = date("Y");
+        $date = (float)$date - 1;
+        $date = date($date."-01-16");
+
+        $sql = "SELECT * FROM `transactions` WHERE
+        `transaction_type` = '$transactiontype' AND `deposit_type` = '$deposittype' AND
+        `transaction_day` BETWEEN '{$date}' AND '{$seconddate}' ORDER BY `id` DESC;";
+    }else{
+        $sql = "SELECT * FROM `transactions` WHERE
+        `transaction_type` = '$transactiontype' AND `deposit_type` = '$deposittype' AND
+        `transaction_day` >= '{$date}' ORDER BY `id` DESC;";
+    }
 
     $result = mysqli_query($conn, $sql);
 
