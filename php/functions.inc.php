@@ -447,7 +447,7 @@
 
     function checkApplicantStatus($conn, $search, $search2){
         $sql = "SELECT * FROM `applicant` WHERE 
-        `member_code` = '{$search}' OR `staff_id` = '{$search}'
+        `member_code` = '{$search}' OR `staff_id` = '{$search}' OR
         `member_code` = '{$search2}' OR `staff_id` = '{$search2}' 
         and `loan_status` != 'paid';";
         $result2 = mysqli_query($conn, $sql);
