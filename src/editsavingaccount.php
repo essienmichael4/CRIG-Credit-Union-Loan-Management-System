@@ -27,7 +27,7 @@
                     </div>
                 </div>
 
-                <form  action="../php/savings/createaccount.inc.php" method="POST">
+                <form  action="../php/savings/createaccount.inc.php" method="POST" enctype="multipart/form-data">
                     <div class="apply_savings">
                         <div class="personal_info bg">
                             <button type="submit" name="partialedit">Edit Account</button>

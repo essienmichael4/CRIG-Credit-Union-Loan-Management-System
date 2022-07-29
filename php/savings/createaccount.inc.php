@@ -54,10 +54,10 @@
         }
 
         if(empty(!$pic['name'])){
-            $picName = $studentpic['name'];
-            $picTempName = $studentpic['tmp_name'];
-            $ppicSize = $studentpic['size'];
-            $picError = $studentpic['error'];
+            $picName = $pic['name'];
+            $picTempName = $pic['tmp_name'];
+            $picSize = $pic['size'];
+            $picError = $pic['error'];
 
             $picExt = explode('.', $picName);
             $picActExt = strtolower(end($picExt));
@@ -67,7 +67,7 @@
             if(in_array($picActExt, $allowedExt)){
                 if($picError === 0){
                     if($picSize < 5000000){
-                        $picNewName = $first_name."".$lastname."".$othernames.uniqid('',true).".".$ppicActExt;
+                        $picNewName = $first_name."".$lastname."".$othernames.uniqid('',true).".".$picActExt;
                         $fileDes = '../../assets/'.$picNewName;
 
                         $sql = "INSERT INTO `savings`(`first_name`, `last_name`,`other_names`, `mem_code`, 
@@ -199,10 +199,10 @@
         }
 
         if(empty(!$pic['name'])){
-            $picName = $studentpic['name'];
-            $picTempName = $studentpic['tmp_name'];
-            $ppicSize = $studentpic['size'];
-            $picError = $studentpic['error'];
+            $picName = $pic['name'];
+            $picTempName = $pic['tmp_name'];
+            $picSize = $pic['size'];
+            $picError = $pic['error'];
 
             $picExt = explode('.', $picName);
             $picActExt = strtolower(end($picExt));
@@ -212,10 +212,10 @@
             if(in_array($picActExt, $allowedExt)){
                 if($picError === 0){
                     if($picSize < 5000000){
-                        $picNewName = $first_name."".$lastname."".$othernames.uniqid('',true).".".$ppicActExt;
-                        $fileDes = '../../assets/'.$picNewName;
+                        echo $picNewName = $firstname."".$lastname."".$othernames.uniqid('',true).".".$picActExt;
+                        echo $fileDes = '../../assets/'.$picNewName;
 
-                        $sql = "UPDATE `savings` SET `first_name`='{$firstname}', `last_name` = '{$lastname}',
+                       echo $sql = "UPDATE `savings` SET `first_name`='{$firstname}', `last_name` = '{$lastname}',
                         `other_names` = '{$othernames}',
                         `staff_id` = '{$staffid}', `phone` = '{$phonenumber}', `address` = '{$address}',
                         `home_town` = '{$hometown}', `residential_address` = '{$residentialaddress}',
@@ -251,7 +251,7 @@
             }            
         }
 
-        $sql = "UPDATE `savings` SET `first_name`='{$firstname}', `last_name` = '{$lastname}',
+        echo $sql = "UPDATE `savings` SET `first_name`='{$firstname}', `last_name` = '{$lastname}',
         `other_names` = '{$othernames}',
         `staff_id` = '{$staffid}', `phone` = '{$phonenumber}', `address` = '{$address}',
         `home_town` = '{$hometown}', `residential_address` = '{$residentialaddress}',

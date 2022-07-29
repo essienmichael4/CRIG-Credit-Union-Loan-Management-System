@@ -93,10 +93,10 @@
         $gauranteed_amount = $loan_total / LOAN_GUARANTEED;
 
         if(empty(!$pic['name'])){
-            $picName = $studentpic['name'];
-            $picTempName = $studentpic['tmp_name'];
-            $ppicSize = $studentpic['size'];
-            $picError = $studentpic['error'];
+            $picName = $pic['name'];
+            $picTempName = $pic['tmp_name'];
+            $picSize = $pic['size'];
+            $picError = $pic['error'];
 
             $picExt = explode('.', $picName);
             $picActExt = strtolower(end($picExt));
@@ -106,7 +106,7 @@
             if(in_array($picActExt, $allowedExt)){
                 if($picError === 0){
                     if($picSize < 5000000){
-                        $picNewName = $applicant_name.uniqid('',true).".".$ppicActExt;
+                        $picNewName = $applicant_name.uniqid('',true).".".$picActExt;
                         $fileDes = '../../assets/'.$picNewName;
 
                         $sql = "INSERT INTO `applicant`(`applicant_name`,`sponsor`, `phone_number`, `member_code`, `staff_id`, 
@@ -241,24 +241,24 @@
             exit();
         }
 
-        if(checkApplicantStatus($conn, $membership_code, $staff_number) == "false"){
+        if(checkApplicantStatus($conn, $membership_code, $staff_number) == "true"){
             header("location: ../../src/routes.php?pgname=apply&error=userhasoutstandingloan");
             exit(); 
         }
 
-        if(checkGuarantorStatus($conn, $first_guarantor_staff_number, $first_guarantor_guaranteed_amount) == "false"){
+        if(checkGuarantorStatus($conn, $first_guarantor_staff_number, $first_guarantor_guaranteed_amount) == "true"){
             header("location: ../../src/routes.php?pgname=apply&error=firstguarantoroutstanding");
                 exit();
         }
-        if(checkGuarantorStatus($conn, $second_guarantor_staff_number, $second_guarantor_guaranteed_amount) == "false"){
+        if(checkGuarantorStatus($conn, $second_guarantor_staff_number, $second_guarantor_guaranteed_amount) == "true"){
             header("location: ../../src/routes.php?pgname=apply&error=secondguarantoroutstanding");
                 exit();
         }
-        if(checkGuarantorStatus($conn, $third_guarantor_staff_number, $third_guarantor_guaranteed_amount) == "false"){
+        if(checkGuarantorStatus($conn, $third_guarantor_staff_number, $third_guarantor_guaranteed_amount) == "true"){
             header("location: ../../src/routes.php?pgname=apply&error=thirdguarantoroutstanding");
                 exit();
         }
-        if(checkGuarantorStatus($conn, $fourth_guarantor_staff_number, $fourth_guarantor_guaranteed_amount) == "false"){
+        if(checkGuarantorStatus($conn, $fourth_guarantor_staff_number, $fourth_guarantor_guaranteed_amount) == "true"){
             header("location: ../../src/routes.php?pgname=apply&error=fourthguarantoroutstanding");
             exit();
         }
@@ -270,10 +270,10 @@
         $gauranteed_amount = $loan_total / LOAN_GUARANTEED;
         
         if(empty(!$pic['name'])){
-            $picName = $studentpic['name'];
-            $picTempName = $studentpic['tmp_name'];
-            $ppicSize = $studentpic['size'];
-            $picError = $studentpic['error'];
+            $picName = $pic['name'];
+            $picTempName = $pic['tmp_name'];
+            $picSize = $pic['size'];
+            $picError = $pic['error'];
 
             $picExt = explode('.', $picName);
             $picActExt = strtolower(end($picExt));
@@ -283,7 +283,7 @@
             if(in_array($picActExt, $allowedExt)){
                 if($picError === 0){
                     if($picSize < 5000000){
-                        $picNewName = $applicant_name.uniqid('',true).".".$ppicActExt;
+                        $picNewName = $applicant_name.uniqid('',true).".".$picActExt;
                         $fileDes = '../../assets/'.$picNewName;
 
                         $sql = "INSERT INTO `applicant`(`applicant_name`, `sponsor`, `phone_number`, `member_code`, `staff_id`, 
@@ -387,4 +387,5 @@
         }
     }else{
         header("location: ../../src/routes.php?pgname=apply");
+        exit();
     }
