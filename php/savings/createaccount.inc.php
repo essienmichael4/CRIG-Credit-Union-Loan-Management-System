@@ -227,7 +227,7 @@
                             
                         if(mysqli_query($conn, $sql)){
                             move_uploaded_file($picTempName, $fileDes);
-                            if($profile != "general.pnp"){
+                            if($profile != "general.png"){
                                 unlink('../../assets/'.$profile);
                             }
                             header("location: ../../src/routes.php?pgname=applysavings&success=success"); 
