@@ -56,7 +56,7 @@
         include_once("./dbs.inc.php");
         include_once("./functions.inc.php");
     
-        $userid = mysqli_real_escape_string($conn,$_POST["uid"]);
+        $uid = mysqli_real_escape_string($conn,$_POST["uid"]);
         $sessionid = mysqli_real_escape_string($conn,$_POST["sid"]);
         $firstname = mysqli_real_escape_string($conn,$_POST["firstname"]);
         $lastname = mysqli_real_escape_string($conn,$_POST["lastname"]);
@@ -172,7 +172,7 @@
         $newPassword = mysqli_real_escape_string($conn,$_POST["password"]);
         $repPassword = mysqli_real_escape_string($conn,$_POST["password_repeat"]);
         
-        $id = mysqli_real_escape_string($conn,$_POST["uid"]);
+        $uid = mysqli_real_escape_string($conn,$_POST["uid"]);
 
         if($newPassword != $repPassword){
             header("Location: ../src/routes.php?pgname=useredit&userid=".$uid."error=passdonotmatch");
@@ -180,7 +180,7 @@
             
         }else{
             
-            $sql = "SELECT * FROM `users` WHERE `id` = $id;";
+            $sql = "SELECT * FROM `users` WHERE `id` = $uid;";
     
             $result = mysqli_query($conn, $sql);
     
@@ -188,7 +188,7 @@
     
             if(password_verify($oldPassword, $row['password']) == "true"){
                 $hashedpwd = password_hash($newPassword, PASSWORD_DEFAULT);
-                $sql = "UPDATE `users` SET `password` = '$hashedpwd' WHERE `id`= {$id}";
+                $sql = "UPDATE `users` SET `password` = '$hashedpwd' WHERE `id`= {$uid}";
     
                 if(mysqli_query($conn, $sql)){
                     header("location: ../src/routes.php?pgname=users"); 
@@ -210,13 +210,13 @@
         $newPassword = mysqli_real_escape_string($conn,$_POST["password"]);
         $repPassword = mysqli_real_escape_string($conn,$_POST["password_repeat"]);
         
-        $id = mysqli_real_escape_string($conn,$_POST["uid"]);
+        $uid = mysqli_real_escape_string($conn,$_POST["uid"]);
 
         if($newPassword != $repPassword){
             header("Location: ../src/routes.php?pgname=useredit&userid=".$uid."error=passdonotmatch");
             exit();
         }else{
-            $sql = "SELECT * FROM `users` WHERE `id` = $id;";
+            $sql = "SELECT * FROM `users` WHERE `id` = $uid;";
     
             $result = mysqli_query($conn, $sql);
     
@@ -224,7 +224,7 @@
     
             if(password_verify($oldPassword, $row['password']) == "true"){
                 $hashedpwd = password_hash($newPassword, PASSWORD_DEFAULT);
-                $sql = "UPDATE `users` SET `password` = '$hashedpwd' WHERE `id`= {$id}";
+                $sql = "UPDATE `users` SET `password` = '$hashedpwd' WHERE `id`= {$uid}";
     
                 if(mysqli_query($conn, $sql)){
                     header("location: ../src/routes.php?pgname=users"); 
