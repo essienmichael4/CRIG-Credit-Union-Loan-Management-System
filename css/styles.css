@@ -811,8 +811,8 @@ body {
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
 }
 .main .filter button {
-  padding: 0.7rem 3rem;
-  margin-left: 1rem;
+  padding: 0.7rem 2rem;
+  margin-left: 0.6rem;
   background-color: var(--color-accent-1);
   border: none;
   color: var(--text-light-300);
@@ -838,7 +838,7 @@ body {
 }
 .main .filter__actions a:nth-of-type(1).active {
   background-color: var(--color-accent-1);
-  padding: 0.4rem 1rem;
+  padding: 0.4rem 0.8rem;
   color: var(--text-light-300);
   border-radius: 4px;
   cursor: pointer;
@@ -856,7 +856,7 @@ body {
   width: 0px;
 }
 .main .filter__actions a {
-  margin-right: 1.5rem;
+  margin-right: 1rem;
   padding: 0.4rem 0;
   font-weight: 700;
   position: relative;

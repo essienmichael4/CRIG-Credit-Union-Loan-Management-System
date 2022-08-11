@@ -1,14 +1,15 @@
 let accountsname = [];
-let applicantname = document.querySelector(".applicant_name")
+let applicantnamesearch = document.querySelector(".applicant_name_search")
+// let applicantname = document.querySelector(".applicant_name")
 let accounts = document.querySelector("#accounts")
 let savingsaccountfirst = document.querySelector("#savingsaccountfirst")
 let savingsaccountsecond = document.querySelector("#savingsaccountsecond")
 let savingsaccountthird = document.querySelector("#savingsaccountthird")
 let savingsaccountfourth = document.querySelector("#savingsaccountfourth")
-let gaurantoronename = document.querySelector(".gaurantoronename")
-let gaurantortwoname = document.querySelector(".gaurantortwoname")
-let gaurantorthreename = document.querySelector(".gaurantorthreename")
-let gaurantorfourname = document.querySelector(".gaurantorfourname")
+let gaurantoronenamesearch = document.querySelector(".gaurantoronenamesearch")
+let gaurantortwonamesearch = document.querySelector(".gaurantortwonamesearch")
+let gaurantorthreenamesearch = document.querySelector(".gaurantorthreenamesearch")
+let gaurantorfournamesearch = document.querySelector(".gaurantorfournamesearch")
 
 fetch("./../php/savings/getallaccountslist.inc.php")
     .then(res => res.json())
@@ -28,8 +29,9 @@ fetch("./../php/savings/getallaccountslist.inc.php")
         })
     )
 
-applicantname.addEventListener("click", (e)=>{
-    let useraccount = e.target.value.toLowerCase();
+applicantnamesearch.addEventListener("click", ()=>{
+    let applicantname = document.querySelector(".applicant_name")
+    let useraccount = applicantname.value.toLowerCase();
     let applicantsearch = document.querySelector(".applicant-search")
     let phone = document.querySelector(".phone")
     let work = document.querySelector(".work")
@@ -47,8 +49,9 @@ applicantname.addEventListener("click", (e)=>{
     }
 })
 
-gaurantoronename.addEventListener("click", (e)=>{
-    let useraccount = e.target.value.toLowerCase();
+gaurantoronenamesearch.addEventListener("click", ()=>{
+    let gaurantoronename = document.querySelector(".gaurantoronename")
+    let useraccount = gaurantoronename.value.toLowerCase();
     let gaurantoroneid = document.querySelector(".gaurantoroneid")
     let gaurantoronephone = document.querySelector(".gaurantoronephone")
 
@@ -64,8 +67,9 @@ gaurantoronename.addEventListener("click", (e)=>{
     }
 })
 
-gaurantortwoname.addEventListener("click", (e)=>{
-    let useraccount = e.target.value.toLowerCase();
+gaurantortwonamesearch.addEventListener("click", ()=>{
+    let gaurantortwoname = document.querySelector(".gaurantortwoname")
+    let useraccount = gaurantortwoname.value.toLowerCase();
     let gaurantortwoid = document.querySelector(".gaurantortwoid")
     let gaurantortwophone = document.querySelector(".gaurantortwophone")
     
@@ -81,8 +85,9 @@ gaurantortwoname.addEventListener("click", (e)=>{
     }
 })
 
-gaurantorthreename.addEventListener("click", (e)=>{
-    let useraccount = e.target.value.toLowerCase();
+gaurantorthreenamesearch.addEventListener("click", ()=>{
+    let gaurantorthreename = document.querySelector(".gaurantorthreename")
+    let useraccount = gaurantorthreename.value.toLowerCase();
     let gaurantorthreeid = document.querySelector(".gaurantorthreeid")
     let gaurantorthreephone = document.querySelector(".gaurantorthreephone")
     accountsname.forEach(user => {
@@ -96,8 +101,9 @@ gaurantorthreename.addEventListener("click", (e)=>{
         gaurantorthreephone.value = ""
     }
 })
-gaurantorfourname.addEventListener("click", (e)=>{
-    let useraccount = e.target.value.toLowerCase();
+gaurantorfournamesearch.addEventListener("click", ()=>{
+    let gaurantorfourname = document.querySelector(".gaurantorfourname")
+    let useraccount = gaurantorfourname.value.toLowerCase();
     let gaurantorfourid = document.querySelector(".gaurantorfourid")
     let gaurantorfourphone = document.querySelector(".gaurantorfourphone")
     accountsname.forEach(user => {

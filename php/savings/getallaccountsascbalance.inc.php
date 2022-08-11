@@ -14,7 +14,6 @@
         $balance = number_format($res['balance'],2);
         $rows .= "<tr>
                     <td>{$res['mem_code']}</td>
-                    <td>{$res['mem_code']}</td>
                     <td>
                         <a href='?pgname=savingdetails&account_id={$res['id']}'>
                         <div class='prof_img'><img src='../assets/{$res['account_pic']}' alt=''></div> 

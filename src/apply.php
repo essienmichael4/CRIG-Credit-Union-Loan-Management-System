@@ -155,91 +155,117 @@
 
                         <h3 class="title my2">Guarantor Detials</h3>
                         <div class="form__group">
-                            <div class="formControl flex-c">
-                                <label for="">Guarantor's name (1st)</label>
-                                <input type="text" name="first_guarantor_name" required placeholder="Guarantor's name" value="<?=$applicant["guarantor_fullname_first"]?>">
-                            </div>
-                            <div class="formControl flex-c">
+                            <div class="formControl flex-c bgb">
                                 <label for="">Guarantor's Staff No. (1st)</label>
-                                <input type="text" name="first_guarantor_staff_number" required placeholder="Staff No." value="<?=$applicant["guarantor_staffnum_first"]?>">
+                                <div>
+                                    <input type="text" required class="gaurantoroneid" name="first_guarantor_staff_number" placeholder="Mem. Code/Staff No." value="<?=$applicant["guarantor_staffnum_first"]?>">
+                                    <span class="gaurantoronesearch"><i class="fas fa-search "></i></span>
+                                </div>
                             </div>
+                            <div class="formControl flex-c bgb">
+                                <label for="">Guarantor's name (1st)</label>
+                                <div>
+                                    <input type="text" required list="savingsaccountfirst"  class="gaurantoronename" name="first_guarantor_name" placeholder="Guarantor's name" value="<?=$applicant["guarantor_fullname_first"]?>">
+                                    <span class="gaurantoronenamesearch"><i class="fas fa-search "></i></span>
+                                </div>
+                            </div>
+
+                            <datalist id="savingsaccountfirst">
+                            </datalist>
+                            <datalist id="savingsaccountsecond">
+                            </datalist>
+                            <datalist id="savingsaccountthird">
+                            </datalist>
+                            <datalist id="savingsaccountfourth">
+                            </datalist>
+                            
                             <div class="formControl flex-c">
                                 <label for="">Guarantor's Phone (1st)</label>
-                                <div>
-                                    <span>+233</span><input type="text" required name="first_guarantor_phone_number" placeholder="eg. 201234567" value="<?=$applicant["guarantor_phone_first"]?>">
-                                </div>
+                                    <input type="text" required  class="gaurantoronephone" name="first_guarantor_phone_number" placeholder="eg. 201234567"  value="<?=$applicant["guarantor_phone_first"]?>">
                             </div>
                             <div class="formControl flex-c">
                                 <label for="">Guaranteed Amount (1st)</label>
                                 <div>
                                     <span>GH¢</span>
-                                    <input type="number" name="first_guarantor_guaranteed_amount" required class="guaranteed1" placeholder="Amount" value="<?=$applicant["guaranteed_amount_first"]?>">
+                                    <input type="text" required name="first_guarantor_guaranteed_amount" class="guaranteed1" placeholder="Amount" value="<?=$applicant["guaranteed_amount_first"]?>">
                                 </div>
                             </div>
-                            <div class="formControl flex-c">
-                                <label for="">Guarantor's name (2nd)</label>
-                                <input type="text" name="second_guarantor_name" required placeholder="Guarantor's name" value="<?=$applicant["guarantor_fullname_second"]?>">
-                            </div>
-                            <div class="formControl flex-c">
+                            <div class="formControl flex-c bgb">
                                 <label for="">Guarantor's Staff No. (2nd)</label>
-                                <input type="text" name="second_guarantor_staff_number" required placeholder="Staff No." value="<?=$applicant["guarantor_staffnum_second"]?>">
+                                <div>
+                                    <input type="text"  required class="gaurantortwoid" name="second_guarantor_staff_number" placeholder="Mem. Code/Staff No." value="<?=$applicant["guarantor_staffnum_second"]?>">
+                                    <span class="gaurantortwosearch"><i class="fas fa-search"></i></span>
+                                </div>
                             </div>
+                            <div class="formControl flex-c bgb">
+                                <label for="">Guarantor's name (2nd)</label>
+                                <div>
+                                    <input type="text" value="<?=$applicant["guarantor_fullname_second"]?>" list="savingsaccountsecond"  required class="gaurantortwoname" name="second_guarantor_name" placeholder="Guarantor's name">
+                                    <span class="gaurantortwonamesearch"><i class="fas fa-search "></i></span>
+                                </div>
+                            </div>
+                            
                             <div class="formControl flex-c">
                                 <label for="">Guarantor's Phone (2nd)</label>
-                                <div>
-                                    <span>+233</span>
-                                    <input type="text" name="second_guarantor_phone_number" required placeholder="eg. 201234567" value="<?=$applicant["guarantor_phone_second"]?>">
-                                </div>
+                                    <input type="text" value="<?=$applicant["guarantor_phone_second"]?>"  required class="gaurantortwophone" name="second_guarantor_phone_number" placeholder="eg. 201234567">
                             </div>
                             <div class="formControl flex-c">
                                 <label for="">Guaranteed Amount (2nd)</label>
                                 <div>
                                     <span>GH¢</span>
-                                    <input type="number" required name="second_guarantor_guaranteed_amount" class="guaranteed2" placeholder="Amount" value="<?=$applicant["guaranteed_amount_second"]?>">
+                                    <input type="text" value="<?=$applicant["guaranteed_amount_second"]?>"  required name="second_guarantor_guaranteed_amount" class="guaranteed2" placeholder="Amount">
                                 </div>
                             </div>
-                            <div class="formControl flex-c">
-                                <label for="">Guarantor's name (3rd)</label>
-                                <input type="text" required name="third_guarantor_name" placeholder="Guarantor's name" value="<?=$applicant["guarantor_fullname_third"]?>">
-                            </div>
-                            <div class="formControl flex-c">
+                            <div class="formControl flex-c bgb">
                                 <label for="">Guarantor's Staff No. (3rd)</label>
-                                <input type="text" required name="third_guarantor_staff_number" placeholder="Staff No." value="<?=$applicant["guarantor_staffnum_third"]?>">
+                                <div>
+                                    <input type="text" value="<?=$applicant["guarantor_staffnum_third"]?>" required class="gaurantorthreeid" name="third_guarantor_staff_number" placeholder="Mem. Code/Staff No.">
+                                    <span class="gaurantorthreesearch"><i class="fas fa-search"></i></span>
+                                </div>
                             </div>
+                            <div class="formControl flex-c bgb">
+                                <label for="">Guarantor's name (3rd)</label>
+                                <div>
+                                    <input type="text" value="<?=$applicant["guarantor_fullname_third"]?>" list="savingsaccountthird" required class="gaurantorthreename" name="third_guarantor_name" placeholder="Guarantor's name">
+                                    <span class="gaurantorthreenamesearch"><i class="fas fa-search "></i></span>
+                                </div>
+                            </div>
+                            
                             <div class="formControl flex-c">
                                 <label for="">Guarantor's Phone (3rd)</label>
-                                <div>
-                                    <span>+233</span>
-                                    <input type="text" required name="third_guarantor_phone_number" placeholder="eg. 201234567" value="<?=$applicant["guarantor_phone_third"]?>">
-                                </div>
+                                    <input type="text" value="<?=$applicant["guarantor_phone_third"]?>" required class="gaurantorthreephone" name="third_guarantor_phone_number" placeholder="eg. 201234567">
                             </div>
                             <div class="formControl flex-c">
                                 <label for="">Guaranteed Amount (3rd)</label>
                                 <div>
                                     <span>GH¢</span>
-                                    <input type="number" required name="third_guarantor_guaranteed_amount" class="guaranteed3" placeholder="Amount" value="<?=$applicant["guaranteed_amount_third"]?>">
+                                    <input type="text" value="<?=$applicant["guaranteed_amount_third"]?>" required name="third_guarantor_guaranteed_amount" class="guaranteed3" placeholder="Amount">
                                 </div>
                             </div>
-                            <div class="formControl flex-c">
-                                <label for="">Guarantor's name (4th)</label>
-                                <input type="text"required name="fourth_guarantor_name" placeholder="Guarantor's name" value="<?=$applicant["guarantor_fullname_fourth"]?>">
-                            </div>
-                            <div class="formControl flex-c">
+                            <div class="formControl flex-c bgb">
                                 <label for="">Guarantor's Staff No. (4th)</label>
-                                <input type="text"required name="fourth_guarantor_staff_number" placeholder="Staff No." value="<?=$applicant["guarantor_staffnum_fourth"]?>">
+                                <div>
+                                    <input type="text" value="<?=$applicant["guarantor_staffnum_fourth"]?>" required class="gaurantorfourid" name="fourth_guarantor_staff_number" placeholder="Mem. Code/Staff No.">
+                                    <span class="gaurantorfoursearch"><i class="fas fa-search"></i></span>
+                                </div>
                             </div>
+                            <div class="formControl flex-c bgb">
+                                <label for="">Guarantor's name (4th)</label>
+                                <div>
+                                    <input type="text" value="<?=$applicant["guarantor_fullname_fourth"]?>" list="savingsaccountfourth" required class="gaurantorfourname" name="fourth_guarantor_name" placeholder="Guarantor's name">
+                                    <span class="gaurantorfournamesearch"><i class="fas fa-search "></i></span>
+                                </div>
+                            </div>
+                            
                             <div class="formControl flex-c">
                                 <label for="">Guarantor's Phone (4th)</label>
-                                <div>
-                                    <span>+233</span>
-                                    <input type="text"required name="fourth_guarantor_phone_number" placeholder="eg. 201234567" value="<?=$applicant["guarantor_phone_fourth"]?>">
-                                </div>
+                                    <input type="text" value="<?=$applicant["guarantor_phone_fourth"]?>" required class="gaurantorfourphone" name="fourth_guarantor_phone_number" placeholder="eg. 201234567">
                             </div>
                             <div class="formControl flex-c">
                                 <label for="">Guaranteed Amount (4th)</label>
                                 <div>
                                     <span>GH¢</span>
-                                    <input type="number" required name="fourth_guarantor_guaranteed_amount" class="guaranteed4" placeholder="Amount" value="<?=$applicant["guaranteed_amount_fourth"]?>">
+                                    <input type="text" value="<?=$applicant["guaranteed_amount_fourth"]?>" required name="fourth_guarantor_guaranteed_amount" class="guaranteed4" placeholder="Amount">
                                 </div>
                             </div>
                         </div>
@@ -334,9 +360,12 @@
                             <datalist id="accounts">
                             </datalist>
                             
-                            <div class="formControl flex-c">
+                            <div class="formControl flex-c bgb">
                                 <label for="">Applicant name</label>
-                                <input type="text" list="accounts" required class="applicant_name first_name" name="applicant_name" placeholder="Applicant Name">
+                                <div>
+                                    <input type="text" list="accounts" required class="applicant_name first_name" name="applicant_name" placeholder="Applicant Name">
+                                    <span class="applicant_name_search"><i class="fas fa-search "></i></span>
+                                </div>
                             </div>
                             <div class="formControl flex-c">
                                 <label for="">Sponsor name</label>
@@ -433,9 +462,12 @@
                                     <span class="gaurantoronesearch"><i class="fas fa-search "></i></span>
                                 </div>
                             </div>
-                            <div class="formControl flex-c">
+                            <div class="formControl flex-c bgb">
                                 <label for="">Guarantor's name (1st)</label>
-                                <input type="text" required list="savingsaccountfirst"  class="gaurantoronename" name="first_guarantor_name" placeholder="Guarantor's name">
+                                <div>
+                                    <input type="text" required list="savingsaccountfirst"  class="gaurantoronename" name="first_guarantor_name" placeholder="Guarantor's name">
+                                    <span class="gaurantoronenamesearch"><i class="fas fa-search "></i></span>
+                                </div>
                             </div>
 
                             <datalist id="savingsaccountfirst">
@@ -465,9 +497,12 @@
                                     <span class="gaurantortwosearch"><i class="fas fa-search"></i></span>
                                 </div>
                             </div>
-                            <div class="formControl flex-c">
+                            <div class="formControl flex-c bgb">
                                 <label for="">Guarantor's name (2nd)</label>
-                                <input type="text" list="savingsaccountsecond"  required class="gaurantortwoname" name="second_guarantor_name" placeholder="Guarantor's name">
+                                <div>
+                                    <input type="text" list="savingsaccountsecond"  required class="gaurantortwoname" name="second_guarantor_name" placeholder="Guarantor's name">
+                                    <span class="gaurantortwonamesearch"><i class="fas fa-search "></i></span>
+                                </div>
                             </div>
                             
                             <div class="formControl flex-c">
@@ -488,9 +523,12 @@
                                     <span class="gaurantorthreesearch"><i class="fas fa-search"></i></span>
                                 </div>
                             </div>
-                            <div class="formControl flex-c">
+                            <div class="formControl flex-c bgb">
                                 <label for="">Guarantor's name (3rd)</label>
-                                <input type="text" list="savingsaccountthird" required class="gaurantorthreename" name="third_guarantor_name" placeholder="Guarantor's name">
+                                <div>
+                                    <input type="text" list="savingsaccountthird" required class="gaurantorthreename" name="third_guarantor_name" placeholder="Guarantor's name">
+                                    <span class="gaurantorthreenamesearch"><i class="fas fa-search "></i></span>
+                                </div>
                             </div>
                             
                             <div class="formControl flex-c">
@@ -511,9 +549,12 @@
                                     <span class="gaurantorfoursearch"><i class="fas fa-search"></i></span>
                                 </div>
                             </div>
-                            <div class="formControl flex-c">
+                            <div class="formControl flex-c bgb">
                                 <label for="">Guarantor's name (4th)</label>
-                                <input type="text" list="savingsaccountfourth" required class="gaurantorfourname" name="fourth_guarantor_name" placeholder="Guarantor's name">
+                                <div>
+                                    <input type="text" list="savingsaccountfourth" required class="gaurantorfourname" name="fourth_guarantor_name" placeholder="Guarantor's name">
+                                    <span class="gaurantorfournamesearch"><i class="fas fa-search "></i></span>
+                                </div>
                             </div>
                             
                             <div class="formControl flex-c">

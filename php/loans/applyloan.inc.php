@@ -268,6 +268,7 @@
         $loan_interest = $requested_loan * LOAN_INTEREST_PERCENTAGE;
         $loan_total = $requested_loan + $loan_interest;
         $gauranteed_amount = $loan_total / LOAN_GUARANTEED;
+        $loan_status = "pending";
         
         if(empty(!$pic['name'])){
             $picName = $pic['name'];
@@ -293,7 +294,8 @@
             `guarantor_fullname_third`, `guarantor_phone_third`, `guarantor_staffnum_third`, `guaranteed_amount_third`, 
             `guarantor_fullname_fourth`, `guarantor_phone_fourth`, `guarantor_staffnum_fourth`, `guaranteed_amount_fourth`, 
             `recipient_name`,`applicant_first_due_date`,`first_due_date`, `second_due_date`, `third_due_date`, `fourth_due_date`,
-            `fifth_due_date`,`sixth_due_date`, `approved_by`, `day_approved`, `approval_status`, `applicant_pic`) VALUES('{$applicant_name}', '$sponsor', '{$phone_number}', '{$membership_code}', '{$staff_number}',
+            `fifth_due_date`,`sixth_due_date`, `approved_by`, `day_approved`, `approval_status`, `applicant_pic`,`loan_status`) 
+            VALUES('{$applicant_name}', '$sponsor', '{$phone_number}', '{$membership_code}', '{$staff_number}',
             '{$work_place}', '{$membership_status}', '{$purpose_of_loan}', {$requested_loan}, {$loan_interest}, {$loan_total}, {$loan_total}, '{$mode_of_payment}',
             '{$first_guarantor_name}', '{$first_guarantor_phone_number}', '{$first_guarantor_staff_number}', {$gauranteed_amount},
             '{$second_guarantor_name}', '{$second_guarantor_phone_number}', '{$second_guarantor_staff_number}', {$gauranteed_amount},
@@ -301,7 +303,7 @@
             '{$fourth_guarantor_name}', '{$fourth_guarantor_phone_number}', '{$fourth_guarantor_staff_number}', {$gauranteed_amount},
             '{$recipientname}', '{$customer_due_payment}', '{$first_due_approved}', '{$second_due_approved}', '{$third_due_approved}'
             , '{$fourth_due_approved}', '{$fifth_due_approved}', '{$sixth_due_approved}', '{$recipientname}', '{$day_approved}', '{$approval_status}'
-            , '{$picNewName}')";
+            , '{$picNewName}', '$loan_status')";
                             
                         if(mysqli_query($conn, $sql)){
                             move_uploaded_file($picTempName, $fileDes);
@@ -333,14 +335,16 @@
             `guarantor_fullname_third`, `guarantor_phone_third`, `guarantor_staffnum_third`, `guaranteed_amount_third`, 
             `guarantor_fullname_fourth`, `guarantor_phone_fourth`, `guarantor_staffnum_fourth`, `guaranteed_amount_fourth`, 
             `recipient_name`,`applicant_first_due_date`,`first_due_date`, `second_due_date`, `third_due_date`, `fourth_due_date`,
-            `fifth_due_date`,`sixth_due_date`, `approved_by`, `day_approved`, `approval_status`, `applicant_pic`) VALUES('{$applicant_name}', '$sponsor', '{$phone_number}', '{$membership_code}', '{$staff_number}',
+            `fifth_due_date`,`sixth_due_date`, `approved_by`, `day_approved`, `approval_status`, `applicant_pic`, `loan_status`) 
+            VALUES('{$applicant_name}', '$sponsor', '{$phone_number}', '{$membership_code}', '{$staff_number}',
             '{$work_place}', '{$membership_status}', '{$purpose_of_loan}', {$requested_loan}, {$loan_interest}, {$loan_total}, {$loan_total}, '{$mode_of_payment}',
             '{$first_guarantor_name}', '{$first_guarantor_phone_number}', '{$first_guarantor_staff_number}', {$gauranteed_amount},
             '{$second_guarantor_name}', '{$second_guarantor_phone_number}', '{$second_guarantor_staff_number}', {$gauranteed_amount},
             '{$third_guarantor_name}', '{$third_guarantor_phone_number}', '{$third_guarantor_staff_number}', {$gauranteed_amount},
             '{$fourth_guarantor_name}', '{$fourth_guarantor_phone_number}', '{$fourth_guarantor_staff_number}', {$gauranteed_amount},
             '{$recipientname}', '{$customer_due_payment}', '{$first_due_approved}', '{$second_due_approved}', '{$third_due_approved}'
-            , '{$fourth_due_approved}', '{$fifth_due_approved}', '{$sixth_due_approved}', '{$recipientname}', '{$day_approved}', '{$approval_status}', 'general.png')";
+            , '{$fourth_due_approved}', '{$fifth_due_approved}', '{$sixth_due_approved}', '{$recipientname}', '{$day_approved}', '{$approval_status}', 'general.png',
+            '$loan_status')";
 
             if(mysqli_query($conn, $sql)){
             header("location: ../../src/routes.php?pgname=dashboard"); 

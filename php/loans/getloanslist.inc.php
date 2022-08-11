@@ -1,7 +1,6 @@
 <?php
     include_once("../dbs.inc.php");
     include_once("../functions.inc.php");
-    // $status = "disabled";
     $date = date('Y'."-01-16 00:00:00");
 
     $sql = "SELECT * FROM `applicant` WHERE `apply_date` >= '{$date}';";
