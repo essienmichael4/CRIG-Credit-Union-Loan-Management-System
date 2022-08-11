@@ -75,12 +75,12 @@
 
         $row = mysqli_fetch_assoc($result);
 
-        if($firstname == $row["firstname"] || empty($firstname)){
-            $firstname = $row["firstname"];
+        if($firstname == $row["first_name"] || empty($firstname)){
+            $firstname = $row["first_name"];
         }
     
-        if($lastname == $row["lastname"] || empty($lastname)){
-            $lastname = $row["lastname"];
+        if($lastname == $row["last_name"] || empty($lastname)){
+            $lastname = $row["last_name"];
         }
         if($othernames == $row["other_names"] || empty($othernames)){
             $othernames = $row["other_names"];
@@ -89,11 +89,11 @@
         if($username == $row["username"] || empty($username)){
             $username == $row["username"];
         }
-        if($phonenumber == $row["phone_number"] || empty($phonenumber)){
-            $phonenumber == $row["phone_number"];
+        if($phonenumber == $row["phone"] || empty($phonenumber)){
+            $phonenumber == $row["phone"];
         }
-        if($staffnumber == $row["staff_number"] || empty($staffnumber)){
-            $staffnumber == $row["staff_number"];
+        if($staffnumber == $row["staff_id"] || empty($staffnumber)){
+            $staffnumber == $row["staff_id"];
         }
     
         if($email == $row["email"] || empty($email)){
@@ -104,9 +104,9 @@
             $role = $row["role"];
         }
     
-        $sql = "UPDATE `users` SET `firstname` = '$firstname', `lastname` = '$lastname',  `other_names` = '$othernames'
-        , `email` = '$email', `username` = '$username',`role` = '$role', `phone_number` = '$phonenmber'
-        , `staff_number` = '$staffnumber' WHERE `id`= {$id}";
+        $sql = "UPDATE `users` SET `first_name` = '$firstname', `last_name` = '$lastname',  `other_names` = '$othernames'
+        , `email` = '$email', `username` = '$username',`role` = '$role', `phone` = '$phonenmber'
+        , `staff_id` = '$staffnumber' WHERE `id`= {$uid}";
 
         if(mysqli_query($conn, $sql)){
             header("location: ../src/routes.php?pgname=users"); 
@@ -241,6 +241,3 @@
     }else{
         header("location: ../src/routes.php?pgname=users"); 
     }
-
-
-
