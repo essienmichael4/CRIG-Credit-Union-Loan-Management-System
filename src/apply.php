@@ -14,6 +14,35 @@
                 </div>
             </div>
             <div class="wrapper">
+                <?php
+                    if(isset($_GET["error"])){
+                        if($_GET["error"] == "emptyInput"){
+                            echo "<p class='err'>Please, fill out all the required inputs.</p>";
+                        }else if($_GET["error"] == "memberstatusinput"){
+                            echo "<p class='err'>Please, the loan applicant is a member but the member code seems to be empty.</p>";
+                        }else if($_GET["error"] == "userhasoutstandingloan"){
+                            echo "<p class='err'>Please, the loan applicant seems to have some unpaid loans.</p>";
+                        }else if($_GET["error"] == "firstguarantoroutstanding"){
+                            echo "<p class='err'>Please, the first guarantor does not have sufficeint funds to guarant the loan.</p>";
+                        }else if($_GET["error"] == "secondguarantoroutstanding"){
+                            echo "<p class='err'>Please, the second guarantor does not have sufficeint funds to guarant the loan.</p>";
+                        }else if($_GET["error"] == "thirdguarantoroutstanding"){
+                            echo "<p class='err'>Please, the third guarantor does not have sufficeint funds to guarant the loan.</p>";
+                        }else if($_GET["error"] == "fourthguarantoroutstanding"){
+                            echo "<p class='err'>Please, the fourth guarantor does not have sufficeint funds to guarant the loan.</p>";
+                        }else if($_GET["error"] == "sqlerror"){
+                            echo "<p class='err'>Please, check if the database is online.</p>";
+                        }else if($_GET["error"] == "picexterror"){
+                            echo "<p class='err'>Please, the image extension is of the wrong format. Use (PNG, JPG or JPEG)</p>";
+                        }else if($_GET["error"] == "picerror"){
+                            echo "<p class='err'>Please, there was an error with the image. Try again.</p>";
+                        }else if($_GET["error"] == "fileTooBig"){
+                            echo "<p class='err'>Please, the image size is too big.</p>";
+                        }else if($_GET["error"] == "fileTooBig"){
+                            echo "<p class='err'>Please, the image size is too big.</p>";
+                        }
+                    }
+                ?>
                 <section class="apply">
                     <h3 class="title">Applicant Detials</h3>
                     <form class="form apply__form" action="../php/loans/applyloan.inc.php" method="POST">
@@ -342,7 +371,35 @@
                 </div>
             </div>
             <div class="wrapper">
-                
+                <?php
+                    if(isset($_GET["error"])){
+                        if($_GET["error"] == "emptyInput"){
+                            echo "<p class='err'>Please, fill out all the required inputs.</p>";
+                        }else if($_GET["error"] == "memberstatusinput"){
+                            echo "<p class='err'>Please, the loan applicant is a member but the member code seems to be empty.</p>";
+                        }else if($_GET["error"] == "userhasoutstandingloan"){
+                            echo "<p class='err'>Please, the loan applicant seems to have some unpaid loans.</p>";
+                        }else if($_GET["error"] == "firstguarantoroutstanding"){
+                            echo "<p class='err'>Please, the first guarantor does not have sufficeint funds to guarant the loan.</p>";
+                        }else if($_GET["error"] == "secondguarantoroutstanding"){
+                            echo "<p class='err'>Please, the second guarantor does not have sufficeint funds to guarant the loan.</p>";
+                        }else if($_GET["error"] == "thirdguarantoroutstanding"){
+                            echo "<p class='err'>Please, the third guarantor does not have sufficeint funds to guarant the loan.</p>";
+                        }else if($_GET["error"] == "fourthguarantoroutstanding"){
+                            echo "<p class='err'>Please, the fourth guarantor does not have sufficeint funds to guarant the loan.</p>";
+                        }else if($_GET["error"] == "sqlerror"){
+                            echo "<p class='err'>Please, check if the database is online.</p>";
+                        }else if($_GET["error"] == "picexterror"){
+                            echo "<p class='err'>Please, the image extension is of the wrong format. Use (PNG, JPG or JPEG)</p>";
+                        }else if($_GET["error"] == "picerror"){
+                            echo "<p class='err'>Please, there was an error with the image. Try again.</p>";
+                        }else if($_GET["error"] == "fileTooBig"){
+                            echo "<p class='err'>Please, the image size is too big.</p>";
+                        }else if($_GET["error"] == "fileTooBig"){
+                            echo "<p class='err'>Please, the image size is too big.</p>";
+                        }
+                    }
+                ?>
                 <section class="apply">
                 <h3>LOAN APPLICATION</h3>
                     <h3 class="title">Applicant Detials</h3>

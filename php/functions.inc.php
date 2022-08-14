@@ -413,7 +413,7 @@
     }
 
     function checkGuarantorStatus($conn, $search, $amount){
-        echo $sql = "SELECT SUM(`guaranteed_amount_first` + `guaranteed_amount_second` +
+        $sql = "SELECT SUM(`guaranteed_amount_first` + `guaranteed_amount_second` +
                     `guaranteed_amount_third` + `guaranteed_amount_fourth`) AS guaranteed FROM `applicant` 
                     WHERE `guarantor_staffnum_first` = '{$search}' 
                     or `guarantor_staffnum_second` = '{$search}' or `guarantor_staffnum_third` = '{$search}'
@@ -422,15 +422,13 @@
 
         $result = mysqli_query($conn, $sql);
 
-        show($result);
-
         $sum = mysqli_fetch_assoc($result);
 
         if($sum['guaranteed'] == ""){
             return false;
         }
         
-        $guaranteed = (float)$sum["guaranteed"];
+        $guaranteed = (float)$sum["guaranteed"] / 4;
         $guaranteed = $guaranteed + $amount;
 
         $sql = "SELECT * FROM `savings` WHERE `mem_code` = '{$search}';";
@@ -450,16 +448,12 @@
         }
         
         return false;
-        
     }
 
-    function checkApplicantStatus($conn, $search, $search2){
-        $sql = "SELECT * FROM `applicant` WHERE 
-        `member_code` = '{$search}' OR `staff_id` = '{$search2}' 
-        and `loan_status` != 'paid';";
-        $result2 = mysqli_query($conn, $sql);
+    function checkApplicantStatus($conn, $sql){
+        $result = mysqli_query($conn, $sql);
 
-        if(mysqli_num_rows($result2) == 0){
+        if(mysqli_num_rows($result) == 0){
             return false;
         }else{
             return true;

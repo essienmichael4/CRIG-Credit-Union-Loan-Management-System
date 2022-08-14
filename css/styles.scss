@@ -1033,7 +1033,7 @@ body{
 
     .apply{
         width: 99%;
-        margin: 2rem auto 1rem auto;
+        margin: 1rem auto 1rem auto;
         padding: 0 1rem;
 
         h3{
@@ -2701,4 +2701,12 @@ h2.p{
             }
         }
     }
+}
+
+p.err{
+    background-color: rgb(247, 183, 183);
+    color: red;
+    text-align: center;
+    margin: .5rem 1rem;
+    padding: .5rem;
 }
