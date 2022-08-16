@@ -1,4 +1,4 @@
-let all_loans__table = document.querySelector(".savings__table");
+let all_loans__table = document.querySelector(".loan_data");
 
 window.addEventListener("load",()=>{
     let xhr = new XMLHttpRequest();

@@ -1456,6 +1456,34 @@ body {
   outline: none;
   cursor: pointer;
 }
+.savings__table table tbody tr td span {
+  padding: 0.2rem 0.8rem;
+  border-radius: 4px;
+}
+.savings__table table tbody tr td span.approved {
+  background-color: rgba(0, 128, 0, 0.5);
+}
+.savings__table table tbody tr td span.pending {
+  background-color: rgba(80, 82, 80, 0.5);
+}
+.savings__table table tbody tr td span.awaiting {
+  background-color: rgba(190, 190, 194, 0.5);
+}
+.savings__table table tbody tr td span.due {
+  background-color: rgba(255, 136, 0, 0.5);
+}
+.savings__table table tbody tr td span.overdue {
+  background-color: rgba(255, 0, 0, 0.5);
+}
+.savings__table table tbody tr td span.paid {
+  background-color: rgba(0, 26, 255, 0.5);
+}
+.savings__table table tbody tr td span.in {
+  background-color: rgba(0, 26, 255, 0.5);
+}
+.savings__table table tbody tr td span.out {
+  background-color: rgba(255, 0, 0, 0.5);
+}
 
 .account-details {
   width: 99%;

@@ -1665,6 +1665,39 @@ body{
                         outline: none;
                         cursor: pointer;
                     }
+                    span{
+                        padding: .2rem .8rem;
+                        border-radius: 4px;
+                        // background-color: #4d4a4a;
+    
+                        &.approved{
+                            background-color: rgba(0, 128, 0, .5);
+                        }
+                        &.pending{
+                            background-color: rgba(80, 82, 80, 0.5);
+                        }
+                        &.awaiting{
+                            background-color: rgba(190, 190, 194, 0.5);
+                        }
+                        &.due{
+                            background-color: rgba(255, 136, 0, 0.5);
+                        }
+                        &.overdue{
+                            background-color: rgba(255, 0, 0, 0.5);
+                        }
+                        &.paid{
+                            background-color: rgba(0, 26, 255, 0.5);
+                        }
+    
+                        &.in{
+                            background-color: rgba(0, 26, 255, 0.5);
+                        }
+    
+                        &.out{
+                            background-color: rgba(255, 0, 0, 0.5);
+                        }
+    
+                    }
                 }
             }
         }

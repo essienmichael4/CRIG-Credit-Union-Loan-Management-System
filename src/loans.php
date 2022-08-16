@@ -50,17 +50,32 @@
                             <input type="text" class="namesort">
                             <i class="fas fa-search"></i>
                         </div>
-                        <button class="getalldebit">All</button>
-                        <button class="getallaccounts">Members</button>
-                        <button class="getalltransactions">Non-Mebers</button>
-                        <button class="getalldeposit">Casuals</button>
+                        <button class="all_loan_data">All</button>
+                        <button class="members">Members</button>
+                        <button class="non_members">Non-Mebers</button>
+                        <button class="casuals">Casuals</button>
                         <!-- <a class="loanfilter members">Members</a>
                         <a class="loanfilter nonmembers">Non-Mebers</a>
                         <a class="loanfilter casual">Casuals</a> -->
                     </div>
                 </div>
                 <section class="savings__table">
-                    
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Applicant ID</th>
+                            <th>Applicant Name</th>
+                            <th>Contact</th>
+                            <th>Address</th>
+                            <th>Date</th>
+                            <th>Amount</th>
+                            <th>Arrears</th>
+                            <th>Membership</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody class="loan_data"></tbody>
+                </table>
                 </section>
             </div>
         </div>
@@ -73,3 +88,4 @@
     <script src="../js/getallloantotal.js"></script>
     <script src="../js/getallpaidloans.js"></script>
     <script src="../js/getinterest.js"></script>
+    <script src="../js/loans/fetchloans.js"></script>

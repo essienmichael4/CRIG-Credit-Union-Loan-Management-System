@@ -27,13 +27,13 @@ fetch("../php/savings/getallaccountslist.inc.php")
                 ${row}
             </tr>`
             
-
             let name = `${account.first_name} ${account.last_name} ${account.other_names}`;
             let memberid = account.mem_code;
             return {name, memberid, accountrow}
         })
     )
     
+// console.log(accountsname)
     
 sortname.addEventListener("input", (e)=>{
     let useraccount = e.target.value.toLowerCase();

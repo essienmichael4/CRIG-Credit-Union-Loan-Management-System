@@ -151,24 +151,12 @@
                         <td>{$applicant_due}</td>
                         <td>{$res['loan_to_be_payed']}</td>
                         <td>{$arrears}</td>
+                        <td>{$res['member_status']}</td>
                         {$row}
                     </tr>"; 
             }
 
-            echo $data = "<table>
-                <thead>
-                    <tr>
-                        <th>Applicant ID</th>
-                        <th>Applicant Name</th>
-                        <th>Contact</th>
-                        <th>Address</th>
-                        <th>Date</th>
-                        <th>Amount</th>
-                        <th>Arrears</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>"
-                    .$rows.
-                "</tbody>
-            </table>";
+            echo $data = "
+                
+                    $rows
+                ";
