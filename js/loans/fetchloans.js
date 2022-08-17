@@ -64,7 +64,7 @@ fetch("../php/loans/getloanslist.inc.php")
         loansdata.forEach((account)=>{
             if(account.name.toLowerCase().includes(useraccount)){
                 rows += account.loanrow
-             }
+            }
         })
         loan_data.innerHTML = rows;
     })

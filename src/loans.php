@@ -23,7 +23,7 @@
                         <a href="?pgname=apply" class="active">Loan Application <i class="fas fa-plus"></i></a>
                         <a class="loanfilter all active">All Loans</a>
                         <a class="loanfilter unapproved">Unapproved</a>
-                        <a class="loanfilter unapproved">Awaiting Approval</a>
+                        <a class="loanfilter awaiting">Awaiting Approval</a>
                         <a class="loanfilter approved">Approved</a>
                         <a class="loanfilter due">Due</a>
                         <a class="loanfilter overdue">Overdue</a>
@@ -54,9 +54,6 @@
                         <button class="members">Members</button>
                         <button class="non_members">Non-Mebers</button>
                         <button class="casuals">Casuals</button>
-                        <!-- <a class="loanfilter members">Members</a>
-                        <a class="loanfilter nonmembers">Non-Mebers</a>
-                        <a class="loanfilter casual">Casuals</a> -->
                     </div>
                 </div>
                 <section class="savings__table">
@@ -82,10 +79,11 @@
     </div>
     <script src="../js/searchUtils.js"></script>
     <script src="../js/getallloans.js"></script>
-    <script src="../js/filters.js"></script>
+    <!-- <script src="../js/filters.js"></script> -->
     <!-- <script src="../js/getlimitedloans.js"></script> -->
     <script src="../js/getallarrears.js"></script>
     <script src="../js/getallloantotal.js"></script>
     <script src="../js/getallpaidloans.js"></script>
     <script src="../js/getinterest.js"></script>
     <script src="../js/loans/fetchloans.js"></script>
+    <script src="../js/loans/fetchallloans.js"></script>
