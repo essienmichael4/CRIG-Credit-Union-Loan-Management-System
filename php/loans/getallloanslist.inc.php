@@ -2,7 +2,7 @@
     include_once("../dbs.inc.php");
     include_once("../functions.inc.php");
 
-    $sql = "SELECT * FROM `applicant`;";
+    $sql = "SELECT * FROM `applicant` ORDER BY `id` DESC;";
 
     $result = mysqli_query($conn, $sql);
 

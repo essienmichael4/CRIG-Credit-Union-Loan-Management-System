@@ -21,7 +21,7 @@
                 <div class="filter flex">
                     <div class="filter__actions">
                         <a href="?pgname=apply" class="active">Loan Application <i class="fas fa-plus"></i></a>
-                        <a class="loanfilter all active">All Loans</a>
+                        <a class="loanfilter all">All Loans</a>
                         <a class="loanfilter unapproved">Unapproved</a>
                         <a class="loanfilter awaiting">Awaiting Approval</a>
                         <a class="loanfilter approved">Approved</a>
@@ -31,7 +31,7 @@
                         
                     </div>
                     <div class="filter__time">
-                        <a class="time allTime active">All Time</a>
+                        <a class="time allTime">All Time</a>
                         <input type="date" class="dayInputfirst">
                         <input type="date" class="dayInputsecond">
                         <input type="month" class="monthInput1">
