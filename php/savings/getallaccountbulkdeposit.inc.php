@@ -37,7 +37,7 @@
                     <td>{$res['amount_in_account']}</td>
                     <td>{$res['amount_transacted']}</td>
                     <td>{$res['balance_in_account']}</td>
-                    <td>{$res['transacted_by']}</td>
+                    <td class='des'>{$res['transacted_by']}</td>
                 </tr>"; 
     }
 
@@ -49,7 +49,7 @@
                         <th>Previous Balance GH¢</th>
                         <th>Deposit/Debit GH¢</th>
                         <th>Balance GH¢</th>
-                        <th>Teller</th>
+                        <th class='des'>Teller</th>
                     </tr>
                 </thead>
                 <tbody>"

@@ -41,7 +41,7 @@
                     <td>{$res['staff_id']}</td>
                     <td>{$res['phone_number']}</td>
                     <td>GH¢ {$balance}</td>
-                    <td>{$res['account_status']}</td>
+                    <td class='des'>{$res['account_status']}</td>
                 </tr>"; 
     }
 
@@ -53,7 +53,7 @@
                         <th>Staff ID</th>
                         <th>Contact</th>
                         <th>Balance</th>
-                        <th>Account Status</th>
+                        <th class='des'>Account Status</th>
                     </tr>
                 </thead>
                 <tbody>"

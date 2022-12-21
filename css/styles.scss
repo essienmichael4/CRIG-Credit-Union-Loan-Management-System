@@ -2743,3 +2743,33 @@ p.err{
     margin: .5rem 1rem;
     padding: .5rem;
 }
+
+.tblwrapper_header{
+    margin: 0 auto;
+    width: 100%;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+
+        h2{
+            font-size: 16px;
+            margin: 0;
+        }
+
+        h3, h5{
+            margin: 0;
+        }
+
+        p{
+            margin: 0;
+            &.box_info{
+                font-size: .7rem;
+            }
+
+            &.terminal{
+                font-weight: 600;
+            }
+        }
+    }

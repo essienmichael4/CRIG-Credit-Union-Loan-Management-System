@@ -26,6 +26,7 @@ let all_loan_data = document.querySelector(".all_loan_data")
 let loansdata = [];
 let allloansdata = [];
 
+//Fetch all loans in the current year
 fetch("../php/loans/getloanslist.inc.php")
     .then(res => res.json())
     .then(data => 
@@ -79,6 +80,7 @@ fetch("../php/loans/getloanslist.inc.php")
         })
     )
 
+//Fetch all loans in the system
 fetch("../php/loans/getallloanslist.inc.php")
     .then(res => res.json())
     .then(data => 

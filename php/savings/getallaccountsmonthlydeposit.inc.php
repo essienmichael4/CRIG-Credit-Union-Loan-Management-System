@@ -42,7 +42,7 @@
                     <td>{$res['mem_code']}</td>
                     <td>
                         <a href='?pgname=savingdetails&account_id={$res['id']}'>
-                        <div class='prof_img'><img src='../assets/{$res['account_pic']}' alt=''></div> 
+                        <div class='prof_img des'><img src='../assets/{$res['account_pic']}' alt=''></div> 
                         {$res['first_name']} {$res['last_name']} {$res['other_names']}
                     </a> 
                     </td>
@@ -50,7 +50,7 @@
                     <td>{$amount_in_account}</td>
                     <td>{$amount_transacted}</td>
                     <td>{$balance_in_account}</td>
-                    <td class='tu'>{$res['transacted_by']}</td>
+                    <td class='tu des'>{$res['transacted_by']}</td>
                 </tr>"; 
     }
 
@@ -64,7 +64,7 @@
                         <th>Previous Balance GH¢</th>
                         <th>Deposit/Debit GH¢</th>
                         <th>Balance GH¢</th>
-                        <th>Teller</th>
+                        <th class='des'>Teller</th>
                     </tr>
                 </thead>
                 <tbody>"

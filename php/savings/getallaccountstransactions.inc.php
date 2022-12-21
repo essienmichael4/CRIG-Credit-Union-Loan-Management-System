@@ -40,8 +40,8 @@
                     <td>{$res['transaction_day']}</td>
                     <td>{$account['mem_code']}</td>
                     <td>
-                        <a href='?pgname=savingdetails&account_id={$account['id']}'>
-                        <div class='prof_img'><img src='../assets/{$account['account_pic']}' alt=''></div> 
+                        <a href='?pgname=savingdetails&account_id={$account['id']}' >
+                        <div class='prof_img des'><img src='../assets/{$account['account_pic']}' alt=''></div> 
                         {$account['first_name']} {$account['last_name']} {$account['other_names']}
                     </a> 
                     </td>
@@ -50,7 +50,7 @@
                     <td>{$amount_in_account}</td>
                     <td>{$amount_transacted}</td>
                     <td>{$balance_in_account}</td>
-                    <td class='tu'>{$res['transacted_by']}</td>
+                    <td class='tu des'>{$res['transacted_by']}</td>
                 </tr>"; 
         }else{
             $rows .= "<tr>
@@ -59,7 +59,7 @@
                     <td>{$account['mem_code']}</td>
                     <td>
                         <a href='?pgname=savingdetails&account_id={$account['id']}'>
-                        <div class='prof_img'><img src='../assets/{$account['account_pic']}' alt=''></div> 
+                        <div class='prof_img des'><img src='../assets/{$account['account_pic']}' alt=''></div> 
                         {$account['first_name']} {$account['last_name']} {$account['other_names']}
                     </a> 
                     </td>
@@ -68,7 +68,7 @@
                     <td>{$amount_in_account}</td>
                     <td>{$amount_transacted}</td>
                     <td>{$balance_in_account}</td>
-                    <td class='tu'>{$res['transacted_by']}</td>
+                    <td class='tu des'>{$res['transacted_by']}</td>
                 </tr>"; 
         }
 
@@ -81,12 +81,12 @@
                         <th>Date</th>
                         <th>Member ID</th>
                         <th>Account Name</th>
-                        <th>Receipt/Cheque</th>
+                        <th>Receipt</th>
                         <th>Transaction Type</th>
                         <th>Previous Balance GH¢</th>
                         <th>Deposit/Debit GH¢</th>
                         <th>Balance GH¢</th>
-                        <th>Teller</th>
+                        <th class='des'>Teller</th>
                     </tr>
                 </thead>
                 <tbody>"

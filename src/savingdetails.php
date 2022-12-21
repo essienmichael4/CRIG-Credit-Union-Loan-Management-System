@@ -10,15 +10,20 @@
     ?>
     <input type="text" class="account_code" value="<?=$memcode?>" hidden>            
             <div class="wrapper">
+                <div class="tblwrapper_header">
+                    <h2>CRIG QUALITY CLUB</h2>
+                    <p class="box_info">BOX 8, NEW TAFO. | TEL: +233 55-875-7533</p>
+                    <p>Account Details & Statements</p>
+                </div>
                 <div class="details-head">
-                    <a href="?pgname=savings">	&#8592;</a>
+                    <a href="?pgname=savings" class="navBack">	&#8592;</a>
                     <div class="prof_img"><img src="../assets/<?=$account["account_pic"]?>" alt=""></div>
                     <div class="details-right">
                         <h2 class="p"><span><?=$account["first_name"].' '.$account["last_name"].' '.$account["other_names"]?></span></h2>
                         
                         <p><?=$account["mem_code"]?></p>
                     </div>
-                    <div class="actions">
+                    <div class="actions accActions">
                         <button class="deposite_btn"><span><i class="fas fa-plus-circle"></i></span> Deposit</button>
                         <button  class="withdrawal_btn"><span><i class="fas fa-minus-circle"></i></span> Withdrawal</button>
                         <button class="person_btn"><span><i class="fas fa-angle-down"></i></span> Personal Details</button>
@@ -115,12 +120,13 @@
                         <p>Current Account</p>
                         <h4 class="current_account">GH¢ <?=$balance?></h4>
                     </div>
-                    <h3 class="headline"> Account Details & Statements</h3>
+                    <h3 class="headline des"> Account Details & Statements</h3>
                 </div>
 
-                <div class=" account-details">
+                <div class="account-details">
                     <h2 class="account-title">Transactions</h2>
                     <div class="actions">
+                        <button class="print" onclick="printAccountStatement()">Print Statement</button>
                         <button class="getalltransactions" name="<?=$_GET["account_id"]?>">All Transactions</button>
                         <button class="getalldeposit" name="<?=$_GET["account_id"]?>">Deposits</button>
                         <button class="getalldebit" name="<?=$_GET["account_id"]?>">Withdrawals</button>
@@ -238,3 +244,4 @@
     <script src="../js/deposite.js"></script>
     <script src="../js/getaccounttransactions.js"></script>
     <script src="../js/getCurrentAccountBalance.js"></script>
+    <script src="../js/print.js"></script>

@@ -1,3 +1,4 @@
+//Sort the loans using names
 namesort.addEventListener("input", (e)=>{
     let useraccount = e.target.value.toLowerCase();
     let btnfilter;
@@ -492,6 +493,7 @@ namesort.addEventListener("input", (e)=>{
     }
 })
 
+//Sort the loans using membership status of casuals
 casuals.addEventListener("click", ()=>{
     let input = "casual";
     let rows = "";
@@ -991,6 +993,7 @@ casuals.addEventListener("click", ()=>{
     }
 })
 
+//Sort the loans using membership status of non-members
 non_members.addEventListener("click", ()=>{
     let input = "non-member";
     let rows = "";
@@ -1484,6 +1487,7 @@ non_members.addEventListener("click", ()=>{
     }
 })
 
+//Sort the loans using membership status of members
 members.addEventListener("click", ()=>{
     let input = "member";
     let rows = "";
@@ -1977,6 +1981,7 @@ members.addEventListener("click", ()=>{
     }
 })
 
+//Get all loans in the system
 all_loan_data.addEventListener("click", ()=>{
     let rows = "";
 
@@ -2469,6 +2474,7 @@ all_loan_data.addEventListener("click", ()=>{
     }
 })
 
+//Get all loan members in the system
 all.addEventListener("click", ()=>{
     allfilters.forEach(filter =>{
         const activeLink = document.querySelector(".all")
@@ -2611,6 +2617,7 @@ all.addEventListener("click", ()=>{
     }
 })
 
+//Get all unapproved loans
 unapproved.addEventListener("click", ()=>{
     allfilters.forEach(filter =>{
         const activeLink = document.querySelector(".unapproved")
@@ -2737,6 +2744,7 @@ unapproved.addEventListener("click", ()=>{
     }
 })
 
+//Get all approved loans
 approved.addEventListener("click", ()=>{
     allfilters.forEach(filter =>{
         const activeLink = document.querySelector(".approved")
@@ -2863,6 +2871,7 @@ approved.addEventListener("click", ()=>{
     }
 })
 
+//Get all awaiting approval loans
 awaiting.addEventListener("click", ()=>{
     allfilters.forEach(filter =>{
         const activeLink = document.querySelector(".awaiting")
@@ -2988,6 +2997,7 @@ awaiting.addEventListener("click", ()=>{
     }
 })
 
+//Get all due loans
 due.addEventListener("click", ()=>{
     allfilters.forEach(filter =>{
         const activeLink = document.querySelector(".due")
@@ -3114,6 +3124,7 @@ due.addEventListener("click", ()=>{
     }
 })
 
+//Get all overdue loans
 overdue.addEventListener("click", ()=>{
     allfilters.forEach(filter =>{
         const activeLink = document.querySelector(".overdue")
@@ -3239,6 +3250,7 @@ overdue.addEventListener("click", ()=>{
     }
 })
 
+//Get all paid loans
 paid.addEventListener("click", ()=>{
     allfilters.forEach(filter =>{
         const activeLink = document.querySelector(".paid")
@@ -3363,4 +3375,3 @@ paid.addEventListener("click", ()=>{
         loan_data.innerHTML = rows;
     }
 })
-

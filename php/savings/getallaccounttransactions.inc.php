@@ -37,22 +37,22 @@
                     <td>{$res['transaction_day']}</td>
                     <td>{$res['receipt_number']}</td>
                     <td class='tu'>{$res['transaction_type']} / {$res['deposit_type']}</td>
-                    <td>{$res['description']}</td>
+                    <td class='des'>{$res['description']}</td>
                     <td>{$amount_in_account}</td>
                     <td>{$amount_transacted}</td>
                     <td>{$balance_in_account}</td>
-                    <td class='tu'>{$res['transacted_by']}</td>
+                    <td class='tu des'>{$res['transacted_by']}</td>
                 </tr>"; 
         }else{
             $rows .= "<tr>
                     <td>{$res['transaction_day']}</td>
                     <td>{$res['receipt_number']}</td>
                     <td class='tu'>{$res['transaction_type']} </td>
-                    <td>{$res['description']}</td>
+                    <td class='des'>{$res['description']}</td>
                     <td>{$amount_in_account}</td>
                     <td>{$amount_transacted}</td>
                     <td>{$balance_in_account}</td>
-                    <td class='tu'>{$res['transacted_by']}</td>
+                    <td class='tu des'>{$res['transacted_by']}</td>
                 </tr>"; 
         }
         
@@ -63,13 +63,13 @@
                 <thead>
                     <tr>
                         <th>Date</th>
-                        <th>Receipt/Cheque</th>
+                        <th>Receipt</th>
                         <th>Transaction Type</th>
-                        <th>Description</th>
+                        <th class='des'>Description</th>
                         <th>Previous Balance GH¢</th>
                         <th>Deposit/Debit GH¢</th>
                         <th>Balance GH¢</th>
-                        <th>Teller</th>
+                        <th class='des'>Teller</th>
                     </tr>
                 </thead>
                 <tbody>"

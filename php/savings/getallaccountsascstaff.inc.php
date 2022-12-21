@@ -23,7 +23,7 @@
                     <td>{$res['staff_id']}</td>
                     <td>{$res['phone']}</td>
                     <td>{$balance}</td>
-                    <td><button onclick='disablemember({$res['id']})'>{$res['account_status']}</button></td>
+                    <td class='des'><button onclick='disablemember({$res['id']})'>{$res['account_status']}</button></td>
                 </tr>"; 
     }
 
@@ -35,7 +35,7 @@
                         <th class='orderbystaff orderby dsc' onclick='staffsort()'>Staff ID</th>
                         <th>Contact</th>
                         <th class='orderbybalance orderby asc' onclick='balancesort()'>Balance GH¢</th>
-                        <th>Account Status</th>
+                        <th class='des'>Account Status</th>
                     </tr>
                 </thead>
                 <tbody class='accounttable'>"

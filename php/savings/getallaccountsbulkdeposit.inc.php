@@ -53,7 +53,7 @@
                     <td>{$amount_in_account}</td>
                     <td>{$amount_transacted}</td>
                     <td>{$balance_in_account}</td>
-                    <td class='tu'>{$res['transacted_by']}</td>
+                    <td class='tu des'>{$res['transacted_by']}</td>
                 </tr>"; 
         }else{
             $rows .= "<tr>
@@ -65,7 +65,7 @@
                     <td>{$amount_in_account}</td>
                     <td>{$amount_transacted}</td>
                     <td>{$balance_in_account}</td>
-                    <td class='tu'>{$res['transacted_by']}</td>
+                    <td class='tu des'>{$res['transacted_by']}</td>
                 </tr>"; 
         }
 
@@ -75,10 +75,10 @@
     echo $data = "<table>
                 <thead>
                     <tr>
-                    <th>Date</th>
-                    <th>Member ID</th>
-                    <th>Account Name</th>
-                    <th>Receipt</th>
+                        <th>Date</th>
+                        <th>Member ID</th>
+                        <th>Account Name</th>
+                        <th>Receipt</th>
                         <th>Transaction Type</th>
                         <th>Previous Balance GH¢</th>
                         <th>Deposit/Debit GH¢</th>

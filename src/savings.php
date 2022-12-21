@@ -6,6 +6,11 @@
                 </div>
             </div>
             <div class="wrapper">
+                <div class="tblwrapper_header">
+                    <h2>CRIG QUALITY CLUB</h2>
+                    <p class="box_info">BOX 8, NEW TAFO. | TEL: +233 55-875-7533</p>
+                    <p>Account Details & Statements</p>
+                </div>
                 <div class="savings__card">
                     <div class="card">
                         <p>All Funds</p>
@@ -25,14 +30,14 @@
                     </div>                    
                 </div>
 
-                <div class="details-head">
+                <div class="details-head des">
                     <div class="actions mnot my_5">
                         <button class="deposite_btn"><span><i class="fas fa-plus-circle"></i></span> Deposit</button>
                         <button  class="withdrawal_btn"><span><i class="fas fa-minus-circle"></i></span> Withdrawal</button>
                     </div>
                 </div>
 
-                <div class="filter savings flex">
+                <div class="filter savings flex des">
                     <div class="filter__actions">
                         <a href="?pgname=applysavings" class="active">Savings Application <i class="fas fa-plus"></i></a>
                     </div>
@@ -49,13 +54,14 @@
                         <a class="time year">Y</a>
                     </div>
                 </div>
-                <div class=" account-details">
+                <div class=" account-details des">
                     <h2 class="account-title">Accounts</h2>
                     <div class="actions">
                         <div class="searchname">
                             <input type="text" class="namesort">
                             <i class="fas fa-search"></i>
                         </div>
+                        <button class="print" onclick="printStatement()">Print Statement</button>
                         <button class="getallaccounts">Accounts</button>
                         <button class="getalltransactions">Transactions</button>
                         <button class="getalldeposit">Deposits</button>
@@ -180,6 +186,8 @@
     <script src="../js/getinterest.js"></script>
     <script src="../js/sort.js"></script>
     <script src="../js/sortname.js"></script>
+    <script src="../js/print.js"></script>
+
 
     <script>
         let toast = document.querySelector(".toast_container");
