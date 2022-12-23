@@ -42,6 +42,11 @@
     --color-accent-4: #ff371c;
 }
 
+.print{
+    background-color: #4d4a4a;
+    color: white;
+}
+
 body.dark{
     --color-blackbg-100: #a3a2a2;
     --color-blackbg-200: #dfdfdf;
@@ -1726,27 +1731,23 @@ body{
         button{
             padding: .5rem 1rem;
             border: none;
-            background-color: var(--color-accent-1);
+            background-color: var(--color-blackbg-200);
             color: #ebebeb;
 
-            &:nth-last-of-type(1){
-                background-color: var(--color-blackbg-300);
-                color: var(--text-white-300);
+            &.active{
+                background-color: var(--color-accent-1);
             }
-            &:nth-last-of-type(3){
-                background-color: var(--color-accent-2);
-                color: #4d4a4a;
-            }
-            &:nth-last-of-type(4){
-                background-color: var(--color-accent-3);
-                color: var(--text-dark-300);
+
+            &:nth-of-type(1){
+                background-color: var(--color-blackbg-400);
+                color: var(--text-light-400);
             }
 
             span{
                 margin-right: .3rem;
             }
 
-            &:hover, &:focus{
+            &:hover{
                 opacity: .7;
                 cursor: pointer;
             }

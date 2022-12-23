@@ -35,6 +35,11 @@
   --color-accent-4: #ff371c;
 }
 
+.print {
+  background-color: #4d4a4a;
+  color: white;
+}
+
 body.dark {
   --color-blackbg-100: #a3a2a2;
   --color-blackbg-200: #dfdfdf;
@@ -1506,25 +1511,20 @@ body {
 .account-details .actions button {
   padding: 0.5rem 1rem;
   border: none;
-  background-color: var(--color-accent-1);
+  background-color: var(--color-blackbg-200);
   color: #ebebeb;
 }
-.account-details .actions button:nth-last-of-type(1) {
-  background-color: var(--color-blackbg-300);
-  color: var(--text-white-300);
+.account-details .actions button.active {
+  background-color: var(--color-accent-1);
 }
-.account-details .actions button:nth-last-of-type(3) {
-  background-color: var(--color-accent-2);
-  color: #4d4a4a;
-}
-.account-details .actions button:nth-last-of-type(4) {
-  background-color: var(--color-accent-3);
-  color: var(--text-dark-300);
+.account-details .actions button:nth-of-type(1) {
+  background-color: var(--color-blackbg-400);
+  color: var(--text-light-400);
 }
 .account-details .actions button span {
   margin-right: 0.3rem;
 }
-.account-details .actions button:hover, .account-details .actions button:focus {
+.account-details .actions button:hover {
   opacity: 0.7;
   cursor: pointer;
 }

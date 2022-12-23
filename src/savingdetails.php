@@ -127,9 +127,9 @@
                     <h2 class="account-title">Transactions</h2>
                     <div class="actions">
                         <button class="print" onclick="printAccountStatement()">Print Statement</button>
-                        <button class="getalltransactions" name="<?=$_GET["account_id"]?>">All Transactions</button>
-                        <button class="getalldeposit" name="<?=$_GET["account_id"]?>">Deposits</button>
-                        <button class="getalldebit" name="<?=$_GET["account_id"]?>">Withdrawals</button>
+                        <button class="fill one active getalltransactions" name="<?=$_GET["account_id"]?>" onclick="activate('one')">All Transactions</button>
+                        <button class="fill two getalldeposit" name="<?=$_GET["account_id"]?>" onclick="activate('two')">Deposits</button>
+                        <button class="fill three getalldebit" name="<?=$_GET["account_id"]?>" onclick="activate('three')">Withdrawals</button>
                     </div>
                 </div>
                 <section class="savings__table">
@@ -245,3 +245,20 @@
     <script src="../js/getaccounttransactions.js"></script>
     <script src="../js/getCurrentAccountBalance.js"></script>
     <script src="../js/print.js"></script>
+    <script>
+        function activate(id){
+            const btns = document.querySelectorAll(".fill")
+            btns.forEach(btn => {
+                if(btn.classList.contains("active") && !btn.classList.contains(`${id}`)){
+                    btn.classList.remove("active")
+                }
+                if(btn.classList.contains("active") && btn.classList.contains(`${id}`)){
+                    return
+                }
+                if(!btn.classList.contains("active") && btn.classList.contains(`${id}`)){
+                    btn.classList.add("active")
+                }
+                
+            })
+        }
+    </script>

@@ -62,10 +62,11 @@
                             <i class="fas fa-search"></i>
                         </div>
                         <button class="print" onclick="printStatement()">Print Statement</button>
-                        <button class="getallaccounts">Accounts</button>
-                        <button class="getalltransactions">Transactions</button>
-                        <button class="getalldeposit">Deposits</button>
-                        <button class="getalldebit">Withdrawals</button>
+                        <button class="fill one getallaccounts active" onclick="activate('one')">Accounts</button>
+                        <button class="fill two getalltransactions" onclick="activate('two')">Transactions</button>
+                        <button class="fill three getTransactionsSummary" onclick="activate('three')">Trans. Summary</button>
+                        <button class="fill four getalldeposit" onclick="activate('four')">Deposits</button>
+                        <button class="fill five getalldebit" onclick="activate('five')">Withdrawals</button>
                     </div>
                 </div>
                 <section class="savings__table">
@@ -213,5 +214,22 @@
                 }
             }
             xhr.send(params)
+        }
+
+        function activate(id){
+            const btns = document.querySelectorAll(".fill")
+            
+            btns.forEach(btn => {
+                if(btn.classList.contains("active") && !btn.classList.contains(`${id}`)){
+                    btn.classList.remove("active")
+                }
+                if(btn.classList.contains("active") && btn.classList.contains(`${id}`)){
+                    return
+                }
+                if(!btn.classList.contains("active") && btn.classList.contains(`${id}`)){
+                    btn.classList.add("active")
+                }
+                
+            })
         }
     </script>

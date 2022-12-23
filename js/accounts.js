@@ -17,6 +17,7 @@ window.addEventListener("load",()=>{
 const getallaccounts = document.querySelector(".getallaccounts")
 const getalldeposit = document.querySelector(".getalldeposit")
 const getalltransactions = document.querySelector(".getalltransactions")
+const getTransactionsSummary = document.querySelector(".getTransactionsSummary")
 const getalldebit = document.querySelector(".getalldebit")
 let account_title = document.querySelector(".account-title")
 
@@ -76,6 +77,23 @@ getalltransactions.addEventListener("click",()=>{
 
     let xhr = new XMLHttpRequest();
     xhr.open("GET", "../php/savings/getallaccountstransactions.inc.php", true);
+    xhr.onload = () =>{
+        if(xhr.readyState == XMLHttpRequest.DONE){
+            if(xhr.status == 200){
+                let data = xhr.response;
+                table.innerHTML = data;
+                account_title.textContent = "Transactions";
+            }
+        }
+    }
+    xhr.send()
+})
+
+getTransactionsSummary.addEventListener("click",()=>{
+    let table = document.querySelector(".savings__table");
+
+    let xhr = new XMLHttpRequest();
+    xhr.open("GET", "../php/savings/getTransactionSummary.inc.php", true);
     xhr.onload = () =>{
         if(xhr.readyState == XMLHttpRequest.DONE){
             if(xhr.status == 200){
