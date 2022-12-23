@@ -29,7 +29,4 @@
             $controller = "_404";
             require("./".$controller.".php");
         }
-
-        
     }
-?>
